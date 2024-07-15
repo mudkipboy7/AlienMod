@@ -8,6 +8,6 @@ run
 # files
 .classpath
 .project
-runClient.launch
+.launch
 runData.launch
 runServer.launch
