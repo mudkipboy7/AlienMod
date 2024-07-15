@@ -8,6 +8,4 @@ run
 # files
 .classpath
 .project
-.launch
-runData.launch
-runServer.launch
+*.launch
