@@ -62,12 +62,11 @@ public class SurvivalArmorItem extends ArmorItem implements ISurvivalItem {
 					/*
 					 * Sets the item to what it breaks into.
 					 */
-					if (itemStack.hasCustomHoverName())
-						player.getInventory().setItem(index,
-								this.getBecomesUponBreaking().getDefaultInstance().setHoverName(originalName));
-					else
-						player.getInventory().setItem(index,
-								this.getBecomesUponBreaking().getDefaultInstance());
+					// if (itemStack.hasCustomHoverName())
+					// player.getInventory().setItem(index,
+					// this.getBecomesUponBreaking().getDefaultInstance().setHoverName(originalName));
+					// else
+					player.getInventory().setItem(index, this.getBecomesUponBreaking().getDefaultInstance());
 					return amount;
 				}
 			}
