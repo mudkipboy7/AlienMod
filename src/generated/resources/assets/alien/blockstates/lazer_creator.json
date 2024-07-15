@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "alien:block/lazer_creator",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "alien:block/lazer_creator",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "alien:block/lazer_creator",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "alien:block/lazer_creator",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "alien:block/lazer_creator"
+    },
+    "facing=west": {
+      "model": "alien:block/lazer_creator",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

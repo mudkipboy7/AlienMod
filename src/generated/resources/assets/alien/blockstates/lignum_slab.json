@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alien:block/lignum_slab"
+    },
+    "type=double": {
+      "model": "alien:block/lignum_planks"
+    },
+    "type=top": {
+      "model": "alien:block/lignum_slab_top"
+    }
+  }
+}

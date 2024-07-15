@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "alien:block/lignum_planks",
+    "east": "alien:block/aliencraftingtable/lignum_crafting_table_side",
+    "north": "alien:block/aliencraftingtable/lignum_crafting_table_front",
+    "particle": "alien:block/aliencraftingtable/lignum_crafting_table_front",
+    "south": "alien:block/aliencraftingtable/lignum_crafting_table_side",
+    "up": "alien:block/aliencraftingtable/lignum_crafting_table_top",
+    "west": "alien:block/aliencraftingtable/lignum_crafting_table_front"
+  }
+}

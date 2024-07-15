@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "alien:block/lignum_planks",
+    "side": "alien:block/lignum_planks",
+    "top": "alien:block/lignum_planks"
+  }
+}

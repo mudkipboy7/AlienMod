@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "dead_plant_type=flower": {
+      "model": "alien:block/dead_plant_flower"
+    },
+    "dead_plant_type=grass": {
+      "model": "alien:block/dead_plant_grass"
+    },
+    "dead_plant_type=sapling": {
+      "model": "alien:block/dead_plant_sapling"
+    }
+  }
+}

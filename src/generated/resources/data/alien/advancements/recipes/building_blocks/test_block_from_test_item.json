@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_test_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alien:test_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alien:test_block_from_test_item"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_test_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alien:test_block_from_test_item"
+    ]
+  },
+  "sends_telemetry_event": false
+}

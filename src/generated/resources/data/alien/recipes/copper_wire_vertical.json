@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "forge:ingots/copper"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "WCW",
+    "WCW"
+  ],
+  "result": {
+    "count": 8,
+    "item": "alien:copper_wire"
+  },
+  "show_notification": true
+}

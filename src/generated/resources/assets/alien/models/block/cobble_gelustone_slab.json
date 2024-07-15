@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "alien:block/cobble_gelustone",
+    "side": "alien:block/cobble_gelustone",
+    "top": "alien:block/cobble_gelustone"
+  }
+}

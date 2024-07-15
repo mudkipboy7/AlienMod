@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "alien:block/aliendirt/algussoil",
+    "side": "alien:block/aliendirt/gramen_block_side",
+    "top": "alien:block/aliendirt/gramen_block"
+  }
+}

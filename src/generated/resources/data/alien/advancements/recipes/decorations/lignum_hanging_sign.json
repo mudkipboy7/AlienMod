@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lignum_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alien:lignum_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alien:lignum_hanging_sign"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lignum_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alien:lignum_hanging_sign"
+    ]
+  },
+  "sends_telemetry_event": false
+}

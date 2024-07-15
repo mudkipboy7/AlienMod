@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#alien:lignum_planks"
+  ],
+  "values": [
+    "#minecraft:planks"
+  ]
+}

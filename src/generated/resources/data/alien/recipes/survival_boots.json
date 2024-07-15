@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "R": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "W W",
+    "R R",
+    "L L"
+  ],
+  "result": {
+    "item": "alien:survival_boots"
+  },
+  "show_notification": true
+}

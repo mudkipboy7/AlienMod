@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "alien:lignum_planks"
+    }
+  ],
+  "result": {
+    "item": "alien:lignum_button"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "values": [
+    "alien:test_entity",
+    "minecraft:ghast",
+    "minecraft:iron_golem",
+    "minecraft:snow_golem",
+    "minecraft:enderman",
+    "minecraft:ender_dragon",
+    "minecraft:endermite",
+    "minecraft:slime",
+    "minecraft:allay",
+    "minecraft:vex",
+    "minecraft:ravager",
+    "minecraft:warden",
+    "minecraft:shulker",
+    "minecraft:ghast",
+    "minecraft:guardian",
+    "minecraft:elder_guardian",
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:zombie_horse",
+    "minecraft:zombified_piglin",
+    "minecraft:zoglin",
+    "minecraft:phantom",
+    "minecraft:wither",
+    "minecraft:drowned",
+    "minecraft:husk",
+    "#alien:alien_creature",
+    "#minecraft:skeletons"
+  ]
+}

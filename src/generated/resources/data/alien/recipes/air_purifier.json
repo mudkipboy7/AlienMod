@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "alien:cobble_gelustone"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "alien:oxygen_sack"
+    }
+  },
+  "pattern": [
+    "CIC",
+    "OOO",
+    "CIC"
+  ],
+  "result": {
+    "item": "alien:air_purifier"
+  },
+  "show_notification": true
+}

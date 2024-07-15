@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:pufferfish"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    " W ",
+    "WPW",
+    " W "
+  ],
+  "result": {
+    "item": "alien:oxygen_sack"
+  },
+  "show_notification": true
+}

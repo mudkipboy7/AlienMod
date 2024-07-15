@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "alien:block/log/stripped_lignum_log_top",
+    "side": "alien:block/log/stripped_lignum_log"
+  }
+}

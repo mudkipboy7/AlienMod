@@ -1,0 +1,9 @@
+{
+  "remove": [
+    "#alien:lignum_logs",
+    "#alien:lignum_planks",
+    "#alien:lignum_slabs",
+    "#alien:lignum_stairs"
+  ],
+  "values": []
+}

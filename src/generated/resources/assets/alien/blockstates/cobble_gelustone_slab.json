@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alien:block/cobble_gelustone_slab"
+    },
+    "type=double": {
+      "model": "alien:block/cobble_gelustone"
+    },
+    "type=top": {
+      "model": "alien:block/cobble_gelustone_slab_top"
+    }
+  }
+}

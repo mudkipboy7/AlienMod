@@ -1,0 +1,11 @@
+{
+  "values": [
+    "alien:test_entity",
+    "minecraft:player",
+    "minecraft:enderman",
+    "minecraft:ender_dragon",
+    "minecraft:endermite",
+    "minecraft:shulker",
+    "#alien:alien_creature"
+  ]
+}

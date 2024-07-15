@@ -1,0 +1,22 @@
+pluginManagement {
+	// Repositories for gralde plugins
+    repositories {
+        gradlePluginPortal()
+
+        // Forge
+        maven {
+        	name='Forge'
+        	url = 'https://maven.minecraftforge.net/'
+        }
+        // Parchment
+		maven { 
+			name='Parchment'
+			url = 'https://maven.parchmentmc.org'
+		}
+	}
+}
+
+// I don't really know what this does
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}

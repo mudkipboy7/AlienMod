@@ -1,0 +1,22 @@
+{
+  "player_cough": {
+    "sounds": [
+      "alien:entity/player_cough"
+    ]
+  },
+  "test_entity_ambient": {
+    "sounds": [
+      "alien:entity/test_entity_ambient"
+    ]
+  },
+  "test_entity_death": {
+    "sounds": [
+      "alien:entity/test_entity_death"
+    ]
+  },
+  "test_entity_hurt": {
+    "sounds": [
+      "alien:entity/test_entity_hurt"
+    ]
+  }
+}

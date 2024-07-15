@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "alien:gelustone"
+    }
+  ],
+  "result": {
+    "item": "alien:gelustone_button"
+  }
+}

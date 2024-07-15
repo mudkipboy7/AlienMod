@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "alien:block/machine/air_purifier_bottom",
+    "side": "alien:block/machine/air_purifier",
+    "top": "alien:block/machine/air_purifier_top"
+  }
+}

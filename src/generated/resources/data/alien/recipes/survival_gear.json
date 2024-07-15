@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "alien:oxygen_sack"
+    }
+  },
+  "pattern": [
+    "III",
+    "SGS",
+    "III"
+  ],
+  "result": {
+    "item": "alien:survival_gear"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "alien:atsali_ingot"
+    },
+    "S": {
+      "item": "alien:fur_coat"
+    }
+  },
+  "pattern": [
+    "ASA",
+    "AAA",
+    "AAA"
+  ],
+  "result": {
+    "item": "alien:atsali_chestplate"
+  },
+  "show_notification": true
+}

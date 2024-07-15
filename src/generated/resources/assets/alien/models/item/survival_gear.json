@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:item/generated",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "alien:item/survival_gear"
+    }
+  },
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "head": {}
+  }
+}

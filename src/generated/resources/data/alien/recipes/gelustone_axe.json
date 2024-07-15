@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "alien:cobble_gelustone"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "MM",
+    "MS",
+    " S"
+  ],
+  "result": {
+    "item": "alien:gelustone_axe"
+  },
+  "show_notification": true
+}

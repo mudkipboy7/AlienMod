@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "R R",
+    "RWR",
+    "RWR"
+  ],
+  "result": {
+    "item": "alien:fur_coat"
+  },
+  "show_notification": true
+}

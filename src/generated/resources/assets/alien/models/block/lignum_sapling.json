@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "alien:block/plant/lignum_sapling"
+  }
+}

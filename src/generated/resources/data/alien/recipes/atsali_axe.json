@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "alien:atsali_ingot"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "MM",
+    "MS",
+    " S"
+  ],
+  "result": {
+    "item": "alien:atsali_axe"
+  },
+  "show_notification": true
+}

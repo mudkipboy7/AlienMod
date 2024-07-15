@@ -1,0 +1,23 @@
+{
+	"required": true,
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "alien.refmap.json",
+	"package": "mudkipboy7.alien.mixin.mixins",
+	"mixins": [
+		"ItemEntityMixin",
+		"LivingEntityMixin",
+		"LevelMixin",
+		"PlayerMixin"
+	],
+	"server": [
+	],
+	"client": [
+		"client.HeartGuiMixin",
+		"client.LivingEntityRendererMixin"		//,"client.TitleScreenMixin"
+
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"minVersion": "0.8"
+}

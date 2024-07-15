@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "tag": "forge:storage_blocks/netherite"
+    },
+    "T": {
+      "item": "alien:test_item"
+    }
+  },
+  "pattern": [
+    "TNT",
+    "TNT",
+    "TNT"
+  ],
+  "result": {
+    "item": "alien:int_limit_battery"
+  },
+  "show_notification": true
+}

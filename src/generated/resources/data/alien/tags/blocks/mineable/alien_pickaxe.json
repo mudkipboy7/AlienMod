@@ -1,0 +1,30 @@
+{
+  "values": [
+    "alien:gelustone",
+    "alien:cobble_gelustone",
+    "alien:gelustone_coal_ore",
+    "alien:gelustone_stairs",
+    "alien:cobble_gelustone_stairs",
+    "alien:gelustone_slab",
+    "alien:cobble_gelustone_slab",
+    "alien:gelustone_gold_ore",
+    "alien:gelustone_button",
+    "alien:gelustone_pressure_plate",
+    "alien:cobble_gelustone_wall",
+    "alien:atsali_ore",
+    "alien:atsali_block",
+    "alien:raw_atsali_block",
+    "minecraft:bell",
+    "minecraft:furnace",
+    "minecraft:blast_furnace",
+    "minecraft:smoker",
+    "minecraft:brewing_stand",
+    "#minecraft:anvil",
+    "#minecraft:cauldrons",
+    "#forge:obsidian",
+    "#forge:chests/ender",
+    "#forge:storage_blocks/gold",
+    "#forge:storage_blocks/raw_gold",
+    "#forge:storage_blocks/coal"
+  ]
+}

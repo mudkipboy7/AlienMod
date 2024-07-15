@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "alien:battery"
+    },
+    "C": {
+      "tag": "forge:ingots/copper"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "pattern": [
+    "III",
+    "CFC",
+    "CBC"
+  ],
+  "result": {
+    "item": "alien:coal_generator"
+  },
+  "show_notification": true
+}

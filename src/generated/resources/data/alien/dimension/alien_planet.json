@@ -1,0 +1,11 @@
+{
+  "type": "alien:alien_planet",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "alien:alien_plains"
+    },
+    "settings": "alien:alien_planet"
+  }
+}

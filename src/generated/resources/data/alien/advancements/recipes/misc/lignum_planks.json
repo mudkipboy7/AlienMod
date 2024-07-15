@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_alien_log": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "alien:lignum_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alien:lignum_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_alien_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alien:lignum_planks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

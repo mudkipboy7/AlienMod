@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hanging_sign",
+  "key": {
+    "C": {
+      "item": "minecraft:chain"
+    },
+    "M": {
+      "item": "alien:lignum_log"
+    }
+  },
+  "pattern": [
+    "C C",
+    "MMM",
+    "MMM"
+  ],
+  "result": {
+    "count": 6,
+    "item": "alien:lignum_hanging_sign"
+  },
+  "show_notification": true
+}

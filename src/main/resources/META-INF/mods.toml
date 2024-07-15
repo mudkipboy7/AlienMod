@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[48,)"
+license="All rights reserved"
+[[mods]]
+modId="alien" 
+version="${file.jarVersion}"
+displayName="AlienMod"
+logoFile="alienmod.png"
+credits="mudkipboy7"
+authors="mudkipboy7"
+description='''Alienmod'''
+
+[[dependencies.alien]]
+    modId="forge"
+    mandatory=true
+    versionRange="[48,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.alien]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.2,1.21)"
+    ordering="NONE"
+    side="BOTH"
+

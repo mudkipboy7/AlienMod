@@ -1,0 +1,23 @@
+{
+  "values": [
+    "alien:lignum_planks",
+    "alien:lignum_stairs",
+    "alien:lignum_slab",
+    "alien:lignum_crafting_table",
+    "alien:lignum_door",
+    "alien:lignum_fence",
+    "alien:lignum_fence_gate",
+    "alien:lignum_trapdoor",
+    "alien:lignum_button",
+    "alien:lignum_pressure_plate",
+    "alien:lignum_chest",
+    "minecraft:crafting_table",
+    "minecraft:composter",
+    "minecraft:fletching_table",
+    "#alien:lignum_logs",
+    "#minecraft:beds",
+    "#forge:chests/wooden",
+    "#forge:barrels/wooden",
+    "#forge:storage_blocks/coal"
+  ]
+}

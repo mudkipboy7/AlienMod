@@ -1,0 +1,9 @@
+# Defines special players based on their usernames
+[USERNAMES]
+	Notch			= "trans"
+	BeniferShrimpo 	= "trans"
+	DanTDM			= "blue"
+	
+# Defines special players based on their UUIDS
+[UUIDS]
+	a9886315-d13c-40ea-8ccd-e3cbb6c9978d = "pink" # mudkipboy7
