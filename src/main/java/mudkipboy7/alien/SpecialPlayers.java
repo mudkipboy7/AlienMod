@@ -5,8 +5,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.yaml.snakeyaml.Yaml;
-
 import com.electronwill.nightconfig.core.CommentedConfig;
 import com.google.gson.JsonObject;
 
@@ -36,7 +34,7 @@ public class SpecialPlayers {
 		/*
 		 * Gets the special player types
 		 */
-		JsonObject jsonFile = AMMethods.getJson(specialPlayerTypesDir).getAsJsonObject();
+		JsonObject jsonFile = AMFileMethods.getJson(specialPlayerTypesDir).getAsJsonObject();
 		jsonFile.keySet().forEach(entry -> {
 			if (jsonFile.get(entry) instanceof JsonObject playerType) {
 				String name = entry;
@@ -48,7 +46,7 @@ public class SpecialPlayers {
 		/*
 		 * Gets the special players
 		 */
-		CommentedConfig specialPlayersTOML = AMMethods.getTOML(specialPlayersDir);
+		CommentedConfig specialPlayersTOML = AMFileMethods.getTOML(specialPlayersDir);
 		Map<String, Object> specialPlayersMap = specialPlayersTOML.valueMap();
 		if (specialPlayersMap.getOrDefault("USERNAMES", null) instanceof CommentedConfig cfg)
 			cfg.valueMap().forEach((username, setting) -> {
@@ -112,10 +110,6 @@ public class SpecialPlayers {
 			if (player.has("flags") && player.get("flags").isJsonArray()) {
 				player.getAsJsonArray("flags").forEach(c -> flags.add(c.getAsString()));
 			}
-		}
-
-		public SpecialPlayerType(Yaml player) {
-
 		}
 
 		public ResourceLocation getSurvivalGearTexture() {

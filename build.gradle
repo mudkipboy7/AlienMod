@@ -88,8 +88,8 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
     
     // Java Libraries
-    minecraftLibrary "com.fasterxml.jackson.core:jackson-core:${jackson_core_version}"
-    minecraftLibrary "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jackson_yaml_version}"
+    //minecraftLibrary "com.fasterxml.jackson.core:jackson-core:${jackson_core_version}"
+    //minecraftLibrary "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jackson_yaml_version}"
     
     
 }
