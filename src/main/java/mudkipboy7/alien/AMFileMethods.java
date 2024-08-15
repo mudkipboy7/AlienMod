@@ -11,7 +11,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class AMFileMethods {
-	@SuppressWarnings("deprecation")
 	public static JsonObject getJson(String filename) {
 		InputStream inputStream = AlienMod.class.getClassLoader().getResourceAsStream(filename);
 		BufferedReader jsonReader = null;
@@ -30,11 +29,10 @@ public class AMFileMethods {
 		InputStream inputStream = AlienMod.class.getClassLoader().getResourceAsStream(filename);
 		return tomlParser.parse(inputStream);
 	}
-/*
-	public static HashMap<String, Object> getYamlAsJson(String filename) {
-		InputStream inputStream = AlienMod.class.getClassLoader().getResourceAsStream(filename);
-		HashMap<String, Object> map = new Yaml().load(inputStream);
-		return map;
-	}
-	*/
+	/*
+	 * public static HashMap<String, Object> getYamlAsJson(String filename) {
+	 * InputStream inputStream =
+	 * AlienMod.class.getClassLoader().getResourceAsStream(filename);
+	 * HashMap<String, Object> map = new Yaml().load(inputStream); return map; }
+	 */
 }
