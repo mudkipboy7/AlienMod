@@ -1,6 +1,7 @@
 package mudkipboy7.alien.world.block.blockentity;
 
-import mudkipboy7.alien.AlienMod;
+import static mudkipboy7.alien.AMRegistry.BLOCK_ENTITY_TYPES;
+
 import mudkipboy7.alien.world.block.AMBlocks;
 import mudkipboy7.alien.world.block.blockentity.machine.CoalGeneratorBlockEntity;
 import mudkipboy7.alien.world.block.blockentity.machine.EnergyStorageBlockEntity;
@@ -9,14 +10,10 @@ import mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBl
 import mudkipboy7.alien.world.block.blockentity.machine.transport.LazerExtenderBlockEntity;
 import mudkipboy7.alien.world.block.blockentity.machine.transport.WireBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class AMBlockEntities {
 	// Loader Stuff
-	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister
-			.create(ForgeRegistries.BLOCK_ENTITY_TYPES, AlienMod.MODID);
 
 	/*
 	 * Block Entities
@@ -54,24 +51,24 @@ public class AMBlockEntities {
 	public static final RegistryObject<BlockEntityType<EnergyStorageBlockEntity>> ENERGY_STORAGE = BLOCK_ENTITY_TYPES
 			.register("energy_storage_block", () -> BlockEntityType.Builder
 					.of(EnergyStorageBlockEntity::new, AMBlocks.ENERGY_STORAGE.get()).build(null));
-	
+
 	@SuppressWarnings("deprecation")
 	@Deprecated
 	// Copper wire
-	public static final RegistryObject<BlockEntityType<WireBlockEntity>> COPPER_WIRE = BLOCK_ENTITY_TYPES
-			.register("copper_wire", () -> BlockEntityType.Builder
-					.of(WireBlockEntity::new, AMBlocks.COPPER_WIRE.get()).build(null));
-	
+	public static final RegistryObject<BlockEntityType<WireBlockEntity>> COPPER_WIRE = BLOCK_ENTITY_TYPES.register(
+			"copper_wire",
+			() -> BlockEntityType.Builder.of(WireBlockEntity::new, AMBlocks.COPPER_WIRE.get()).build(null));
+
 	// Lazer creator
 	public static final RegistryObject<BlockEntityType<LazerCreatorBlockEntity>> LAZER_CREATOR = BLOCK_ENTITY_TYPES
 			.register("lazer_creator", () -> BlockEntityType.Builder
 					.of(LazerCreatorBlockEntity::new, AMBlocks.LAZER_CREATOR.get()).build(null));
-	
+
 	// Lazer extender
 	public static final RegistryObject<BlockEntityType<LazerExtenderBlockEntity>> LAZER_EXTENDER = BLOCK_ENTITY_TYPES
 			.register("lazer_extender", () -> BlockEntityType.Builder
 					.of(LazerExtenderBlockEntity::new, AMBlocks.LAZER_EXTENDER.get()).build(null));
-	
+
 	// Alien Portal
 	public static final RegistryObject<BlockEntityType<AlienPortalBlockEntity>> ALIEN_PORTAL = BLOCK_ENTITY_TYPES
 			.register("alien_portal", () -> BlockEntityType.Builder

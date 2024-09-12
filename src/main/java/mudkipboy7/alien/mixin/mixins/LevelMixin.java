@@ -23,7 +23,8 @@ public abstract class LevelMixin extends net.minecraftforge.common.capabilities.
 	@Inject(method = "Lnet/minecraft/world/level/Level;updateSkyBrightness()V", at = @At("HEAD"), cancellable = true)
 	public void updateSkyBrightness(CallbackInfo callBackInfo) {
 		Level serverlevel = (Level) (Object) this;
-		if (AlienDimSky.modifySkylightServerSide(serverlevel))
+		if (AlienDimSky.alienDimSky.modifySkylightServerSide(serverlevel)) {
 			callBackInfo.cancel();
+		}
 	}
 }

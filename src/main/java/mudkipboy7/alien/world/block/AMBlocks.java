@@ -1,6 +1,7 @@
 package mudkipboy7.alien.world.block;
 
-import mudkipboy7.alien.AlienMod;
+import static mudkipboy7.alien.AMRegistry.BLOCKS;
+
 import mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import mudkipboy7.alien.world.block.flora.AlienDoubleTallGrassBlock;
 import mudkipboy7.alien.world.block.flora.AlienGrassBlock;
@@ -51,15 +52,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;;
 
 @SuppressWarnings("deprecation")
-public class AMBlocks {
-	// Loader Stuff
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
-			AlienMod.MODID);
+public final class AMBlocks {
 
 	/*
 	 * Register Blocks
@@ -73,7 +69,6 @@ public class AMBlocks {
 	public static final RegistryObject<AmmoniaLiquidBlock> AMMONIA_LIQUID_BLOCK = BLOCKS.register("ammonia_liquid",
 			() -> new AmmoniaLiquidBlock((AMFluids.AMMONIA_LIQUID_SOURCE), BlockBehaviour.Properties.of()));
 
-	
 	public static final RegistryObject<Block> ALIEN_AIR = BLOCKS.register("alien_air", () -> new AlienAirBlock(
 			BlockBehaviour.Properties.of().noCollission().noLootTable().noOcclusion().strength(-1.0F, 3600000.0F)));
 
@@ -372,5 +367,4 @@ public class AMBlocks {
 		return makePillarBlock(name, BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F)
 				.sound(SoundType.WOOD).ignitedByLava());
 	}
-
 }

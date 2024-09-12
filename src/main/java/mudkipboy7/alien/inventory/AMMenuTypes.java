@@ -1,6 +1,7 @@
 package mudkipboy7.alien.inventory;
 
-import mudkipboy7.alien.AlienMod;
+import static mudkipboy7.alien.AMRegistry.MENU_TYPES;
+
 import mudkipboy7.alien.inventory.menu.AlienCraftingTableMenu;
 import mudkipboy7.alien.inventory.menu.CoalGeneratorMenu;
 import mudkipboy7.alien.inventory.menu.EnergyStorageMenu;
@@ -8,14 +9,9 @@ import mudkipboy7.alien.inventory.menu.HazardRemovalMenu;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-
+import net.minecraftforge.registries.RegistryObject;;
 public class AMMenuTypes {
 	// Loader Stuff
-	public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES,
-			AlienMod.MODID);
 
 	// Alien Crafting Table
 	public static final RegistryObject<MenuType<AlienCraftingTableMenu>> ALIEN_CRAFTING = MENU_TYPES.register(

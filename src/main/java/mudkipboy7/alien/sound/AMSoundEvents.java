@@ -1,15 +1,13 @@
 package mudkipboy7.alien.sound;
 
+import static mudkipboy7.alien.AMRegistry.SOUND_EVENTS;
+
 import mudkipboy7.alien.AlienMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-
+import net.minecraftforge.registries.RegistryObject;;
 public class AMSoundEvents {
-	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister
-			.create(ForgeRegistries.SOUND_EVENTS, AlienMod.MODID);
+
 
 	/*
 	 * Remember, to add these sounds to the sounds.json you must go to

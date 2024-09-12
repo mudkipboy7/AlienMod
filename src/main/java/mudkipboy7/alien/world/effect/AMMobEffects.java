@@ -1,18 +1,15 @@
 package mudkipboy7.alien.world.effect;
 
-import mudkipboy7.alien.AlienMod;
-import net.minecraft.world.effect.MobEffect;
+import static mudkipboy7.alien.AMRegistry.MOB_EFFECTS;
+import static mudkipboy7.alien.AMRegistry.POTIONS;
+
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class AMMobEffects {
 	// Loader Stuff
-	public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS,
-			AlienMod.MODID);
 
 	/*
 	 * Register Effects
@@ -34,11 +31,7 @@ public class AMMobEffects {
 	public static final RegistryObject<AlienMobEffect> NO_SPRINT = MOB_EFFECTS.register("no_sprint",
 			() -> new AlienMobEffect(MobEffectCategory.HARMFUL, 1052198));
 
-	public class AMPotions {
-
-		// Loader Stuff
-		public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS,
-				AlienMod.MODID);
+	public static class AMPotions {
 
 		// Potion for hazard protection effect
 		public static final RegistryObject<Potion> HAZARD_PROTECTION_POTION = POTIONS.register("hazard_protection",

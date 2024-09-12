@@ -1,5 +1,7 @@
 package mudkipboy7.alien.client.render.dim;
 
+import static mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky.alienDimSky;
+
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
@@ -11,6 +13,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,9 +32,10 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 
 	@Override
 	public Vec3 getBrightnessDependentFogColor(Vec3 biomeFogColor, float daylight) {
-		@SuppressWarnings("resource")
-		long currentTime = Minecraft.getInstance().level.getDayTime();
-		float eclipsyness = AlienDimSky.getEclipsyness(currentTime, AlienDimSky.alienDimEclipseSettings);
+
+		// The amount that it is eclipsing.
+		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
+				alienDimSky.jovianPlanet.getLocation());
 		double sky = daylight * eclipsyness;
 		return biomeFogColor.multiply(sky, sky, sky);
 	}
@@ -66,8 +70,9 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker,
 			float skyLight, int pixelX, int pixelY, Vector3f colors) {
 		Minecraft minecraft = Minecraft.getInstance();
-		float eclipsyness = AlienDimSky.getEclipsyness(level.getDayTime(), AlienDimSky.alienDimEclipseSettings);
-		float brightnessMultiplier = AlienDimSky.brightnessMultiplier;
+		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
+				alienDimSky.jovianPlanet.getLocation());
+		float brightnessMultiplier = alienDimSky.brightnessMultiplier;
 
 		// Checks if eclipsyness is low enough if it is it changes skyDarken.
 		if (eclipsyness <= 0.8F) {

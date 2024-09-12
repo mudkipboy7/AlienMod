@@ -60,23 +60,11 @@ public final class AlienMod {
 	 * DeferredRegister you have to put it here or else it won't do anything.
 	 */
 	public AlienMod() {
-		SpecialPlayers.loadSpecialPlayersStuff();
+		loadCustomJSONStuff();
 		// Makes the mod bus
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-		// DeferredRegisters
-		AMBlocks.BLOCKS.register(modBus);
-		AMItems.ITEMS.register(modBus);
-		AMFluids.FLUIDS.register(modBus);
-		AMFluids.FLUID_TYPES.register(modBus);
-		AMCreativeTabs.CREATIVE_TABS.register(modBus);
-		AMSoundEvents.SOUND_EVENTS.register(modBus);
-		AMMobEffects.MOB_EFFECTS.register(modBus);
-		AMBlockEntities.BLOCK_ENTITY_TYPES.register(modBus);
-		AMMenuTypes.MENU_TYPES.register(modBus);
-		AMEntities.ENTITY_TYPES.register(modBus);
-		AMMobEffects.AMPotions.POTIONS.register(modBus);
-
+		// Sets up all of the mod regist
+		AMRegistry.init(modBus);
 		// Listeners
 		modBus.addListener(AMDataGenerators::gatherData);
 		modBus.addListener(this::registerStuff);
@@ -109,6 +97,10 @@ public final class AlienMod {
 
 	public static ResourceLocation location(String loc) {
 		return location(AlienMod.MODID, loc);
+	}
+
+	public static void loadCustomJSONStuff() {
+		SpecialPlayers.loadSpecialPlayersStuff();
 	}
 
 }

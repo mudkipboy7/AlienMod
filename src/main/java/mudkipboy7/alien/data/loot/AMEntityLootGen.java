@@ -1,8 +1,10 @@
 package mudkipboy7.alien.data.loot;
 
+
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import mudkipboy7.alien.AMRegistry;
 import mudkipboy7.alien.world.entity.AMEntities;
 import mudkipboy7.alien.world.item.AMItems;
 import net.minecraft.data.loot.EntityLootSubProvider;
@@ -36,7 +38,7 @@ public class AMEntityLootGen extends EntityLootSubProvider {
 
 	@Override
 	protected Stream<EntityType<?>> getKnownEntityTypes() {
-		return AMEntities.ENTITY_TYPES.getEntries().stream().map(Supplier::get);
+		return AMRegistry.ENTITY_TYPES.getEntries().stream().map(Supplier::get);
 	}
 
 }

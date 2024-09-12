@@ -1,27 +1,20 @@
 package mudkipboy7.alien.world.block;
 
+import static mudkipboy7.alien.AMRegistry.FLUIDS;
+import static mudkipboy7.alien.AMRegistry.FLUID_TYPES;
+
 import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.world.block.fluid.AmmoniaFluidType;
 import mudkipboy7.alien.world.block.fluid.AmmoniaLiquid;
 import mudkipboy7.alien.world.item.AMItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class AMFluids {
-	// Loader Stuff
-	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
-			AlienMod.MODID);
 
-	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.FLUID_TYPES,
-			AlienMod.MODID);
-	
 	/*
 	 * Liquid Ammonia
 	 */

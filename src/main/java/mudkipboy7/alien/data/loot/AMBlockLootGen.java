@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import mudkipboy7.alien.AMRegistry;
 import mudkipboy7.alien.world.block.AMBlocks;
 import mudkipboy7.alien.world.item.AMItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -116,6 +117,6 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return AMBlocks.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
+		return AMRegistry.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
 	}
 }

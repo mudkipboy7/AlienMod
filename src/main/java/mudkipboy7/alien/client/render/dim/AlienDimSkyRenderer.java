@@ -1,5 +1,9 @@
 package mudkipboy7.alien.client.render.dim;
 
+import static mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky.alienDimSky;
+import java.security.spec.ECField;
+
+import org.joml.Math;
 import org.joml.Matrix4f;
 
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -15,6 +19,8 @@ import com.mojang.math.Axis;
 
 import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
+import mudkipboy7.alien.world.worldgen.dimension.sky.AstronomicalFunctions;
+import mudkipboy7.alien.world.worldgen.dimension.sky.PhasingAstronomicalObject;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -30,7 +36,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(value = Dist.CLIENT)
-public class AlienDimSkyRenderer extends AlienDimSky {
+public class AlienDimSkyRenderer {
 
 	// Star buffer
 	private static VertexBuffer starBuffer;
@@ -49,23 +55,18 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 	// The brightness of the stars during broad daylight
 	public static float starDayTimeBrightness = 0.15F;
 
-	// The brightness of the jovian planet during broad daylight
-	public static float jovianDaytimeBrightness = 0.5F;
-
 	public AlienDimSkyRenderer() {
 		this.createStars();
 	}
 
 	public static boolean renderSky(ClientLevel level, int ticks, float partialTick, PoseStack poseStack, Camera camera,
 			Matrix4f projectionMatrix, boolean isFoggy, Runnable setupFog) {
-		// The current time in ticks.
-		long currentTime = level.getDayTime();
-
-		// The current phase of the sky object
-		int currentPhase = getCurrentPhase(currentTime);
+		// The sun's current location
+		float sunLocation = alienDimSky.alienSun.getLocation();
 
 		// The amount that it is eclipsing.
-		float eclipsyness = getEclipsyness(currentTime, alienDimEclipseSettings);
+		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
+				alienDimSky.jovianPlanet.getLocation());
 
 		/*
 		 * This determines the brightness of the stars. With baseStarBrightness set to
@@ -74,13 +75,7 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 		 */
 		float starBrightness = getStarBrightness(starDayTimeBrightness, level, partialTick);
 
-		/*
-		 * This determines the brightness of the stationary sky object. With
-		 * baseJovianBrightness set to 0.5F it will have a brightness of 1.0F during
-		 * night time and during eclipses, and a brightness of 0.5F during daytime.
-		 */
-		float jovianBrightness = getStarBrightness(jovianDaytimeBrightness, level, partialTick);
-
+		// System.out.println(jovianBrightness);
 		/*
 		 * Draws sky
 		 */
@@ -148,27 +143,28 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 		 * Everything here is only drawn if it isn't raining. All of the celestial
 		 * bodies are drawn here.
 		 */
-		poseStack.pushPose();
+
 		if (!level.isRaining()) {
 
 			/*
 			 * Draws The Sun
 			 */
-
+			poseStack.pushPose();
 			float sunRedness = 1.0F;
 			float sunGreenness = 1.0F;
 			float sunBlueness = 1.0F;
 			float sunBrightness = Math.max(0.0F, eclipsyness);
 
 			poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
-			poseStack.mulPose(Axis.XP.rotationDegrees((level.getTimeOfDay(partialTick) * 360.0F)));
+
+			poseStack.mulPose(Axis.XP.rotationDegrees(alienDimSky.alienSun.getLocation()));
 			Matrix4f matrix4f1 = poseStack.last().pose();
 			RenderSystem.setShader(GameRenderer::getPositionTexShader);
 			// Glare
-			float celestialSize = 22.0F;
-			if (!isInFullEclipse(currentTime, alienDimEclipseSettings)) {
+			float celestialSize = alienDimSky.alienSun.getGlareVisualSize();
+			if (eclipsyness > 0) {
 				RenderSystem.setShaderColor(sunRedness, sunGreenness, sunBlueness, sunBrightness);
-				RenderSystem.setShaderTexture(0, SUN_GLARE_TEXTURE);
+				RenderSystem.setShaderTexture(0, alienDimSky.alienSun.getGlareTexture());
 				bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 				bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 				bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();
@@ -177,10 +173,11 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 				BufferUploader.drawWithShader(bufferbuilder.end());
 			}
 			// Sun
-			sunBrightness = Math.max(0.65F, eclipsyness);
-			celestialSize = celestialSize / 4;
+			sunBrightness = alienDimSky.alienSun.getBrightness(eclipsyness, 0);
+			celestialSize = alienDimSky.alienSun.getVisualSize();
+			// System.out.println(celestialSize);
 			RenderSystem.setShaderColor(sunRedness, sunGreenness, sunBlueness, sunBrightness);
-			RenderSystem.setShaderTexture(0, SUN_TEXTURE);
+			RenderSystem.setShaderTexture(0, alienDimSky.alienSun.getTexture());
 			bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();
@@ -199,72 +196,12 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 			VertexBuffer.unbind();
 			setupFog.run();
 			poseStack.popPose();
-
-			/*
-			 * Draws the stationary sky object.
-			 */
-
-			// Determines stuff related to the texture.
-			float textureThing = 1.0F / numberOfPhases;
-
-			// I think this specifies where the image stops drawing the image on the x-axis
-			float xStop = textureThing * (currentPhase + 1);
-			// I think this specifies where the image stops drawing the image on the y-axis
-			float yStop = 1.0F;
-			// I think this specifies where the image starts drawing the image on the x-axis
-			float xStart = textureThing * currentPhase;
-			// I think this specifies where the image starts drawing the image on the y-axis
-			float yStart = 0.0F;
-
-			celestialSize = 34.0F;
-
-			// Starts up it.
-			poseStack.pushPose();
-			matrix4f1 = poseStack.last().pose();
-
-			/*
-			 * This stuff thats commented out would've changed it's location depending on
-			 * the player's location
-			 */
-			// double boarderSize = level.getWorldBorder().getSize()/2.0D;//29999984.0D;
-			// float position = (float) ((camera.getPosition().x() * 50.0D) / boarderSize);
-			// poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
-			// poseStack.mulPose(Axis.ZN.rotationDegrees(position));
-
-			// Sets it's location
-			poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
-			poseStack.mulPose(Axis.XP.rotationDegrees(0.0F));
-
-			/*
-			 * The main part that draws the actual texture of the sky object. The blending
-			 * must be disabled to prevent it looking see through at night.
-			 */
-			Float shaderMod = starBrightness / eclipsyness;
-			RenderSystem.disableBlend();
-			RenderSystem.setShaderColor(jovianBrightness, jovianBrightness, jovianBrightness, jovianBrightness);
-			RenderSystem.setShader(GameRenderer::getPositionTexShader);
-			RenderSystem.setShaderTexture(0, JOVIAN_PLANET_TEXTURE);
-			bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(xStart, yStart).endVertex();
-			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(xStop, yStart).endVertex();
-			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, celestialSize).uv(xStop, yStop).endVertex();
-			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, celestialSize).uv(xStart, yStop).endVertex();
-			BufferUploader.drawWithShader(bufferbuilder.end());
-
-			/*
-			 * Draws a box used to make the planet look like it's being seen behind the sky.
-			 */
-			shaderMod = 2.0F;
-			RenderSystem.enableBlend();
-			RenderSystem.setShader(GameRenderer::getPositionShader);
-			RenderSystem.setShaderColor(skyRed * shaderMod, skyGreen * shaderMod, skyBlue * shaderMod, 1.0F);
-			bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
-			// bufferbuilder.color(f13, f14, f15, f16);
-			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).endVertex();
-			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).endVertex();
-			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, celestialSize).endVertex();
-			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, celestialSize).endVertex();
-			BufferUploader.drawWithShader(bufferbuilder.end());
+			// Draws the moon planet
+			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, alienDimSky.smallMoon, 1,
+					bufferbuilder, skyRed, skyGreen, skyBlue);
+			// Draws the jovian planet
+			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, alienDimSky.jovianPlanet, eclipsyness,
+					bufferbuilder, skyRed, skyGreen, skyBlue);
 
 		}
 
@@ -272,10 +209,11 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 		 * I don't exactly know what this does, I've just left it because I don't want
 		 * to screw things up.
 		 */
-		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-		RenderSystem.disableBlend();
-		RenderSystem.defaultBlendFunc();
-		poseStack.popPose();
+		// poseStack.pushPose();
+		// RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		// RenderSystem.disableBlend();
+		// RenderSystem.defaultBlendFunc();
+		// poseStack.popPose();
 
 		/*
 		 * I think this has something to do with culling or something.
@@ -380,7 +318,8 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 	 */
 
 	protected static float getStarBrightness(float brightnessModifier, ClientLevel clientLevel, float partialTick) {
-		float eclipsyness = getEclipsyness(clientLevel.getDayTime(), alienDimEclipseSettings);
+		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
+				alienDimSky.jovianPlanet.getLocation());
 		/*
 		 * Does math to determine what the brightness should be. It checks that it isn't
 		 * negative.
@@ -389,5 +328,77 @@ public class AlienDimSkyRenderer extends AlienDimSky {
 				brightnessModifier + clientLevel.getStarBrightness(partialTick) + ((1.0F - eclipsyness) / 2.0F));
 		// Makes sure it's not to high if so returns the max value.
 		return Math.max(0.0F, brightness);
+	}
+
+	private static void drawJovian(float partialTick, PoseStack poseStack, float sunLocation, Matrix4f matrix4f1,
+			PhasingAstronomicalObject jovianPlanet, float eclipsyness, BufferBuilder bufferbuilder, float skyRed,
+			float skyGreen, float skyBlue) {
+		/*
+		 * Draws the stationary sky object.
+		 */
+		// The current phase of the sky object
+		int jovianCurrentPhase = jovianPlanet.getCurrentPhase(sunLocation);
+		// Determines stuff related to the texture.
+		float textureThing = 1.0F / jovianPlanet.getNumberOfPhases();
+
+		// I think this specifies where the image stops drawing the image on the x-axis
+		float xStop = textureThing * (jovianCurrentPhase + 1);
+		// I think this specifies where the image stops drawing the image on the y-axis
+		float yStop = 1.0F;
+		// I think this specifies where the image starts drawing the image on the x-axis
+		float xStart = textureThing * jovianCurrentPhase;
+		// I think this specifies where the image starts drawing the image on the y-axis
+		float yStart = 0.0F;
+
+		float celestialSize = jovianPlanet.getVisualSize();
+
+		// Starts up it.
+		poseStack.pushPose();
+		matrix4f1 = poseStack.last().pose();
+
+		/*
+		 * This stuff thats commented out would've changed it's location depending on
+		 * the player's location
+		 */
+		// double boarderSize = level.getWorldBorder().getSize()/2.0D;//29999984.0D;
+		// float position = (float) ((camera.getPosition().x() * 50.0D) / boarderSize);
+		// poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
+		// poseStack.mulPose(Axis.ZN.rotationDegrees(position));
+
+		// Sets it's location
+		poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
+		poseStack.mulPose(Axis.ZP.rotationDegrees(jovianPlanet.getLocation()));
+
+		/*
+		 * The main part that draws the actual texture of the sky object. The blending
+		 * must be disabled to prevent it looking see through at night.
+		 */
+		RenderSystem.disableBlend();
+		float jovianBrightness = jovianPlanet.getBrightness(eclipsyness, sunLocation);
+		RenderSystem.setShaderColor(jovianBrightness, jovianBrightness, jovianBrightness, jovianBrightness);
+		RenderSystem.setShader(GameRenderer::getPositionTexShader);
+		RenderSystem.setShaderTexture(0, jovianPlanet.getTexture());
+		bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
+		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(xStart, yStart).endVertex();
+		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(xStop, yStart).endVertex();
+		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, celestialSize).uv(xStop, yStop).endVertex();
+		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, celestialSize).uv(xStart, yStop).endVertex();
+		BufferUploader.drawWithShader(bufferbuilder.end());
+
+		/*
+		 * Draws a box used to make the planet look like it's being seen behind the sky.
+		 */
+		Float shaderMod = 0.8F;
+		RenderSystem.enableBlend();
+		RenderSystem.setShader(GameRenderer::getPositionShader);
+		RenderSystem.setShaderColor(skyRed * shaderMod, skyGreen * shaderMod, skyBlue * shaderMod, eclipsyness);
+		bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
+		// bufferbuilder.color(f13, f14, f15, f16);
+		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).endVertex();
+		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).endVertex();
+		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, celestialSize).endVertex();
+		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, celestialSize).endVertex();
+		BufferUploader.drawWithShader(bufferbuilder.end());
+		poseStack.popPose();
 	}
 }

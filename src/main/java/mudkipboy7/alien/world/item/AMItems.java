@@ -1,8 +1,9 @@
 package mudkipboy7.alien.world.item;
 
+import static mudkipboy7.alien.AMRegistry.ITEMS;
+
 import java.util.List;
 
-import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.data.AMLanguage;
 import mudkipboy7.alien.world.block.AMBlocks;
 import mudkipboy7.alien.world.block.AMFluids;
@@ -37,15 +38,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @SuppressWarnings("unused")
 public class AMItems {
-	// Loader Stuff
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AlienMod.MODID);
-
 	/*
 	 * Register Block Items
 	 */
@@ -217,7 +213,8 @@ public class AMItems {
 	public static final RegistryObject<AlienSwordItem> STONE_ALIEN_SWORD = ITEMS.register("gelustone_sword",
 			() -> new AlienSwordItem(AMTeirs.GELUSTONE, 3, -2.4F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienPickaxeItem> STONE_ALIEN_PICKAXE = ITEMS.register("gelustone_pickaxe",
+	public static final RegistryObject<AlienPickaxeItem> STONE_ALIEN_PICKAXE = ITEMS.register(
+			"gelustone_pickaxe",
 			() -> new AlienPickaxeItem(AMTeirs.GELUSTONE, 1, -2.8F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<AlienAxeItem> STONE_ALIEN_AXE = ITEMS.register("gelustone_axe",
@@ -232,9 +229,9 @@ public class AMItems {
 	public static final RegistryObject<Item> ANTI_GRAVITY = simpleDescItem("anti_gravity",
 			new Item.Properties().stacksTo(1));
 
-	public static final RegistryObject<AlienDimCreativeTeleporterItem> ALIENDIM_CREATIVE_TELEPORTER = ITEMS.register(
-			"alien_creative_teleporter",
-			() -> new AlienDimCreativeTeleporterItem(new Item.Properties().stacksTo(1).fireResistant()));
+	public static final RegistryObject<AlienDimCreativeTeleporterItem> ALIENDIM_CREATIVE_TELEPORTER = ITEMS
+			.register("alien_creative_teleporter",
+					() -> new AlienDimCreativeTeleporterItem(new Item.Properties().stacksTo(1).fireResistant()));
 
 	public static final RegistryObject<BatteryItem> BATTERY = ITEMS.register("battery",
 			() -> new BatteryItem(new Item.Properties(), 8000));
@@ -250,12 +247,12 @@ public class AMItems {
 			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.HELMET,
 					new Item.Properties().stacksTo(1), SURVIVAL_HEAD.get()));
 
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_CHESTPLATE = ITEMS.register("atsali_chestplate",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.CHESTPLATE,
-					new Item.Properties().stacksTo(1), SURVIVAL_TORSO.get()));
+	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_CHESTPLATE = ITEMS
+			.register("atsali_chestplate", () -> new SurvivalArmorItem(AMArmorMaterials.ATSALI,
+					ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1), SURVIVAL_TORSO.get()));
 
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_LEGGINGS = ITEMS.register("atsali_leggings",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.LEGGINGS,
+	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_LEGGINGS = ITEMS
+			.register("atsali_leggings", () -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.LEGGINGS,
 					new Item.Properties().stacksTo(1), SURVIVAL_LEGS.get()));
 
 	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_BOOTS = ITEMS.register("atsali_boots",
@@ -347,7 +344,8 @@ public class AMItems {
 	private static RegistryObject<ForgeSpawnEggItem> simpleSpawnEggItem(String name,
 			RegistryObject<? extends EntityType<? extends Mob>> entity, int backgroundColor, int highlightColor,
 			Properties properties) {
-		return ITEMS.register(name, () -> new ForgeSpawnEggItem(entity, backgroundColor, highlightColor, properties));
+		return ITEMS.register(name,
+				() -> new ForgeSpawnEggItem(entity, backgroundColor, highlightColor, properties));
 	}
 
 	// Method for making basic spawn eggs

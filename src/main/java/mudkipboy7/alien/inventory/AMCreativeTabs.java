@@ -1,21 +1,20 @@
 package mudkipboy7.alien.inventory;
 
+import static mudkipboy7.alien.AMRegistry.CREATIVE_TABS;
+import static mudkipboy7.alien.AMRegistry.ITEMS;
+
 import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.world.item.AMItems;
 import mudkipboy7.alien.world.item.functional.BatteryItem;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTab.Output;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class AMCreativeTabs {
-	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
-			.create(Registries.CREATIVE_MODE_TAB, AlienMod.MODID);
 
 	// Sets the items to be displayed in the order they are programmed in.
 	private static boolean displayInOrderOfAddition = true;
@@ -25,7 +24,7 @@ public class AMCreativeTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + AlienMod.MODID + ".blocks_tab"))
 					.icon(() -> new ItemStack(AMItems.ALIEN_GRASS_BLOCK.get())).displayItems((parameters, output) -> {
 						if (displayInOrderOfAddition)
-							AMItems.ITEMS.getEntries().forEach(item -> {
+							ITEMS.getEntries().forEach(item -> {
 								if (item.get() instanceof BlockItem)
 									output.accept(item.get());
 							});
@@ -39,7 +38,7 @@ public class AMCreativeTabs {
 
 					.displayItems((parameters, output) -> {
 						if (displayInOrderOfAddition)
-							AMItems.ITEMS.getEntries().forEach(item -> {
+							ITEMS.getEntries().forEach(item -> {
 								if (!(item.get() instanceof BlockItem)) {
 									// Checks if it is a battery if so it adds a second, filled one
 									if (item.get() instanceof BatteryItem battery)

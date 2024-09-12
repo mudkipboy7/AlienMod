@@ -1,5 +1,7 @@
 package mudkipboy7.alien.client.render.dim;
 
+import static mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky.alienDimSky;
+
 import javax.annotation.Nullable;
 
 import org.joml.Matrix4f;
@@ -37,8 +39,9 @@ public class AlienDimCloudRenderer extends AlienDimSky {
 
 	public static boolean renderClouds(ClientLevel level, int ticks, float partialTick, PoseStack poseStack,
 			double camX, double camY, double camZ, Matrix4f projectionMatrix) {
-		long currentTime = level.getDayTime();
-		float eclipsyness = getEclipsyness(currentTime, alienDimEclipseSettings);
+		// The amount that it is eclipsing.
+		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
+				alienDimSky.jovianPlanet.getLocation());
 		drawCloudsAtHeight(eclipsyness, 110, level, ticks * 3, partialTick, poseStack, camX, camY, camZ,
 				projectionMatrix);
 		drawCloudsAtHeight(eclipsyness, 120, level, ticks * 2, partialTick, poseStack, camX, camY, camZ,
