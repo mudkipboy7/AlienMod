@@ -10,21 +10,25 @@ public class AstronomicalObject {
 	protected float eclipseSize = 1.0F;
 
 	protected float minBrightness = 1.0F;
-
+	protected AlienDimSky sky;
 	protected ResourceLocation texture;
 
 	/**
 	 * 
 	 * @param normalBrightness It's default/max brightness
-	 * @param visualSize       The size it's drawn with
-	 * @param eclipseSize      The size used to calculate eclipses and lighting
+	 * @param size             The size it's drawn with
 	 * @param texture          The location of it's texture
 	 */
-	public AstronomicalObject(float minBrightness, float visualSize, float eclipseSize, ResourceLocation texture) {
+	public AstronomicalObject(AlienDimSky sky, float minBrightness, float size, ResourceLocation texture) {
+		this.sky = sky;
 		this.minBrightness = minBrightness;
-		this.visualSize = visualSize;
-		this.eclipseSize = eclipseSize;
+		this.visualSize = size;
+		this.eclipseSize = size;
 		this.texture = texture;
+	}
+
+	public AlienDimSky getSky() {
+		return sky;
 	}
 
 	public float getBrightness(float mul, float sunLocation) {
@@ -52,6 +56,10 @@ public class AstronomicalObject {
 		return 0.0F;
 	}
 
+	public void setEclipseSize(float eclipseSize) {
+		this.eclipseSize = eclipseSize;
+	}
+
 	protected float getPartialTick() {
 		return Minecraft.getInstance().getPartialTick();
 	}
@@ -63,7 +71,7 @@ public class AstronomicalObject {
 	protected float getTimeOfDay() {
 		Level level = getLevel();
 		if (level != null)
-			return level.getTimeOfDay(getPartialTick());
+			return level.getTimeOfDay(Minecraft.getInstance().getPartialTick());
 		return 0.0F;
 	}
 }

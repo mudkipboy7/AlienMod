@@ -22,6 +22,7 @@ import mudkipboy7.alien.world.effect.AMMobEffects;
 import mudkipboy7.alien.world.entity.AMEntities;
 import mudkipboy7.alien.world.item.AMItems;
 import mudkipboy7.alien.world.worldgen.dimension.AlienChunkGenerator;
+import mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -55,6 +56,9 @@ public final class AlienMod {
 	// String name for the energy capability
 	public static final String ENERGY = "energy";
 
+	// The sky of the alienDim
+	private static AlienDimSky alienDimSky;
+
 	/**
 	 * Main method to set up the mod. Remember that whenever you create a
 	 * DeferredRegister you have to put it here or else it won't do anything.
@@ -82,6 +86,10 @@ public final class AlienMod {
 		serverConfig = serverSpecPair.getLeft();
 		clientConfig = clientSpecPair.getLeft();
 		commonConfig = commonSpecPair.getLeft();
+		alienDimSky = new AlienDimSky();
+
+		// Sets up other stuff
+
 	}
 
 	public void registerStuff(RegisterEvent event) {
@@ -101,6 +109,11 @@ public final class AlienMod {
 
 	public static void loadCustomJSONStuff() {
 		SpecialPlayers.loadSpecialPlayersStuff();
+		
+	}
+
+	public static AlienDimSky getAlienDimSky() {
+		return alienDimSky;
 	}
 
 }

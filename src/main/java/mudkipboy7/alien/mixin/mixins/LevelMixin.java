@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -23,7 +24,7 @@ public abstract class LevelMixin extends net.minecraftforge.common.capabilities.
 	@Inject(method = "Lnet/minecraft/world/level/Level;updateSkyBrightness()V", at = @At("HEAD"), cancellable = true)
 	public void updateSkyBrightness(CallbackInfo callBackInfo) {
 		Level serverlevel = (Level) (Object) this;
-		if (AlienDimSky.alienDimSky.modifySkylightServerSide(serverlevel)) {
+		if (AlienMod.getAlienDimSky().modifySkylightServerSide(serverlevel)) {
 			callBackInfo.cancel();
 		}
 	}

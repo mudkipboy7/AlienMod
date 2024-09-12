@@ -18,10 +18,8 @@ public class PhasingAstronomicalObject extends AstronomicalObject {
 	 */
 	protected int numberOfPhases = 8;
 
-	public PhasingAstronomicalObject(float minBrightness, float visualSize, float eclipseSize, ResourceLocation texture,
-			int numberOfPhases) {
-		super(minBrightness, visualSize, eclipseSize, texture);
-		this.numberOfPhases = numberOfPhases;
+	public PhasingAstronomicalObject(AlienDimSky sky,float minBrightness, float size, ResourceLocation texture) {
+		super(sky, minBrightness, size, texture);
 	}
 
 	public int getCurrentPhase(float locationOfLightSource) {

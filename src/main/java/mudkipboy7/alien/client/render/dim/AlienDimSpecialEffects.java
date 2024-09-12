@@ -1,19 +1,17 @@
 package mudkipboy7.alien.client.render.dim;
 
-import static mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky.alienDimSky;
-
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
+import mudkipboy7.alien.AlienMod;
 import mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,8 +32,8 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	public Vec3 getBrightnessDependentFogColor(Vec3 biomeFogColor, float daylight) {
 
 		// The amount that it is eclipsing.
-		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
-				alienDimSky.jovianPlanet.getLocation());
+		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getLocation(),
+				getSky().jovianPlanet.getLocation());
 		double sky = daylight * eclipsyness;
 		return biomeFogColor.multiply(sky, sky, sky);
 	}
@@ -70,9 +68,9 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker,
 			float skyLight, int pixelX, int pixelY, Vector3f colors) {
 		Minecraft minecraft = Minecraft.getInstance();
-		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
-				alienDimSky.jovianPlanet.getLocation());
-		float brightnessMultiplier = alienDimSky.brightnessMultiplier;
+		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getLocation(),
+				getSky().jovianPlanet.getLocation());
+		float brightnessMultiplier = getSky().brightnessMultiplier;
 
 		// Checks if eclipsyness is low enough if it is it changes skyDarken.
 		if (eclipsyness <= 0.8F) {
@@ -114,7 +112,7 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 				vector3f1.lerp(vector3f3, minecraft.gameRenderer.getDarkenWorldAmount(partialTicks));
 			}
 		}
-		vector3f1.set(vector3f1.x * 1.3F, vector3f1.y * 0.9F, vector3f1.z * 0.8F);
+		vector3f1.set(vector3f1.x * getSky().redMul, vector3f1.y * getSky().greenMul, vector3f1.z * getSky().blueMul);
 		colors.set(vector3f1);
 	}
 
@@ -124,4 +122,7 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 		return Mth.lerp(p_234317_.ambientLight(), o, 1.0F);
 	}
 
+	private static AlienDimSky getSky() {
+		return AlienMod.getAlienDimSky();
+	}
 }

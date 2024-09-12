@@ -8,9 +8,9 @@ public class AlienSunAstromicalObject extends AstronomicalObject {
 	protected ResourceLocation glareTexture;
 	protected float glareSize = 0;
 
-	public AlienSunAstromicalObject(float minBrightness, float visualSize, float eclipseSize, ResourceLocation texture,
+	public AlienSunAstromicalObject(AlienDimSky sky, float minBrightness, float size, ResourceLocation texture,
 			ResourceLocation glareTexture) {
-		super(minBrightness, visualSize, eclipseSize, texture);
+		super(sky, minBrightness, size, texture);
 		this.glareTexture = glareTexture;
 		this.glareSize = this.getVisualSize() * 4.0F;
 	}

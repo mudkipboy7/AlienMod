@@ -1,7 +1,6 @@
 package mudkipboy7.alien.client.render.dim;
 
-import static mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky.alienDimSky;
-import java.security.spec.ECField;
+import static mudkipboy7.alien.AlienMod.getAlienDimSky;
 
 import org.joml.Math;
 import org.joml.Matrix4f;
@@ -18,8 +17,6 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.math.Axis;
 
 import mudkipboy7.alien.AlienMod;
-import mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
-import mudkipboy7.alien.world.worldgen.dimension.sky.AstronomicalFunctions;
 import mudkipboy7.alien.world.worldgen.dimension.sky.PhasingAstronomicalObject;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -41,20 +38,6 @@ public class AlienDimSkyRenderer {
 	// Star buffer
 	private static VertexBuffer starBuffer;
 
-	// The sun texture.
-	private static final ResourceLocation SUN_TEXTURE = AlienMod.location("textures/environment/alien_sun.png");
-
-	// The texture of The Sun's glare
-	private static final ResourceLocation SUN_GLARE_TEXTURE = AlienMod
-			.location("textures/environment/alien_sun_glare.png");
-
-	// The texture for the stationary planet in the sky.
-	private static final ResourceLocation JOVIAN_PLANET_TEXTURE = AlienMod
-			.location("textures/environment/jovian_planet_phases.png");
-
-	// The brightness of the stars during broad daylight
-	public static float starDayTimeBrightness = 0.15F;
-
 	public AlienDimSkyRenderer() {
 		this.createStars();
 	}
@@ -62,18 +45,18 @@ public class AlienDimSkyRenderer {
 	public static boolean renderSky(ClientLevel level, int ticks, float partialTick, PoseStack poseStack, Camera camera,
 			Matrix4f projectionMatrix, boolean isFoggy, Runnable setupFog) {
 		// The sun's current location
-		float sunLocation = alienDimSky.alienSun.getLocation();
+		float sunLocation = getAlienDimSky().alienSun.getLocation();
 
 		// The amount that it is eclipsing.
-		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
-				alienDimSky.jovianPlanet.getLocation());
+		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getLocation(),
+				getAlienDimSky().jovianPlanet.getLocation());
 
 		/*
 		 * This determines the brightness of the stars. With baseStarBrightness set to
 		 * 0.15 the stars will have a brightness of 0.65 during night time and during
 		 * eclipses, and a brightness of 0.15F during daytime.
 		 */
-		float starBrightness = getStarBrightness(starDayTimeBrightness, level, partialTick);
+		float starBrightness = getAlienDimSky().stars.getBrightness(eclipsyness, sunLocation);
 
 		// System.out.println(jovianBrightness);
 		/*
@@ -157,14 +140,14 @@ public class AlienDimSkyRenderer {
 
 			poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
 
-			poseStack.mulPose(Axis.XP.rotationDegrees(alienDimSky.alienSun.getLocation()));
+			poseStack.mulPose(Axis.XP.rotationDegrees(getAlienDimSky().alienSun.getLocation()));
 			Matrix4f matrix4f1 = poseStack.last().pose();
 			RenderSystem.setShader(GameRenderer::getPositionTexShader);
 			// Glare
-			float celestialSize = alienDimSky.alienSun.getGlareVisualSize();
+			float celestialSize = getAlienDimSky().alienSun.getGlareVisualSize();
 			if (eclipsyness > 0) {
 				RenderSystem.setShaderColor(sunRedness, sunGreenness, sunBlueness, sunBrightness);
-				RenderSystem.setShaderTexture(0, alienDimSky.alienSun.getGlareTexture());
+				RenderSystem.setShaderTexture(0, getAlienDimSky().alienSun.getGlareTexture());
 				bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 				bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 				bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();
@@ -173,11 +156,11 @@ public class AlienDimSkyRenderer {
 				BufferUploader.drawWithShader(bufferbuilder.end());
 			}
 			// Sun
-			sunBrightness = alienDimSky.alienSun.getBrightness(eclipsyness, 0);
-			celestialSize = alienDimSky.alienSun.getVisualSize();
+			sunBrightness = getAlienDimSky().alienSun.getBrightness(eclipsyness, 0);
+			celestialSize = getAlienDimSky().alienSun.getVisualSize();
 			// System.out.println(celestialSize);
 			RenderSystem.setShaderColor(sunRedness, sunGreenness, sunBlueness, sunBrightness);
-			RenderSystem.setShaderTexture(0, alienDimSky.alienSun.getTexture());
+			RenderSystem.setShaderTexture(0, getAlienDimSky().alienSun.getTexture());
 			bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 			bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 			bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();
@@ -197,10 +180,10 @@ public class AlienDimSkyRenderer {
 			setupFog.run();
 			poseStack.popPose();
 			// Draws the moon planet
-			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, alienDimSky.smallMoon, 1,
-					bufferbuilder, skyRed, skyGreen, skyBlue);
+			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, getAlienDimSky().smallMoon, 1, bufferbuilder,
+					skyRed, skyGreen, skyBlue);
 			// Draws the jovian planet
-			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, alienDimSky.jovianPlanet, eclipsyness,
+			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, getAlienDimSky().jovianPlanet, eclipsyness,
 					bufferbuilder, skyRed, skyGreen, skyBlue);
 
 		}
@@ -250,59 +233,10 @@ public class AlienDimSkyRenderer {
 		}
 
 		starBuffer = new VertexBuffer(VertexBuffer.Usage.STATIC);
-		BufferBuilder.RenderedBuffer bufferbuilder$renderedbuffer = drawStars(bufferbuilder);
+		BufferBuilder.RenderedBuffer bufferbuilder$renderedbuffer = getAlienDimSky().stars.drawStars(bufferbuilder);
 		starBuffer.bind();
 		starBuffer.upload(bufferbuilder$renderedbuffer);
 		VertexBuffer.unbind();
-	}
-
-	private BufferBuilder.RenderedBuffer drawStars(BufferBuilder builderBuffer) {
-		RandomSource randomsource = RandomSource.create(94373L);
-		builderBuffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
-
-		for (int i = 0; i < (2000); ++i) {
-			double d0 = (double) (randomsource.nextFloat() * 2.0F - 1.0F);
-			double d1 = (double) (randomsource.nextFloat() * 2.0F - 1.0F);
-			double d2 = (double) (randomsource.nextFloat() * 2.0F - 1.0F);
-			double d3 = (double) (0.15F + randomsource.nextFloat() * 0.1F);
-			double d4 = d0 * d0 + d1 * d1 + d2 * d2;
-			if (d4 < 1.0D && d4 > 0.01D) {
-				d4 = 1.0D / Math.sqrt(d4);
-				d0 *= d4;
-				d1 *= d4;
-				d2 *= d4;
-				double d5 = d0 * 100.0D;
-				double d6 = d1 * 100.0D;
-				double d7 = d2 * 100.0D;
-				double d8 = Math.atan2(d0, d2);
-				double d9 = Math.sin(d8);
-				double d10 = Math.cos(d8);
-				double d11 = Math.atan2(Math.sqrt(d0 * d0 + d2 * d2), d1);
-				double d12 = Math.sin(d11);
-				double d13 = Math.cos(d11);
-				double d14 = randomsource.nextDouble() * Math.PI * 2.0D;
-				double d15 = Math.sin(d14);
-				double d16 = Math.cos(d14);
-
-				for (int j = 0; j < 4; ++j) {
-					@SuppressWarnings("unused")
-					double d17 = 0.0D;
-					double d18 = (double) ((j & 2) - 1) * d3;
-					double d19 = (double) ((j + 1 & 2) - 1) * d3;
-					@SuppressWarnings("unused")
-					double d20 = 0.0D;
-					double d21 = d18 * d16 - d19 * d15;
-					double d22 = d19 * d16 + d18 * d15;
-					double d23 = d21 * d12 + 0.0D * d13;
-					double d24 = 0.0D * d12 - d21 * d13;
-					double d25 = d24 * d9 - d22 * d10;
-					double d26 = d22 * d9 + d24 * d10;
-					builderBuffer.vertex(d5 + d25, d6 + d23, d7 + d26).endVertex();
-				}
-			}
-		}
-
-		return builderBuffer.end();
 	}
 
 	/**
@@ -318,8 +252,8 @@ public class AlienDimSkyRenderer {
 	 */
 
 	protected static float getStarBrightness(float brightnessModifier, ClientLevel clientLevel, float partialTick) {
-		float eclipsyness = alienDimSky.getEclipsyness(alienDimSky.alienSun.getLocation(),
-				alienDimSky.jovianPlanet.getLocation());
+		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getLocation(),
+				getAlienDimSky().jovianPlanet.getLocation());
 		/*
 		 * Does math to determine what the brightness should be. It checks that it isn't
 		 * negative.
