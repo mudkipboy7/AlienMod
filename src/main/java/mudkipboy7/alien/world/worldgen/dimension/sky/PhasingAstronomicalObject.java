@@ -23,7 +23,7 @@ public class PhasingAstronomicalObject extends AstronomicalObject {
 	}
 
 	public int getCurrentPhase(float locationOfLightSource) {
-		float distanceToLightSource = AstronomicalFunctions.getAstroDist(this.getLocation(), locationOfLightSource);
+		float distanceToLightSource = AstronomicalFunctions.getAstroDist(this.getSkyLocation(), locationOfLightSource);
 		float x = (distanceToLightSource) / (((float) AstronomicalFunctions.DEGREES_IN_CIRC) / this.numberOfPhases);
 		// System.out.println(distanceToLightSource);
 		return Math.round(x);
@@ -37,14 +37,14 @@ public class PhasingAstronomicalObject extends AstronomicalObject {
 	@Override
 	public float getBrightness(float mul, float sunLocation) {
 		float x = Math.max(getMinBrightness(),
-				Math.abs(AstronomicalFunctions.getAstroDistNegativePositive(this.getLocation(), sunLocation))
+				Math.abs(AstronomicalFunctions.getAstroDistNegativePositive(this.getSkyLocation(), sunLocation))
 						/ AstronomicalFunctions.DEGREES_IN_CIRC);
 		// System.out.println(x);
 		return x;
 	}
 
 	@Override
-	public float getLocation() {
+	public float getSkyLocation() {
 		return 10.0F;
 	}
 }

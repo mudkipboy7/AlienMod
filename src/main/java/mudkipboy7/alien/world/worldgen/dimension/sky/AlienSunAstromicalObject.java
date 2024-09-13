@@ -24,7 +24,7 @@ public class AlienSunAstromicalObject extends AstronomicalObject {
 	}
 
 	@Override
-	public float getLocation() {
+	public float getSkyLocation() {
 		return getTimeOfDay() * 360.0F;
 	}
 

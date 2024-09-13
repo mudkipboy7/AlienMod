@@ -39,8 +39,8 @@ public class AlienDimCloudRenderer {
 	public static boolean renderClouds(ClientLevel level, int ticks, float partialTick, PoseStack poseStack,
 			double camX, double camY, double camZ, Matrix4f projectionMatrix) {
 		// The amount that it is eclipsing.
-		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getLocation(),
-				getAlienDimSky().jovianPlanet.getLocation());
+		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getSkyLocation(),
+				getAlienDimSky().jovianPlanet.getSkyLocation());
 		drawCloudsAtHeight(eclipsyness, 110, level, ticks * 3, partialTick, poseStack, camX, camY, camZ,
 				projectionMatrix);
 		drawCloudsAtHeight(eclipsyness, 120, level, ticks * 2, partialTick, poseStack, camX, camY, camZ,

@@ -52,7 +52,7 @@ public class AstronomicalObject {
 		return texture;
 	}
 
-	public float getLocation() {
+	public float getSkyLocation() {
 		return 0.0F;
 	}
 

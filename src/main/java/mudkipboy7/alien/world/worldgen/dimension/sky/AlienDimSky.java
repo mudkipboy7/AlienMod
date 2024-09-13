@@ -39,8 +39,9 @@ public final class AlienDimSky {
 			SUN_GLARE_TEXTURE);
 	public PhasingAstronomicalObject jovianPlanet = new PhasingAstronomicalObject(this, 0.15F, 34.0F,
 			JOVIAN_PLANET_TEXTURE);
-	public PhasingAstronomicalObject smallMoon = new SmallMoonAstronomicalObject(this, 0.15F, 4.0F, SMALL_MOON_TEXURE,
+	public SmallMoonAstronomicalObject smallMoon = new SmallMoonAstronomicalObject(this, 0.15F, 4.0F, SMALL_MOON_TEXURE,
 			2.0F);
+	public SatiliteAstronomicalObject alienPlanet = new SatiliteAstronomicalObject(this, 0.0F, 0.0F, null, 1.0F);
 	public StarAstronomicalObject stars = new StarAstronomicalObject(this, 0.15F, 94373L, 2000);
 
 	public AlienDimSky() {
@@ -94,7 +95,7 @@ public final class AlienDimSky {
 
 		// System.out.println(level.getGameTime());
 		if (!level.isClientSide() && level.dimension() == AMDimensions.ALIENDIM_LEVEL) {
-			float eclipsyness = this.getEclipsyness(this.alienSun.getLocation(), this.jovianPlanet.getLocation());
+			float eclipsyness = this.getEclipsyness(this.alienSun.getSkyLocation(), this.jovianPlanet.getSkyLocation());
 
 			if (eclipsyness <= 0.8F) {
 				double thunder = 1.0D - (double) (level.getRainLevel(1.0F) * 5.0F) / 16.0D;

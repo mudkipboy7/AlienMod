@@ -45,11 +45,11 @@ public class AlienDimSkyRenderer {
 	public static boolean renderSky(ClientLevel level, int ticks, float partialTick, PoseStack poseStack, Camera camera,
 			Matrix4f projectionMatrix, boolean isFoggy, Runnable setupFog) {
 		// The sun's current location
-		float sunLocation = getAlienDimSky().alienSun.getLocation();
+		float sunLocation = getAlienDimSky().alienSun.getSkyLocation();
 
 		// The amount that it is eclipsing.
-		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getLocation(),
-				getAlienDimSky().jovianPlanet.getLocation());
+		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getSkyLocation(),
+				getAlienDimSky().jovianPlanet.getSkyLocation());
 
 		/*
 		 * This determines the brightness of the stars. With baseStarBrightness set to
@@ -140,7 +140,7 @@ public class AlienDimSkyRenderer {
 
 			poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
 
-			poseStack.mulPose(Axis.XP.rotationDegrees(getAlienDimSky().alienSun.getLocation()));
+			poseStack.mulPose(Axis.XP.rotationDegrees(getAlienDimSky().alienSun.getSkyLocation()));
 			Matrix4f matrix4f1 = poseStack.last().pose();
 			RenderSystem.setShader(GameRenderer::getPositionTexShader);
 			// Glare
@@ -183,8 +183,8 @@ public class AlienDimSkyRenderer {
 			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, getAlienDimSky().smallMoon, 1, bufferbuilder,
 					skyRed, skyGreen, skyBlue);
 			// Draws the jovian planet
-			drawJovian(partialTick, poseStack, sunLocation, matrix4f1, getAlienDimSky().jovianPlanet, eclipsyness,
-					bufferbuilder, skyRed, skyGreen, skyBlue);
+			//drawJovian(partialTick, poseStack, sunLocation, matrix4f1, getAlienDimSky().jovianPlanet, eclipsyness,
+			//		bufferbuilder, skyRed, skyGreen, skyBlue);
 
 		}
 
@@ -252,8 +252,8 @@ public class AlienDimSkyRenderer {
 	 */
 
 	protected static float getStarBrightness(float brightnessModifier, ClientLevel clientLevel, float partialTick) {
-		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getLocation(),
-				getAlienDimSky().jovianPlanet.getLocation());
+		float eclipsyness = getAlienDimSky().getEclipsyness(getAlienDimSky().alienSun.getSkyLocation(),
+				getAlienDimSky().jovianPlanet.getSkyLocation());
 		/*
 		 * Does math to determine what the brightness should be. It checks that it isn't
 		 * negative.
@@ -301,7 +301,7 @@ public class AlienDimSkyRenderer {
 
 		// Sets it's location
 		poseStack.mulPose(Axis.YP.rotationDegrees(0.0F));
-		poseStack.mulPose(Axis.ZP.rotationDegrees(jovianPlanet.getLocation()));
+		poseStack.mulPose(Axis.ZP.rotationDegrees(jovianPlanet.getSkyLocation()));
 
 		/*
 		 * The main part that draws the actual texture of the sky object. The blending

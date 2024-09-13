@@ -32,8 +32,8 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	public Vec3 getBrightnessDependentFogColor(Vec3 biomeFogColor, float daylight) {
 
 		// The amount that it is eclipsing.
-		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getLocation(),
-				getSky().jovianPlanet.getLocation());
+		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getSkyLocation(),
+				getSky().jovianPlanet.getSkyLocation());
 		double sky = daylight * eclipsyness;
 		return biomeFogColor.multiply(sky, sky, sky);
 	}
@@ -68,8 +68,8 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker,
 			float skyLight, int pixelX, int pixelY, Vector3f colors) {
 		Minecraft minecraft = Minecraft.getInstance();
-		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getLocation(),
-				getSky().jovianPlanet.getLocation());
+		float eclipsyness = getSky().getEclipsyness(getSky().alienSun.getSkyLocation(),
+				getSky().jovianPlanet.getSkyLocation());
 		float brightnessMultiplier = getSky().brightnessMultiplier;
 
 		// Checks if eclipsyness is low enough if it is it changes skyDarken.
