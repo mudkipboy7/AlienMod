@@ -1,7 +1,7 @@
 # Defines special players based on their usernames
 [USERNAMES]
-	Notch			= "trans"
-	BeniferShrimpo 	= "trans"
+	Notch			= "notch"
+	BeniferShrimpo 	= "notch"
 	DanTDM			= "blue"
 	
 # Defines special players based on their UUIDS

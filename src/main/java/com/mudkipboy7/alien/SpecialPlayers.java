@@ -23,7 +23,7 @@ public class SpecialPlayers {
 	private static final HashMap<String, SpecialPlayerType> specialPlayerTypes = new HashMap<String, SpecialPlayerType>();
 	private static final HashMap<String, String> specialPlayerSettingsUsernames = new HashMap<String, String>();
 	private static final HashMap<String, String> specialPlayerSettingsUUIDS = new HashMap<String, String>();
-
+	
 	/**
 	 * This reads the alien.specialplayers.json and adds all of the items in all of
 	 * the lists to their respective lists in this file

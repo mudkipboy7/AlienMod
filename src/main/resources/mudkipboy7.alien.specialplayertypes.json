@@ -2,14 +2,13 @@
 	"pink": {
 		"survival_gear_texture": "alien:textures/models/survivalgear/pink_survival_gear.png"
 	},
-	"trans": {
-		"survival_gear_texture": "alien:textures/models/survivalgear/notch_survival_gear.png",
-		"flags": [
-			"dress"
-		]
+	"notch": {
+		"survival_gear_texture": "alien:textures/models/survivalgear/notch_survival_gear.png"
 	},
 	"blue": {
 		"survival_gear_texture": "alien:textures/models/survivalgear/blue_survival_gear.png"
+	},
+	"new": {
+		"survival_gear_texture": "alien:textures/models/survivalgear/survival_gear_new.png"
 	}
 }
-
