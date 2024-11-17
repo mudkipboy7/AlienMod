@@ -2,12 +2,14 @@
 	"required": true,
 	"compatibilityLevel": "JAVA_17",
 	"refmap": "alien.refmap.json",
-	"package": "mudkipboy7.alien.mixin.mixins",
+	"package": "com.mudkipboy7.alien.mixin.mixins",
 	"mixins": [
 		"ItemEntityMixin",
 		"LivingEntityMixin",
 		"LevelMixin",
-		"PlayerMixin"
+		"PlayerMixin",
+		"FluidTypeMixin",
+		"IceBlockMixin"
 	],
 	"server": [
 	],

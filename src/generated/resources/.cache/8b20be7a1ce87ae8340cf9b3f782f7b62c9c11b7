@@ -1,6 +1,7 @@
-// 1.20.2	2024-05-07T14:36:36.3138356	Block States: alien
+// 1.20.2	2024-11-17T11:56:39.4106965	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
+09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
 4525ef9435590758c69ebf3b52bb2907f482f3fe assets/alien/blockstates/alien_portal.json
 aa88213a1e151caafe389253300d7d039c64ea3a assets/alien/blockstates/ammonia_liquid.json
 f9800c8f3f9cba43fcad27121be68779d3736045 assets/alien/blockstates/atsali_block.json
@@ -10,6 +11,7 @@ c1c2da7cde1b499c5ab24cd1254e01e65fde4ca6 assets/alien/blockstates/coal_generator
 929e7a95bba1be2968d1097de3aa010a8f207944 assets/alien/blockstates/cobble_gelustone_slab.json
 ca51d73481daaabfc0ba1c7e2d619a16555fdd09 assets/alien/blockstates/cobble_gelustone_stairs.json
 0a6ef165b0a738f7214f6f701c5d08feb0cf19b1 assets/alien/blockstates/cobble_gelustone_wall.json
+ef85e164f5a7f86d3487697a521fc9f1dd8ae572 assets/alien/blockstates/copper_wire.json
 268c03ca2a9b7fdebd641d1bfddd571d8b9e5eb8 assets/alien/blockstates/dead_plant.json
 c6767b80edae5e80d34341f5451ffcd55e2a7252 assets/alien/blockstates/energy_storage_block.json
 13ee36f252a7c13cb49180ad96a000b34d8408fa assets/alien/blockstates/gelustone.json
@@ -50,6 +52,7 @@ d1b6c53eb9f357e0d9182aeb6acef79b55143de3 assets/alien/blockstates/stripped_lignu
 c8be591b38b77d9c7e47c691df31251829299d6f assets/alien/blockstates/test_block.json
 329f0561e2bb2c1c7bcd9655da16d674e0a7f80d assets/alien/models/block/air_purifier.json
 979260bd19e18991909749e27041718660da93f9 assets/alien/models/block/algussoil.json
+d9ad7f90a53b8c7e2e3d6eff18b3b01521ddfc7b assets/alien/models/block/alien_air.json
 857ade45ddac4b17ae13bd500b87b351846abb91 assets/alien/models/block/alien_portal.json
 2221158bd510c2058a1920f0d120e2d0b6bb0ca2 assets/alien/models/block/ammonia_liquid.json
 2a23d4737c456b763c339ed36bf0dbd81cea7223 assets/alien/models/block/atsali_block.json
@@ -64,6 +67,8 @@ f1b344bc171b402cffea8751b8a77d3979920528 assets/alien/models/block/cobble_gelust
 b149e947c22644e0d3781f6ef908ed168e53aa10 assets/alien/models/block/cobble_gelustone_wall_post.json
 2e47b9b54a6533e283c5e880c84ff63f269be882 assets/alien/models/block/cobble_gelustone_wall_side.json
 2f215bbaaf6ba42c8276a2ee91be415b0da841b6 assets/alien/models/block/cobble_gelustone_wall_side_tall.json
+df26f671cfaee85accef231b9774b93e7ccd72f9 assets/alien/models/block/copper_wire.json
+b1e064dd16b2a791442926f0976fa56ed8de595f assets/alien/models/block/copper_wire_side.json
 e8023e184ab40ed46ad63e45313a199336587941 assets/alien/models/block/dead_plant_flower.json
 8663f61f94796347b666b37d96b5421979d6bd59 assets/alien/models/block/dead_plant_grass.json
 ab9990d340c8c01705673d78bfbb67b245ac8555 assets/alien/models/block/dead_plant_sapling.json
