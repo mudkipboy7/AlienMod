@@ -16,11 +16,15 @@ public class Gravity {
 	 */
 
 	// These are used to modify an entity's fall
-	public static double alienDimLivingFallMod = 0.045D;
-	public static double alienDimItemFallMod = 0.02D;
+	public static final double ALIENDIM_LIVING_FALL_MOD = 0.045D;
+	public static final double ALIENDIM_ITEM_FALL_MOD = 0.02D;
+
 
 	// These are used to modify an entity's jump
-	public static double alienDimJumpMod = 1.15D;
+	public static final double ALIENDIM_JUMP_MOD = 1.15D;
+	
+	// Used to modify fall damage
+	public static final float ALIENDIM_FALL_DAMAGE_MOD = 0.7F;
 
 	/**
 	 * This function makes the entity fall slower. Should be called every tick. This

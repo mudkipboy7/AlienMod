@@ -1,8 +1,8 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject;
+package com.mudkipboy7.alien.sky.astroobject;
 
 import org.joml.Math;
 
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.AstronomicalFunctions;
+import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
 import net.minecraft.resources.ResourceLocation;
 
@@ -18,7 +18,12 @@ public class AlienSunAstroObject extends AstronomicalObject {
 
 	@Override
 	public double getSkyLocation() {
-		return AstronomicalFunctions.normalizeDegreees(AstronomicalFunctions.rotationsToDegrees(this.getTimeOfDay()));
+		return AstronomicalFunctions
+				.normalizeDegreees(AstronomicalFunctions.rotationsToDegrees(this.getSkyLocationTurns()));
+	}
+
+	public float getSkyLocationTurns() {
+		return this.getTimeOfDay();
 	}
 
 	@Override

@@ -1,7 +1,7 @@
-// 1.20.2	2024-10-17T15:26:02.50075	Registries
+// 1.20.2	2025-04-23T22:02:56.179222	Registries
 74f5acb51b97095b1cfc71e6b7fcb38e38392b69 data/alien/damage_type/no_oxygen.json
 4b5f7e67e19fb8cb0673f34d2c4cf7d8d4e0f914 data/alien/dimension/alien_planet.json
-bcb7f2629813e2e3fa4c0240b63fc83d51a5d7b0 data/alien/dimension_type/alien_planet.json
+a6278580d02e760e8636b67ceb3bf438b9ebbe05 data/alien/dimension_type/alien_planet.json
 fd4d22618ee100617340ea5355d51831e5b5624f data/alien/worldgen/biome/alien_plains.json
 6dead1b5d067bba018bca73a93598da528604fe5 data/alien/worldgen/configured_feature/alien_double_grass.json
 3935815410c7b3fe31d3507006eca80ff4693dff data/alien/worldgen/configured_feature/alien_grass.json

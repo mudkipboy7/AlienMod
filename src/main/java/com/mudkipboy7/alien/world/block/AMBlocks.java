@@ -2,6 +2,7 @@ package com.mudkipboy7.alien.world.block;
 
 import static com.mudkipboy7.alien.AMRegistry.BLOCKS;
 
+import com.google.common.base.Supplier;
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.flora.AlienDoubleTallGrassBlock;
 import com.mudkipboy7.alien.world.block.flora.AlienGrassBlock;
@@ -25,6 +26,7 @@ import com.mudkipboy7.alien.world.block.functional.sign.AlienWallHangingSignBloc
 import com.mudkipboy7.alien.world.block.functional.sign.AlienWallSignBlock;
 import com.mudkipboy7.alien.world.block.misc.AlienAirBlock;
 import com.mudkipboy7.alien.world.block.misc.TestBlock;
+import com.mudkipboy7.alien.world.item.AMItems;
 import com.mudkipboy7.alien.world.worldgen.structure.grower.AMTreeGrowers;
 
 import net.minecraft.core.BlockPos;
@@ -105,7 +107,7 @@ public final class AMBlocks {
 					.sound(SoundType.WOOD).ignitedByLava()));
 
 	// Wooden logs for the Alien Dimension
-	public static final RegistryObject<RotatedPillarBlock> ALIEN_LOG = makeSimpleLogBlock("lignum_log");
+	public static final RegistryObject<RotatedPillarBlock> ALIEN_LOG = simpleLogBlock("lignum_log");
 
 	// Leaves for the Alien Dimension
 	public static final RegistryObject<AlienLeavesBlock> ALIEN_LEAVES = BLOCKS.register("lignum_leaves",
@@ -127,14 +129,14 @@ public final class AMBlocks {
 			ALIEN_PLANKS);
 
 	// Slabs for the alien stone
-	public static final RegistryObject<SlabBlock> ALIEN_STONE_SLAB = makeSimpleSlabBlock("gelustone_slab", ALIEN_STONE);
+	public static final RegistryObject<SlabBlock> ALIEN_STONE_SLAB = simpleSlabBlock("gelustone_slab", ALIEN_STONE);
 
 	// Slabs for the alien cobblestone
-	public static final RegistryObject<SlabBlock> ALIEN_COBBLESTONE_SLAB = makeSimpleSlabBlock("cobble_gelustone_slab",
+	public static final RegistryObject<SlabBlock> ALIEN_COBBLESTONE_SLAB = simpleSlabBlock("cobble_gelustone_slab",
 			ALIEN_COBBLESTONE);
 
 	// Slabs for the alien planks
-	public static final RegistryObject<SlabBlock> ALIEN_WOOD_SLAB = makeSimpleSlabBlock("lignum_slab", ALIEN_PLANKS);
+	public static final RegistryObject<SlabBlock> ALIEN_WOOD_SLAB = simpleSlabBlock("lignum_slab", ALIEN_PLANKS);
 
 	// Alien bedrock
 	public static final RegistryObject<Block> ALIEN_BEDROCK = BLOCKS.register("gelustone_bedrock",
@@ -257,16 +259,16 @@ public final class AMBlocks {
 					AMBlockSetTypes.LIGNUM_WOOD_TYPE));
 
 	// Stripped alien log
-	public static final RegistryObject<RotatedPillarBlock> STRIPPED_ALIEN_LOG = makeSimpleLogBlock(
-			"stripped_lignum_log");
+	public static final RegistryObject<RotatedPillarBlock> STRIPPED_ALIEN_LOG = simpleLogBlock("stripped_lignum_log");
 
 	// Stripped log log with side texture on all sides for the alien dim
-	public static final RegistryObject<RotatedPillarBlock> STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = makeSimpleLogBlock(
+	public static final RegistryObject<RotatedPillarBlock> STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = simpleLogBlock(
 			"stripped_lignum_all_sides_log");
 
 	// Protects the player from hazards
 	public static final RegistryObject<HazardRemovalMachineBlock> AIR_PURIFIER = BLOCKS.register("air_purifier",
-			() -> new HazardRemovalMachineBlock(BlockBehaviour.Properties.of().strength(1F, 6.0F).sound(SoundType.METAL)));
+			() -> new HazardRemovalMachineBlock(
+					BlockBehaviour.Properties.of().strength(1F, 6.0F).sound(SoundType.METAL)));
 
 	// Alien wood chest
 	public static final RegistryObject<AlienChestBlock> ALIEN_WOOD_CHEST = BLOCKS.register("lignum_chest",
@@ -341,9 +343,21 @@ public final class AMBlocks {
 	}
 
 	// Makes a slab block
-	private static final RegistryObject<SlabBlock> makeSimpleSlabBlock(String name,
+	private static final RegistryObject<SlabBlock> simpleSlabBlock(String name,
 			RegistryObject<? extends Block> blockin) {
 		return BLOCKS.register(name, () -> new SlabBlock(BlockBehaviour.Properties.copy(blockin.get())));
+	}
+
+	// Makes making log blocks easier
+	private static RegistryObject<RotatedPillarBlock> simplePillarBlock(String name,
+			BlockBehaviour.Properties properties) {
+		return BLOCKS.register(name, () -> new RotatedPillarBlock(properties));
+	}
+
+	// Makes making log blocks easier
+	private static RegistryObject<RotatedPillarBlock> simpleLogBlock(String name) {
+		return simplePillarBlock(name, BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS)
+				.strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
 	}
 
 	// I don't know what this does. Copied from blocks.class
@@ -355,17 +369,5 @@ public final class AMBlocks {
 	private static Boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos,
 			EntityType<?> entityType) {
 		return (boolean) false;
-	}
-
-	// Makes making log blocks easier
-	private static RegistryObject<RotatedPillarBlock> makePillarBlock(String name,
-			BlockBehaviour.Properties properties) {
-		return BLOCKS.register(name, () -> new RotatedPillarBlock(properties));
-	}
-
-	// Makes making log blocks easier
-	private static RegistryObject<RotatedPillarBlock> makeSimpleLogBlock(String name) {
-		return makePillarBlock(name, BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F)
-				.sound(SoundType.WOOD).ignitedByLava());
 	}
 }

@@ -15,7 +15,8 @@
 	],
 	"client": [
 		"client.HeartGuiMixin",
-		"client.LivingEntityRendererMixin"		//,"client.TitleScreenMixin"
+		"client.LivingEntityRendererMixin",
+		"client.PanoramaRendererMixin"
 
 	],
 	"injectors": {

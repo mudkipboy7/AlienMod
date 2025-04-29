@@ -7,8 +7,5 @@
 	},
 	"blue": {
 		"survival_gear_texture": "alien:textures/models/survivalgear/blue_survival_gear.png"
-	},
-	"new": {
-		"survival_gear_texture": "alien:textures/models/survivalgear/survival_gear_new.png"
 	}
 }

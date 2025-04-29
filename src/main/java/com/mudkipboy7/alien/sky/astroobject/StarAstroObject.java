@@ -1,4 +1,4 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject;
+package com.mudkipboy7.alien.sky.astroobject;
 
 import org.joml.Math;
 

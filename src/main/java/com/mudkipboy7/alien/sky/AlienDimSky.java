@@ -1,15 +1,22 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky;
+package com.mudkipboy7.alien.sky;
 
+import com.mudkipboy7.alien.AlienMod;
+import com.mudkipboy7.alien.sky.astroobject.AlienSunAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
+import com.mudkipboy7.alien.sky.astroobject.JovianPlanetAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.SatiliteAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.SmallMoonAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.StarAstroObject;
+import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.AlienSunAstroObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.AstronomicalObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.JovianPlanetAstroObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.SatiliteAstroObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.SmallMoonAstroObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.StarAstroObject;
 
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.util.CubicSampler;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.BiomeManager;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.client.event.ViewportEvent.ComputeFogColor;
 
 public class AlienDimSky {
 	/*
@@ -98,12 +105,33 @@ public class AlienDimSky {
 				double sun = 0.5D + 2.0D
 						* Mth.clamp((double) Mth.cos(level.getTimeOfDay(1.0F) * ((float) Math.PI * 2F)), -0.25D, 0.25D);
 				// Dont know what the + 0.2 was for
-				sun = sun * (eclipsyness+ 0.2F );
+				sun = sun * (eclipsyness + 0.2F);
 				level.skyDarken = (int) ((1.0D - sun * rain * thunder) * 11.0D);
 				return true;
 			}
 
 		}
 		return false;
+	}
+
+	/**
+	 * Call in AMClientEvents.java. Its here so I don't have to restart the game
+	 * while in debug mode.
+	 * 
+	 * @param event
+	 */
+	public static void setFogColors(ComputeFogColor event) {
+		/*
+		 * This fixes a problem where the fog during eclipses would be red still
+		 */
+		if (WorldFuncs.isInAlienDim(event.getCamera().getEntity())) {
+			float eclipsyness = AlienMod.getAlienDimSky().getEclipsyness();
+			float red = event.getRed();
+			float green = event.getGreen();
+			float blue = event.getBlue();
+			event.setRed(red * eclipsyness);
+			event.setGreen(green * eclipsyness);
+			event.setBlue(blue * eclipsyness);
+		}
 	}
 }

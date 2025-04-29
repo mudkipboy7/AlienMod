@@ -57,7 +57,15 @@ public class AMEntityEvents {
 		// Checks if the entity is in a low gravity biome.
 		if (Gravity.entityIsInLowGravityBiome(livingEntity)) {
 			// Runs doSlowFall() to make the entity fall slower if it is falling.
-			Gravity.doSlowFall(livingEntity, Gravity.alienDimLivingFallMod);
+			Gravity.doSlowFall(livingEntity, Gravity.ALIENDIM_LIVING_FALL_MOD);
+		}
+		/*
+		 * For fun. checks if the entity is holding the anti-gravity item. If he is it
+		 * makes him float up.
+		 */
+		if (livingEntity.isHolding(AMItems.ANTI_GRAVITY.get()) && (livingEntity.getY() <= Short.MAX_VALUE)) {
+			Vec3 movement = livingEntity.getDeltaMovement();
+			livingEntity.setDeltaMovement(movement.x, 0.3D, movement.z);
 		}
 	}
 
@@ -66,23 +74,9 @@ public class AMEntityEvents {
 	 * 
 	 * @param event
 	 */
-	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent event) {
-		Player player = event.player;
-		Holder<Biome> biome = player.level().getBiome(player.blockPosition());
-
-		/*
-		 * For fun. checks if the player is holding the anti-gravity item. If he is it
-		 * makes him float up.
-		 */
-		if (player.isHolding(AMItems.ANTI_GRAVITY.get()) && (!player.getAbilities().flying)
-				&& (player.getY() <= Short.MAX_VALUE)) {
-			Vec3 movement = player.getDeltaMovement();
-			player.stopFallFlying();
-			// Makes the entity go up
-			player.setDeltaMovement(movement.x, 0.3D, movement.z);
-		}
-	}
+	//@SubscribeEvent
+	//public static void onPlayerTick(PlayerTickEvent event) {
+	//}
 
 	/**
 	 * Called every time a living entity jumps.
@@ -96,7 +90,7 @@ public class AMEntityEvents {
 
 		// Checks if the entity is in a low gravity biome.
 		if (Gravity.entityIsInLowGravityBiome(livingEntity)) {
-			double jumpMultiplier = Gravity.alienDimJumpMod;
+			double jumpMultiplier = Gravity.ALIENDIM_JUMP_MOD;
 			// Does the higher jump stuff.
 			Gravity.doHighJump(livingEntity, jumpMultiplier);
 
@@ -120,7 +114,7 @@ public class AMEntityEvents {
 			/*
 			 * Lessons the fall damage taken.
 			 */
-			event.setDistance(distance * 0.7F);
+			event.setDistance(distance * Gravity.ALIENDIM_FALL_DAMAGE_MOD);
 			// AlienMod.sendDebugMessage("before: " + distance + " after: " +
 			// event.getDistance());
 		}

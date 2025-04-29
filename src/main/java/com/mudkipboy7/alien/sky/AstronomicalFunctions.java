@@ -1,6 +1,6 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky;
+package com.mudkipboy7.alien.sky;
 
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.IPhasingAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.IPhasingAstroObject;
 
 import mezz.jei.common.util.MathUtil;
 import net.minecraft.client.Minecraft;

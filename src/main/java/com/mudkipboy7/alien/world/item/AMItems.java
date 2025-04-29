@@ -288,18 +288,18 @@ public class AMItems {
 	 */
 
 	// Method for making basic block items that can have properties set.
-	private static RegistryObject<BlockItem> simpleBlockItem(RegistryObject<? extends Block> block,
+	public static RegistryObject<BlockItem> simpleBlockItem(RegistryObject<? extends Block> block,
 			Properties properties) {
 		return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), properties));
 	}
 
 	// Method for making basic block items with no properties set.
-	private static RegistryObject<BlockItem> simpleBlockItem(RegistryObject<? extends Block> block) {
+	public static RegistryObject<BlockItem> simpleBlockItem(RegistryObject<? extends Block> block) {
 		return simpleBlockItem(block, new Item.Properties());
 	}
 
 	// Method for making basic block items that have descriptions.
-	private static RegistryObject<BlockItem> simpleDescBlockItem(RegistryObject<? extends Block> block,
+	public static RegistryObject<BlockItem> simpleDescBlockItem(RegistryObject<? extends Block> block,
 			Properties properties) {
 		return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), properties) {
 			@Override
@@ -311,7 +311,7 @@ public class AMItems {
 	}
 
 	// Method for making basic block items that have descriptions.
-	private static RegistryObject<BlockItem> simpleDescBlockItem(RegistryObject<? extends Block> block) {
+	public static RegistryObject<BlockItem> simpleDescBlockItem(RegistryObject<? extends Block> block) {
 		return simpleDescBlockItem(block, new Item.Properties());
 	}
 

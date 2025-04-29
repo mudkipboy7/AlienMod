@@ -1,6 +1,6 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject;
+package com.mudkipboy7.alien.sky.astroobject;
 
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.AstronomicalFunctions;
+import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;

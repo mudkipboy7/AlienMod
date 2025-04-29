@@ -1,6 +1,6 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject;
+package com.mudkipboy7.alien.sky.astroobject;
 
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.AstronomicalFunctions;
+import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
 public interface IPhasingAstroObject {
 	public abstract int getCurrentPhase(double locationOfLightSource);

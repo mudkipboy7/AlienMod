@@ -1,4 +1,4 @@
-package com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject;
+package com.mudkipboy7.alien.sky.astroobject;
 
 import org.joml.Math;
 
@@ -38,9 +38,12 @@ public class AstronomicalObject {
 	public float getVisualSize() {
 		return (float) (this.getSize() / getDistToCamera());
 	}
-
+	/**
+	 * Gives the current position in the sky in degrees
+	 * @return
+	 */
 	public double getSkyLocation() {
-		return 0.0D;
+		return 0;
 	}
 
 	/**

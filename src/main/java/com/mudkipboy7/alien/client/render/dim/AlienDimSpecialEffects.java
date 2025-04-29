@@ -5,7 +5,7 @@ import org.joml.Vector3f;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mudkipboy7.alien.AlienMod;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.AlienDimSky;
+import com.mudkipboy7.alien.sky.AlienDimSky;
 
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -61,7 +61,7 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 	}
 
 	/*
-	 * Changes lighting for eclipses
+	 * Changes lighting of blocks and stuff for eclipses
 	 */
 	@Override
 	public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker,

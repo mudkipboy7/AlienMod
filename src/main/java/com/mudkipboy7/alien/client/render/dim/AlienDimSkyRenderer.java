@@ -18,8 +18,8 @@ import com.mojang.blaze3d.vertex.VertexBuffer;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.math.Axis;
 import com.mudkipboy7.alien.AlienMod;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.AstronomicalObject;
-import com.mudkipboy7.alien.world.worldgen.dimension.sky.astroobject.IPhasingAstroObject;
+import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
+import com.mudkipboy7.alien.sky.astroobject.IPhasingAstroObject;
 
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -109,15 +109,17 @@ public class AlienDimSkyRenderer {
 		RenderSystem.enableBlend();
 
 		/*
-		 * Draws sunset
+		 * Draws sunset/sunrise
 		 */
-		float[] afloat = level.effects().getSunriseColor(level.getTimeOfDay(partialTick), partialTick);
+		//float[] afloat = level.effects().getSunriseColor(level.getTimeOfDay(partialTick), partialTick);
+		float[] afloat = level.effects().getSunriseColor(getAlienDimSky().alienSun.getSkyLocationTurns(), partialTick);
 		if (afloat != null) {
 			RenderSystem.setShader(GameRenderer::getPositionColorShader);
 			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 			poseStack.pushPose();
 			poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-			float f3 = Mth.sin(level.getSunAngle(partialTick)) < 0.0F ? 180.0F : 0.0F;
+			//float f3 = Mth.sin(level.getSunAngle(partialTick)) < 0.0F ? 180.0F : 0.0F;
+			float f3 = Mth.sin((float) getAlienDimSky().alienSun.getSkyLocation()) < 0.0F ? 180.0F : 0.0F;
 			poseStack.mulPose(Axis.ZP.rotationDegrees(f3));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(90.0F));
 			float f4 = afloat[0];

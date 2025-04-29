@@ -16,7 +16,7 @@ public class ItemEntityMixin {
 	public void tick(CallbackInfo callbackInfo) {
 		ItemEntity entity = (ItemEntity) (Object) this;
 		if (Gravity.entityIsInLowGravityBiome(entity)) {
-			Gravity.doSlowFall(entity, Gravity.alienDimItemFallMod);
+			Gravity.doSlowFall(entity, Gravity.ALIENDIM_ITEM_FALL_MOD);
 		}
 	}
 }

@@ -13,6 +13,7 @@ import com.mudkipboy7.alien.client.render.dim.AlienDimSkyRenderer;
 import com.mudkipboy7.alien.client.render.dim.AlienDimSpecialEffects;
 import com.mudkipboy7.alien.client.render.entity.SurvivalGearRenderingStuff;
 import com.mudkipboy7.alien.inventory.AMMenuTypes;
+import com.mudkipboy7.alien.sky.AlienDimSky;
 import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
@@ -101,17 +102,6 @@ public class AMClientEvents {
 
 	@SubscribeEvent
 	public static void setFogColors(ComputeFogColor event) {
-		/*
-		 * This fixes a problem where the fog during eclipses would be red still
-		 */
-		if (WorldFuncs.isInAlienDim(event.getCamera().getEntity())) {
-			float eclipsyness = AlienMod.getAlienDimSky().getEclipsyness();
-			float red = event.getRed();
-			float green = event.getGreen();
-			float blue = event.getBlue();
-			event.setRed(red * eclipsyness);
-			event.setGreen(green * eclipsyness);
-			event.setBlue(blue * eclipsyness);
-		}
+		AlienDimSky.setFogColors(event);
 	}
 }
