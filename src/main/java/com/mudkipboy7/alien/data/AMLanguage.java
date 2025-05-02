@@ -75,6 +75,7 @@ public class AMLanguage {
 			 */
 			addConfigDesc(AMConfig.Client.renderFurCoatFirstPerson,
 					"Determines if the Fur Coat worn item is displayed over the arm in first person.");
+			addConfigDesc(AMConfig.Client.customTitleScreen, "Determines if the custom title screen is rendered.");
 
 			/*
 			 * Creative Menu
@@ -181,7 +182,7 @@ public class AMLanguage {
 			addBlock(AMBlocks.ALIEN_METAL_BLOCK, "Block of Atsali");
 			addBlock(AMBlocks.RAW_ALIEN_METAL_BLOCK, "Raw Atsali Block");
 			addBlock(AMBlocks.COPPER_WIRE, "Copper Wire");
-			//addDepricatedItemDesc(AMBlocks.COPPER_WIRE);
+			// addDepricatedItemDesc(AMBlocks.COPPER_WIRE);
 			addBlock(AMBlocks.LAZER_CREATOR, "Lazer Creator");
 			addItemDesc(AMBlocks.LAZER_CREATOR,
 					"Creates a lazer that can be used to transport energy between machines.");
@@ -221,8 +222,7 @@ public class AMLanguage {
 					"Used to teleport the player to the alien dimension for testing purposes.");
 			addChargableItem(AMItems.BATTERY, "Battery", "Full Battery", "Dead Battery", "Partially Filled Battery");
 			// addItem(AMItems.BATTERY, "Battery");
-			addChargableItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery", "Integer Limit Battery",
-					"Integer Limit Battery", "Integer Limit Battery");
+			addItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery");
 			addItem(AMItems.ALIEN_METAL_INGOT, "Atsali Ingot");
 			addItem(AMItems.RAW_ALIEN_METAL, "Raw Atsali");
 			addItem(AMItems.ALIEN_METAL_HELMET, "Atsali Helmet");
@@ -252,22 +252,12 @@ public class AMLanguage {
 			this.add(Affixes.configPrefix + list.get(0) + "." + list.get(1), text);
 		}
 
-		@SuppressWarnings("unused")
-		private void addChargableBlock(RegistryObject<? extends Block> block, String normal, String full, String empty,
-				String partFull) {
-			this.add(block.get().getDescriptionId(), normal);
-			this.add(block.get().getDescriptionId() + Affixes.full, full);
-			this.add(block.get().getDescriptionId() + Affixes.empty, empty);
-			this.add(block.get().getDescriptionId() + Affixes.partFull, partFull);
-
-		}
-
-		private void addChargableItem(RegistryObject<? extends Item> item, String normal, String full, String empty,
-				String partFull) {
-			this.add(item.get().getDescriptionId(), normal);
-			this.add(item.get().getDescriptionId() + Affixes.full, full);
-			this.add(item.get().getDescriptionId() + Affixes.empty, empty);
-			this.add(item.get().getDescriptionId() + Affixes.partFull, partFull);
+		private void addChargableItem(RegistryObject<? extends ItemLike> itemLike, String normal, String full,
+				String empty, String partFull) {
+			this.add(getDescription(itemLike.get()).getString(), normal);
+			this.add(getDescription(itemLike.get()).getString() + Affixes.full, full);
+			this.add(getDescription(itemLike.get()).getString() + Affixes.empty, empty);
+			this.add(getDescription(itemLike.get()).getString() + Affixes.partFull, partFull);
 		}
 
 		private void addPotion(RegistryObject<? extends Potion> potion, String normal, String splash, String lingering,
@@ -298,34 +288,17 @@ public class AMLanguage {
 	 * Gets the name that a charagible thing should have based on it's percent full.
 	 * Set somewhere out of range for default value
 	 */
-	public static MutableComponent getChargableLangName(Block block, float percentFull) {
+	public static MutableComponent getChargableLangName(Item itemLike, float percentFull) {
 		float fullValue = 100.0F;
 		float emptyValue = 0.0F;
 		if (percentFull == fullValue)
-			return Component.translatable(block.getDescriptionId() + Affixes.full);
+			return Component.translatable(getDescription(itemLike).getString() + Affixes.full);
 		else if (percentFull == emptyValue)
-			return Component.translatable(block.getDescriptionId() + Affixes.empty);
+			return Component.translatable(getDescription(itemLike).getString() + Affixes.empty);
 		else if (percentFull < fullValue && percentFull > emptyValue)
-			return Component.translatable(block.getDescriptionId() + Affixes.partFull);
+			return Component.translatable(getDescription(itemLike).getString() + Affixes.partFull);
 		else
-			return Component.translatable(block.getDescriptionId());
-	}
-
-	/**
-	 * Gets the name that a charagible thing should have based on it's percent full.
-	 * Set somewhere out of range for default value
-	 */
-	public static MutableComponent getChargableLangName(Item item, float percentFull) {
-		float fullValue = 100.0F;
-		float emptyValue = 0.0F;
-		if (percentFull == fullValue)
-			return Component.translatable(item.getDescriptionId() + Affixes.full);
-		else if (percentFull == emptyValue)
-			return Component.translatable(item.getDescriptionId() + Affixes.empty);
-		else if (percentFull < fullValue && percentFull > emptyValue)
-			return Component.translatable(item.getDescriptionId() + Affixes.partFull);
-		else
-			return Component.translatable(item.getDescriptionId());
+			return Component.translatable(getDescription(itemLike).getString());
 	}
 
 }

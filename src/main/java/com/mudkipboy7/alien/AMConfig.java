@@ -24,6 +24,7 @@ public class AMConfig {
 
 	public static class Client {
 		public static BooleanValue renderFurCoatFirstPerson;
+		public static BooleanValue customTitleScreen;
 
 		public Client(Builder builder) {
 
@@ -33,6 +34,10 @@ public class AMConfig {
 					.comment("Determines if the Fur Coat worn item is displayed over the arm in first person.")
 					.translation(configString + "renderfurcoatfirstperson")
 					.define("renderfurcoatfirstperson", true);
+			customTitleScreen = builder
+					.comment("Determines if the custom title screen is rendered.")
+					.translation(configString + "customTitleScreen")
+					.define("customTitleScreen", true);
 
 		}
 	}
