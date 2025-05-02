@@ -5,10 +5,10 @@ import com.mudkipboy7.alien.AlienMod;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
-public record AMBlockSetTypes() {
+public class AMBlockSetTypes {
 
 	public static final BlockSetType LIGNUM = blockType("lignum");
-	
+
 	public static final BlockSetType GELUSTONE = blockType("gelustone");
 
 	private static BlockSetType blockType(String name) {
