@@ -164,8 +164,6 @@ public class AMItems {
 
 	public static final RegistryObject<BlockItem> LAZER_CREATOR = simpleDescBlockItem(AMBlocks.LAZER_CREATOR);
 
-	public static final RegistryObject<BlockItem> LAZER_EXTENDER = simpleDescBlockItem(AMBlocks.LAZER_EXTENDER);
-
 	/*
 	 * Register Normal Items
 	 */

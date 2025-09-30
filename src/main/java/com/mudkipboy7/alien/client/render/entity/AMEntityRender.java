@@ -4,7 +4,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.client.render.blockentity.AlienChestRenderer2;
+import com.mudkipboy7.alien.client.render.blockentity.LazerCreatingMachineRenderer;
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
+import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 
 import net.minecraft.client.Minecraft;
@@ -33,6 +35,8 @@ public class AMEntityRender {
 			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_SIGN.get(), SignRenderer::new);
 			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_HANGING_SIGN.get(), HangingSignRenderer::new);
 			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_CHEST.get(), AlienChestRenderer2::new);
+			event.registerBlockEntityRenderer(AMBlockEntities.LAZER_CREATOR.get(), LazerCreatingMachineRenderer::new);
+			
 			event.registerEntityRenderer(AMEntities.TEST_ENTITY.get(), TestEntityRenderer::new);
 			event.registerEntityRenderer(AMEntities.ALIEN_ZOMBIE.get(), AlienZombieRenderer::new);
 		}

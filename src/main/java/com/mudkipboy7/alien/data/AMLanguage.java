@@ -186,8 +186,6 @@ public class AMLanguage {
 			addBlock(AMBlocks.LAZER_CREATOR, "Lazer Creator");
 			addItemDesc(AMBlocks.LAZER_CREATOR,
 					"Creates a lazer that can be used to transport energy between machines.");
-			addBlock(AMBlocks.LAZER_EXTENDER, "Lazer Extender");
-			addItemDesc(AMBlocks.LAZER_EXTENDER, "Extends a lazer to make it go a further distance.");
 
 			/*
 			 * Item
@@ -221,8 +219,9 @@ public class AMLanguage {
 			addItemDesc(AMItems.ALIENDIM_CREATIVE_TELEPORTER,
 					"Used to teleport the player to the alien dimension for testing purposes.");
 			addChargableItem(AMItems.BATTERY, "Battery", "Full Battery", "Dead Battery", "Partially Filled Battery");
+			addChargableItem(AMItems.INT_LIMIT_BATTERY, "Int Limit Battery", "Int Limit Battery", "Int Limit Battery", "Int Limit Battery");
 			// addItem(AMItems.BATTERY, "Battery");
-			addItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery");
+			//addItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery");
 			addItem(AMItems.ALIEN_METAL_INGOT, "Atsali Ingot");
 			addItem(AMItems.RAW_ALIEN_METAL, "Raw Atsali");
 			addItem(AMItems.ALIEN_METAL_HELMET, "Atsali Helmet");
@@ -254,10 +253,17 @@ public class AMLanguage {
 
 		private void addChargableItem(RegistryObject<? extends ItemLike> itemLike, String normal, String full,
 				String empty, String partFull) {
-			this.add(getDescription(itemLike.get()).getString(), normal);
-			this.add(getDescription(itemLike.get()).getString() + Affixes.full, full);
-			this.add(getDescription(itemLike.get()).getString() + Affixes.empty, empty);
-			this.add(getDescription(itemLike.get()).getString() + Affixes.partFull, partFull);
+			String itemName = null;
+			
+			if (itemLike.get() instanceof Item item)
+				itemName = item.getDescriptionId();
+			else if (itemLike.get() instanceof Block block)
+				itemName = block.getDescriptionId();
+
+			this.add(itemName, normal);
+			this.add(itemName + Affixes.full, full);
+			this.add(itemName + Affixes.empty, empty);
+			this.add(itemName + Affixes.partFull, partFull);
 		}
 
 		private void addPotion(RegistryObject<? extends Potion> potion, String normal, String splash, String lingering,
@@ -292,13 +298,13 @@ public class AMLanguage {
 		float fullValue = 100.0F;
 		float emptyValue = 0.0F;
 		if (percentFull == fullValue)
-			return Component.translatable(getDescription(itemLike).getString() + Affixes.full);
+			return Component.translatable(itemLike.getDescriptionId() + Affixes.full);
 		else if (percentFull == emptyValue)
-			return Component.translatable(getDescription(itemLike).getString() + Affixes.empty);
+			return Component.translatable(itemLike.getDescriptionId() + Affixes.empty);
 		else if (percentFull < fullValue && percentFull > emptyValue)
-			return Component.translatable(getDescription(itemLike).getString() + Affixes.partFull);
+			return Component.translatable(itemLike.getDescriptionId() + Affixes.partFull);
 		else
-			return Component.translatable(getDescription(itemLike).getString());
+			return Component.translatable(itemLike.getDescriptionId());
 	}
 
 }

@@ -16,13 +16,15 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class LazerCreatorBlock extends AbstractMachineBlock {
 	public static final EnumProperty<Direction> DIRECTION = EnumProperty.create("facing", Direction.class);
-
+	public static final IntegerProperty LAZER_LENGTH = IntegerProperty.create("lazer_length", 0, 1000);
 	public LazerCreatorBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(DIRECTION, Direction.UP));
+		this.registerDefaultState(this.defaultBlockState().setValue(LAZER_LENGTH, 0));
 	}
 
 	@Override
@@ -41,6 +43,7 @@ public class LazerCreatorBlock extends AbstractMachineBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(DIRECTION);
+		builder.add(LAZER_LENGTH);
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {

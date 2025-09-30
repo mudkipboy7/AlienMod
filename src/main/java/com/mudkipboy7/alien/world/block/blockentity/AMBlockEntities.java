@@ -7,7 +7,6 @@ import com.mudkipboy7.alien.world.block.blockentity.machine.CoalGeneratorBlockEn
 import com.mudkipboy7.alien.world.block.blockentity.machine.EnergyStorageBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.HazardRemovalMachineBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
-import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerExtenderBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.WireBlockEntity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -64,12 +63,6 @@ public class AMBlockEntities {
 	public static final RegistryObject<BlockEntityType<LazerCreatorBlockEntity>> LAZER_CREATOR = BLOCK_ENTITY_TYPES
 			.register("lazer_creator", () -> BlockEntityType.Builder
 					.of(LazerCreatorBlockEntity::new, AMBlocks.LAZER_CREATOR.get()).build(null));
-
-	// Lazer extender
-	public static final RegistryObject<BlockEntityType<LazerExtenderBlockEntity>> LAZER_EXTENDER = BLOCK_ENTITY_TYPES
-			.register("lazer_extender", () -> BlockEntityType.Builder
-					.of(LazerExtenderBlockEntity::new, AMBlocks.LAZER_EXTENDER.get()).build(null));
-
 	// Alien Portal
 	public static final RegistryObject<BlockEntityType<AlienPortalBlockEntity>> ALIEN_PORTAL = BLOCK_ENTITY_TYPES
 			.register("alien_portal", () -> BlockEntityType.Builder

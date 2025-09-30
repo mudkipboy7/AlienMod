@@ -17,6 +17,7 @@ public abstract class AbstractMachineBlock extends BaseEntityBlock {
 
 	@Override
 	protected void spawnDestroyParticles(Level pLevel, Player pPlayer, BlockPos pPos, BlockState pState) {
+		// Spawns yellow stuff if it's broken while charged
 		if (pLevel.getBlockEntity(pPos) instanceof IEnergyStoringBlockEntity entity
 				&& entity.getEnergy().getEnergyStored() > 0) {
 			Minecraft.getInstance().particleEngine.destroy(pPos, Blocks.YELLOW_WOOL.defaultBlockState());

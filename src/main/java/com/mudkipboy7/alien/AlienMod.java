@@ -23,6 +23,7 @@ import net.minecraftforge.registries.RegisterEvent;
 
 @Mod(value = AlienMod.MODID)
 public final class AlienMod {
+	
 	/*
 	 * Constants
 	 */
@@ -44,11 +45,13 @@ public final class AlienMod {
 	// The class for the alienDimSky
 	private static AlienDimSky alienDimSky;
 
+
+
 	/**
-	 * Main method to set up the mod. Remember that whenever you create a
-	 * DeferredRegister you have to put it here or else it won't do anything.
+	 * Main method to set up the mod.
 	 */
 	public AlienMod() {
+		//b k = null;
 		loadCustomJSONStuff();
 		// Makes the mod bus
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();

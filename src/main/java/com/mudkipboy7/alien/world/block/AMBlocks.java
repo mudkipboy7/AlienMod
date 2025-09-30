@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.world.block;
 
 import static com.mudkipboy7.alien.AMRegistry.BLOCKS;
 
-import com.google.common.base.Supplier;
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.flora.AlienDoubleTallGrassBlock;
 import com.mudkipboy7.alien.world.block.flora.AlienGrassBlock;
@@ -18,7 +17,6 @@ import com.mudkipboy7.alien.world.block.functional.machine.CoalGeneratorBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.EnergyStorageBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.HazardRemovalMachineBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerCreatorBlock;
-import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerExtenderBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.WireBlock;
 import com.mudkipboy7.alien.world.block.functional.sign.AlienCeilingHangingSignBlock;
 import com.mudkipboy7.alien.world.block.functional.sign.AlienStandingSignBlock;
@@ -26,7 +24,6 @@ import com.mudkipboy7.alien.world.block.functional.sign.AlienWallHangingSignBloc
 import com.mudkipboy7.alien.world.block.functional.sign.AlienWallSignBlock;
 import com.mudkipboy7.alien.world.block.misc.AlienAirBlock;
 import com.mudkipboy7.alien.world.block.misc.TestBlock;
-import com.mudkipboy7.alien.world.item.AMItems;
 import com.mudkipboy7.alien.world.worldgen.structure.grower.AMTreeGrowers;
 
 import net.minecraft.core.BlockPos;
@@ -326,11 +323,6 @@ public final class AMBlocks {
 	// Lazer wire
 	public static final RegistryObject<Block> LAZER_CREATOR = BLOCKS.register("lazer_creator",
 			() -> new LazerCreatorBlock(BlockBehaviour.Properties.of()));
-
-	// Lazer extender
-	public static final RegistryObject<Block> LAZER_EXTENDER = BLOCKS.register("lazer_extender",
-			() -> new LazerExtenderBlock(BlockBehaviour.Properties.of()));
-
 	/*
 	 * Methods
 	 */
