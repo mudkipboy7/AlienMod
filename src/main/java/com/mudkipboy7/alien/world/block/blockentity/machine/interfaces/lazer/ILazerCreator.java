@@ -6,7 +6,7 @@ import net.minecraftforge.energy.EnergyStorage;
 
 public interface ILazerCreator {
 
-	public BlockPos searchForCharagbles();
+	public BlockPos searchForCharagbles(int ammountDoneSoFar);
 
 	public int sendEnergyTo(BlockPos blockPos, EnergyStorage extractingFrom, Direction directionSendingTowards);
 

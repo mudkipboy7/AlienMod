@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringBlockEntity;
+import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringMachineBlockEntity;
 import com.mudkipboy7.alien.world.block.functional.machine.AbstractMachineBlock;
 
 import net.minecraft.Util;
@@ -105,7 +105,7 @@ public abstract class AbstractMachineWireBlock extends AbstractMachineBlock {
 	protected boolean canConnectInDirection(BlockGetter blockGetter, BlockPos thisPos, Direction direction) {
 		if (blockGetter.getBlockState(thisPos.relative(direction)).is(this)) {
 			return true;
-		} else if (blockGetter.getBlockEntity(thisPos.relative(direction)) instanceof IEnergyStoringBlockEntity block) {
+		} else if (blockGetter.getBlockEntity(thisPos.relative(direction)) instanceof IEnergyStoringMachineBlockEntity block) {
 			return block.canConnectInDirection(direction.getOpposite());
 		}
 		return false;

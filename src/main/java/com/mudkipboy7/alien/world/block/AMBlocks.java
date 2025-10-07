@@ -14,6 +14,7 @@ import com.mudkipboy7.alien.world.block.functional.AlienChestBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienCraftingTableBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienPortalBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.CoalGeneratorBlock;
+import com.mudkipboy7.alien.world.block.functional.machine.EnergyBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.EnergyStorageBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.HazardRemovalMachineBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerCreatorBlock;
@@ -323,6 +324,10 @@ public final class AMBlocks {
 	// Lazer wire
 	public static final RegistryObject<Block> LAZER_CREATOR = BLOCKS.register("lazer_creator",
 			() -> new LazerCreatorBlock(BlockBehaviour.Properties.of()));
+	
+	// Infinitely Dispenses energy
+	public static final RegistryObject<EnergyBlock> ENERGY_BLOCK = BLOCKS.register("energy_block",
+			() -> new EnergyBlock(BlockBehaviour.Properties.of().strength(1F, 6.0F).sound(SoundType.AMETHYST)));
 	/*
 	 * Methods
 	 */

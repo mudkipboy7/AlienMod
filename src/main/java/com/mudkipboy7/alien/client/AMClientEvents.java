@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.client.gui.screen.CoalGeneratorScreen;
+import com.mudkipboy7.alien.client.gui.screen.EnergyBlockScreen;
 import com.mudkipboy7.alien.client.gui.screen.EnergyStorageScreen;
 import com.mudkipboy7.alien.client.gui.screen.HazardRemovalScreen;
 import com.mudkipboy7.alien.client.render.dim.AlienDimSkyRenderer;
@@ -70,6 +71,7 @@ public class AMClientEvents {
 			MenuScreens.register(AMMenuTypes.HAZARD_REMOVAL.get(), HazardRemovalScreen::new);
 			MenuScreens.register(AMMenuTypes.COAL_GENERATOR.get(), CoalGeneratorScreen::new);
 			MenuScreens.register(AMMenuTypes.ENERGY_STORAGE.get(), EnergyStorageScreen::new);
+			MenuScreens.register(AMMenuTypes.ENERGY_BLOCK.get(), EnergyBlockScreen::new);
 		}
 
 		@SubscribeEvent

@@ -1,4 +1,4 @@
-// 1.20.2	2024-11-17T11:56:39.4106965	Block States: alien
+// 1.20.2	2025-10-07T01:23:02.2262732	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -13,6 +13,7 @@ ca51d73481daaabfc0ba1c7e2d619a16555fdd09 assets/alien/blockstates/cobble_gelusto
 0a6ef165b0a738f7214f6f701c5d08feb0cf19b1 assets/alien/blockstates/cobble_gelustone_wall.json
 ef85e164f5a7f86d3487697a521fc9f1dd8ae572 assets/alien/blockstates/copper_wire.json
 268c03ca2a9b7fdebd641d1bfddd571d8b9e5eb8 assets/alien/blockstates/dead_plant.json
+60e24714af3ec4056e640962dfc9cd3aa031df30 assets/alien/blockstates/energy_block.json
 c6767b80edae5e80d34341f5451ffcd55e2a7252 assets/alien/blockstates/energy_storage_block.json
 13ee36f252a7c13cb49180ad96a000b34d8408fa assets/alien/blockstates/gelustone.json
 5afe9c1ef4250d3374b70bd9d071b0dcdd279278 assets/alien/blockstates/gelustone_bedrock.json
@@ -24,8 +25,7 @@ aaea7683437e8139767947b74e46774aab39093f assets/alien/blockstates/gelustone_butt
 b1c13f15c66071ef413f9ab373cd5c77ab3f197f assets/alien/blockstates/gelustone_stairs.json
 813f8562a7f59dc82844a15e88f46c8d3f453c30 assets/alien/blockstates/gramen.json
 5d2efa33a80fc735b16d953801ead7358ac588e3 assets/alien/blockstates/gramen_block.json
-d7355fe177494eea96464f9628a6641762c16c04 assets/alien/blockstates/lazer_creator.json
-e640310f0e81fb3e2917cdb32251759b2f369b06 assets/alien/blockstates/lazer_extender.json
+db2d5a47bf12e9e3fb9502fea5d9957d275eef7a assets/alien/blockstates/lazer_creator.json
 bb959a3a19a0126a372f0a7ae7d32f65e40488e7 assets/alien/blockstates/lignum_all_sides_log.json
 584eb2e5631ee9b647e788ce8f77b2b71746d175 assets/alien/blockstates/lignum_button.json
 05f9120a5a09a051a95bbe0c303415c1110c619d assets/alien/blockstates/lignum_chest.json
@@ -72,6 +72,7 @@ b1e064dd16b2a791442926f0976fa56ed8de595f assets/alien/models/block/copper_wire_s
 e8023e184ab40ed46ad63e45313a199336587941 assets/alien/models/block/dead_plant_flower.json
 8663f61f94796347b666b37d96b5421979d6bd59 assets/alien/models/block/dead_plant_grass.json
 ab9990d340c8c01705673d78bfbb67b245ac8555 assets/alien/models/block/dead_plant_sapling.json
+1bcb7ad29e6af30c50df0c16cddf63fe6a51338d assets/alien/models/block/energy_block.json
 f5db5b56434c36813df6056b97ff33ef9f1a13ed assets/alien/models/block/energy_storage_block.json
 e0203e9471f28c40bdfa842abb6459943d0d8c2d assets/alien/models/block/gelustone.json
 0b6936cefcb825f3a48f75d9211223d6491e0d92 assets/alien/models/block/gelustone_bedrock.json
@@ -89,7 +90,6 @@ d9692f0abbd3b989dcef934fb69346f78db78e05 assets/alien/models/block/gelustone_sta
 15226f7957550dad73aa22ce7e0bbb9cc076738b assets/alien/models/block/gramen.json
 4f5767decc063556dd74c52d686458a2a08cf698 assets/alien/models/block/gramen_block.json
 62e1c68bf8280c64b44a5e96ef1cbc09ff90b05f assets/alien/models/block/lazer_creator.json
-87db27d5296883903a86625885b47b96468a9399 assets/alien/models/block/lazer_extender.json
 29a3d68752162a68c431fd6b5fe07b16e2162608 assets/alien/models/block/lignum_all_sides_log.json
 269b1d22d5ebc2bc08e84bf1653fb6df9e180afa assets/alien/models/block/lignum_all_sides_log_horizontal.json
 1b57e3a2137bb7248f91788396e92c98180b7e2c assets/alien/models/block/lignum_button.json

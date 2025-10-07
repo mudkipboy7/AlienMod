@@ -4,10 +4,12 @@ import static com.mudkipboy7.alien.AMRegistry.MENU_TYPES;
 
 import com.mudkipboy7.alien.inventory.menu.AlienCraftingTableMenu;
 import com.mudkipboy7.alien.inventory.menu.CoalGeneratorMenu;
+import com.mudkipboy7.alien.inventory.menu.EnergyBlockMenu;
 import com.mudkipboy7.alien.inventory.menu.EnergyStorageMenu;
 import com.mudkipboy7.alien.inventory.menu.HazardRemovalMenu;
 
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.RegistryObject;;
@@ -29,5 +31,9 @@ public class AMMenuTypes {
 	// Energy Storage
 	public static final RegistryObject<MenuType<EnergyStorageMenu>> ENERGY_STORAGE = MENU_TYPES
 			.register("energy_storage_menu", () -> IForgeMenuType.create(EnergyStorageMenu::new));
+	
+	// Energy Block
+	public static final RegistryObject<MenuType<EnergyBlockMenu>> ENERGY_BLOCK = MENU_TYPES
+			.register("energy_block_menu", () -> IForgeMenuType.create(EnergyBlockMenu::new));
 
 }

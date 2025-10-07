@@ -54,6 +54,8 @@ public class AMLanguage {
 			.translatable(Affixes.containerPrefix + "coal_generator");
 	public static Component energyStorageBlockName = Component
 			.translatable(Affixes.containerPrefix + "energy_storage_block");
+	public static Component energyBlockName = Component
+			.translatable(Affixes.containerPrefix + "energy_block");
 
 	/*
 	 * Generates the language files.
@@ -89,6 +91,8 @@ public class AMLanguage {
 			add(airPuriferContainerName.getString(), "Air Purifier");
 			add(coalGeneratorContainerName.getString(), "Coal Generator");
 			add(energyStorageBlockName.getString(), "Energy Storage Block");
+			add(energyBlockName.getString(), "Energy Block");
+			
 
 			/*
 			 * Subtitle
@@ -186,6 +190,7 @@ public class AMLanguage {
 			addBlock(AMBlocks.LAZER_CREATOR, "Lazer Creator");
 			addItemDesc(AMBlocks.LAZER_CREATOR,
 					"Creates a lazer that can be used to transport energy between machines.");
+			addBlock(AMBlocks.ENERGY_BLOCK, "Energy Block");
 
 			/*
 			 * Item

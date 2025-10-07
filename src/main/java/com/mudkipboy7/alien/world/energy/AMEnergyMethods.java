@@ -47,7 +47,8 @@ public class AMEnergyMethods {
 	 * Tries to exchange a certain ammount of energy between two energy storages.
 	 * 
 	 * @param receiver The energy storage that will be receiving the energy.
-	 * @param provider The energy storage that will be providing the energy.
+	 * @param provider The energy storage that will be providing the energy. 
+	 *                 provides for free.
 	 * @param ammount  The ammount to try to exchange.
 	 * @return The amount of energy that was successfully added to the receiver.
 	 */
@@ -74,6 +75,7 @@ public class AMEnergyMethods {
 				int extractedFromProvider = provider.extractEnergy(ammountToAdd, false);
 				reciever.receiveEnergy(extractedFromProvider, false);
 				return extractedFromProvider;
+
 			}
 		}
 		return 0;
@@ -84,6 +86,7 @@ public class AMEnergyMethods {
 	 * 
 	 * @param receiver The energy storage that will be receiving the energy.
 	 * @param provider The energy storage that will be providing the energy.
+	 *                 provides for free.
 	 * @return The amount of energy that was successfully added to the receiver.
 	 */
 	public static int tryExchangeEnergy(@NotNull IEnergyStorage reciever, @NotNull IEnergyStorage provider) {

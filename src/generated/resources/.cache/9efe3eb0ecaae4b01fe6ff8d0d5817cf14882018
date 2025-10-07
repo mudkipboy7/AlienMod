@@ -1,4 +1,4 @@
-// 1.20.2	2024-05-10T14:05:11.9790697	Item Models: alien
+// 1.20.2	2025-10-07T01:23:02.229264	Item Models: alien
 ea411e845d0ddb8b29a9e850a24a30b9c26c2ca7 assets/alien/models/item/air_purifier.json
 762cb26d8d4a387261889bea16b7a5a785ecba5f assets/alien/models/item/algussoil.json
 5d7af0e918e1a5edae73711792347441b0197982 assets/alien/models/item/alien_air.json
@@ -29,6 +29,7 @@ c9d806d929e63c77b92955b8a706f6641e24e43e assets/alien/models/item/cobble_gelusto
 d79b2cb04340c8c3dda71099dcc7fb5db15d7a46 assets/alien/models/item/cobble_gelustone_wall.json
 5ffdf40732bee1674f4afd486e7da452873bf00d assets/alien/models/item/copper_wire.json
 64b31f2b626a5bc151b80392ec2214b7f5273ac7 assets/alien/models/item/dead_plant.json
+f0af880d2eb0b86f821d3f3e8068de851d83432c assets/alien/models/item/energy_block.json
 237d7287cfeb170149de6bf7c2ee61c27b784ab1 assets/alien/models/item/energy_storage_block.json
 ee771ec40b113bff98b1e82e8fe7f78786a7b772 assets/alien/models/item/fur_coat.json
 afb1dabac5a699ed204dbda07f8509242d5f6803 assets/alien/models/item/fur_pants.json
@@ -49,7 +50,6 @@ d63d9852238e50d73c674a3c7192dd9ae0296d09 assets/alien/models/item/gelustone_swor
 27aa3e80f79c4e9fc604cf51f980f796faee5dd9 assets/alien/models/item/gramen_block.json
 22e731d9d25091c5f1689bca04399b80ed043bfc assets/alien/models/item/int_limit_battery.json
 b2234b49e43a7dd9d727c20830d022e02894ed62 assets/alien/models/item/lazer_creator.json
-cc9ded4c48ee1f43fffd80b6bcf7fd3b7cce8e1b assets/alien/models/item/lazer_extender.json
 763617f1b247276b66c4e5342c745b62e21bd9e8 assets/alien/models/item/lignum_all_sides_log.json
 7ba665a76dbea59fb71bcd71f21b7dbaf41e7aff assets/alien/models/item/lignum_axe.json
 8d9c4b06d4cf80a9da0105cd0cefdfed797cc848 assets/alien/models/item/lignum_button.json

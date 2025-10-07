@@ -1,10 +1,7 @@
 package com.mudkipboy7.alien.client.render.blockentity;
 
-import java.util.List;
-
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
-import org.joml.Quaternionf;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -12,8 +9,6 @@ import com.mojang.math.Axis;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerCreatorBlock;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -21,12 +16,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BeaconBlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -47,14 +38,14 @@ public class LazerCreatingMachineRenderer<T extends LazerCreatorBlockEntity>
 		float[] color = { 1F, 0.0F, 0F };
 		int length = blockEntity.getBlockState().getValue(LazerCreatorBlock.LAZER_LENGTH);
 		Direction direction = blockEntity.getBlockState().getValue(LazerCreatorBlock.DIRECTION);
-
+		//System.out.println(blockEntity.currentLazersGoingIn);
 		renderBeaconBeam(poseStack, buffer, partialTick, time, 0, length, color, direction);
 
 	}
 
 	public static void renderBeaconBeam(PoseStack poseStack, MultiBufferSource bufferSource, float partialTick,
 			long gameTime, int yOffset, int length, float[] pColors, Direction direction) {
-		float pBeamRadius = 0.15F;
+		float pBeamRadius = 0.20F;
 		int i = yOffset + length;
 		poseStack.pushPose();
 		float f = (float) Math.floorMod(gameTime, 40) + partialTick;
@@ -81,7 +72,7 @@ public class LazerCreatingMachineRenderer<T extends LazerCreatorBlockEntity>
 			poseStack.translate(0D, 0.5D, 0.5D);
 			poseStack.mulPose(Axis.ZP.rotationDegrees(90));
 		}
-		 poseStack.mulPose(Axis.YP.rotationDegrees(f * 2.25F - 45.0F));
+		poseStack.mulPose(Axis.YP.rotationDegrees(f * 2.25F - 45.0F));
 		// float f = (float) Math.floorMod(gameTime, 40) + partialTick;
 		float f1 = length < 0 ? f : -f;
 		float f2 = Mth.frac(f1 * 0.2F - (float) Mth.floor(f1 * 0.1F));
@@ -100,7 +91,7 @@ public class LazerCreatingMachineRenderer<T extends LazerCreatorBlockEntity>
 		// pPoseStack.rotateAround(null, f15, pYOffset, f16);
 
 		poseStack.popPose();
-		
+
 		poseStack.popPose();
 	}
 

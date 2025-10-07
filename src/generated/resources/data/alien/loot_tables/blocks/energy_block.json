@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "alien:lazer_extender"
+          "name": "alien:energy_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "alien:blocks/lazer_extender"
+  "random_sequence": "alien:blocks/energy_block"
 }

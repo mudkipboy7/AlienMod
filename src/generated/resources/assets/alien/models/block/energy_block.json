@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "alien:block/machine/lazer_extender"
+    "all": "alien:block/energy_block"
   }
 }

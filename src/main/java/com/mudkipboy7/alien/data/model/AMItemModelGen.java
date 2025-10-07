@@ -95,6 +95,7 @@ public class AMItemModelGen extends ItemModelProvider {
 		blockItem(AMItems.RAW_ALIEN_METAL_BLOCK);
 		genItem(AMItems.COPPER_WIRE);
 		blockItem(AMItems.LAZER_CREATOR);
+		blockItem(AMItems.ENERGY_BLOCK);
 
 		/*
 		 * Items

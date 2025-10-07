@@ -163,6 +163,8 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> COPPER_WIRE = simpleBlockItem(AMBlocks.COPPER_WIRE);
 
 	public static final RegistryObject<BlockItem> LAZER_CREATOR = simpleDescBlockItem(AMBlocks.LAZER_CREATOR);
+	
+	public static final RegistryObject<BlockItem> ENERGY_BLOCK = simpleBlockItem(AMBlocks.ENERGY_BLOCK);
 
 	/*
 	 * Register Normal Items

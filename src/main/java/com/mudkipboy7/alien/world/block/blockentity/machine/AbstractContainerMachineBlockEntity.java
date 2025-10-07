@@ -3,7 +3,7 @@ package com.mudkipboy7.alien.world.block.blockentity.machine;
 import org.jetbrains.annotations.NotNull;
 
 import com.mudkipboy7.alien.AlienMod;
-import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringBlockEntity;
+import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringMachineBlockEntity;
 import com.mudkipboy7.alien.world.energy.AMEnergyMethods;
 import com.mudkipboy7.alien.world.energy.AMEnergyStorage;
 import com.mudkipboy7.alien.world.item.functional.BatteryItem;
@@ -26,7 +26,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.EnergyStorage;
 
 public abstract class AbstractContainerMachineBlockEntity extends BaseContainerBlockEntity
-		implements IEnergyStoringBlockEntity {
+		implements IEnergyStoringMachineBlockEntity {
 	// The inventory
 	NonNullList<ItemStack> inventory;
 	// The energy storage

@@ -26,10 +26,11 @@ import net.minecraftforge.energy.EnergyStorage;
 public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreator {
 	// private BlockPos connectedTo;
 	private static final int MAX_SEARCH_RANGE = 10;
+	private static final int MAX_SEARCH_EXTENTIONS = 5;
 	public int ammountTransferedLastTick = 0;
 
 	// These are used for animations
-	public boolean isTransferingEnergy = false;
+
 	public int currentLazerLength = 0;
 
 	public LazerCreatorBlockEntity(BlockPos blockPos, BlockState blockState) {
@@ -41,11 +42,15 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 		EnergyStorage extractingFrom = blockEntity.findSomethingToExtractFrom();
 		// System.out.println(blockEntity);
 		// level.setBlockAndUpdate(blockPos, blockState);
-		blockEntity.level.setBlockAndUpdate(blockPos,
-				blockState.setValue(LazerCreatorBlock.LAZER_LENGTH, blockEntity.getCurrentLazerLength()));
-		if (extractingFrom != null && extractingFrom.getEnergyStored() > 0) {
-			BlockPos charging = blockEntity.searchForCharagbles();
+		//if (blockEntity.ammountTransferedLastTick != 0) {
+			blockEntity.level.setBlockAndUpdate(blockPos,
+					blockState.setValue(LazerCreatorBlock.LAZER_LENGTH, blockEntity.getCurrentLazerLength()));
+		//}
+		if ((extractingFrom != null) && extractingFrom.getEnergyStored() > 0) {
+			BlockPos charging = blockEntity.searchForCharagbles(0);
 			if (charging != null) {
+				// int x = blockEntity.sendEnergyTo(charging, extractingFrom,
+				// blockEntity.getBlockState().getValue(LazerCreatorBlock.DIRECTION));
 				blockEntity.ammountTransferedLastTick = blockEntity.sendEnergyTo(charging, extractingFrom,
 						blockEntity.getBlockState().getValue(LazerCreatorBlock.DIRECTION));
 				if (level.getGameTime() % 80L == 0L)
@@ -71,20 +76,31 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 	}
 
 	@Override
-	public BlockPos searchForCharagbles() {
+	public BlockPos searchForCharagbles(int ammountDoneSoFar) {
 		Direction direction = this.getBlockState().getValue(LazerCreatorBlock.DIRECTION);
 		/*
 		 * Tries to find something to charge
 		 */
 		for (int i = 1; i < MAX_SEARCH_RANGE; i++) {
 			BlockPos beingChecked = this.getBlockPos().relative(direction, i);
+			BlockEntity blockentity = level.getBlockEntity(beingChecked);
 			// Minecraft.getInstance().player.sendSystemMessage(Component.literal(beingChecked.toString()));
-			if (level.getBlockEntity(beingChecked) instanceof ILazerAcceptor
-					|| level.getBlockEntity(beingChecked) instanceof ILazerExtender) {
+			if (blockentity instanceof ILazerAcceptor) {
 				this.currentLazerLength = i;
 				return beingChecked;
-			} else if (!(level.getBlockState(beingChecked).isSolid()
-					&& level.getBlockState(beingChecked).canOcclude())) {
+
+			}
+			// Commented out because this causes visual bugs
+			
+			/* else if (blockentity instanceof LazerCreatorBlockEntity otherLazer
+					&& otherLazer.getBlockState().getValue(LazerCreatorBlock.DIRECTION) != direction.getOpposite()) {
+				if (ammountDoneSoFar <= MAX_SEARCH_EXTENTIONS) {
+					this.currentLazerLength = i;
+					return otherLazer.searchForCharagbles(ammountDoneSoFar + 1);
+				}
+			}*/
+
+			else if (!(level.getBlockState(beingChecked).isSolid() && level.getBlockState(beingChecked).canOcclude())) {
 
 			} else {
 				return null;

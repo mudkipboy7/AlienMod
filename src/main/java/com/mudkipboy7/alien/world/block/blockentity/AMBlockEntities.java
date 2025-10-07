@@ -4,6 +4,7 @@ import static com.mudkipboy7.alien.AMRegistry.BLOCK_ENTITY_TYPES;
 
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.blockentity.machine.CoalGeneratorBlockEntity;
+import com.mudkipboy7.alien.world.block.blockentity.machine.EnergyBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.EnergyStorageBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.HazardRemovalMachineBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
@@ -51,6 +52,10 @@ public class AMBlockEntities {
 	public static final RegistryObject<BlockEntityType<EnergyStorageBlockEntity>> ENERGY_STORAGE = BLOCK_ENTITY_TYPES
 			.register("energy_storage_block", () -> BlockEntityType.Builder
 					.of(EnergyStorageBlockEntity::new, AMBlocks.ENERGY_STORAGE.get()).build(null));
+	// Energy Storage Block
+	public static final RegistryObject<BlockEntityType<EnergyBlockEntity>> ENERGY_BLOCK = BLOCK_ENTITY_TYPES
+			.register("energy_block", () -> BlockEntityType.Builder
+					.of(EnergyBlockEntity::new, AMBlocks.ENERGY_BLOCK.get()).build(null));
 
 	@SuppressWarnings("deprecation")
 	@Deprecated

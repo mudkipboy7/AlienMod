@@ -2,7 +2,7 @@ package com.mudkipboy7.alien.world.energy.networking;
 
 import java.util.ArrayList;
 
-import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringBlockEntity;
+import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringMachineBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -63,7 +63,7 @@ class ElectricalNetwork implements IResourceNetwork {
 	@Override
 	public void addMachine(BlockPos blockPos) {
 		if (this.level.getBlockEntity(blockPos) instanceof INetworkable machine
-				&& this.level.getBlockEntity(blockPos) instanceof IEnergyStoringBlockEntity
+				&& this.level.getBlockEntity(blockPos) instanceof IEnergyStoringMachineBlockEntity
 				&& !this.machines.contains(blockPos)) {
 			this.machines.add(blockPos);
 			machine.setControllerPos(this.controller);
