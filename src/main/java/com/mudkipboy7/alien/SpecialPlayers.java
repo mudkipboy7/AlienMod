@@ -30,6 +30,7 @@ public class SpecialPlayers {
 	 */
 	public static void loadSpecialPlayersStuff() {
 		SpecialPlayers.specialPlayerSettingsUsernames.clear();
+		SpecialPlayers.specialPlayerSettingsUUIDS.clear();
 
 		/*
 		 * Gets the special player types

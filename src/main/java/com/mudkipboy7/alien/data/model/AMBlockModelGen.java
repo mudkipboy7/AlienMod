@@ -177,7 +177,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 						AlienMod.location(machineFolder + AMBlocks.LAZER_CREATOR.getId().getPath() + "_bottom"),
 						AlienMod.location(machineFolder + AMBlocks.LAZER_CREATOR.getId().getPath() + "_top")));
 		
-		simpleBlock(AMBlocks.ENERGY_BLOCK.get());
+		simpleBlock(AMBlocks.ENERGY_BLOCK.get(), models().cubeAll(AMBlocks.ENERGY_BLOCK.getId().getPath(),
+				AlienMod.location(machineFolder + AMBlocks.ENERGY_BLOCK.getId().getPath())));
 
 
 	}

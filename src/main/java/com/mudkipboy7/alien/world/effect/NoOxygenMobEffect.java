@@ -1,10 +1,12 @@
 package com.mudkipboy7.alien.world.effect;
 
 import com.mudkipboy7.alien.data.AMDamageTypes;
+import com.mudkipboy7.alien.sound.AMSoundEvents;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 
 public class NoOxygenMobEffect extends AlienMobEffect {
 	int timeSinceLastCough = 0;
@@ -18,13 +20,15 @@ public class NoOxygenMobEffect extends AlienMobEffect {
 		// if (!entity.hasEffect(AMMobEffects.HAZARD_PROTECTION.get())) {
 		// Level level = livingEntity.level();
 
-		/*
-		 * if (livingEntity instanceof Player player && false) { timeSinceLastCough +=
-		 * 1; if (timeSinceLastCough > 10) {
-		 * player.playSound(AMSoundEvents.PLAYER_COUGH.get()); timeSinceLastCough = 0;
-		 * 
-		 * } }
-		 */
+		/*if (livingEntity instanceof Player player) {
+			timeSinceLastCough += 1;
+			if (timeSinceLastCough > 100) {
+				player.playSound(AMSoundEvents.PLAYER_COUGH.get());
+				timeSinceLastCough = 0;
+
+			}
+		}*/
+
 		livingEntity.hurt(AMDamageTypes.damageSource(livingEntity.level(), AMDamageTypes.NO_OXYGEN),
 				1.0F + (float) amplifier);
 		// }

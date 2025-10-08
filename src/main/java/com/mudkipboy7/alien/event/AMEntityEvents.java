@@ -231,6 +231,7 @@ public class AMEntityEvents {
 				} else {
 					livingEntity.removeEffect(AMMobEffects.NO_OXYGEN.get());
 					livingEntity.removeEffect(AMMobEffects.COLD.get());
+					livingEntity.removeEffect(AMMobEffects.NO_SPRINT.get());
 				}
 			}
 		}
