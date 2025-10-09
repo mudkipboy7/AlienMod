@@ -191,6 +191,7 @@ public class AMLanguage {
 			addItemDesc(AMBlocks.LAZER_CREATOR,
 					"Creates a lazer that can be used to transport energy between machines.");
 			addBlock(AMBlocks.ENERGY_BLOCK, "Energy Block");
+			addBlock(AMBlocks.THIN_ALIEN_LOG, "Thin Lignum Log");
 
 			/*
 			 * Item
@@ -241,6 +242,8 @@ public class AMLanguage {
 			addItem(AMItems.TEST_ENTITY_SPAWN_EGG, "Test Entity Spawn Egg");
 			addItem(AMItems.ALIEN_SEEDS, "Alien Seeds");
 			addItem(AMItems.ALIEN_ZOMBIE_SPAWN_EGG, "Alien Zombie Spawn Egg");
+			addItem(AMItems.ALIEN_ZOMBIE_SPAWN_EGG, "Alien Zombie Spawn Egg");
+			
 		}
 
 		private void addItemDesc(RegistryObject<? extends ItemLike> itemLike, String text) {

@@ -5,6 +5,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.mudkipboy7.alien.AMConfig.Client;
 import com.mudkipboy7.alien.AMConfig.Common;
 import com.mudkipboy7.alien.AMConfig.Server;
+import com.mudkipboy7.alien.client.render.AMPanoramaRenderer;
 import com.mudkipboy7.alien.data.AMDataGenerators;
 import com.mudkipboy7.alien.sky.AlienDimSky;
 import com.mudkipboy7.alien.world.worldgen.dimension.AlienChunkGenerator;
@@ -44,6 +45,7 @@ public final class AlienMod {
 
 	// The class for the alienDimSky
 	private static AlienDimSky alienDimSky;
+
 
 
 
@@ -102,6 +104,4 @@ public final class AlienMod {
 	public static AlienDimSky getAlienDimSky() {
 		return alienDimSky;
 	}
-	
-
 }

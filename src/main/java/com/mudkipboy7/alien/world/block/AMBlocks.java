@@ -9,6 +9,7 @@ import com.mudkipboy7.alien.world.block.flora.AlienLeavesBlock;
 import com.mudkipboy7.alien.world.block.flora.AlienSaplingBlock;
 import com.mudkipboy7.alien.world.block.flora.AlienTallGrassBlock;
 import com.mudkipboy7.alien.world.block.flora.DeadPlantBlock;
+import com.mudkipboy7.alien.world.block.flora.ThinAlienLog;
 import com.mudkipboy7.alien.world.block.fluid.AmmoniaLiquidBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienChestBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienCraftingTableBlock;
@@ -324,10 +325,15 @@ public final class AMBlocks {
 	// Lazer wire
 	public static final RegistryObject<Block> LAZER_CREATOR = BLOCKS.register("lazer_creator",
 			() -> new LazerCreatorBlock(BlockBehaviour.Properties.of()));
-	
+
 	// Infinitely Dispenses energy
 	public static final RegistryObject<EnergyBlock> ENERGY_BLOCK = BLOCKS.register("energy_block",
 			() -> new EnergyBlock(BlockBehaviour.Properties.of().strength(1F, 6.0F).sound(SoundType.AMETHYST)));
+
+	// Infinitely Dispenses energy
+	public static final RegistryObject<ThinAlienLog> THIN_ALIEN_LOG = BLOCKS.register("thin_lignum_log",
+			() -> new ThinAlienLog(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F)
+					.sound(SoundType.WOOD).ignitedByLava()));
 	/*
 	 * Methods
 	 */

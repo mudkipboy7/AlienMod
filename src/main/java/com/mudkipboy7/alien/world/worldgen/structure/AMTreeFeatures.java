@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 
 public class AMTreeFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> ALIEN_TREE = createKey("lignum_tree");
+	public static final ResourceKey<ConfiguredFeature<?,?>> ALIEN_BRANCHING_TREE = createKey("lignum_branching");
 
 	private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block log, Block leaves,
 			int baseHeight, int heightRandA, int heightRandB, int leavesRadius) {

@@ -9,6 +9,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
+import com.mudkipboy7.alien.client.render.AMPanoramaRenderer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -20,14 +21,11 @@ import net.minecraft.network.chat.Component;
 
 @Mixin(PanoramaRenderer.class)
 public abstract class PanoramaRendererMixin {
-	private final CubeMap cubeMap = new CubeMap(AlienMod.location("textures/environment/phases.png"));
 
 	@Inject(method = "render", at = @At("INVOKE"), cancellable = true)
 	protected void render(float pDeltaT, float pAlpha, CallbackInfo callbackInfo) {
 		if (AMConfig.Client.customTitleScreen.get()) {
-			this.cubeMap.render(Minecraft.getInstance(), 0.0F, 0, pAlpha);
-			// RenderSystem.setShaderTexture(0,
-			// AlienMod.location("textures/block/alien_portal.png"));
+			AMPanoramaRenderer.render(pDeltaT, pAlpha);
 			callbackInfo.cancel();
 		}
 	}

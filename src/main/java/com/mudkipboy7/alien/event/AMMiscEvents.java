@@ -19,15 +19,17 @@ import net.minecraftforge.fml.common.Mod;
 public class AMMiscEvents {
 	@SubscribeEvent
 	public static void registerCommands(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("reloadspecialplayers").requires((executor) -> {
-			return executor.hasPermission(2);
-		}).executes((command) -> {
-			SpecialPlayers.loadSpecialPlayersStuff();
-			command.getSource().sendSuccess(() -> {
-				return Component.literal("Reloaded AlienMod special players related stuff");
-			}, true);
-			return 0;
-		}));
+		if (AlienMod.DEVMODE == true) {
+			event.getDispatcher().register(Commands.literal("reloadspecialplayers").requires((executor) -> {
+				return executor.hasPermission(2);
+			}).executes((command) -> {
+				SpecialPlayers.loadSpecialPlayersStuff();
+				command.getSource().sendSuccess(() -> {
+					return Component.literal("Reloaded AlienMod special players related stuff");
+				}, true);
+				return 0;
+			}));
+		}
 
 		/*
 		 * event.getDispatcher().register(Commands.literal("setspecialplayer").requires(
