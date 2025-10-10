@@ -1,5 +1,6 @@
 package com.mudkipboy7.alien.sky;
 
+import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.sky.astroobject.AlienSunAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
@@ -51,6 +52,9 @@ public class AlienDimSky {
 	 */
 
 	public float getEclipsyness() {
+		if(!AMConfig.Common.doEclipses.get()) {
+			return 1.0F;
+		}
 		float sunJovian = getTwoObjectEclipsyness(alienSun, jovianPlanet);
 
 		// The minimum ammount the moon can decrease the brightness

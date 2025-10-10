@@ -1,0 +1,7 @@
+{
+  "parent": "alien:block/thin_block",
+  "textures": {
+    "side": "alien:block/log/lignum_log",
+    "top": "alien:block/log/thin_lignum_log_top"
+  }
+}

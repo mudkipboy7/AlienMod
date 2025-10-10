@@ -43,8 +43,13 @@ public class AMConfig {
 	}
 
 	public static class Common {
-
+		public static BooleanValue doEclipses;
 		public Common(Builder builder) {
+			builder.push("common");
+			doEclipses = builder
+					.comment("Determines whether or not anything is altered during an eclipse.")
+					.translation(configString + "doEclipses")
+					.define("doEclipses", true);
 
 		}
 	}

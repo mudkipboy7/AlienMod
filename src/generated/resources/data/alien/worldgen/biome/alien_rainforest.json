@@ -22,7 +22,7 @@
     [
       "alien:alien_grass",
       "alien:alien_double_grass",
-      "alien:lignum_tree"
+      "alien:thin_tall_lignum_tree"
     ]
   ],
   "has_precipitation": true,

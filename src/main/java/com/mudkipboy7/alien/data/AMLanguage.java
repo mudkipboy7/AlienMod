@@ -242,7 +242,6 @@ public class AMLanguage {
 			addItem(AMItems.TEST_ENTITY_SPAWN_EGG, "Test Entity Spawn Egg");
 			addItem(AMItems.ALIEN_SEEDS, "Alien Seeds");
 			addItem(AMItems.ALIEN_ZOMBIE_SPAWN_EGG, "Alien Zombie Spawn Egg");
-			addItem(AMItems.ALIEN_ZOMBIE_SPAWN_EGG, "Alien Zombie Spawn Egg");
 			
 		}
 

@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-07T21:27:15.1006849	Block States: alien
+// 1.20.2	2025-10-09T23:11:20.8918937	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -50,6 +50,7 @@ aaa8b20333a4d5f5734eabb78d0f012fdd2e6642 assets/alien/blockstates/raw_atsali_blo
 d1b6c53eb9f357e0d9182aeb6acef79b55143de3 assets/alien/blockstates/stripped_lignum_log.json
 2ac8453ff0fda8c3ce86ef9a71848a2ba49fa1aa assets/alien/blockstates/tall_gramen.json
 c8be591b38b77d9c7e47c691df31251829299d6f assets/alien/blockstates/test_block.json
+bd759c3e21b2e32879a0651aa1a9602eaebe563b assets/alien/blockstates/thin_lignum_log.json
 329f0561e2bb2c1c7bcd9655da16d674e0a7f80d assets/alien/models/block/air_purifier.json
 979260bd19e18991909749e27041718660da93f9 assets/alien/models/block/algussoil.json
 d9ad7f90a53b8c7e2e3d6eff18b3b01521ddfc7b assets/alien/models/block/alien_air.json
@@ -135,3 +136,4 @@ cf2b7aa7f4f8f078acc4eaff1eb2e10301aea885 assets/alien/models/block/raw_atsali_bl
 0fdc9a6cc6c950ee9f417113a49985bc26cfde88 assets/alien/models/block/tall_gramen_bottom.json
 1c485b2787dd7d24374ec4b196084a56a2e16e83 assets/alien/models/block/tall_gramen_top.json
 e59aa3aea2b9511af0d74a1ded5d3fb46ad16944 assets/alien/models/block/test_block.json
+7bc09b7dac04c73b3d8020c21d93da3a68720622 assets/alien/models/block/thin_lignum_log.json

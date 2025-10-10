@@ -44,6 +44,7 @@ import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
@@ -330,10 +331,18 @@ public final class AMBlocks {
 	public static final RegistryObject<EnergyBlock> ENERGY_BLOCK = BLOCKS.register("energy_block",
 			() -> new EnergyBlock(BlockBehaviour.Properties.of().strength(1F, 6.0F).sound(SoundType.AMETHYST)));
 
-	// Infinitely Dispenses energy
+	// Thin Log
 	public static final RegistryObject<ThinAlienLog> THIN_ALIEN_LOG = BLOCKS.register("thin_lignum_log",
 			() -> new ThinAlienLog(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F)
-					.sound(SoundType.WOOD).ignitedByLava()));
+					.sound(SoundType.WOOD).ignitedByLava().noOcclusion()));
+
+	public static final RegistryObject<SnowLayerBlock> AMMONIA_SNOW_LAYER = BLOCKS.register("ammonia_snow",
+			() -> new SnowLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).replaceable()
+					.forceSolidOff().randomTicks().strength(0.1F).requiresCorrectToolForDrops().sound(SoundType.SNOW)
+					.isViewBlocking((p_187417_, p_187418_, p_187419_) -> {
+						return p_187417_.getValue(SnowLayerBlock.LAYERS) >= 8;
+					}).pushReaction(PushReaction.DESTROY)));
+
 	/*
 	 * Methods
 	 */

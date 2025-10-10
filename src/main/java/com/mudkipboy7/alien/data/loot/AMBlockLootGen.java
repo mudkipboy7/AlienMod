@@ -114,6 +114,7 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 		this.dropSelf(AMBlocks.COPPER_WIRE.get());
 		this.dropSelf(AMBlocks.LAZER_CREATOR.get());
 		this.dropSelf(AMBlocks.ENERGY_BLOCK.get());
+		this.dropSelf(AMBlocks.THIN_ALIEN_LOG.get());
 	}
 
 	@Override

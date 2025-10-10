@@ -14,5 +14,12 @@ public class AMTreeGrowers {
 			return AMTreeFeatures.ALIEN_TREE;
 		}
 	};
+	
+	public static AbstractTreeGrower thinTallAlienTreeGrower = new AbstractTreeGrower() {
+		@Override
+		protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean hive) {
+			return AMTreeFeatures.THIN_TALL_ALIEN_TREE;
+		}
+	};
 
 }

@@ -32,6 +32,7 @@ public class AMVegetationPlacers {
 
 	// Trees
 	public static final ResourceKey<PlacedFeature> ALIEN_TREE = createKey("lignum_tree");
+	public static final ResourceKey<PlacedFeature> THIN_TALL_ALIEN_TREE = createKey("thin_tall_lignum_tree");
 
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
 		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -43,13 +44,20 @@ public class AMVegetationPlacers {
 
 		context.register(ALIEN_DOUBLE_GRASS,
 				new PlacedFeature(configuredFeatures.getOrThrow(AMGrassFeatures.ALIEN_DOUBLE_GRASS),
-						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7),RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(),
-								PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7), RarityFilter.onAverageOnceEvery(5),
+								InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
 		PlacementModifier placementmodifier = SurfaceWaterDepthFilter.forMaxDepth(0);
 		context.register(ALIEN_TREE,
 				new PlacedFeature(configuredFeatures.getOrThrow(AMTreeFeatures.ALIEN_TREE),
 						List.of(PlacementUtils.countExtra(0, 0.05F, 1), InSquarePlacement.spread(), placementmodifier,
+								PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+								BlockPredicateFilter.forPredicate(BlockPredicate
+										.wouldSurvive(AMBlocks.ALIEN_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),
+								BiomeFilter.biome())));
+		context.register(THIN_TALL_ALIEN_TREE,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMTreeFeatures.THIN_TALL_ALIEN_TREE),
+						List.of(PlacementUtils.countExtra(15, 0.2F, 1), InSquarePlacement.spread(), placementmodifier,
 								PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
 								BlockPredicateFilter.forPredicate(BlockPredicate
 										.wouldSurvive(AMBlocks.ALIEN_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),

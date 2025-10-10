@@ -366,7 +366,7 @@
           "if_true": {
             "type": "minecraft:biome",
             "biome_is": [
-              "alien:alien_plains"
+              "alien:alien_rainforest"
             ]
           },
           "then_run": {

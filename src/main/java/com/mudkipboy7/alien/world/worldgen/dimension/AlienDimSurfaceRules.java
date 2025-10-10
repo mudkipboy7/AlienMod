@@ -29,7 +29,7 @@ public class AlienDimSurfaceRules {
 
 		SurfaceRules.RuleSource surfaceDirt = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
 				// Checks if the biome is alien_plains, if so, it makes the dirt and grass.
-				SurfaceRules.ifTrue(SurfaceRules.isBiome(AMBiomes.ALIEN_PLAINS), SurfaceRules.sequence(
+				SurfaceRules.ifTrue(SurfaceRules.isBiome(AMBiomes.ALIEN_RAINFOREST), SurfaceRules.sequence(
 
 						// Makes the Grass
 						SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),

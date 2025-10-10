@@ -91,7 +91,8 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(SUPPORTS_ALIEN_LEAVES).addTag(LIGNUM_LOGS);
 
 		tag(LIGNUM_LOGS).add(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get(),
-				AMBlocks.STRIPPED_ALIEN_LOG.get(), AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get());
+				AMBlocks.STRIPPED_ALIEN_LOG.get(), AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get(),
+				AMBlocks.THIN_ALIEN_LOG.get());
 
 		tag(LIGNUM_PLANKS).add(AMBlocks.ALIEN_PLANKS.get());
 
@@ -154,7 +155,7 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(Tags.Blocks.ORES).add(AMBlocks.ALIEN_METAL_ORE.get());
 
 		tag(Tags.Blocks.STORAGE_BLOCKS).add(AMBlocks.ALIEN_METAL_BLOCK.get(), AMBlocks.RAW_ALIEN_METAL_BLOCK.get());
-		
+
 		tag(BlockTags.MINEABLE_WITH_AXE).remove(LIGNUM_LOGS, LIGNUM_PLANKS, LIGNUM_SLABS, LIGNUM_STAIRS);
 	}
 

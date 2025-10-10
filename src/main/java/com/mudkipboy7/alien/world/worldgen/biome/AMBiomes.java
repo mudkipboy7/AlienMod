@@ -14,13 +14,12 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber()
 public class AMBiomes extends AMBiomeMaker {
-	public static final ResourceKey<Biome> ALIEN_PLAINS = makeKey("alien_plains");
 	public static final ResourceKey<Biome> ALIEN_RAINFOREST = makeKey("alien_rainforest");
 
 	public static void bootstrapBiomes(BootstapContext<Biome> context) {
 		HolderGetter<PlacedFeature> feature = context.lookup(Registries.PLACED_FEATURE);
 		HolderGetter<ConfiguredWorldCarver<?>> carver = context.lookup(Registries.CONFIGURED_CARVER);
-		context.register(ALIEN_PLAINS, makeBiome(true, 1.0F, 1.0F, alienPlainsGenSettings(feature, carver),
+		context.register(ALIEN_RAINFOREST, makeBiome(true, 1.0F, 1.0F, alienPlainsGenSettings(feature, carver),
 				defaultSpawnSettings(), basicEffects()));
 	}
 

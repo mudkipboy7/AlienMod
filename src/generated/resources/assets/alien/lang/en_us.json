@@ -54,6 +54,7 @@
   "block.alien.tall_gramen": "Tall Gramen",
   "block.alien.test_block": "Test Block",
   "block.alien.test_block.desc": "Used to test stuff during development.",
+  "block.alien.thin_lignum_log": "Thin Lignum Log",
   "config.alien.client.customTitleScreen": "Determines if the custom title screen is rendered.",
   "config.alien.client.renderfurcoatfirstperson": "Determines if the Fur Coat worn item is displayed over the arm in first person.",
   "container.alien.air_purifier": "Air Purifier",

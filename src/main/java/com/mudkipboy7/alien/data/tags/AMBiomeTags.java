@@ -32,9 +32,9 @@ public class AMBiomeTags extends BiomeTagsProvider {
 		/*
 		 * AlienMod
 		 */
-		tag(AMBiomeTags.LOW_GRAVITY).add(AMBiomes.ALIEN_PLAINS);
+		tag(AMBiomeTags.LOW_GRAVITY).add(AMBiomes.ALIEN_RAINFOREST);
 
-		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.ALIEN_PLAINS);
+		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.ALIEN_RAINFOREST);
 		
 		/*
 		 * Vanilla/Forge/Other

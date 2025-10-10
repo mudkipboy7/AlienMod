@@ -39,7 +39,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 			alienLogSide = AlienMod.location(logBlockFolder + "lignum_log"),
 			alienLogTop = AlienMod.location(logBlockFolder + "lignum_log_top"),
 			strippedAlienLogSide = AlienMod.location(logBlockFolder + "stripped_lignum_log"),
-			strippedAlienLogTop = AlienMod.location(logBlockFolder + "stripped_lignum_log_top");
+			strippedAlienLogTop = AlienMod.location(logBlockFolder + "stripped_lignum_log_top"),
+			thinAlienLogTop = AlienMod.location(logBlockFolder + "thin_lignum_log_top");
 
 	public AMBlockModelGen(PackOutput packOutput, ExistingFileHelper exFileHelper) {
 		super(packOutput, AlienMod.MODID, exFileHelper);
@@ -52,9 +53,9 @@ public class AMBlockModelGen extends BlockStateProvider {
 		simpleBlock(AMBlocks.AMMONIA_LIQUID_BLOCK.get(),
 				models().getBuilder(AMBlocks.AMMONIA_LIQUID_BLOCK.getId().getPath()).texture("particle",
 						"alien:block/fluid/ammonia_liquid"));
-		
+
 		simpleBlock(AMBlocks.ALIEN_AIR.get());
-		
+
 		simpleBlock(AMBlocks.ALIEN_STONE.get());
 
 		simpleBlock(AMBlocks.ALIEN_DIRT.get(),
@@ -176,10 +177,13 @@ public class AMBlockModelGen extends BlockStateProvider {
 						AlienMod.location(machineFolder + AMBlocks.LAZER_CREATOR.getId().getPath()),
 						AlienMod.location(machineFolder + AMBlocks.LAZER_CREATOR.getId().getPath() + "_bottom"),
 						AlienMod.location(machineFolder + AMBlocks.LAZER_CREATOR.getId().getPath() + "_top")));
-		
+
 		simpleBlock(AMBlocks.ENERGY_BLOCK.get(), models().cubeAll(AMBlocks.ENERGY_BLOCK.getId().getPath(),
 				AlienMod.location(machineFolder + AMBlocks.ENERGY_BLOCK.getId().getPath())));
 
+		simpleBlock(AMBlocks.THIN_ALIEN_LOG.get(),
+				models().withExistingParent(AMBlocks.THIN_ALIEN_LOG.getId().getPath(),
+						AlienMod.location(blockFolder + "thin_block")).texture("side", alienLogSide).texture("top", thinAlienLogTop));
 
 	}
 

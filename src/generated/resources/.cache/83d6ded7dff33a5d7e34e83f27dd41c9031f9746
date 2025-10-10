@@ -1,8 +1,8 @@
-// 1.20.2	2024-05-10T15:10:35.9109318	Tags for minecraft:block mod id alien
+// 1.20.2	2025-10-09T23:15:53.5061579	Tags for minecraft:block mod id alien
 5a7ff9d8a958ca891a87b9fe3470386a26bd3a5d data/alien/tags/blocks/alien_plant.json
 39eaec9509e48211aac28e15cde1360defadba3b data/alien/tags/blocks/alien_soil.json
 98a4ba37009d94811c7d545a36557a2185623315 data/alien/tags/blocks/lazer_can_pass.json
-f71ad758edc2014ed12d3e89df5aa74b84db6e3a data/alien/tags/blocks/lignum_logs.json
+130dd75aaacf0aa3bc6d7dc54493bd54994d61d0 data/alien/tags/blocks/lignum_logs.json
 35bcb38a02b561589922f5fe0398ccc2d29f7290 data/alien/tags/blocks/lignum_planks.json
 9dac3ae087cebe895b5159312d7a7ccce73a21b6 data/alien/tags/blocks/lignum_slabs.json
 6fd7f47ad841b85a5ed4b42c6f2edc039042a0d8 data/alien/tags/blocks/lignum_stairs.json

@@ -167,6 +167,8 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> ENERGY_BLOCK = simpleBlockItem(AMBlocks.ENERGY_BLOCK);
 	
 	public static final RegistryObject<BlockItem> THIN_ALIEN_LOG = simpleBlockItem(AMBlocks.THIN_ALIEN_LOG);
+	
+	public static final RegistryObject<BlockItem> AMMONIA_SNOW_LAYER = simpleBlockItem(AMBlocks.AMMONIA_SNOW_LAYER);
 
 
 	/*

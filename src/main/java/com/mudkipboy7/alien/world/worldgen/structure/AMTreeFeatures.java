@@ -20,23 +20,27 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 
 public class AMTreeFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> ALIEN_TREE = createKey("lignum_tree");
-	public static final ResourceKey<ConfiguredFeature<?,?>> ALIEN_BRANCHING_TREE = createKey("lignum_branching");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> THIN_TALL_ALIEN_TREE = createKey("thin_tall_lignum_tree");
 
 	private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block log, Block leaves,
-			int baseHeight, int heightRandA, int heightRandB, int leavesRadius) {
+			int baseHeight, int heightRandA, int heightRandB, int leavesHeight, int leavesOffsett, int leavesRadius) {
 		return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log),
 				new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(leaves),
-				new BlobFoliagePlacer(ConstantInt.of(leavesRadius), ConstantInt.of(0), 3),
+				new BlobFoliagePlacer(ConstantInt.of(leavesRadius), ConstantInt.of(leavesOffsett), leavesHeight),
 				new TwoLayersFeatureSize(1, 0, 1));
 	}
 
 	private static TreeConfiguration.TreeConfigurationBuilder createBasicTree() {
-		return createStraightBlobTree(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LEAVES.get(), 4, 2, 0, 2).ignoreVines()
-				.dirt(BlockStateProvider.simple(AMBlocks.ALIEN_DIRT.get()));
+		return createStraightBlobTree(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LEAVES.get(), 4, 2, 0, 3, 0, 2)
+				.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALIEN_DIRT.get()));
 	}
 
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		FeatureUtils.register(context, ALIEN_TREE, Feature.TREE, createBasicTree().build());
+
+		FeatureUtils.register(context, THIN_TALL_ALIEN_TREE, Feature.TREE,
+				createStraightBlobTree(AMBlocks.THIN_ALIEN_LOG.get(), AMBlocks.ALIEN_LEAVES.get(), 5, 2, 10, 2, 1, 2)
+						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALIEN_GRASS_BLOCK.get())).build());
 	}
 
 	private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

@@ -20,7 +20,7 @@ class AMBiomeMaker {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.ALIEN_GRASS);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.ALIEN_DOUBLE_GRASS);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.ALIEN_TREE);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.THIN_TALL_ALIEN_TREE);
 		return genSettings;
 
 	}
@@ -28,7 +28,8 @@ class AMBiomeMaker {
 	public static MobSpawnSettings.Builder defaultSpawnSettings() {
 		MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
 		builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 5, 1, 1));
-		builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(AMEntities.ALIEN_ZOMBIE.get(), 70, 1, 4));
+		builder.addSpawn(MobCategory.MONSTER,
+				new MobSpawnSettings.SpawnerData(AMEntities.ALIEN_ZOMBIE.get(), 70, 1, 4));
 		return builder;
 	}
 

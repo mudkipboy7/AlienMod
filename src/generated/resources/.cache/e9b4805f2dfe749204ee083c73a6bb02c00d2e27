@@ -1,10 +1,10 @@
-// 1.20.2	2024-05-10T14:05:11.9830724	Tags for minecraft:item mod id alien
+// 1.20.2	2025-10-09T23:15:53.5151425	Tags for minecraft:item mod id alien
 5a7ff9d8a958ca891a87b9fe3470386a26bd3a5d data/alien/tags/items/alien_plant.json
 39eaec9509e48211aac28e15cde1360defadba3b data/alien/tags/items/alien_soil.json
 ed008167142c96d9c7e1fe616b0c8fa0b7736788 data/alien/tags/items/alien_weapon.json
 7adf4d3ac9b147a979f1ddbcc8b8bc925fe702e1 data/alien/tags/items/batteries.json
 c62b9be8a52938b166add3c15cf8fe7b6021f08a data/alien/tags/items/can_be_made_into_oxygen.json
-f71ad758edc2014ed12d3e89df5aa74b84db6e3a data/alien/tags/items/lignum_logs.json
+130dd75aaacf0aa3bc6d7dc54493bd54994d61d0 data/alien/tags/items/lignum_logs.json
 35bcb38a02b561589922f5fe0398ccc2d29f7290 data/alien/tags/items/lignum_planks.json
 9dac3ae087cebe895b5159312d7a7ccce73a21b6 data/alien/tags/items/lignum_slabs.json
 6fd7f47ad841b85a5ed4b42c6f2edc039042a0d8 data/alien/tags/items/lignum_stairs.json

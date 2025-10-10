@@ -96,8 +96,10 @@ public class AMItemModelGen extends ItemModelProvider {
 		genItem(AMItems.COPPER_WIRE);
 		blockItem(AMItems.LAZER_CREATOR);
 		blockItem(AMItems.ENERGY_BLOCK);
-		blockItem(AMItems.THIN_ALIEN_LOG);
-		
+
+		withExistingParent(AMItems.THIN_ALIEN_LOG.getId().getPath(),
+				AlienMod.location(blockFolder + "thin_block_inventory")).texture("side", AMBlockModelGen.alienLogSide)
+				.texture("top", AMBlockModelGen.thinAlienLogTop);
 
 		/*
 		 * Items
