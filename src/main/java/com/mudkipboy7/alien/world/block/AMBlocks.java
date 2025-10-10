@@ -336,12 +336,12 @@ public final class AMBlocks {
 			() -> new ThinAlienLog(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F)
 					.sound(SoundType.WOOD).ignitedByLava().noOcclusion()));
 
-	public static final RegistryObject<SnowLayerBlock> AMMONIA_SNOW_LAYER = BLOCKS.register("ammonia_snow",
+	/*public static final RegistryObject<SnowLayerBlock> AMMONIA_SNOW_LAYER = BLOCKS.register("ammonia_snow",
 			() -> new SnowLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).replaceable()
 					.forceSolidOff().randomTicks().strength(0.1F).requiresCorrectToolForDrops().sound(SoundType.SNOW)
 					.isViewBlocking((p_187417_, p_187418_, p_187419_) -> {
 						return p_187417_.getValue(SnowLayerBlock.LAYERS) >= 8;
-					}).pushReaction(PushReaction.DESTROY)));
+					}).pushReaction(PushReaction.DESTROY)));*/
 
 	/*
 	 * Methods
