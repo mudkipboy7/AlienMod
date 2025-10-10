@@ -1,6 +1,6 @@
 {
   "carvers": {},
-  "downfall": 1.0,
+  "downfall": 0.1,
   "effects": {
     "fog_color": 9318400,
     "foliage_color": 16777215,
@@ -9,23 +9,7 @@
     "water_color": 16777215,
     "water_fog_color": 16777215
   },
-  "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "alien:tall_gramen",
-      "alien:double_tall_gramen",
-      "alien:thin_tall_lignum_tree",
-      "alien:tall_lignum_tree"
-    ]
-  ],
+  "features": [],
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
@@ -51,5 +35,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 1.0
+  "temperature": 3.0
 }

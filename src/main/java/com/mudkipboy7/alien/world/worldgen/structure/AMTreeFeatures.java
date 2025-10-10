@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class AMTreeFeatures {
-	public static final ResourceKey<ConfiguredFeature<?, ?>> ALIEN_TREE = createKey("lignum_tree");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> THIN_ALIEN_TREE = createKey("tall_lignum_tree");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> THIN_TALL_ALIEN_TREE = createKey("thin_tall_lignum_tree");
 
 	private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block log, Block leaves,
@@ -36,7 +36,9 @@ public class AMTreeFeatures {
 	}
 
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-		FeatureUtils.register(context, ALIEN_TREE, Feature.TREE, createBasicTree().build());
+		FeatureUtils.register(context, THIN_ALIEN_TREE, Feature.TREE,
+				createStraightBlobTree(AMBlocks.LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 8, 6, 10, 3, 1, 2)
+						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALGUSSOIL.get())).build());
 
 		FeatureUtils.register(context, THIN_TALL_ALIEN_TREE, Feature.TREE,
 				createStraightBlobTree(AMBlocks.THIN_LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 5, 2, 10, 2, 1, 2)

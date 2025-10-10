@@ -11,7 +11,7 @@ public class AMTreeGrowers {
 	public static AbstractTreeGrower basicAlienTreeGrower = new AbstractTreeGrower() {
 		@Override
 		protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean hive) {
-			return AMTreeFeatures.ALIEN_TREE;
+			return AMTreeFeatures.THIN_ALIEN_TREE;
 		}
 	};
 	

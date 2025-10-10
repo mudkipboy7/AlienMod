@@ -119,6 +119,7 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 		this.add(AMBlocks.GELUSTONE_IRON_ORE.get(), (block) -> {
 			return this.createOreDrop(block, Items.RAW_GOLD);
 		});
+		this.dropSelf(AMBlocks.REGOLITH.get());
 	}
 
 	@Override

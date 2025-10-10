@@ -117,7 +117,7 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> LIGNUM_PRESSURE_PLATE = simpleBlockItem(
 			AMBlocks.LIGNUM_PRESSURE_PLATE);
 
-	public static final RegistryObject<BlockItem> LIGNUM_ALL_SIDES_SAME = simpleBlockItem(
+	public static final RegistryObject<BlockItem> LIGNUM_LOG_ALL_SIDES_SAME = simpleBlockItem(
 			AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME);
 
 	public static final RegistryObject<SignItem> LIGNUM_SIGN = ITEMS.register(
@@ -167,6 +167,8 @@ public class AMItems {
 	
 	//public static final RegistryObject<BlockItem> AMMONIA_SNOW_LAYER = simpleBlockItem(AMBlocks.AMMONIA_SNOW_LAYER);
 	public static final RegistryObject<BlockItem> GELUSTONE_IRON_ORE = simpleBlockItem(AMBlocks.GELUSTONE_IRON_ORE);
+
+	public static final RegistryObject<BlockItem> REGOLITH = simpleBlockItem(AMBlocks.REGOLITH);
 
 
 	/*

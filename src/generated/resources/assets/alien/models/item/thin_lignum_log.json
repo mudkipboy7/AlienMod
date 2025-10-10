@@ -2,6 +2,6 @@
   "parent": "alien:block/thin_block_inventory",
   "textures": {
     "side": "alien:block/log/lignum_log",
-    "top": "alien:block/log/thin_lignum_log_top"
+    "top": "alien:block/log/lignum_log_top"
   }
 }

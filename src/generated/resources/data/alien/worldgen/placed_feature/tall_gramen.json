@@ -1,5 +1,5 @@
 {
-  "feature": "alien:alien_double_grass",
+  "feature": "alien:tall_gramen",
   "placement": [
     {
       "type": "minecraft:noise_threshold_count",
@@ -8,15 +8,11 @@
       "noise_level": -0.8
     },
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 5
-    },
-    {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "MOTION_BLOCKING"
+      "heightmap": "WORLD_SURFACE_WG"
     },
     {
       "type": "minecraft:biome"

@@ -1,8 +1,5 @@
 {
   "values": [
-    "alien:apsius_ore",
-    "alien:gelustone_coal_ore",
-    "alien:gelustone_gold_ore",
-    "alien:gelustone_iron_ore"
+    "alien:apsius_ore"
   ]
 }

@@ -77,7 +77,7 @@ public class AMDimensions {
 		// context.lookup(Registries.CHUNK_GENERATOR);
 		HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 		
-		FixedBiomeSource fixedBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.ALIEN_RAINFOREST));
+		FixedBiomeSource fixedBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.TOWERING_FOREST));
 		
 		//MultiNoiseBiomeSource biomeSource = MultiNoiseBiomeSource.createFromList(null);
 		AlienChunkGenerator wrappedChunkGenerator = new AlienChunkGenerator(fixedBiomeSource,

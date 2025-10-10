@@ -21,6 +21,7 @@ class AMBiomeMaker {
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.TALL_GRAMEN);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.DOUBLE_TALL_GRAMEN);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.THIN_TALL_ALIEN_TREE);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.TALL_ALIEN_TREE);
 		return genSettings;
 	}
 	public static BiomeGenerationSettings.Builder barrenCraterscape(HolderGetter<PlacedFeature> feature,

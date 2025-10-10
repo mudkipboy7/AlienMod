@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alien:lignum_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "alien:lignum_planks"
+  }
+}

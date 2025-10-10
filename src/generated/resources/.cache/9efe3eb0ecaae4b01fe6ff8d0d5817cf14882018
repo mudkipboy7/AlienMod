@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-10T15:18:57.4224775	Item Models: alien
+// 1.20.2	2025-10-10T16:37:12.0384275	Item Models: alien
 ea411e845d0ddb8b29a9e850a24a30b9c26c2ca7 assets/alien/models/item/air_purifier.json
 762cb26d8d4a387261889bea16b7a5a785ecba5f assets/alien/models/item/algussoil.json
 5d7af0e918e1a5edae73711792347441b0197982 assets/alien/models/item/alien_air.json
@@ -74,10 +74,11 @@ aae6c9aeefb5eb22d64dbe91772fb69fd296f7f3 assets/alien/models/item/lignum_pressur
 be8f63fd2afee8b5e7e64170acd5c6bf4df7aaab assets/alien/models/item/lignum_sword.json
 3baf15a8632ba2c810899df19c734089ee498022 assets/alien/models/item/lignum_trapdoor.json
 47473606da928e81eac24b214e2cd0e9fbf4e2d6 assets/alien/models/item/oxygen_sack.json
+6ada8e1a330d7f5ecbbb713577371b0dac97ca8a assets/alien/models/item/regolith.json
 2cce8a9bf614a247a08262b2eaff181da1934da0 assets/alien/models/item/survival_boots.json
 b7bc3c3d25f3a5279e7734a3057e0f1e41bf9082 assets/alien/models/item/survival_gear.json
 61afd24f90843b8b4a37c4ca5bd58c0786b078a6 assets/alien/models/item/tall_gramen.json
 5d6e983c9ac16c29d41bcacf90a166a48112187c assets/alien/models/item/test_block.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/alien/models/item/test_entity_spawn_egg.json
 fa06357b0fb2c3e9bde48bdf640258ad38ade9ef assets/alien/models/item/test_item.json
-87f7fb721a9e6ca02430390ddea5a1a2762412b3 assets/alien/models/item/thin_lignum_log.json
+64a27631bd81e975b79c39224ea9d4f18bc963c1 assets/alien/models/item/thin_lignum_log.json

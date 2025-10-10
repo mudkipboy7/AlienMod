@@ -1,6 +1,6 @@
-// 1.20.2	2025-10-10T15:42:15.8143656	Tags for minecraft:item mod id alien
+// 1.20.2	2025-10-10T16:34:34.2275465	Tags for minecraft:item mod id alien
 3e7a34bb3a00a3818fbc00da386c5d7101059eb2 data/alien/tags/items/alien_plant.json
-39eaec9509e48211aac28e15cde1360defadba3b data/alien/tags/items/alien_soil.json
+8ece85f797e67afa6131a969e5c581dd42c93189 data/alien/tags/items/alien_soil.json
 3c43e126eb296ba25a95b3b6a0441133355286fd data/alien/tags/items/alien_weapon.json
 7adf4d3ac9b147a979f1ddbcc8b8bc925fe702e1 data/alien/tags/items/batteries.json
 c62b9be8a52938b166add3c15cf8fe7b6021f08a data/alien/tags/items/can_be_made_into_oxygen.json
@@ -18,7 +18,7 @@ c877f31ded47410371585b3485b9b7b9853bb13b data/forge/tags/items/armors/boots.json
 7de81c72211efaed7a9702f9fe9d88f49699286b data/forge/tags/items/armors/helmets.json
 59a9a1598f5f5481ebf83a9ed9819376bd60166f data/forge/tags/items/armors/leggings.json
 2b9c5b6d7ac29f85a3ea7aac94f34d0dd85bd3fb data/forge/tags/items/chests/wooden.json
-771184962dc790cdcb86c520f3dc7120ee58bf67 data/forge/tags/items/ores.json
+4e1b9c0cc504abf0936f648a0b7bad75a59e2c31 data/forge/tags/items/ores.json
 0d687de573b4108414691dd5c8e6c4eef80abf23 data/forge/tags/items/storage_blocks.json
 ec54a670949d8ac4de4f5ee0ca79988313e72fde data/minecraft/tags/items/coal_ores.json
 420cbd2cee1ce3034d031de39e64b0a860eb866b data/minecraft/tags/items/fence_gates.json

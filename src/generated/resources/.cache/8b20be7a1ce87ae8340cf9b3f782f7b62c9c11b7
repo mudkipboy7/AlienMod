@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-10T15:18:57.4184872	Block States: alien
+// 1.20.2	2025-10-10T16:34:34.221563	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -46,6 +46,7 @@ e13d71f67496135c2dbbf3cc0318a4914db9bcdf assets/alien/blockstates/lignum_stairs.
 a38a9e2ac8eb62326d98fd2bd84238a0ebcc7cb9 assets/alien/blockstates/lignum_trapdoor.json
 4d34789e004e2d2dda4d4763d8a6f285487f09a6 assets/alien/blockstates/lignum_wall_hanging_sign.json
 22f63e212353bdae56672ccfd17f073701f77d26 assets/alien/blockstates/lignum_wall_sign.json
+06bf493a5a36e164a70625aa98521e4f4ec8083a assets/alien/blockstates/regolith.json
 c55c240cc401e8f68efd96bd19bc60f3a911b2f7 assets/alien/blockstates/tall_gramen.json
 c8be591b38b77d9c7e47c691df31251829299d6f assets/alien/blockstates/test_block.json
 bd759c3e21b2e32879a0651aa1a9602eaebe563b assets/alien/blockstates/thin_lignum_log.json
@@ -128,6 +129,7 @@ ec0739ef841fecc8c2afcfec00fee742d85777b4 assets/alien/models/block/lignum_slab_t
 a9147173df50501535e1a3ad9da25c1a8d1db654 assets/alien/models/block/lignum_trapdoor_bottom.json
 1da5384c60c913ac72a37b1f2a006f6d53331e4d assets/alien/models/block/lignum_trapdoor_open.json
 6ad1b99e33d60a1c930e9e1d0a2fb8ad84d8c39d assets/alien/models/block/lignum_trapdoor_top.json
+968b7cd06484bfab71f3a80e9a190b309c2e94a2 assets/alien/models/block/regolith.json
 15226f7957550dad73aa22ce7e0bbb9cc076738b assets/alien/models/block/tall_gramen.json
 e59aa3aea2b9511af0d74a1ded5d3fb46ad16944 assets/alien/models/block/test_block.json
 7bc09b7dac04c73b3d8020c21d93da3a68720622 assets/alien/models/block/thin_lignum_log.json

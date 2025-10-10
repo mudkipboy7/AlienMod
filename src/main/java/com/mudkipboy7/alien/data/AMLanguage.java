@@ -192,6 +192,7 @@ public class AMLanguage {
 			addBlock(AMBlocks.ENERGY_BLOCK, "Energy Block");
 			addBlock(AMBlocks.THIN_LIGNUM_LOG, "Thin Lignum Log");
 			addBlock(AMBlocks.GELUSTONE_IRON_ORE, "Gelustone Iron Ore");
+			addBlock(AMBlocks.REGOLITH, "Regolith");
 
 			/*
 			 * Item

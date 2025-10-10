@@ -18,7 +18,7 @@ public class AlienDimSurfaceRules {
 	private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(AMBlocks.GELUSTONE_BEDROCK.get());
 	private static final SurfaceRules.RuleSource DIRT = makeStateRule(AMBlocks.ALGUSSOIL.get());
 	private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(AMBlocks.GRAMEN_BLOCK.get());
-	private static final SurfaceRules.RuleSource REGOLITH = makeStateRule(Blocks.GRAVEL);
+	private static final SurfaceRules.RuleSource REGOLITH = makeStateRule(AMBlocks.REGOLITH.get());
 
 	private static SurfaceRules.RuleSource makeStateRule(Block block) {
 		return SurfaceRules.state(block.defaultBlockState());
@@ -30,7 +30,7 @@ public class AlienDimSurfaceRules {
 				BEDROCK);
 
 		SurfaceRules.RuleSource surfaceDirt = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
-				SurfaceRules.ifTrue(SurfaceRules.isBiome(AMBiomes.ALIEN_RAINFOREST), SurfaceRules.sequence(
+				SurfaceRules.ifTrue(SurfaceRules.isBiome(AMBiomes.TOWERING_FOREST), SurfaceRules.sequence(
 
 						// Makes the Grass
 						SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),

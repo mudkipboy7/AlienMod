@@ -31,7 +31,7 @@ public class AMVegetationPlacers {
 	public static final ResourceKey<PlacedFeature> DOUBLE_TALL_GRAMEN = createKey("double_tall_gramen");
 
 	// Trees
-	public static final ResourceKey<PlacedFeature> ALIEN_TREE = createKey("lignum_tree");
+	public static final ResourceKey<PlacedFeature> TALL_ALIEN_TREE = createKey("tall_lignum_tree");
 	public static final ResourceKey<PlacedFeature> THIN_TALL_ALIEN_TREE = createKey("thin_tall_lignum_tree");
 
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -48,9 +48,9 @@ public class AMVegetationPlacers {
 								InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
 		PlacementModifier placementmodifier = SurfaceWaterDepthFilter.forMaxDepth(0);
-		context.register(ALIEN_TREE,
-				new PlacedFeature(configuredFeatures.getOrThrow(AMTreeFeatures.ALIEN_TREE),
-						List.of(PlacementUtils.countExtra(0, 0.05F, 1), InSquarePlacement.spread(), placementmodifier,
+		context.register(TALL_ALIEN_TREE,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMTreeFeatures.THIN_ALIEN_TREE),
+						List.of(PlacementUtils.countExtra(1, 0.1F, 1), InSquarePlacement.spread(), placementmodifier,
 								PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
 								BlockPredicateFilter.forPredicate(BlockPredicate
 										.wouldSurvive(AMBlocks.LIGNUM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),

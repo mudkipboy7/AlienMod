@@ -1,6 +1,6 @@
-// 1.20.2	2025-10-10T15:42:15.8113756	Tags for minecraft:block mod id alien
+// 1.20.2	2025-10-10T16:34:34.2175732	Tags for minecraft:block mod id alien
 3e7a34bb3a00a3818fbc00da386c5d7101059eb2 data/alien/tags/blocks/alien_plant.json
-39eaec9509e48211aac28e15cde1360defadba3b data/alien/tags/blocks/alien_soil.json
+8ece85f797e67afa6131a969e5c581dd42c93189 data/alien/tags/blocks/alien_soil.json
 98a4ba37009d94811c7d545a36557a2185623315 data/alien/tags/blocks/lazer_can_pass.json
 6669e6d90f3996e4ce30cca12afe6edde6693532 data/alien/tags/blocks/lignum_logs.json
 35bcb38a02b561589922f5fe0398ccc2d29f7290 data/alien/tags/blocks/lignum_planks.json
@@ -9,11 +9,11 @@
 10cc3e5d88f0dab68c16a31ccf50ca0e37028ac9 data/alien/tags/blocks/mineable/alien_axe.json
 b487dea33b37e5c57f81f3dbd801cc35d61e4fc2 data/alien/tags/blocks/mineable/alien_hoe.json
 1185dda195143d1d857d814aece8b1a5b745267e data/alien/tags/blocks/mineable/alien_pickaxe.json
-39eaec9509e48211aac28e15cde1360defadba3b data/alien/tags/blocks/mineable/alien_shovel.json
+8ece85f797e67afa6131a969e5c581dd42c93189 data/alien/tags/blocks/mineable/alien_shovel.json
 e7a8c631b3ba3bd9a98d2bb83f927b25fe348d37 data/alien/tags/blocks/mineable/alien_sword.json
 c3d8512f123646fc33402489c0c2a171e30f710e data/alien/tags/blocks/supports_alien_leaves.json
 2b9c5b6d7ac29f85a3ea7aac94f34d0dd85bd3fb data/forge/tags/blocks/chests/wooden.json
-771184962dc790cdcb86c520f3dc7120ee58bf67 data/forge/tags/blocks/ores.json
+4e1b9c0cc504abf0936f648a0b7bad75a59e2c31 data/forge/tags/blocks/ores.json
 0d687de573b4108414691dd5c8e6c4eef80abf23 data/forge/tags/blocks/storage_blocks.json
 1d037d02bdc548c596efa8169d006941856f2f7f data/minecraft/tags/blocks/ceiling_hanging_signs.json
 ec54a670949d8ac4de4f5ee0ca79988313e72fde data/minecraft/tags/blocks/coal_ores.json

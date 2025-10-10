@@ -1,6 +1,7 @@
 package com.mudkipboy7.alien.data.recipe;
 
 import com.mudkipboy7.alien.AlienMod;
+import com.mudkipboy7.alien.world.item.AMItems;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -111,12 +112,14 @@ abstract class AMRecipeProvider extends RecipeProvider {
         	.save(output);
 	}
 	// Planks from log
-	protected static void planksFromLog(TagKey<Item> ingredient, Item result, String name,
-			RecipeOutput output) {
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, 4)
-			.requires(ingredient)
-			.unlockedBy(name, has(ingredient))
-			.save(output);
+	protected static void planksFromLog(Item result,
+			RecipeOutput output, int count, Item... items) {
+		for (int i = 0; i < items.length ; i++) {
+			ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, count)
+			.requires(items[i])
+			.unlockedBy(getHasName(items[i]), has(items[i]))
+			.save(output, AlienMod.MODID + ":" + getItemName(result) + "_from_" + getItemName(items[i]));
+		}
 	}
 	
 	// Makes door recipes

@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "alien:lignum_logs"
+      "item": "alien:lignum_all_sides_log"
     }
   ],
   "result": {

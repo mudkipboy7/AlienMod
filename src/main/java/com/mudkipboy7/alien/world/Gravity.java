@@ -25,6 +25,18 @@ public class Gravity {
 	
 	// Used to modify fall damage
 	public static final float ALIENDIM_FALL_DAMAGE_MOD = 0.7F;
+	
+	
+	// These are used to modify an entity's fall
+	public static final double HIGH_GRAVITY_LIVING_FALL_MOD = 1.5D;
+	public static final double HIGH_GRAVITY_ITEM_FALL_MOD = 1.2D;
+
+
+	// These are used to modify an entity's jump
+	public static final double HIGH_GRAVITY_JUMP_MOD = .75D;
+	
+	// Used to modify fall damage
+	public static final float HIGH_GRAVITY_FALL_DAMAGE_MOD = 1.5F;
 
 	/**
 	 * This function makes the entity fall slower. Should be called every tick. This
@@ -88,6 +100,10 @@ public class Gravity {
 	public static boolean entityIsInLowGravityBiome(Entity entity) {
 		Holder<Biome> biome = entity.level().getBiome(entity.blockPosition());
 		return biome.is(AMBiomeTags.LOW_GRAVITY);
-
+	}
+	
+	public static boolean entityIsInHighGravityBiome(Entity entity) {
+		Holder<Biome> biome = entity.level().getBiome(entity.blockPosition());
+		return biome.is(AMBiomeTags.HIGH_GRAVITY);
 	}
 }

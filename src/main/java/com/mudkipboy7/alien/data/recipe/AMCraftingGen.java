@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
@@ -46,7 +47,10 @@ public class AMCraftingGen extends AMRecipeProvider {
 		basicAxe(AMItems.LIGNUM_PLANKS.get(), AMItems.LIGNUM_AXE.get(), output);
 		basicShovel(AMItems.LIGNUM_PLANKS.get(), AMItems.LIGNUM_SHOVEL.get(), output);
 		basicHoe(AMItems.LIGNUM_PLANKS.get(), AMItems.LIGNUM_HOE.get(), output);
-		planksFromLog(AMItemTags.LIGNUM_LOGS, AMItems.LIGNUM_PLANKS.get(), "has_alien_log", output);
+		
+		planksFromLog(AMItems.LIGNUM_PLANKS.get(), output, 4, AMItems.LIGNUM_LOG.get(), AMItems.LIGNUM_LOG_ALL_SIDES_SAME.get());
+		planksFromLog(AMItems.LIGNUM_PLANKS.get(), output, 2, AMItems.THIN_LIGNUM_LOG.get());
+		
 		basicStairs(AMItems.GELUSTONE.get(), AMItems.GLELUSTONE_STAIRS.get(), output);
 		basicStairs(AMItems.COBBLE_GELUSTONE.get(), AMItems.COBBLE_GELUSTONE_STAIRS.get(), output);
 		basicStairs(AMItems.LIGNUM_PLANKS.get(), AMItems.LIGNUM_STAIRS.get(), output);

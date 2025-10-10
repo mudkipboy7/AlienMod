@@ -22,15 +22,15 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber()
 public class AMBiomes extends AMBiomeMaker {
 
-	public static final ResourceKey<Biome> ALIEN_RAINFOREST = makeKey("alien_rainforest");
+	public static final ResourceKey<Biome> TOWERING_FOREST = makeKey("towering_forrest");
 	public static final ResourceKey<Biome> BARREN_CRATERSCAPE = makeKey("barren_craterscape");
 
 	public static void bootstrapBiomes(BootstapContext<Biome> context) {
 		HolderGetter<PlacedFeature> feature = context.lookup(Registries.PLACED_FEATURE);
 		HolderGetter<ConfiguredWorldCarver<?>> carver = context.lookup(Registries.CONFIGURED_CARVER);
-		context.register(ALIEN_RAINFOREST,
+		context.register(TOWERING_FOREST,
 				makeBiome(true, 1.0F, 1.0F, alienRainforest(feature, carver), defaultSpawnSettings(), basicEffects()));
-		context.register(ALIEN_RAINFOREST, makeBiome(true, 0.1F, 3.0F, barrenCraterscape(feature, carver),
+		context.register(BARREN_CRATERSCAPE, makeBiome(true, 0.1F, 3.0F, barrenCraterscape(feature, carver),
 				defaultSpawnSettings(), basicEffects()));
 	}
 
@@ -45,8 +45,7 @@ public class AMBiomes extends AMBiomeMaker {
 	static <T> Climate.ParameterList<T> generateAMBiomes(Function<ResourceKey<Biome>, T> pValueGetter) {
 		ImmutableList.Builder<Pair<Climate.ParameterPoint, T>> builder = ImmutableList.builder();
 		AlienDimBiomeBuilder v = new AlienDimBiomeBuilder();
-		
-		
-	return new Climate.ParameterList<>(builder.build());
+
+		return new Climate.ParameterList<>(builder.build());
 	}
 }

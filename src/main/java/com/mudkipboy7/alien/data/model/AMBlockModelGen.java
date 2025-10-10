@@ -182,6 +182,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 						AlienMod.location(blockFolder + "thin_block")).texture("side", lignumLogSide).texture("top", thinLignumLogTop));
 		
 		simpleBlock(AMBlocks.GELUSTONE_IRON_ORE.get());
+		
+		simpleBlock(AMBlocks.REGOLITH.get());
 
 	}
 

@@ -59,6 +59,12 @@ public class AMEntityEvents {
 			// Runs doSlowFall() to make the entity fall slower if it is falling.
 			Gravity.doSlowFall(livingEntity, Gravity.ALIENDIM_LIVING_FALL_MOD);
 		}
+
+		// Checks if the entity is in a high gravity biome.
+		else if (Gravity.entityIsInHighGravityBiome(livingEntity)) {
+			// Runs doSlowFall() to make the entity fall faster if it is falling.
+			Gravity.doSlowFall(livingEntity, Gravity.ALIENDIM_LIVING_FALL_MOD);
+		}
 		/*
 		 * For fun. checks if the entity is holding the anti-gravity item. If he is it
 		 * makes him float up.
@@ -74,9 +80,9 @@ public class AMEntityEvents {
 	 * 
 	 * @param event
 	 */
-	//@SubscribeEvent
-	//public static void onPlayerTick(PlayerTickEvent event) {
-	//}
+	// @SubscribeEvent
+	// public static void onPlayerTick(PlayerTickEvent event) {
+	// }
 
 	/**
 	 * Called every time a living entity jumps.
@@ -90,10 +96,12 @@ public class AMEntityEvents {
 
 		// Checks if the entity is in a low gravity biome.
 		if (Gravity.entityIsInLowGravityBiome(livingEntity)) {
-			double jumpMultiplier = Gravity.ALIENDIM_JUMP_MOD;
 			// Does the higher jump stuff.
-			Gravity.doHighJump(livingEntity, jumpMultiplier);
+			Gravity.doHighJump(livingEntity, Gravity.ALIENDIM_JUMP_MOD);
 
+		} else if (Gravity.entityIsInHighGravityBiome(livingEntity)) {
+			// Does the higher jump stuff.
+			Gravity.doHighJump(livingEntity, Gravity.HIGH_GRAVITY_JUMP_MOD);
 		}
 	}
 
@@ -110,13 +118,10 @@ public class AMEntityEvents {
 		Holder<Biome> biome = livingEntity.level().getBiome(livingEntity.blockPosition());
 		// Checks if the entity is in a low gravity biome.
 		if (biome.containsTag(AMBiomeTags.LOW_GRAVITY)) {
-
-			/*
-			 * Lessons the fall damage taken.
-			 */
 			event.setDistance(distance * Gravity.ALIENDIM_FALL_DAMAGE_MOD);
-			// AlienMod.sendDebugMessage("before: " + distance + " after: " +
-			// event.getDistance());
+
+		} else if (biome.containsTag(AMBiomeTags.HIGH_GRAVITY)) {
+			event.setDistance(distance * Gravity.HIGH_GRAVITY_FALL_DAMAGE_MOD);
 		}
 	}
 

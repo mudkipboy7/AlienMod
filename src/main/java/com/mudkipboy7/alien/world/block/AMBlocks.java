@@ -345,6 +345,10 @@ public final class AMBlocks {
 	 * }).pushReaction(PushReaction.DESTROY)));
 	 */
 
+	// Dirt for the Alien Dimension
+	public static final RegistryObject<Block> REGOLITH = BLOCKS.register("regolith",
+			() -> new Block(BlockBehaviour.Properties.of().strength(0.7F, 6.0F).sound(SoundType.GRAVEL)));
+
 	// Iron ore for alien dim
 	public static final RegistryObject<Block> GELUSTONE_IRON_ORE = BLOCKS.register("gelustone_iron_ore",
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)

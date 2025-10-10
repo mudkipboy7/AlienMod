@@ -66,7 +66,8 @@ public class AMBlockTags extends BlockTagsProvider {
 						Blocks.BELL, Blocks.FURNACE, Blocks.BLAST_FURNACE, Blocks.SMOKER, Blocks.BREWING_STAND)
 				.addTags(BlockTags.ANVIL, BlockTags.CAULDRONS, Tags.Blocks.OBSIDIAN, Tags.Blocks.CHESTS_ENDER,
 						Tags.Blocks.STORAGE_BLOCKS_GOLD, Tags.Blocks.STORAGE_BLOCKS_RAW_GOLD,
-						Tags.Blocks.STORAGE_BLOCKS_COAL,Tags.Blocks.STORAGE_BLOCKS_IRON,Tags.Blocks.STORAGE_BLOCKS_RAW_IRON);
+						Tags.Blocks.STORAGE_BLOCKS_COAL, Tags.Blocks.STORAGE_BLOCKS_IRON,
+						Tags.Blocks.STORAGE_BLOCKS_RAW_IRON);
 
 		tag(MINEABLE_WITH_ALIEN_AXE)
 				.add(AMBlocks.LIGNUM_PLANKS.get(), AMBlocks.LIGNUM_STAIRS.get(), AMBlocks.LIGNUM_SLAB.get(),
@@ -80,11 +81,12 @@ public class AMBlockTags extends BlockTagsProvider {
 						BlockTags.BEDS, Tags.Blocks.CHESTS_WOODEN, Tags.Blocks.BARRELS_WOODEN,
 						Tags.Blocks.STORAGE_BLOCKS_COAL);
 
-		tag(MINEABLE_WITH_ALIEN_SHOVEL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get());
+		tag(MINEABLE_WITH_ALIEN_SHOVEL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get(),
+				AMBlocks.REGOLITH.get());
 
 		tag(MINEABLE_WITH_ALIEN_HOE).add(AMBlocks.LIGNUM_LEAVES.get());
 
-		tag(ALIEN_SOIL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get());
+		tag(ALIEN_SOIL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get(), AMBlocks.REGOLITH.get());
 
 		tag(ALIEN_PLANT).add(AMBlocks.LIGNUM_LEAVES.get(), AMBlocks.TALL_GRAMEN.get(), AMBlocks.LIGNUM_SAPLING.get());
 
@@ -158,6 +160,8 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_AXE).remove(LIGNUM_LOGS, LIGNUM_PLANKS, LIGNUM_SLABS, LIGNUM_STAIRS);
 
 		tag(BlockTags.IRON_ORES).add(AMBlocks.GELUSTONE_IRON_ORE.get());
+		
+		
 	}
 
 	// Methods

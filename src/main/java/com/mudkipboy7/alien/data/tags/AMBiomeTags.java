@@ -1,4 +1,5 @@
 package com.mudkipboy7.alien.data.tags;
+
 import java.util.concurrent.CompletableFuture;
 
 import com.mudkipboy7.alien.AlienMod;
@@ -19,7 +20,6 @@ public class AMBiomeTags extends BiomeTagsProvider {
 	public static final TagKey<Biome> LOW_GRAVITY = makeKey("low_gravity");
 	public static final TagKey<Biome> ULTRACOLD = makeKey("ultracold");
 	public static final TagKey<Biome> HIGH_GRAVITY = makeKey("high_gravity");
-	
 
 	public AMBiomeTags(PackOutput output, CompletableFuture<Provider> lookupProvider,
 			ExistingFileHelper existingFileHelper) {
@@ -28,19 +28,20 @@ public class AMBiomeTags extends BiomeTagsProvider {
 
 	@Override
 	protected void addTags(Provider provider) {
-		
+
 		/*
 		 * AlienMod
 		 */
-		tag(AMBiomeTags.LOW_GRAVITY).add(AMBiomes.ALIEN_RAINFOREST);
+		tag(AMBiomeTags.LOW_GRAVITY).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE);
 
-		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.ALIEN_RAINFOREST);
-		
+		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE);
+
 		/*
 		 * Vanilla/Forge/Other
 		 */
 
 	}
+
 	// Methods
 	private static TagKey<Biome> makeKey(String id, String name) {
 		return TagKey.create(Registries.BIOME, new ResourceLocation(id, name));

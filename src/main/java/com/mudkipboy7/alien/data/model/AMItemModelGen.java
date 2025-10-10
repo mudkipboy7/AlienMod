@@ -73,7 +73,7 @@ public class AMItemModelGen extends ItemModelProvider {
 		withExistingParent(AMItems.LIGNUM_BUTTON.getId().getPath(), "block/button_inventory").texture("texture",
 				AMBlockModelGen.lignumPlanks);
 		blockItem(AMItems.LIGNUM_PRESSURE_PLATE);
-		blockItem(AMItems.LIGNUM_ALL_SIDES_SAME);
+		blockItem(AMItems.LIGNUM_LOG_ALL_SIDES_SAME);
 		genItem(AMItems.LIGNUM_SIGN);
 		genItem(AMItems.LIGNUM_HANGING_SIGN);
 		//blockItem(AMItems.STRIPPED_ALIEN_LOG);
@@ -98,8 +98,9 @@ public class AMItemModelGen extends ItemModelProvider {
 
 		withExistingParent(AMItems.THIN_LIGNUM_LOG.getId().getPath(),
 				AlienMod.location(blockFolder + "thin_block_inventory")).texture("side", AMBlockModelGen.lignumLogSide)
-				.texture("top", AMBlockModelGen.thinLignumLogTop);
+				.texture("top", AMBlockModelGen.lignumLogTop);
 		blockItem(AMItems.GELUSTONE_IRON_ORE);
+		blockItem(AMItems.REGOLITH);
 
 		/*
 		 * Items
