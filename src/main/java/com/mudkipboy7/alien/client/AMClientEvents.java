@@ -60,13 +60,13 @@ public class AMClientEvents {
 		public static void onClientSetup(FMLClientSetupEvent event) {
 			ItemBlockRenderTypes.setRenderLayer(AMFluids.AMMONIA_LIQUID.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(AMFluids.AMMONIA_LIQUID_FLOWING.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_LEAVES.get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_GRASS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_SAPLING.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_LEAVES.get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.TALL_GRAMEN.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_SAPLING.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.DEAD_PLANT.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_DOUBLE_GRASS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_WOOD_DOOR.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.ALIEN_WOOD_TRAPDOOR.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.DOUBLE_TALL_GRAMEN.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_DOOR.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_TRAPDOOR.get(), RenderType.cutout());
 
 			MenuScreens.register(AMMenuTypes.HAZARD_REMOVAL.get(), HazardRemovalScreen::new);
 			MenuScreens.register(AMMenuTypes.COAL_GENERATOR.get(), CoalGeneratorScreen::new);

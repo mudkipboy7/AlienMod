@@ -53,7 +53,7 @@ public abstract class FluidTypeMixin {
 				level.setBlockAndUpdate(blockPos, Blocks.OBSIDIAN.defaultBlockState());
 			}
 			if (isWater) {
-				level.setBlockAndUpdate(blockPos, AMBlocks.ALIEN_STONE.get().defaultBlockState());
+				level.setBlockAndUpdate(blockPos, AMBlocks.GELUSTONE.get().defaultBlockState());
 			}
 		}
 	}

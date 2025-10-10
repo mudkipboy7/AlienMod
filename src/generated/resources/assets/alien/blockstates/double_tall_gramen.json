@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "alien:block/double_tall_gramen_bottom"
+    },
+    "half=upper": {
+      "model": "alien:block/double_tall_gramen_top"
+    }
+  }
+}

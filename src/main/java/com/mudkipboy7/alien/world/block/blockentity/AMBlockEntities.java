@@ -23,14 +23,14 @@ public class AMBlockEntities {
 	// Alien wood sign
 	public static final RegistryObject<BlockEntityType<AlienSignBlockEntity>> ALIEN_WOOD_SIGN = BLOCK_ENTITY_TYPES
 			.register("lignum_sign", () -> BlockEntityType.Builder
-					.of(AlienSignBlockEntity::new, AMBlocks.ALIEN_WOOD_SIGN.get(), AMBlocks.ALIEN_WOOD_WALL_SIGN.get())
+					.of(AlienSignBlockEntity::new, AMBlocks.LIGNUM_SIGN.get(), AMBlocks.LIGNUM_WALL_SIGN.get())
 					.build(null));
 
 	// Alien wood hanging sign
 	public static final RegistryObject<BlockEntityType<AlienHangingSignBlockEntity>> ALIEN_WOOD_HANGING_SIGN = BLOCK_ENTITY_TYPES
 			.register("lignum_hanging_sign",
 					() -> BlockEntityType.Builder.of(AlienHangingSignBlockEntity::new,
-							AMBlocks.ALIEN_WOOD_HANGING_SIGN.get(), AMBlocks.ALIEN_WOOD_WALL_HANGING_SIGN.get())
+							AMBlocks.LIGNUM_HANGING_SIGN.get(), AMBlocks.LIGNUM_WALL_HANGING_SIGN.get())
 							.build(null));
 
 	// Hazard Remover
@@ -39,9 +39,9 @@ public class AMBlockEntities {
 					.of(HazardRemovalMachineBlockEntity::new, AMBlocks.AIR_PURIFIER.get()).build(null));
 
 	// Alien Wood Chest
-	public static final RegistryObject<BlockEntityType<AlienChestBlockEntity>> ALIEN_WOOD_CHEST = BLOCK_ENTITY_TYPES
+	public static final RegistryObject<BlockEntityType<AlienChestBlockEntity>> LIGNUM_CHEST = BLOCK_ENTITY_TYPES
 			.register("alien_wood_chest", () -> BlockEntityType.Builder
-					.of(AlienChestBlockEntity::new, AMBlocks.ALIEN_WOOD_CHEST.get()).build(null));
+					.of(AlienChestBlockEntity::new, AMBlocks.LIGNUM_CHEST.get()).build(null));
 
 	// Hazard Remover
 	public static final RegistryObject<BlockEntityType<CoalGeneratorBlockEntity>> COAL_GENERATOR = BLOCK_ENTITY_TYPES

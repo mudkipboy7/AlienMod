@@ -57,108 +57,105 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> ALIEN_AIR = simpleDescBlockItem(AMBlocks.ALIEN_AIR,
 			new Properties().fireResistant());
 
-	public static final RegistryObject<BlockItem> ALIEN_STONE = simpleBlockItem(AMBlocks.ALIEN_STONE);
+	public static final RegistryObject<BlockItem> GELUSTONE = simpleBlockItem(AMBlocks.GELUSTONE);
 
-	public static final RegistryObject<BlockItem> ALIEN_DIRT = simpleBlockItem(AMBlocks.ALIEN_DIRT);
+	public static final RegistryObject<BlockItem> ALGUSSOIL = simpleBlockItem(AMBlocks.ALGUSSOIL);
 
-	public static final RegistryObject<BlockItem> ALIEN_GRASS_BLOCK = simpleBlockItem(AMBlocks.ALIEN_GRASS_BLOCK);
+	public static final RegistryObject<BlockItem> GRAMEN_BLOCK = simpleBlockItem(AMBlocks.GRAMEN_BLOCK);
 
-	public static final RegistryObject<BlockItem> ALIEN_COBBLESTONE = simpleBlockItem(AMBlocks.ALIEN_COBBLESTONE);
+	public static final RegistryObject<BlockItem> COBBLE_GELUSTONE = simpleBlockItem(AMBlocks.ALIEN_COBBLESTONE);
 
-	public static final RegistryObject<BlockItem> ALIEN_COAL_ORE = simpleBlockItem(AMBlocks.ALIEN_COAL_ORE);
+	public static final RegistryObject<BlockItem> GELUSTONE_COAL_ORE = simpleBlockItem(AMBlocks.GELUSTONE_COAL_ORE);
 
-	public static final RegistryObject<BlockItem> ALIEN_PLANKS = simpleBlockItem(AMBlocks.ALIEN_PLANKS);
+	public static final RegistryObject<BlockItem> LIGNUM_PLANKS = simpleBlockItem(AMBlocks.LIGNUM_PLANKS);
 
-	public static final RegistryObject<BlockItem> ALIEN_LOG = simpleBlockItem(AMBlocks.ALIEN_LOG);
+	public static final RegistryObject<BlockItem> LIGNUM_LOG = simpleBlockItem(AMBlocks.LIGNUM_LOG);
 
-	public static final RegistryObject<BlockItem> ALIEN_LEAVES = simpleBlockItem(AMBlocks.ALIEN_LEAVES);
+	public static final RegistryObject<BlockItem> LIGNUM_LEAVES = simpleBlockItem(AMBlocks.LIGNUM_LEAVES);
 
-	public static final RegistryObject<BlockItem> ALIEN_STONE_STAIRS = simpleBlockItem(AMBlocks.ALIEN_STONE_STAIRS);
+	public static final RegistryObject<BlockItem> GLELUSTONE_STAIRS = simpleBlockItem(AMBlocks.GLELUSTONE_STAIRS);
 
-	public static final RegistryObject<BlockItem> ALIEN_COBBLESTONE_STAIRS = simpleBlockItem(
-			AMBlocks.ALIEN_COBBLESTONE_STAIRS);
+	public static final RegistryObject<BlockItem> COBBLE_GELUSTONE_STAIRS = simpleBlockItem(
+			AMBlocks.COBBLE_GELUSTONE_STAIRS);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_STAIRS = simpleBlockItem(AMBlocks.ALIEN_WOOD_STAIRS);
+	public static final RegistryObject<BlockItem> LIGNUM_STAIRS = simpleBlockItem(AMBlocks.LIGNUM_STAIRS);
 
-	public static final RegistryObject<BlockItem> ALIEN_STONE_SLAB = simpleBlockItem(AMBlocks.ALIEN_STONE_SLAB);
+	public static final RegistryObject<BlockItem> GELUSTONE_SLAB = simpleBlockItem(AMBlocks.GELUSTONE_SLAB);
 
-	public static final RegistryObject<BlockItem> ALIEN_COBBLESTONE_SLAB = simpleBlockItem(
-			AMBlocks.ALIEN_COBBLESTONE_SLAB);
+	public static final RegistryObject<BlockItem> COBBLE_GELUSTONE_SLAB = simpleBlockItem(
+			AMBlocks.COBBLE_GELUSTONE_SLAB);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_SLAB = simpleBlockItem(AMBlocks.ALIEN_WOOD_SLAB);
+	public static final RegistryObject<BlockItem> LIGNUM_SLAB = simpleBlockItem(AMBlocks.LIGNUM_SLAB);
 
-	public static final RegistryObject<BlockItem> ALIEN_BEDROCK = simpleBlockItem(AMBlocks.ALIEN_BEDROCK);
+	public static final RegistryObject<BlockItem> GELUSTONE_BEDROCK = simpleBlockItem(AMBlocks.GELUSTONE_BEDROCK);
 
-	public static final RegistryObject<BlockItem> ALIEN_CRAFTING_TABLE = simpleBlockItem(AMBlocks.ALIEN_CRAFTING_TABLE);
+	public static final RegistryObject<BlockItem> LIGNUM_CRAFTING_TABLE = simpleBlockItem(AMBlocks.LIGNUM_CRAFTING_TABLE);
 
-	public static final RegistryObject<BlockItem> ALIEN_GOLD_ORE = simpleBlockItem(AMBlocks.ALIEN_GOLD_ORE);
+	public static final RegistryObject<BlockItem> GELUSTONE_GOLD_ORE = simpleBlockItem(AMBlocks.GELUSTONE_GOLD_ORE);
 
-	public static final RegistryObject<BlockItem> ALIEN_GRASS = simpleBlockItem(AMBlocks.ALIEN_GRASS);
+	public static final RegistryObject<BlockItem> TALL_GRAMEN = simpleBlockItem(AMBlocks.TALL_GRAMEN);
 
 	public static final RegistryObject<BlockItem> ALIEN_PORTAL = simpleDescBlockItem(AMBlocks.ALIEN_PORTAL);
 
-	public static final RegistryObject<BlockItem> ALIEN_SAPLING = simpleBlockItem(AMBlocks.ALIEN_SAPLING);
+	public static final RegistryObject<BlockItem> LIGNUM_SAPLING = simpleBlockItem(AMBlocks.LIGNUM_SAPLING);
 
 	public static final RegistryObject<BlockItem> DEAD_PLANT = simpleDescBlockItem(AMBlocks.DEAD_PLANT);
 
-	public static final RegistryObject<BlockItem> ALIEN_DOUBLE_GRASS = simpleBlockItem(AMBlocks.ALIEN_DOUBLE_GRASS);
+	public static final RegistryObject<BlockItem> DOUBLE_TALL_GRAMEN = simpleBlockItem(AMBlocks.DOUBLE_TALL_GRAMEN);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_DOOR = simpleBlockItem(AMBlocks.ALIEN_WOOD_DOOR);
+	public static final RegistryObject<BlockItem> LIGNUM_DOOR = simpleBlockItem(AMBlocks.LIGNUM_DOOR);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_FENCE = simpleBlockItem(AMBlocks.ALIEN_WOOD_FENCE);
+	public static final RegistryObject<BlockItem> LIGNUM_FENCE = simpleBlockItem(AMBlocks.LIGNUM_FENCE);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_FENCE_GATE = simpleBlockItem(
-			AMBlocks.ALIEN_WOOD_FENCE_GATE);
+	public static final RegistryObject<BlockItem> LIGNUM_FENCE_GATE = simpleBlockItem(
+			AMBlocks.LIGNUM_FENCE_GATE);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_TRAPDOOR = simpleBlockItem(AMBlocks.ALIEN_WOOD_TRAPDOOR);
+	public static final RegistryObject<BlockItem> LIGNUM_TRAPDOOR = simpleBlockItem(AMBlocks.LIGNUM_TRAPDOOR);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_BUTTON = simpleBlockItem(AMBlocks.ALIEN_WOOD_BUTTON);
+	public static final RegistryObject<BlockItem> LIGNUM_BUTTON = simpleBlockItem(AMBlocks.LIGNUM_BUTTON);
 
-	public static final RegistryObject<BlockItem> ALIEN_WOOD_PRESSURE_PLATE = simpleBlockItem(
-			AMBlocks.ALIEN_WOOD_PRESSURE_PLATE);
+	public static final RegistryObject<BlockItem> LIGNUM_PRESSURE_PLATE = simpleBlockItem(
+			AMBlocks.LIGNUM_PRESSURE_PLATE);
 
-	public static final RegistryObject<BlockItem> ALIEN_LOG_ALL_SIDES_SAME = simpleBlockItem(
-			AMBlocks.ALIEN_LOG_ALL_SIDES_SAME);
+	public static final RegistryObject<BlockItem> LIGNUM_ALL_SIDES_SAME = simpleBlockItem(
+			AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME);
 
-	public static final RegistryObject<SignItem> ALIEN_WOOD_SIGN = ITEMS.register(
-			AMBlocks.ALIEN_WOOD_SIGN.getId().getPath(), () -> new SignItem((new Item.Properties()).stacksTo(16),
-					AMBlocks.ALIEN_WOOD_SIGN.get(), AMBlocks.ALIEN_WOOD_WALL_SIGN.get()));
+	public static final RegistryObject<SignItem> LIGNUM_SIGN = ITEMS.register(
+			AMBlocks.LIGNUM_SIGN.getId().getPath(), () -> new SignItem((new Item.Properties()).stacksTo(16),
+					AMBlocks.LIGNUM_SIGN.get(), AMBlocks.LIGNUM_WALL_SIGN.get()));
 
-	public static final RegistryObject<HangingSignItem> ALIEN_WOOD_HANGING_SIGN = ITEMS.register(
-			AMBlocks.ALIEN_WOOD_HANGING_SIGN.getId().getPath(),
-			() -> new HangingSignItem(AMBlocks.ALIEN_WOOD_HANGING_SIGN.get(),
-					AMBlocks.ALIEN_WOOD_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
+	public static final RegistryObject<HangingSignItem> LIGNUM_HANGING_SIGN = ITEMS.register(
+			AMBlocks.LIGNUM_HANGING_SIGN.getId().getPath(),
+			() -> new HangingSignItem(AMBlocks.LIGNUM_HANGING_SIGN.get(),
+					AMBlocks.LIGNUM_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
 
-	public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG = simpleBlockItem(AMBlocks.STRIPPED_ALIEN_LOG);
+	//public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG = simpleBlockItem(AMBlocks.STRIPPED_ALIEN_LOG);
 
-	public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = simpleBlockItem(
-			AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
+	//public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = simpleBlockItem(
+	//		AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
 
 	public static final RegistryObject<BlockItem> AIR_PURIFIER = simpleBlockItem(AMBlocks.AIR_PURIFIER);
 
-	public static final RegistryObject<BlockEntityItem> ALIEN_WOOD_CHEST = ITEMS.register(
-			AMBlocks.ALIEN_WOOD_CHEST.getId().getPath(),
-			() -> new BlockEntityItem(AMBlocks.ALIEN_WOOD_CHEST.get(), new Item.Properties()));
+	public static final RegistryObject<BlockEntityItem> LIGNUM_CHEST = ITEMS.register(
+			AMBlocks.LIGNUM_CHEST.getId().getPath(),
+			() -> new BlockEntityItem(AMBlocks.LIGNUM_CHEST.get(), new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> ALIEN_STONE_BUTTON = simpleBlockItem(AMBlocks.ALIEN_STONE_BUTTON);
+	public static final RegistryObject<BlockItem> GELUSTONE_BUTTON = simpleBlockItem(AMBlocks.GELUSTONE_BUTTON);
 
-	public static final RegistryObject<BlockItem> ALIEN_STONE_PRESSURE_PLATE = simpleBlockItem(
-			AMBlocks.ALIEN_STONE_PRESSURE_PLATE);
+	public static final RegistryObject<BlockItem> GELUSTONE_PRESSURE_PLATE = simpleBlockItem(
+			AMBlocks.GELUSTONE_PRESSURE_PLATE);
 
-	public static final RegistryObject<BlockItem> ALIEN_COBBLESTONE_WALL = simpleBlockItem(
-			AMBlocks.ALIEN_COBBLESTONE_WALL);
+	public static final RegistryObject<BlockItem> COBBLE_GELUSTONE_WALL = simpleBlockItem(
+			AMBlocks.COBBLE_GELUSTONE_WALL);
 
 	public static final RegistryObject<BlockItem> COAL_GENERATOR = simpleBlockItem(AMBlocks.COAL_GENERATOR);
 
 	public static final RegistryObject<BlockItem> ENERGY_STORAGE = simpleBlockItem(AMBlocks.ENERGY_STORAGE);
 
-	public static final RegistryObject<BlockItem> ALIEN_METAL_ORE = simpleBlockItem(AMBlocks.ALIEN_METAL_ORE);
+	public static final RegistryObject<BlockItem> APSIUS_ORE = simpleBlockItem(AMBlocks.APSIUS_ORE);
 
-	public static final RegistryObject<BlockItem> ALIEN_METAL_BLOCK = simpleBlockItem(AMBlocks.ALIEN_METAL_BLOCK);
-
-	public static final RegistryObject<BlockItem> RAW_ALIEN_METAL_BLOCK = simpleBlockItem(
-			AMBlocks.RAW_ALIEN_METAL_BLOCK);
-
+	public static final RegistryObject<BlockItem> APSIUS_BLOCK = simpleBlockItem(AMBlocks.APSIUS_BLOCK);
+	
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<BlockItem> COPPER_WIRE = simpleBlockItem(AMBlocks.COPPER_WIRE);
 
@@ -166,9 +163,10 @@ public class AMItems {
 	
 	public static final RegistryObject<BlockItem> ENERGY_BLOCK = simpleBlockItem(AMBlocks.ENERGY_BLOCK);
 	
-	public static final RegistryObject<BlockItem> THIN_ALIEN_LOG = simpleBlockItem(AMBlocks.THIN_ALIEN_LOG);
+	public static final RegistryObject<BlockItem> THIN_LIGNUM_LOG = simpleBlockItem(AMBlocks.THIN_LIGNUM_LOG);
 	
 	//public static final RegistryObject<BlockItem> AMMONIA_SNOW_LAYER = simpleBlockItem(AMBlocks.AMMONIA_SNOW_LAYER);
+	public static final RegistryObject<BlockItem> GELUSTONE_IRON_ORE = simpleBlockItem(AMBlocks.GELUSTONE_IRON_ORE);
 
 
 	/*
@@ -202,34 +200,34 @@ public class AMItems {
 	public static final RegistryObject<BucketItem> AMMONIA_LIQUID_BUCKET = ITEMS.register("ammonia_liquid_bucket",
 			() -> new AmmoniaLiquidBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
-	public static final RegistryObject<AlienSwordItem> WOODEN_ALIEN_SWORD = ITEMS.register("lignum_sword",
+	public static final RegistryObject<AlienSwordItem> LIGNUM_SWORD = ITEMS.register("lignum_sword",
 			() -> new AlienSwordItem(AMTeirs.ALIEN_WOOD, 3, -2.4F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienPickaxeItem> WOODEN_ALIEN_PICKAXE = ITEMS.register("lignum_pickaxe",
+	public static final RegistryObject<AlienPickaxeItem> LIGNUM_PICKAXE = ITEMS.register("lignum_pickaxe",
 			() -> new AlienPickaxeItem(AMTeirs.ALIEN_WOOD, 1, -2.8F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienAxeItem> WOODEN_ALIEN_AXE = ITEMS.register("lignum_axe",
+	public static final RegistryObject<AlienAxeItem> LIGNUM_AXE = ITEMS.register("lignum_axe",
 			() -> new AlienAxeItem(AMTeirs.ALIEN_WOOD, 6.0F, -3.2F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienShovelItem> WOODEN_ALIEN_SHOVEL = ITEMS.register("lignum_shovel",
+	public static final RegistryObject<AlienShovelItem> LIGNUM_SHOVEL = ITEMS.register("lignum_shovel",
 			() -> new AlienShovelItem(AMTeirs.ALIEN_WOOD, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> WOODEN_ALIEN_HOE = ITEMS.register("lignum_hoe",
+	public static final RegistryObject<AlienHoeItem> LIGNUM_HOE = ITEMS.register("lignum_hoe",
 			() -> new AlienHoeItem(AMTeirs.ALIEN_WOOD, 0F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienSwordItem> STONE_ALIEN_SWORD = ITEMS.register("gelustone_sword",
+	public static final RegistryObject<AlienSwordItem> GELUSTONE_SWORD = ITEMS.register("gelustone_sword",
 			() -> new AlienSwordItem(AMTeirs.GELUSTONE, 3, -2.4F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienPickaxeItem> STONE_ALIEN_PICKAXE = ITEMS.register("gelustone_pickaxe",
+	public static final RegistryObject<AlienPickaxeItem> GELUSTONE_PICKAXE = ITEMS.register("gelustone_pickaxe",
 			() -> new AlienPickaxeItem(AMTeirs.GELUSTONE, 1, -2.8F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienAxeItem> STONE_ALIEN_AXE = ITEMS.register("gelustone_axe",
+	public static final RegistryObject<AlienAxeItem> GELUSTONE_AXE = ITEMS.register("gelustone_axe",
 			() -> new AlienAxeItem(AMTeirs.GELUSTONE, 7.0F, -3.2F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienShovelItem> STONE_ALIEN_SHOVEL = ITEMS.register("gelustone_shovel",
+	public static final RegistryObject<AlienShovelItem> GELUSTONE_SHOVEL = ITEMS.register("gelustone_shovel",
 			() -> new AlienShovelItem(AMTeirs.GELUSTONE, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> STONE_ALIEN_HOE = ITEMS.register("gelustone_hoe",
+	public static final RegistryObject<AlienHoeItem> GELUSTONE_HOE = ITEMS.register("gelustone_hoe",
 			() -> new AlienHoeItem(AMTeirs.GELUSTONE, -1, -2.0F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<Item> ANTI_GRAVITY = simpleDescItem("anti_gravity",
@@ -245,40 +243,38 @@ public class AMItems {
 	public static final RegistryObject<BatteryItem> INT_LIMIT_BATTERY = ITEMS.register("int_limit_battery",
 			() -> new BatteryItem(new Item.Properties(), Integer.MAX_VALUE));
 
-	public static final RegistryObject<Item> ALIEN_METAL_INGOT = simpleItem("atsali_ingot");
+	public static final RegistryObject<Item> APSIUS_GEM = simpleItem("apsius_gem");
 
-	public static final RegistryObject<Item> RAW_ALIEN_METAL = simpleItem("raw_atsali");
-
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_HELMET = ITEMS.register("atsali_helmet",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.HELMET,
+	public static final RegistryObject<SurvivalArmorItem> APSIUS_HELMET = ITEMS.register("apsius_helmet",
+			() -> new SurvivalArmorItem(AMArmorMaterials.APSIUS, ArmorItem.Type.HELMET,
 					new Item.Properties().stacksTo(1), SURVIVAL_HEAD.get()));
 
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_CHESTPLATE = ITEMS.register("atsali_chestplate",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.CHESTPLATE,
+	public static final RegistryObject<SurvivalArmorItem> APSIUS_CHESTPLATE = ITEMS.register("apsius_chestplate",
+			() -> new SurvivalArmorItem(AMArmorMaterials.APSIUS, ArmorItem.Type.CHESTPLATE,
 					new Item.Properties().stacksTo(1), SURVIVAL_TORSO.get()));
 
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_LEGGINGS = ITEMS.register("atsali_leggings",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.LEGGINGS,
+	public static final RegistryObject<SurvivalArmorItem> APSIUS_LEGGINGS = ITEMS.register("apsius_leggings",
+			() -> new SurvivalArmorItem(AMArmorMaterials.APSIUS, ArmorItem.Type.LEGGINGS,
 					new Item.Properties().stacksTo(1), SURVIVAL_LEGS.get()));
 
-	public static final RegistryObject<SurvivalArmorItem> ALIEN_METAL_BOOTS = ITEMS.register("atsali_boots",
-			() -> new SurvivalArmorItem(AMArmorMaterials.ATSALI, ArmorItem.Type.BOOTS,
+	public static final RegistryObject<SurvivalArmorItem> APSIUS_BOOTS = ITEMS.register("apsius_boots",
+			() -> new SurvivalArmorItem(AMArmorMaterials.APSIUS, ArmorItem.Type.BOOTS,
 					new Item.Properties().stacksTo(1), SURVIVAL_FEET.get()));
 
-	public static final RegistryObject<AlienSwordItem> ALIEN_METAL_SWORD = ITEMS.register("atsali_sword",
-			() -> new AlienSwordItem(AMTeirs.ATSALI, 3, -2.4F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<AlienSwordItem> APSIUS_SWORD = ITEMS.register("apsius_sword",
+			() -> new AlienSwordItem(AMTeirs.APSIUS, 3, -2.4F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienPickaxeItem> ALIEN_METAL_PICKAXE = ITEMS.register("atsali_pickaxe",
-			() -> new AlienPickaxeItem(AMTeirs.ATSALI, 1, -2.8F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<AlienPickaxeItem> APSIUS_PICKAXE = ITEMS.register("apsius_pickaxe",
+			() -> new AlienPickaxeItem(AMTeirs.APSIUS, 1, -2.8F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienAxeItem> ALIEN_METAL_AXE = ITEMS.register("atsali_axe",
-			() -> new AlienAxeItem(AMTeirs.ATSALI, 6.0F, -3.1F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<AlienAxeItem> APSIUS_AXE = ITEMS.register("apsius_axe",
+			() -> new AlienAxeItem(AMTeirs.APSIUS, 6.0F, -3.1F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienShovelItem> ALIEN_METAL_SHOVEL = ITEMS.register("atsali_shovel",
-			() -> new AlienShovelItem(AMTeirs.ATSALI, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<AlienShovelItem> APSIUS_SHOVEL = ITEMS.register("apsius_shovel",
+			() -> new AlienShovelItem(AMTeirs.APSIUS, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> ALIEN_METAL_HOE = ITEMS.register("atsali_hoe",
-			() -> new AlienHoeItem(AMTeirs.ATSALI, -2, -1.0F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<AlienHoeItem> APSIUS_HOE = ITEMS.register("apsius_hoe",
+			() -> new AlienHoeItem(AMTeirs.APSIUS, -2, -1.0F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<ForgeSpawnEggItem> TEST_ENTITY_SPAWN_EGG = simpleSpawnEggItem(
 			AMEntities.TEST_ENTITY, 12332847, 16777215);

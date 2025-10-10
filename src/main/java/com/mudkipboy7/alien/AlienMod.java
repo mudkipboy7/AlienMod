@@ -8,7 +8,7 @@ import com.mudkipboy7.alien.AMConfig.Server;
 import com.mudkipboy7.alien.client.render.AMPanoramaRenderer;
 import com.mudkipboy7.alien.data.AMDataGenerators;
 import com.mudkipboy7.alien.sky.AlienDimSky;
-import com.mudkipboy7.alien.world.worldgen.dimension.AlienChunkGenerator;
+import com.mudkipboy7.alien.world.worldgen.AlienChunkGenerator;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

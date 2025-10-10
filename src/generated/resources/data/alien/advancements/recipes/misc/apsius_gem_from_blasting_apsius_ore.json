@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_apsius_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alien:apsius_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alien:apsius_gem_from_blasting_apsius_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_apsius_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alien:apsius_gem_from_blasting_apsius_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

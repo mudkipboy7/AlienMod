@@ -34,7 +34,7 @@ public class AMEntityRender {
 		public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_SIGN.get(), SignRenderer::new);
 			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_HANGING_SIGN.get(), HangingSignRenderer::new);
-			event.registerBlockEntityRenderer(AMBlockEntities.ALIEN_WOOD_CHEST.get(), AlienChestRenderer2::new);
+			event.registerBlockEntityRenderer(AMBlockEntities.LIGNUM_CHEST.get(), AlienChestRenderer2::new);
 			event.registerBlockEntityRenderer(AMBlockEntities.LAZER_CREATOR.get(), LazerCreatingMachineRenderer::new);
 			
 			event.registerEntityRenderer(AMEntities.TEST_ENTITY.get(), TestEntityRenderer::new);

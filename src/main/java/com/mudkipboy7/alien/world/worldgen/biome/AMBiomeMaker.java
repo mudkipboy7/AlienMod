@@ -15,14 +15,18 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 class AMBiomeMaker {
-	public static BiomeGenerationSettings.Builder alienPlainsGenSettings(HolderGetter<PlacedFeature> feature,
+	public static BiomeGenerationSettings.Builder alienRainforest(HolderGetter<PlacedFeature> feature,
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.ALIEN_GRASS);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.ALIEN_DOUBLE_GRASS);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.TALL_GRAMEN);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.DOUBLE_TALL_GRAMEN);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.THIN_TALL_ALIEN_TREE);
 		return genSettings;
-
+	}
+	public static BiomeGenerationSettings.Builder barrenCraterscape(HolderGetter<PlacedFeature> feature,
+			HolderGetter<ConfiguredWorldCarver<?>> carver) {
+		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
+		return genSettings;
 	}
 
 	public static MobSpawnSettings.Builder defaultSpawnSettings() {

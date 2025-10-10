@@ -11,11 +11,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 @SuppressWarnings("deprecation")
 public enum AMTeirs implements Tier {
 	ALIEN_WOOD(0, 59, 2.0F, 0.0F, 15, () -> {
-		return Ingredient.of(AMItems.ALIEN_PLANKS.get());
+		return Ingredient.of(AMItems.LIGNUM_PLANKS.get());
 	}), GELUSTONE(1, 131, 4.0F, 1.0F, 5, () -> {
-		return Ingredient.of(AMItems.ALIEN_COBBLESTONE.get());
-	}), ATSALI(2, 250, 6.0F, 2.0F, 14, () -> {
-		return Ingredient.of(AMItems.ALIEN_METAL_INGOT.get());
+		return Ingredient.of(AMItems.COBBLE_GELUSTONE.get());
+	}), APSIUS(2, 250, 6.0F, 2.0F, 14, () -> {
+		return Ingredient.of(AMItems.APSIUS_GEM.get());
 	});
 
 	private final int level;

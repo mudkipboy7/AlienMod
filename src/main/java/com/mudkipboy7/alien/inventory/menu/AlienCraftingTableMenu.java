@@ -131,7 +131,7 @@ public class AlienCraftingTableMenu extends RecipeBookMenu<CraftingContainer> {
 	 * Determines whether supplied player can use this container
 	 */
 	public boolean stillValid(Player pPlayer) {
-		return stillValid(this.access, pPlayer, AMBlocks.ALIEN_CRAFTING_TABLE.get());
+		return stillValid(this.access, pPlayer, AMBlocks.LIGNUM_CRAFTING_TABLE.get());
 	}
 
 	/**

@@ -11,9 +11,9 @@
     "alien:gelustone_button",
     "alien:gelustone_pressure_plate",
     "alien:cobble_gelustone_wall",
-    "alien:atsali_ore",
-    "alien:atsali_block",
-    "alien:raw_atsali_block",
+    "alien:apsius_ore",
+    "alien:apsius_block",
+    "alien:gelustone_iron_ore",
     "minecraft:bell",
     "minecraft:furnace",
     "minecraft:blast_furnace",
@@ -25,6 +25,8 @@
     "#forge:chests/ender",
     "#forge:storage_blocks/gold",
     "#forge:storage_blocks/raw_gold",
-    "#forge:storage_blocks/coal"
+    "#forge:storage_blocks/coal",
+    "#forge:storage_blocks/iron",
+    "#forge:storage_blocks/raw_iron"
   ]
 }

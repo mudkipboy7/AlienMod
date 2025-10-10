@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "alien:apsius_gem"
+    },
+    "S": {
+      "item": "alien:survival_boots"
+    }
+  },
+  "pattern": [
+    "ASA",
+    "A A"
+  ],
+  "result": {
+    "item": "alien:apsius_boots"
+  },
+  "show_notification": true
+}

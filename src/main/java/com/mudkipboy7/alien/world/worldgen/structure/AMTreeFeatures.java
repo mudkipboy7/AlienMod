@@ -31,16 +31,16 @@ public class AMTreeFeatures {
 	}
 
 	private static TreeConfiguration.TreeConfigurationBuilder createBasicTree() {
-		return createStraightBlobTree(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LEAVES.get(), 4, 2, 0, 3, 0, 2)
-				.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALIEN_DIRT.get()));
+		return createStraightBlobTree(AMBlocks.LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 4, 2, 0, 3, 0, 2)
+				.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALGUSSOIL.get()));
 	}
 
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		FeatureUtils.register(context, ALIEN_TREE, Feature.TREE, createBasicTree().build());
 
 		FeatureUtils.register(context, THIN_TALL_ALIEN_TREE, Feature.TREE,
-				createStraightBlobTree(AMBlocks.THIN_ALIEN_LOG.get(), AMBlocks.ALIEN_LEAVES.get(), 5, 2, 10, 2, 1, 2)
-						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALIEN_GRASS_BLOCK.get())).build());
+				createStraightBlobTree(AMBlocks.THIN_LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 5, 2, 10, 2, 1, 2)
+						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.GRAMEN_BLOCK.get())).build());
 	}
 
 	private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

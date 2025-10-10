@@ -21,16 +21,16 @@ public enum AMArmorMaterials implements ArmorMaterial {
 		map.put(ArmorItem.Type.CHESTPLATE, 3);
 		map.put(ArmorItem.Type.HELMET, 1);
 	}), 15, SoundEvents.ARMOR_EQUIP_GENERIC, 0.0F, 0.0F, () -> {
-		return Ingredient.of(AMItems.ALIEN_PLANKS.get());
+		return Ingredient.of(AMItems.LIGNUM_PLANKS.get());
 
 		// It should be spelled "atsali"
-	}), ATSALI("atsali", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
+	}), APSIUS("apsius", 15, Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
 		map.put(ArmorItem.Type.BOOTS, 2);
 		map.put(ArmorItem.Type.LEGGINGS, 5);
 		map.put(ArmorItem.Type.CHESTPLATE, 6);
 		map.put(ArmorItem.Type.HELMET, 2);
 	}), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
-		return Ingredient.of(AMItems.ALIEN_METAL_INGOT.get());
+		return Ingredient.of(AMItems.APSIUS_GEM.get());
 	});
 
 	private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util

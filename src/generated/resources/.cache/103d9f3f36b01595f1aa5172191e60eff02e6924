@@ -1,12 +1,12 @@
-// 1.20.2	2025-10-10T00:00:16.7676516	Registries
+// 1.20.2	2025-10-10T15:18:57.4174904	Registries
 74f5acb51b97095b1cfc71e6b7fcb38e38392b69 data/alien/damage_type/no_oxygen.json
 5a0c8eff0a6093f936457b2c9ead7bab3563eaac data/alien/dimension/alien_planet.json
 bcb7f2629813e2e3fa4c0240b63fc83d51a5d7b0 data/alien/dimension_type/alien_planet.json
 1208db55d0206f458cc5ada5eb1870609db24895 data/alien/worldgen/biome/alien_rainforest.json
-6dead1b5d067bba018bca73a93598da528604fe5 data/alien/worldgen/configured_feature/alien_double_grass.json
-3935815410c7b3fe31d3507006eca80ff4693dff data/alien/worldgen/configured_feature/alien_grass.json
+954eeae6376dca3a91d7b618be26bdfd0602057a data/alien/worldgen/configured_feature/alien_double_grass.json
+72bb978ea9548a3ae3223be9c7e2ce2b50a7fe44 data/alien/worldgen/configured_feature/alien_grass.json
 42e1cd8cc9171361664dd42e28b245ff1ef4199f data/alien/worldgen/configured_feature/lignum_tree.json
-0536ac87fb6b62677abfe070d0ce85b828c0f0bb data/alien/worldgen/configured_feature/thin_tall_lignum_tree.json
+dcc1d8eb269ef4ae418446e56639b238ffffdbf7 data/alien/worldgen/configured_feature/thin_tall_lignum_tree.json
 460a4dd6f5d0dad82ec67c8d5ed4117ab5ecc205 data/alien/worldgen/noise_settings/alien_planet.json
 9fe39d30195f903983a6be5d170f7e01ffd0d8bc data/alien/worldgen/placed_feature/alien_double_grass.json
 684a31f0d221ee4a5132ce315f79be41a2a1ba3e data/alien/worldgen/placed_feature/alien_grass.json

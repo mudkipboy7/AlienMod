@@ -31,45 +31,45 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 	@Override
 	protected void generate() {
 		this.dropSelf(AMBlocks.TEST_BLOCK.get());
-		//this.dropSelf(AMBlocks.AMMONIA_LIQUID_BLOCK.get());
+		// this.dropSelf(AMBlocks.AMMONIA_LIQUID_BLOCK.get());
 
-		this.add(AMBlocks.ALIEN_STONE.get(), (block) -> {
+		this.add(AMBlocks.GELUSTONE.get(), (block) -> {
 			return this.createSingleItemTableWithSilkTouch(block, AMBlocks.ALIEN_COBBLESTONE.get());
 		});
 
-		this.dropSelf(AMBlocks.ALIEN_DIRT.get());
+		this.dropSelf(AMBlocks.ALGUSSOIL.get());
 
-		this.add(AMBlocks.ALIEN_GRASS_BLOCK.get(), (block) -> {
-			return this.createSingleItemTableWithSilkTouch(block, AMBlocks.ALIEN_DIRT.get());
+		this.add(AMBlocks.GRAMEN_BLOCK.get(), (block) -> {
+			return this.createSingleItemTableWithSilkTouch(block, AMBlocks.ALGUSSOIL.get());
 		});
 
 		this.dropSelf(AMBlocks.ALIEN_COBBLESTONE.get());
 
-		this.add(AMBlocks.ALIEN_COAL_ORE.get(), (block) -> {
+		this.add(AMBlocks.GELUSTONE_COAL_ORE.get(), (block) -> {
 			return this.createOreDrop(block, Items.COAL);
 		});
 
-		this.dropSelf(AMBlocks.ALIEN_PLANKS.get());
-		this.dropSelf(AMBlocks.ALIEN_LOG.get());
+		this.dropSelf(AMBlocks.LIGNUM_PLANKS.get());
+		this.dropSelf(AMBlocks.LIGNUM_LOG.get());
 
-		this.add(AMBlocks.ALIEN_LEAVES.get(), (block) -> {
-			return this.createLeavesDrops(block, AMItems.ALIEN_SAPLING.get().getBlock(), NORMAL_LEAVES_SAPLING_CHANCES);
+		this.add(AMBlocks.LIGNUM_LEAVES.get(), (block) -> {
+			return this.createLeavesDrops(block, AMItems.LIGNUM_SAPLING.get().getBlock(), NORMAL_LEAVES_SAPLING_CHANCES);
 		});
 
-		this.dropSelf(AMBlocks.ALIEN_STONE_STAIRS.get());
-		this.dropSelf(AMBlocks.ALIEN_COBBLESTONE_STAIRS.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_STAIRS.get());
-		this.dropSelf(AMBlocks.ALIEN_STONE_SLAB.get());
-		this.dropSelf(AMBlocks.ALIEN_COBBLESTONE_SLAB.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_SLAB.get());
-		this.dropSelf(AMBlocks.ALIEN_BEDROCK.get());
-		this.dropSelf(AMBlocks.ALIEN_CRAFTING_TABLE.get());
+		this.dropSelf(AMBlocks.GLELUSTONE_STAIRS.get());
+		this.dropSelf(AMBlocks.COBBLE_GELUSTONE_STAIRS.get());
+		this.dropSelf(AMBlocks.LIGNUM_STAIRS.get());
+		this.dropSelf(AMBlocks.GELUSTONE_SLAB.get());
+		this.dropSelf(AMBlocks.COBBLE_GELUSTONE_SLAB.get());
+		this.dropSelf(AMBlocks.LIGNUM_SLAB.get());
+		this.dropSelf(AMBlocks.GELUSTONE_BEDROCK.get());
+		this.dropSelf(AMBlocks.LIGNUM_CRAFTING_TABLE.get());
 
-		this.add(AMBlocks.ALIEN_GOLD_ORE.get(), (block) -> {
+		this.add(AMBlocks.GELUSTONE_GOLD_ORE.get(), (block) -> {
 			return this.createOreDrop(block, Items.RAW_GOLD);
 		});
 
-		this.add(AMBlocks.ALIEN_GRASS.get(), (block) -> {
+		this.add(AMBlocks.TALL_GRAMEN.get(), (block) -> {
 			return createShearsDispatchTable(block,
 					this.applyExplosionDecay(block,
 							LootItem.lootTableItem(AMItems.ALIEN_SEEDS.get())
@@ -77,9 +77,9 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 									.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
 		});
 
-		this.dropSelf(AMBlocks.ALIEN_SAPLING.get());
+		this.dropSelf(AMBlocks.LIGNUM_SAPLING.get());
 		// this.dropSelf(AMBlocks.DEAD_PLANT.get());
-		this.add(AMBlocks.ALIEN_DOUBLE_GRASS.get(), (block) -> {
+		this.add(AMBlocks.DOUBLE_TALL_GRAMEN.get(), (block) -> {
 			return createShearsDispatchTable(block,
 					this.applyExplosionDecay(block,
 							LootItem.lootTableItem(AMItems.ALIEN_SEEDS.get())
@@ -87,34 +87,38 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 									.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
 		});
 
-		this.add(AMBlocks.ALIEN_WOOD_DOOR.get(), (block) -> {
+		this.add(AMBlocks.LIGNUM_DOOR.get(), (block) -> {
 			return this.createDoorTable(block);
 		});
 
-		this.dropSelf(AMBlocks.ALIEN_WOOD_FENCE.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_FENCE_GATE.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_TRAPDOOR.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_BUTTON.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_PRESSURE_PLATE.get());
-		this.dropSelf(AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_SIGN.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_HANGING_SIGN.get());
-		this.dropSelf(AMBlocks.STRIPPED_ALIEN_LOG.get());
-		this.dropSelf(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get());
+		this.dropSelf(AMBlocks.LIGNUM_FENCE.get());
+		this.dropSelf(AMBlocks.LIGNUM_FENCE_GATE.get());
+		this.dropSelf(AMBlocks.LIGNUM_TRAPDOOR.get());
+		this.dropSelf(AMBlocks.LIGNUM_BUTTON.get());
+		this.dropSelf(AMBlocks.LIGNUM_PRESSURE_PLATE.get());
+		this.dropSelf(AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME.get());
+		this.dropSelf(AMBlocks.LIGNUM_SIGN.get());
+		this.dropSelf(AMBlocks.LIGNUM_HANGING_SIGN.get());
+		// this.dropSelf(AMBlocks.STRIPPED_ALIEN_LOG.get());
+		// this.dropSelf(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get());
 		this.dropSelf(AMBlocks.AIR_PURIFIER.get());
-		this.dropSelf(AMBlocks.ALIEN_WOOD_CHEST.get());
-		this.dropSelf(AMBlocks.ALIEN_STONE_BUTTON.get());
-		this.dropSelf(AMBlocks.ALIEN_STONE_PRESSURE_PLATE.get());
-		this.dropSelf(AMBlocks.ALIEN_COBBLESTONE_WALL.get());
+		this.dropSelf(AMBlocks.LIGNUM_CHEST.get());
+		this.dropSelf(AMBlocks.GELUSTONE_BUTTON.get());
+		this.dropSelf(AMBlocks.GELUSTONE_PRESSURE_PLATE.get());
+		this.dropSelf(AMBlocks.COBBLE_GELUSTONE_WALL.get());
 		this.dropSelf(AMBlocks.COAL_GENERATOR.get());
 		this.dropSelf(AMBlocks.ENERGY_STORAGE.get());
-		this.dropSelf(AMBlocks.ALIEN_METAL_ORE.get());
-		this.dropSelf(AMBlocks.ALIEN_METAL_BLOCK.get());
-		this.dropSelf(AMBlocks.RAW_ALIEN_METAL_BLOCK.get());
+		this.add(AMBlocks.APSIUS_ORE.get(), (block) -> {
+			return this.createOreDrop(block, AMItems.APSIUS_GEM.get());
+		});
+		this.dropSelf(AMBlocks.APSIUS_BLOCK.get());
 		this.dropSelf(AMBlocks.COPPER_WIRE.get());
 		this.dropSelf(AMBlocks.LAZER_CREATOR.get());
 		this.dropSelf(AMBlocks.ENERGY_BLOCK.get());
-		this.dropSelf(AMBlocks.THIN_ALIEN_LOG.get());
+		this.dropSelf(AMBlocks.THIN_LIGNUM_LOG.get());
+		this.add(AMBlocks.GELUSTONE_IRON_ORE.get(), (block) -> {
+			return this.createOreDrop(block, Items.RAW_GOLD);
+		});
 	}
 
 	@Override

@@ -17,8 +17,8 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 public class AMGrassFeatures {
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> ALIEN_GRASS = createKey("alien_grass");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> ALIEN_DOUBLE_GRASS = createKey("alien_double_grass");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_GRAMEN = createKey("tall_gramen");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> DOUBLE_TALL_GRAMEN = createKey("double_tall_gramen");
 
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		// context.register(context, ALIEN_GRASS, new
@@ -26,13 +26,13 @@ public class AMGrassFeatures {
 		// new
 		// SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.ALIEN_GRASS.get()));
 
-		context.register(ALIEN_GRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
-				grassPatch(BlockStateProvider.simple(AMBlocks.ALIEN_GRASS.get()), 32)));
+		context.register(TALL_GRAMEN, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+				grassPatch(BlockStateProvider.simple(AMBlocks.TALL_GRAMEN.get()), 32)));
 
-		context.register(ALIEN_DOUBLE_GRASS,
+		context.register(DOUBLE_TALL_GRAMEN,
 				new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
 						Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.ALIEN_DOUBLE_GRASS.get())))));
+						new SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.DOUBLE_TALL_GRAMEN.get())))));
 	}
 
 	private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

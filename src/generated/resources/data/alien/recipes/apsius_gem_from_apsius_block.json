@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alien:apsius_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "alien:apsius_gem"
+  }
+}

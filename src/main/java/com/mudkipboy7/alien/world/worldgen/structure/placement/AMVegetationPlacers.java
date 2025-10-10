@@ -27,8 +27,8 @@ import net.minecraft.world.level.levelgen.placement.SurfaceWaterDepthFilter;
 public class AMVegetationPlacers {
 
 	// Grasses
-	public static final ResourceKey<PlacedFeature> ALIEN_GRASS = createKey("alien_grass");
-	public static final ResourceKey<PlacedFeature> ALIEN_DOUBLE_GRASS = createKey("alien_double_grass");
+	public static final ResourceKey<PlacedFeature> TALL_GRAMEN = createKey("tall_gramen");
+	public static final ResourceKey<PlacedFeature> DOUBLE_TALL_GRAMEN = createKey("double_tall_gramen");
 
 	// Trees
 	public static final ResourceKey<PlacedFeature> ALIEN_TREE = createKey("lignum_tree");
@@ -37,13 +37,13 @@ public class AMVegetationPlacers {
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
 		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-		context.register(ALIEN_GRASS,
-				new PlacedFeature(configuredFeatures.getOrThrow(AMGrassFeatures.ALIEN_GRASS),
+		context.register(TALL_GRAMEN,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMGrassFeatures.TALL_GRAMEN),
 						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7), InSquarePlacement.spread(),
 								PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
 
-		context.register(ALIEN_DOUBLE_GRASS,
-				new PlacedFeature(configuredFeatures.getOrThrow(AMGrassFeatures.ALIEN_DOUBLE_GRASS),
+		context.register(DOUBLE_TALL_GRAMEN,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMGrassFeatures.DOUBLE_TALL_GRAMEN),
 						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7), RarityFilter.onAverageOnceEvery(5),
 								InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
@@ -53,14 +53,14 @@ public class AMVegetationPlacers {
 						List.of(PlacementUtils.countExtra(0, 0.05F, 1), InSquarePlacement.spread(), placementmodifier,
 								PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
 								BlockPredicateFilter.forPredicate(BlockPredicate
-										.wouldSurvive(AMBlocks.ALIEN_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),
+										.wouldSurvive(AMBlocks.LIGNUM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),
 								BiomeFilter.biome())));
 		context.register(THIN_TALL_ALIEN_TREE,
 				new PlacedFeature(configuredFeatures.getOrThrow(AMTreeFeatures.THIN_TALL_ALIEN_TREE),
 						List.of(PlacementUtils.countExtra(15, 0.2F, 1), InSquarePlacement.spread(), placementmodifier,
 								PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
 								BlockPredicateFilter.forPredicate(BlockPredicate
-										.wouldSurvive(AMBlocks.ALIEN_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),
+										.wouldSurvive(AMBlocks.LIGNUM_SAPLING.get().defaultBlockState(), BlockPos.ZERO)),
 								BiomeFilter.biome())));
 
 		/*

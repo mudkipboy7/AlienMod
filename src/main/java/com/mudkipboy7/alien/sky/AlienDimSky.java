@@ -42,8 +42,6 @@ public class AlienDimSky {
 	public SatiliteAstroObject alienPlanet = new SatiliteAstroObject(0.0F, 0.0F, Level.TICKS_PER_DAY, 0);
 	public StarAstroObject stars = new StarAstroObject(0.15F, 94373L, 2000);
 
-	/** Alters the speed that the sky moves at **/
-	public static final float SKY_TRAVERSAL_RATE = 1.0F;
 
 	public AlienDimSky() {
 	}

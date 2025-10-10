@@ -11,9 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 public class EnergyBlockScreen extends AbstractMachineScreen<EnergyBlockMenu> {
-	protected static final ResourceLocation TEXTURE = AlienMod
-			.location("textures/gui/container/energy_block_menu.png");
-
+	protected static final ResourceLocation TEXTURE = AlienMod.location("textures/gui/container/energy_block_menu.png");
 
 	public EnergyBlockScreen(EnergyBlockMenu menu, Inventory inventory, Component title) {
 		super(menu, inventory, title);
@@ -27,8 +25,8 @@ public class EnergyBlockScreen extends AbstractMachineScreen<EnergyBlockMenu> {
 		int sliceHeight = (this.height - this.imageHeight) / 2;
 		int powerHeightMod = Math.round(52.0F * ((((float) energyAmmount) / (float) maxEnergy)));
 		guiGraphics.blit(TEXTURE, sliceWidth, sliceHeight, 0, 0, this.imageWidth, this.imageHeight);
-		//guiGraphics.blitSprite(POWER_AMMOUNT_SPRITE, 16, 52, 0, 52 - powerHeightMod, sliceWidth + 98,
-		//		sliceHeight + 17 + 52 - powerHeightMod, 16, powerHeightMod);
+		guiGraphics.blitSprite(POWER_AMMOUNT_SPRITE, 16, 52, 0, 52 - powerHeightMod, sliceWidth + 98,
+				sliceHeight + 17 + 52 - powerHeightMod, 16, powerHeightMod);
 	}
 
 	@Override
@@ -39,15 +37,16 @@ public class EnergyBlockScreen extends AbstractMachineScreen<EnergyBlockMenu> {
 	}
 
 	protected void renderTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
-		int energyAmmount = this.menu.getEnergyStored();
-		int maxEnergy = this.menu.getMaxEnergyStored();
-
 		if (this.menu.getCarried().isEmpty() && this.hoveredSlot != null) {
 			if (this.hoveredSlot.hasItem()) {
 				ItemStack itemstack = this.hoveredSlot.getItem();
 				graphics.renderTooltip(this.font, this.getTooltipFromContainerItem(itemstack),
 						itemstack.getTooltipImage(), itemstack, mouseX, mouseY);
 			}
+		} else if (this.isHovering(98, 17, 16, 52, mouseX, mouseY)) {
+			graphics.renderTooltip(this.font,
+					Component.literal("∞").withStyle((arg) -> arg.withColor(getColorFromPercent(100))),
+					mouseX /* 351 */, mouseY + 8);
 		}
 	}
 

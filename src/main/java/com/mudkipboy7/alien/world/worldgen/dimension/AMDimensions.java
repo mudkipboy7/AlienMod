@@ -8,8 +8,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import com.mojang.serialization.Codec;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.world.block.AMBlocks;
+import com.mudkipboy7.alien.world.worldgen.AlienChunkGenerator;
+import com.mudkipboy7.alien.world.worldgen.AlienDimNoiseRouter;
+import com.mudkipboy7.alien.world.worldgen.AlienDimSurfaceRules;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -20,7 +24,9 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.FixedBiomeSource;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
@@ -70,9 +76,11 @@ public class AMDimensions {
 		// HolderGetter<Codec<? extends ChunkGenerator>> chunkGen =
 		// context.lookup(Registries.CHUNK_GENERATOR);
 		HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
-
-		FixedBiomeSource biomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.ALIEN_RAINFOREST));
-		AlienChunkGenerator wrappedChunkGenerator = new AlienChunkGenerator(biomeSource,
+		
+		FixedBiomeSource fixedBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.ALIEN_RAINFOREST));
+		
+		//MultiNoiseBiomeSource biomeSource = MultiNoiseBiomeSource.createFromList(null);
+		AlienChunkGenerator wrappedChunkGenerator = new AlienChunkGenerator(fixedBiomeSource,
 				noiseGenSettings.getOrThrow(ALIEN_DIM_NOISE_SETTINGS));
 
 		LevelStem levelStem = new LevelStem(dimTypes.getOrThrow(AMDimensions.ALIENDIM_TYPE), wrappedChunkGenerator);
@@ -83,7 +91,7 @@ public class AMDimensions {
 		context.register(ALIEN_DIM_NOISE_SETTINGS,
 				// The Actual settings
 				new NoiseGeneratorSettings(NoiseSettings.create(-64, 384, 1, 2),
-						AMBlocks.ALIEN_STONE.get().defaultBlockState(),
+						AMBlocks.GELUSTONE.get().defaultBlockState(),
 						AMBlocks.AMMONIA_LIQUID_BLOCK.get().defaultBlockState(),
 						AlienDimNoiseRouter.alienDimNoiseRouter(context.lookup(Registries.DENSITY_FUNCTION),
 								context.lookup(Registries.NOISE)),

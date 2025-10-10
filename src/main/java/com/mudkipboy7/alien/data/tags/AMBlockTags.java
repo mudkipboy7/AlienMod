@@ -55,24 +55,24 @@ public class AMBlockTags extends BlockTagsProvider {
 
 		tag(MINEABLE_WITH_ALIEN_SWORD).add(Blocks.COBWEB);
 
-		tag(MINEABLE_WITH_ALIEN_PICKAXE).add(AMBlocks.ALIEN_STONE.get(), AMBlocks.ALIEN_COBBLESTONE.get(),
-				AMBlocks.ALIEN_COAL_ORE.get(), AMBlocks.ALIEN_STONE_STAIRS.get(),
-				AMBlocks.ALIEN_COBBLESTONE_STAIRS.get(), AMBlocks.ALIEN_STONE_SLAB.get(),
-				AMBlocks.ALIEN_COBBLESTONE_SLAB.get(), AMBlocks.ALIEN_GOLD_ORE.get(), AMBlocks.ALIEN_STONE_BUTTON.get(),
-				AMBlocks.ALIEN_STONE_PRESSURE_PLATE.get(), AMBlocks.ALIEN_COBBLESTONE_WALL.get(),
-				AMBlocks.ALIEN_METAL_ORE.get(), AMBlocks.ALIEN_METAL_BLOCK.get(), AMBlocks.RAW_ALIEN_METAL_BLOCK.get(),
+		tag(MINEABLE_WITH_ALIEN_PICKAXE)
+				.add(AMBlocks.GELUSTONE.get(), AMBlocks.ALIEN_COBBLESTONE.get(), AMBlocks.GELUSTONE_COAL_ORE.get(),
+						AMBlocks.GLELUSTONE_STAIRS.get(), AMBlocks.COBBLE_GELUSTONE_STAIRS.get(),
+						AMBlocks.GELUSTONE_SLAB.get(), AMBlocks.COBBLE_GELUSTONE_SLAB.get(),
+						AMBlocks.GELUSTONE_GOLD_ORE.get(), AMBlocks.GELUSTONE_BUTTON.get(),
+						AMBlocks.GELUSTONE_PRESSURE_PLATE.get(), AMBlocks.COBBLE_GELUSTONE_WALL.get(),
+						AMBlocks.APSIUS_ORE.get(), AMBlocks.APSIUS_BLOCK.get(), AMBlocks.GELUSTONE_IRON_ORE.get(),
 
-				Blocks.BELL, Blocks.FURNACE, Blocks.BLAST_FURNACE, Blocks.SMOKER, Blocks.BREWING_STAND)
+						Blocks.BELL, Blocks.FURNACE, Blocks.BLAST_FURNACE, Blocks.SMOKER, Blocks.BREWING_STAND)
 				.addTags(BlockTags.ANVIL, BlockTags.CAULDRONS, Tags.Blocks.OBSIDIAN, Tags.Blocks.CHESTS_ENDER,
 						Tags.Blocks.STORAGE_BLOCKS_GOLD, Tags.Blocks.STORAGE_BLOCKS_RAW_GOLD,
-						Tags.Blocks.STORAGE_BLOCKS_COAL);
+						Tags.Blocks.STORAGE_BLOCKS_COAL,Tags.Blocks.STORAGE_BLOCKS_IRON,Tags.Blocks.STORAGE_BLOCKS_RAW_IRON);
 
 		tag(MINEABLE_WITH_ALIEN_AXE)
-				.add(AMBlocks.ALIEN_PLANKS.get(), AMBlocks.ALIEN_WOOD_STAIRS.get(), AMBlocks.ALIEN_WOOD_SLAB.get(),
-						AMBlocks.ALIEN_CRAFTING_TABLE.get(), AMBlocks.ALIEN_WOOD_DOOR.get(),
-						AMBlocks.ALIEN_WOOD_FENCE.get(), AMBlocks.ALIEN_WOOD_FENCE_GATE.get(),
-						AMBlocks.ALIEN_WOOD_TRAPDOOR.get(), AMBlocks.ALIEN_WOOD_BUTTON.get(),
-						AMBlocks.ALIEN_WOOD_PRESSURE_PLATE.get(), AMBlocks.ALIEN_WOOD_CHEST.get(),
+				.add(AMBlocks.LIGNUM_PLANKS.get(), AMBlocks.LIGNUM_STAIRS.get(), AMBlocks.LIGNUM_SLAB.get(),
+						AMBlocks.LIGNUM_CRAFTING_TABLE.get(), AMBlocks.LIGNUM_DOOR.get(), AMBlocks.LIGNUM_FENCE.get(),
+						AMBlocks.LIGNUM_FENCE_GATE.get(), AMBlocks.LIGNUM_TRAPDOOR.get(), AMBlocks.LIGNUM_BUTTON.get(),
+						AMBlocks.LIGNUM_PRESSURE_PLATE.get(), AMBlocks.LIGNUM_CHEST.get(),
 
 						Blocks.CRAFTING_TABLE, Blocks.COMPOSTER, Blocks.FLETCHING_TABLE)
 				.addTags(AMBlockTags.LIGNUM_LOGS,
@@ -80,53 +80,52 @@ public class AMBlockTags extends BlockTagsProvider {
 						BlockTags.BEDS, Tags.Blocks.CHESTS_WOODEN, Tags.Blocks.BARRELS_WOODEN,
 						Tags.Blocks.STORAGE_BLOCKS_COAL);
 
-		tag(MINEABLE_WITH_ALIEN_SHOVEL).add(AMBlocks.ALIEN_DIRT.get(), AMBlocks.ALIEN_GRASS_BLOCK.get());
+		tag(MINEABLE_WITH_ALIEN_SHOVEL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get());
 
-		tag(MINEABLE_WITH_ALIEN_HOE).add(AMBlocks.ALIEN_LEAVES.get());
+		tag(MINEABLE_WITH_ALIEN_HOE).add(AMBlocks.LIGNUM_LEAVES.get());
 
-		tag(ALIEN_SOIL).add(AMBlocks.ALIEN_DIRT.get(), AMBlocks.ALIEN_GRASS_BLOCK.get());
+		tag(ALIEN_SOIL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get());
 
-		tag(ALIEN_PLANT).add(AMBlocks.ALIEN_LEAVES.get(), AMBlocks.ALIEN_GRASS.get(), AMBlocks.ALIEN_SAPLING.get());
+		tag(ALIEN_PLANT).add(AMBlocks.LIGNUM_LEAVES.get(), AMBlocks.TALL_GRAMEN.get(), AMBlocks.LIGNUM_SAPLING.get());
 
 		tag(SUPPORTS_ALIEN_LEAVES).addTag(LIGNUM_LOGS);
 
-		tag(LIGNUM_LOGS).add(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get(),
-				AMBlocks.STRIPPED_ALIEN_LOG.get(), AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get(),
-				AMBlocks.THIN_ALIEN_LOG.get());
+		tag(LIGNUM_LOGS).add(AMBlocks.LIGNUM_LOG.get(), AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME.get(),
+				AMBlocks.THIN_LIGNUM_LOG.get());
 
-		tag(LIGNUM_PLANKS).add(AMBlocks.ALIEN_PLANKS.get());
+		tag(LIGNUM_PLANKS).add(AMBlocks.LIGNUM_PLANKS.get());
 
-		tag(LIGNUM_STAIRS).add(AMBlocks.ALIEN_WOOD_STAIRS.get());
+		tag(LIGNUM_STAIRS).add(AMBlocks.LIGNUM_STAIRS.get());
 
-		tag(LIGNUM_SLABS).add(AMBlocks.ALIEN_WOOD_SLAB.get());
+		tag(LIGNUM_SLABS).add(AMBlocks.LIGNUM_SLAB.get());
 
 		tag(LAZER_CAN_PASS).add(Blocks.GLASS);
 
 		/*
 		 * Vanilla/Forge/Other
 		 */
-		tag(BlockTags.NEEDS_IRON_TOOL).add(AMBlocks.ALIEN_GOLD_ORE.get());
+		tag(BlockTags.NEEDS_IRON_TOOL).add(AMBlocks.GELUSTONE_GOLD_ORE.get(), AMBlocks.GELUSTONE_IRON_ORE.get());
 
-		tag(BlockTags.COAL_ORES).add(AMBlocks.ALIEN_COAL_ORE.get());
+		tag(BlockTags.COAL_ORES).add(AMBlocks.GELUSTONE_COAL_ORE.get());
 
-		tag(BlockTags.GOLD_ORES).add(AMBlocks.ALIEN_GOLD_ORE.get());
+		tag(BlockTags.GOLD_ORES).add(AMBlocks.GELUSTONE_GOLD_ORE.get());
 
 		tag(BlockTags.ENDERMAN_HOLDABLE).addTag(ALIEN_SOIL);
 
-		tag(BlockTags.WOODEN_FENCES).add(AMBlocks.ALIEN_WOOD_FENCE.get());
+		tag(BlockTags.WOODEN_FENCES).add(AMBlocks.LIGNUM_FENCE.get());
 
-		tag(BlockTags.FENCE_GATES).add(AMBlocks.ALIEN_WOOD_FENCE_GATE.get());
+		tag(BlockTags.FENCE_GATES).add(AMBlocks.LIGNUM_FENCE_GATE.get());
 
-		tag(BlockTags.STAIRS).add(AMBlocks.ALIEN_STONE_STAIRS.get(), AMBlocks.ALIEN_COBBLESTONE_STAIRS.get());
+		tag(BlockTags.STAIRS).add(AMBlocks.GLELUSTONE_STAIRS.get(), AMBlocks.COBBLE_GELUSTONE_STAIRS.get());
 
-		tag(BlockTags.SLABS).add(AMBlocks.ALIEN_STONE_SLAB.get(), AMBlocks.ALIEN_COBBLESTONE_SLAB.get());
+		tag(BlockTags.SLABS).add(AMBlocks.GELUSTONE_SLAB.get(), AMBlocks.COBBLE_GELUSTONE_SLAB.get());
 
-		tag(BlockTags.STANDING_SIGNS).add(AMBlocks.ALIEN_WOOD_SIGN.get());
-		tag(BlockTags.WALL_SIGNS).add(AMBlocks.ALIEN_WOOD_WALL_SIGN.get());
+		tag(BlockTags.STANDING_SIGNS).add(AMBlocks.LIGNUM_SIGN.get());
+		tag(BlockTags.WALL_SIGNS).add(AMBlocks.LIGNUM_WALL_SIGN.get());
 
-		tag(BlockTags.CEILING_HANGING_SIGNS).add(AMBlocks.ALIEN_WOOD_HANGING_SIGN.get());
+		tag(BlockTags.CEILING_HANGING_SIGNS).add(AMBlocks.LIGNUM_HANGING_SIGN.get());
 
-		tag(BlockTags.WALL_HANGING_SIGNS).add(AMBlocks.ALIEN_WOOD_WALL_HANGING_SIGN.get());
+		tag(BlockTags.WALL_HANGING_SIGNS).add(AMBlocks.LIGNUM_WALL_HANGING_SIGN.get());
 
 		tag(BlockTags.PLANKS).addTags(AMBlockTags.LIGNUM_PLANKS);
 
@@ -136,27 +135,29 @@ public class AMBlockTags extends BlockTagsProvider {
 
 		tag(BlockTags.LOGS_THAT_BURN).addTags(AMBlockTags.LIGNUM_LOGS);
 
-		tag(BlockTags.WOODEN_BUTTONS).add(AMBlocks.ALIEN_WOOD_BUTTON.get());
+		tag(BlockTags.WOODEN_BUTTONS).add(AMBlocks.LIGNUM_BUTTON.get());
 
-		tag(BlockTags.WOODEN_PRESSURE_PLATES).add(AMBlocks.ALIEN_WOOD_PRESSURE_PLATE.get());
+		tag(BlockTags.WOODEN_PRESSURE_PLATES).add(AMBlocks.LIGNUM_PRESSURE_PLATE.get());
 
-		tag(BlockTags.STONE_BUTTONS).add(AMBlocks.ALIEN_STONE_BUTTON.get());
+		tag(BlockTags.STONE_BUTTONS).add(AMBlocks.GELUSTONE_BUTTON.get());
 
-		tag(BlockTags.PRESSURE_PLATES).add(AMBlocks.ALIEN_STONE_PRESSURE_PLATE.get());
+		tag(BlockTags.PRESSURE_PLATES).add(AMBlocks.GELUSTONE_PRESSURE_PLATE.get());
 
-		tag(BlockTags.WALLS).add(AMBlocks.ALIEN_COBBLESTONE_WALL.get());
+		tag(BlockTags.WALLS).add(AMBlocks.COBBLE_GELUSTONE_WALL.get());
 
-		tag(BlockTags.WOODEN_DOORS).add(AMBlocks.ALIEN_WOOD_DOOR.get());
+		tag(BlockTags.WOODEN_DOORS).add(AMBlocks.LIGNUM_DOOR.get());
 
-		tag(BlockTags.WOODEN_TRAPDOORS).add(AMBlocks.ALIEN_WOOD_TRAPDOOR.get());
+		tag(BlockTags.WOODEN_TRAPDOORS).add(AMBlocks.LIGNUM_TRAPDOOR.get());
 
-		tag(Tags.Blocks.CHESTS_WOODEN).add(AMBlocks.ALIEN_WOOD_CHEST.get());
+		tag(Tags.Blocks.CHESTS_WOODEN).add(AMBlocks.LIGNUM_CHEST.get());
 
-		tag(Tags.Blocks.ORES).add(AMBlocks.ALIEN_METAL_ORE.get());
+		tag(Tags.Blocks.ORES).add(AMBlocks.APSIUS_ORE.get());
 
-		tag(Tags.Blocks.STORAGE_BLOCKS).add(AMBlocks.ALIEN_METAL_BLOCK.get(), AMBlocks.RAW_ALIEN_METAL_BLOCK.get());
+		tag(Tags.Blocks.STORAGE_BLOCKS).add(AMBlocks.APSIUS_BLOCK.get());
 
 		tag(BlockTags.MINEABLE_WITH_AXE).remove(LIGNUM_LOGS, LIGNUM_PLANKS, LIGNUM_SLABS, LIGNUM_STAIRS);
+
+		tag(BlockTags.IRON_ORES).add(AMBlocks.GELUSTONE_IRON_ORE.get());
 	}
 
 	// Methods

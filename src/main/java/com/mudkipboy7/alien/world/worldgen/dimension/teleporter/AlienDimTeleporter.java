@@ -44,7 +44,7 @@ public class AlienDimTeleporter implements ITeleporter {
 				destWorld.setBlockAndUpdate(p_207578_, Blocks.AIR.defaultBlockState());
 			});
 			BlockPos.betweenClosed(i - 2, j, k - 2, i + 2, j, k + 2).forEach((p_184101_) -> {
-				destWorld.setBlockAndUpdate(p_184101_, AMBlocks.ALIEN_BEDROCK.get().defaultBlockState());
+				destWorld.setBlockAndUpdate(p_184101_, AMBlocks.GELUSTONE_BEDROCK.get().defaultBlockState());
 			});
 			destWorld.setBlockAndUpdate(new BlockPos(portalPos), AMBlocks.ALIEN_PORTAL.get().defaultBlockState());
 

@@ -45,26 +45,26 @@ public class AMItemTags<T> extends ItemTagsProvider {
 		 * AlienMod
 		 */
 		tag(AMItemTags.ALIEN_WEAPON)
-			.add(AMItems.WOODEN_ALIEN_SWORD.get(), AMItems.WOODEN_ALIEN_PICKAXE.get(),
-				AMItems.WOODEN_ALIEN_AXE.get(), AMItems.WOODEN_ALIEN_SHOVEL.get(),
-				AMItems.WOODEN_ALIEN_HOE.get(), AMItems.STONE_ALIEN_SWORD.get(),
-				AMItems.STONE_ALIEN_PICKAXE.get(), AMItems.STONE_ALIEN_AXE.get(),
-				AMItems.STONE_ALIEN_SHOVEL.get(),AMItems.STONE_ALIEN_HOE.get(),
-				AMItems.ALIEN_METAL_SWORD.get(),AMItems.ALIEN_METAL_PICKAXE.get(),
-				AMItems.ALIEN_METAL_AXE.get(),AMItems.ALIEN_METAL_SHOVEL.get(),
-				AMItems.ALIEN_METAL_HOE.get());
+			.add(AMItems.LIGNUM_SWORD.get(), AMItems.LIGNUM_PICKAXE.get(),
+				AMItems.LIGNUM_AXE.get(), AMItems.LIGNUM_SHOVEL.get(),
+				AMItems.LIGNUM_HOE.get(), AMItems.GELUSTONE_SWORD.get(),
+				AMItems.GELUSTONE_PICKAXE.get(), AMItems.GELUSTONE_AXE.get(),
+				AMItems.GELUSTONE_SHOVEL.get(),AMItems.GELUSTONE_HOE.get(),
+				AMItems.APSIUS_SWORD.get(),AMItems.APSIUS_PICKAXE.get(),
+				AMItems.APSIUS_AXE.get(),AMItems.APSIUS_SHOVEL.get(),
+				AMItems.APSIUS_HOE.get());
 
 		tag(AMItemTags.SURVIVAL_HEAD)
-			.add(AMItems.SURVIVAL_HEAD.get(), AMItems.ALIEN_METAL_HELMET.get());
+			.add(AMItems.SURVIVAL_HEAD.get(), AMItems.APSIUS_HELMET.get());
 		
 		tag(AMItemTags.SURVIVAL_TORSO)
-			.add(AMItems.SURVIVAL_TORSO.get(), AMItems.ALIEN_METAL_CHESTPLATE.get());
+			.add(AMItems.SURVIVAL_TORSO.get(), AMItems.APSIUS_CHESTPLATE.get());
 		
 		tag(AMItemTags.SURVIVAL_LEGS)
-			.add(AMItems.SURVIVAL_LEGS.get(), AMItems.ALIEN_METAL_LEGGINGS.get());
+			.add(AMItems.SURVIVAL_LEGS.get(), AMItems.APSIUS_LEGGINGS.get());
 		
 		tag(AMItemTags.SURVIVAL_FEET)
-			.add(AMItems.SURVIVAL_FEET.get(), AMItems.ALIEN_METAL_BOOTS.get());
+			.add(AMItems.SURVIVAL_FEET.get(), AMItems.APSIUS_BOOTS.get());
 		
 		tag(AMItemTags.WOOD_PLANKS_CRAFTING_MATERIALS)
 			.addTags(ItemTags.PLANKS)
@@ -81,18 +81,18 @@ public class AMItemTags<T> extends ItemTagsProvider {
 		tag(ItemTags.FREEZE_IMMUNE_WEARABLES)
 			.addTags(AMItemTags.SURVIVAL_TORSO, AMItemTags.SURVIVAL_LEGS);
 		
-		tag(ItemTags.STONE_CRAFTING_MATERIALS).add(AMItems.ALIEN_COBBLESTONE.get());
+		tag(ItemTags.STONE_CRAFTING_MATERIALS).add(AMItems.COBBLE_GELUSTONE.get());
 		
-		tag(ItemTags.STONE_TOOL_MATERIALS).remove(AMItems.ALIEN_COBBLESTONE.get());
+		tag(ItemTags.STONE_TOOL_MATERIALS).remove(AMItems.COBBLE_GELUSTONE.get());
 		
 		
-		tag(Tags.Items.ARMORS_HELMETS).add(AMItems.ALIEN_METAL_HELMET.get());
+		tag(Tags.Items.ARMORS_HELMETS).add(AMItems.APSIUS_HELMET.get());
 		
-		tag(Tags.Items.ARMORS_CHESTPLATES).add(AMItems.ALIEN_METAL_CHESTPLATE.get());
+		tag(Tags.Items.ARMORS_CHESTPLATES).add(AMItems.APSIUS_CHESTPLATE.get());
 		
-		tag(Tags.Items.ARMORS_LEGGINGS).add(AMItems.ALIEN_METAL_LEGGINGS.get());
+		tag(Tags.Items.ARMORS_LEGGINGS).add(AMItems.APSIUS_LEGGINGS.get());
 		
-		tag(Tags.Items.ARMORS_BOOTS).add(AMItems.ALIEN_METAL_BOOTS.get());
+		tag(Tags.Items.ARMORS_BOOTS).add(AMItems.APSIUS_BOOTS.get());
 
 
 		

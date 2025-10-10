@@ -31,16 +31,14 @@ public class AMBlockModelGen extends BlockStateProvider {
 	static String logBlockFolder = blockFolder + "log/";
 	static String machineFolder = blockFolder + "machine/";
 
-	static ResourceLocation alienStone = AlienMod.location(AlienMod.MODID, blockFolder + "gelustone"),
+	static ResourceLocation gelustone = AlienMod.location(AlienMod.MODID, blockFolder + "gelustone"),
 
-			alienCobbestone = AlienMod.location(blockFolder + "cobble_gelustone"),
+			cobbleGelustone = AlienMod.location(blockFolder + "cobble_gelustone"),
 
-			alienPlanks = AlienMod.location(blockFolder + "lignum_planks"),
-			alienLogSide = AlienMod.location(logBlockFolder + "lignum_log"),
-			alienLogTop = AlienMod.location(logBlockFolder + "lignum_log_top"),
-			strippedAlienLogSide = AlienMod.location(logBlockFolder + "stripped_lignum_log"),
-			strippedAlienLogTop = AlienMod.location(logBlockFolder + "stripped_lignum_log_top"),
-			thinAlienLogTop = AlienMod.location(logBlockFolder + "thin_lignum_log_top");
+			lignumPlanks = AlienMod.location(blockFolder + "lignum_planks"),
+			lignumLogSide = AlienMod.location(logBlockFolder + "lignum_log"),
+			lignumLogTop = AlienMod.location(logBlockFolder + "lignum_log_top"),
+			thinLignumLogTop = AlienMod.location(logBlockFolder + "thin_lignum_log_top");
 
 	public AMBlockModelGen(PackOutput packOutput, ExistingFileHelper exFileHelper) {
 		super(packOutput, AlienMod.MODID, exFileHelper);
@@ -56,40 +54,40 @@ public class AMBlockModelGen extends BlockStateProvider {
 
 		simpleBlock(AMBlocks.ALIEN_AIR.get());
 
-		simpleBlock(AMBlocks.ALIEN_STONE.get());
+		simpleBlock(AMBlocks.GELUSTONE.get());
 
-		simpleBlock(AMBlocks.ALIEN_DIRT.get(),
-				models().withExistingParent(AMBlocks.ALIEN_DIRT.getId().getPath(), "block/cube_all").texture("all",
-						blockFolder + "aliendirt/" + AMBlocks.ALIEN_DIRT.getId().getPath()));
+		simpleBlock(AMBlocks.ALGUSSOIL.get(),
+				models().withExistingParent(AMBlocks.ALGUSSOIL.getId().getPath(), "block/cube_all").texture("all",
+						blockFolder + "aliendirt/" + AMBlocks.ALGUSSOIL.getId().getPath()));
 
-		simpleBlock(AMBlocks.ALIEN_GRASS_BLOCK.get(),
-				models().cubeBottomTop(AMBlocks.ALIEN_GRASS_BLOCK.getId().getPath(),
+		simpleBlock(AMBlocks.GRAMEN_BLOCK.get(),
+				models().cubeBottomTop(AMBlocks.GRAMEN_BLOCK.getId().getPath(),
 						AlienMod.location(
-								blockFolder + "aliendirt/" + AMBlocks.ALIEN_GRASS_BLOCK.getId().getPath() + "_side"),
-						AlienMod.location(blockFolder + "aliendirt/" + AMBlocks.ALIEN_DIRT.getId().getPath()),
-						AlienMod.location(blockFolder + "aliendirt/" + AMBlocks.ALIEN_GRASS_BLOCK.getId().getPath())));
+								blockFolder + "aliendirt/" + AMBlocks.GRAMEN_BLOCK.getId().getPath() + "_side"),
+						AlienMod.location(blockFolder + "aliendirt/" + AMBlocks.ALGUSSOIL.getId().getPath()),
+						AlienMod.location(blockFolder + "aliendirt/" + AMBlocks.GRAMEN_BLOCK.getId().getPath())));
 
 		simpleBlock(AMBlocks.ALIEN_COBBLESTONE.get());
-		simpleBlock(AMBlocks.ALIEN_COAL_ORE.get());
-		simpleBlock(AMBlocks.ALIEN_PLANKS.get());
+		simpleBlock(AMBlocks.GELUSTONE_COAL_ORE.get());
+		simpleBlock(AMBlocks.LIGNUM_PLANKS.get());
 
-		axisBlock(AMBlocks.ALIEN_LOG.get(), alienLogSide, alienLogTop);
+		axisBlock(AMBlocks.LIGNUM_LOG.get(), lignumLogSide, lignumLogTop);
 
-		simpleBlock(AMBlocks.ALIEN_LEAVES.get(),
-				models().withExistingParent(AMBlocks.ALIEN_LEAVES.getId().getPath(), "block/leaves").texture("all",
-						blockFolder + AMBlocks.ALIEN_LEAVES.getId().getPath()));
+		simpleBlock(AMBlocks.LIGNUM_LEAVES.get(),
+				models().withExistingParent(AMBlocks.LIGNUM_LEAVES.getId().getPath(), "block/leaves").texture("all",
+						blockFolder + AMBlocks.LIGNUM_LEAVES.getId().getPath()));
 
-		stairsBlock(AMBlocks.ALIEN_STONE_STAIRS.get(), alienStone);
-		stairsBlock(AMBlocks.ALIEN_COBBLESTONE_STAIRS.get(), alienCobbestone);
-		stairsBlock(AMBlocks.ALIEN_WOOD_STAIRS.get(), alienPlanks);
+		stairsBlock(AMBlocks.GLELUSTONE_STAIRS.get(), gelustone);
+		stairsBlock(AMBlocks.COBBLE_GELUSTONE_STAIRS.get(), cobbleGelustone);
+		stairsBlock(AMBlocks.LIGNUM_STAIRS.get(), lignumPlanks);
 
-		slabBlock(AMBlocks.ALIEN_STONE_SLAB.get(), alienStone, alienStone);
-		slabBlock(AMBlocks.ALIEN_COBBLESTONE_SLAB.get(), alienCobbestone, alienCobbestone);
-		slabBlock(AMBlocks.ALIEN_WOOD_SLAB.get(), alienPlanks, alienPlanks);
+		slabBlock(AMBlocks.GELUSTONE_SLAB.get(), gelustone, gelustone);
+		slabBlock(AMBlocks.COBBLE_GELUSTONE_SLAB.get(), cobbleGelustone, cobbleGelustone);
+		slabBlock(AMBlocks.LIGNUM_SLAB.get(), lignumPlanks, lignumPlanks);
 
-		simpleBlock(AMBlocks.ALIEN_BEDROCK.get());
-		simpleBlock(AMBlocks.ALIEN_CRAFTING_TABLE.get(), models().withExistingParent("lignum_crafting_table", "cube")
-				.texture("down", alienPlanks)
+		simpleBlock(AMBlocks.GELUSTONE_BEDROCK.get());
+		simpleBlock(AMBlocks.LIGNUM_CRAFTING_TABLE.get(), models().withExistingParent("lignum_crafting_table", "cube")
+				.texture("down", lignumPlanks)
 				.texture("east", AlienMod.location(blockFolder + "aliencraftingtable/lignum_crafting_table_side"))
 				.texture("north", AlienMod.location(blockFolder + "aliencraftingtable/lignum_crafting_table_front"))
 				.texture("particle", AlienMod.location(blockFolder + "aliencraftingtable/lignum_crafting_table_front"))
@@ -97,11 +95,11 @@ public class AMBlockModelGen extends BlockStateProvider {
 				.texture("up", AlienMod.location(blockFolder + "aliencraftingtable/lignum_crafting_table_top"))
 				.texture("west", AlienMod.location(blockFolder + "aliencraftingtable/lignum_crafting_table_front")));
 
-		simpleBlock(AMBlocks.ALIEN_GOLD_ORE.get());
+		simpleBlock(AMBlocks.GELUSTONE_GOLD_ORE.get());
 
-		crossBlock(AMBlocks.ALIEN_GRASS, AlienMod.location(plantBlockFolder + "gramen"));
+		crossBlock(AMBlocks.TALL_GRAMEN, AlienMod.location(plantBlockFolder + "gramen"));
 		simpleBlock(AMBlocks.ALIEN_PORTAL.get());
-		crossBlock(AMBlocks.ALIEN_SAPLING, AlienMod.location(plantBlockFolder + "lignum_sapling"));
+		crossBlock(AMBlocks.LIGNUM_SAPLING, AlienMod.location(plantBlockFolder + "lignum_sapling"));
 
 		getVariantBuilder(AMBlocks.DEAD_PLANT.get()).partialState()
 				.with(AMBlockStateProperties.DEAD_PLANT_TYPE, DeadPlantType.SAPLING)
@@ -114,31 +112,31 @@ public class AMBlockModelGen extends BlockStateProvider {
 				.addModels(new ConfiguredModel(models().cross(AMBlocks.DEAD_PLANT.getId().getPath() + "_grass",
 						AlienMod.location(plantBlockFolder + "dead_plant_grass"))));
 
-		doubleCrossBlock(AMBlocks.ALIEN_DOUBLE_GRASS, AlienMod.location(plantBlockFolder + "tall_gramen_bottom"),
+		doubleCrossBlock(AMBlocks.DOUBLE_TALL_GRAMEN, AlienMod.location(plantBlockFolder + "tall_gramen_bottom"),
 				AlienMod.location(plantBlockFolder + "tall_gramen_top"));
 
-		doorBlock(AMBlocks.ALIEN_WOOD_DOOR.get(), AlienMod.location(doorBlockFolder + "lignum_door_bottom"),
+		doorBlock(AMBlocks.LIGNUM_DOOR.get(), AlienMod.location(doorBlockFolder + "lignum_door_bottom"),
 				AlienMod.location(doorBlockFolder + "lignum_door_top"));
 
-		fenceBlock(AMBlocks.ALIEN_WOOD_FENCE.get(), alienPlanks);
+		fenceBlock(AMBlocks.LIGNUM_FENCE.get(), lignumPlanks);
 
-		fenceGateBlock(AMBlocks.ALIEN_WOOD_FENCE_GATE.get(), alienPlanks);
+		fenceGateBlock(AMBlocks.LIGNUM_FENCE_GATE.get(), lignumPlanks);
 
-		trapdoorBlock(AMBlocks.ALIEN_WOOD_TRAPDOOR.get(), AlienMod.location(doorBlockFolder + "lignum_trapdoor"),
+		trapdoorBlock(AMBlocks.LIGNUM_TRAPDOOR.get(), AlienMod.location(doorBlockFolder + "lignum_trapdoor"),
 				false);
 
-		buttonBlock(AMBlocks.ALIEN_WOOD_BUTTON.get(), alienPlanks);
+		buttonBlock(AMBlocks.LIGNUM_BUTTON.get(), lignumPlanks);
 
-		pressurePlateBlock(AMBlocks.ALIEN_WOOD_PRESSURE_PLATE.get(), alienPlanks);
+		pressurePlateBlock(AMBlocks.LIGNUM_PRESSURE_PLATE.get(), lignumPlanks);
 
-		axisBlock(AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get(), alienLogSide, alienLogSide);
+		axisBlock(AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME.get(), lignumLogSide, lignumLogSide);
 
-		signBlock(AMBlocks.ALIEN_WOOD_SIGN.get(), AMBlocks.ALIEN_WOOD_WALL_SIGN.get(), alienPlanks);
-		hangingSignBlock(AMBlocks.ALIEN_WOOD_HANGING_SIGN, AMBlocks.ALIEN_WOOD_WALL_HANGING_SIGN, alienPlanks);
+		signBlock(AMBlocks.LIGNUM_SIGN.get(), AMBlocks.LIGNUM_WALL_SIGN.get(), lignumPlanks);
+		hangingSignBlock(AMBlocks.LIGNUM_HANGING_SIGN, AMBlocks.LIGNUM_WALL_HANGING_SIGN, lignumPlanks);
 
-		axisBlock(AMBlocks.STRIPPED_ALIEN_LOG.get(), strippedAlienLogSide, strippedAlienLogTop);
+		//axisBlock(AMBlocks.STRIPPED_ALIEN_LOG.get(), strippedAlienLogSide, strippedAlienLogTop);
 
-		axisBlock(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get(), strippedAlienLogSide, strippedAlienLogSide);
+		//axisBlock(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get(), strippedAlienLogSide, strippedAlienLogSide);
 
 		simpleBlock(AMBlocks.AIR_PURIFIER.get(),
 				models().cubeBottomTop(AMBlocks.AIR_PURIFIER.getId().getPath(),
@@ -146,14 +144,14 @@ public class AMBlockModelGen extends BlockStateProvider {
 						AlienMod.location(machineFolder + AMBlocks.AIR_PURIFIER.getId().getPath() + "_bottom"),
 						AlienMod.location(machineFolder + AMBlocks.AIR_PURIFIER.getId().getPath() + "_top")));
 
-		simpleBlock(AMBlocks.ALIEN_WOOD_CHEST.get(),
-				models().getBuilder(AMBlocks.ALIEN_WOOD_CHEST.getId().getPath()).texture("particle", alienPlanks));
+		simpleBlock(AMBlocks.LIGNUM_CHEST.get(),
+				models().getBuilder(AMBlocks.LIGNUM_CHEST.getId().getPath()).texture("particle", lignumPlanks));
 
-		buttonBlock(AMBlocks.ALIEN_STONE_BUTTON.get(), alienStone);
+		buttonBlock(AMBlocks.GELUSTONE_BUTTON.get(), gelustone);
 
-		pressurePlateBlock(AMBlocks.ALIEN_STONE_PRESSURE_PLATE.get(), alienStone);
+		pressurePlateBlock(AMBlocks.GELUSTONE_PRESSURE_PLATE.get(), gelustone);
 
-		wallBlock(AMBlocks.ALIEN_COBBLESTONE_WALL.get(), alienCobbestone);
+		wallBlock(AMBlocks.COBBLE_GELUSTONE_WALL.get(), cobbleGelustone);
 
 		simpleBlock(AMBlocks.COAL_GENERATOR.get(), models().cubeAll(AMBlocks.COAL_GENERATOR.getId().getPath(),
 				AlienMod.location(machineFolder + AMBlocks.COAL_GENERATOR.getId().getPath())));
@@ -164,12 +162,10 @@ public class AMBlockModelGen extends BlockStateProvider {
 						AlienMod.location(machineFolder + AMBlocks.ENERGY_STORAGE.getId().getPath() + "_bottom"),
 						AlienMod.location(machineFolder + AMBlocks.ENERGY_STORAGE.getId().getPath() + "_top")));
 
-		simpleBlock(AMBlocks.ALIEN_METAL_ORE.get());
+		simpleBlock(AMBlocks.APSIUS_ORE.get());
 
-		simpleBlock(AMBlocks.ALIEN_METAL_BLOCK.get());
-
-		simpleBlock(AMBlocks.RAW_ALIEN_METAL_BLOCK.get());
-
+		simpleBlock(AMBlocks.APSIUS_BLOCK.get());
+		
 		wireBlock(AMBlocks.COPPER_WIRE, AlienMod.location(machineFolder + AMBlocks.COPPER_WIRE.getId().getPath()), 4);
 
 		directionalBlock(AMBlocks.LAZER_CREATOR.get(),
@@ -181,9 +177,11 @@ public class AMBlockModelGen extends BlockStateProvider {
 		simpleBlock(AMBlocks.ENERGY_BLOCK.get(), models().cubeAll(AMBlocks.ENERGY_BLOCK.getId().getPath(),
 				AlienMod.location(machineFolder + AMBlocks.ENERGY_BLOCK.getId().getPath())));
 
-		simpleBlock(AMBlocks.THIN_ALIEN_LOG.get(),
-				models().withExistingParent(AMBlocks.THIN_ALIEN_LOG.getId().getPath(),
-						AlienMod.location(blockFolder + "thin_block")).texture("side", alienLogSide).texture("top", thinAlienLogTop));
+		simpleBlock(AMBlocks.THIN_LIGNUM_LOG.get(),
+				models().withExistingParent(AMBlocks.THIN_LIGNUM_LOG.getId().getPath(),
+						AlienMod.location(blockFolder + "thin_block")).texture("side", lignumLogSide).texture("top", thinLignumLogTop));
+		
+		simpleBlock(AMBlocks.GELUSTONE_IRON_ORE.get());
 
 	}
 

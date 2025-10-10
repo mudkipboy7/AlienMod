@@ -13,8 +13,8 @@ public class AMItemRenderers {
 		@Override
 		public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 			return new BlockEntityItemRenderer<>(() ->
-				new AlienChestBlockEntity(AMBlockEntities.ALIEN_WOOD_CHEST.get(),
-					BlockPos.ZERO, AMBlocks.ALIEN_WOOD_CHEST.get().defaultBlockState()));
+				new AlienChestBlockEntity(AMBlockEntities.LIGNUM_CHEST.get(),
+					BlockPos.ZERO, AMBlocks.LIGNUM_CHEST.get().defaultBlockState()));
 		}
 	};
 }

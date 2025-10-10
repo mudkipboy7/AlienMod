@@ -48,7 +48,7 @@ public class AlienGrassBlock extends SpreadingSnowyDirtBlock {
 			if (!serverLevel.isAreaLoaded(blockPos, 1))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and
 						// spreading
-			serverLevel.setBlockAndUpdate(blockPos, AMBlocks.ALIEN_DIRT.get().defaultBlockState());
+			serverLevel.setBlockAndUpdate(blockPos, AMBlocks.ALGUSSOIL.get().defaultBlockState());
 		} else {
 			if (!serverLevel.isAreaLoaded(blockPos, 3))
 				return; // Forge: prevent loading unloaded chunks when checking neighbor's light and
@@ -60,7 +60,7 @@ public class AlienGrassBlock extends SpreadingSnowyDirtBlock {
 					BlockPos blockpos = blockPos.offset(randomSource.nextInt(3) - 1, randomSource.nextInt(5) - 3,
 							randomSource.nextInt(3) - 1);
 
-					if (serverLevel.getBlockState(blockpos).is(AMBlocks.ALIEN_DIRT.get())
+					if (serverLevel.getBlockState(blockpos).is(AMBlocks.ALGUSSOIL.get())
 							&& canPropagate(blockstate, serverLevel, blockpos)) {
 
 						serverLevel.setBlockAndUpdate(blockpos, blockstate.setValue(SNOWY,

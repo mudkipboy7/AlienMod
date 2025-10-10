@@ -26,9 +26,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 public class AlienAxeItem extends DiggerItem {
-	protected static final Map<Block, Block> STRIPPABLES = (new ImmutableMap.Builder<Block, Block>())
-			.put(AMBlocks.ALIEN_LOG.get(), AMBlocks.STRIPPED_ALIEN_LOG.get())
-			.put(AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get(), AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get()).build();
+	//protected static final Map<Block, Block> STRIPPABLES = (new ImmutableMap.Builder<Block, Block>())
+	//		.put(AMBlocks.ALIEN_LOG.get(), AMBlocks.STRIPPED_ALIEN_LOG.get())
+	//		.put(AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get(), AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME.get()).build();
 
 	//private static final ImmutableList<Block> blocksThatCanBeStripped = new ImmutableList.Builder<Block>()
 	//		.add(AMBlocks.ALIEN_LOG.get(), AMBlocks.ALIEN_LOG_ALL_SIDES_SAME.get()).build();
@@ -38,10 +38,7 @@ public class AlienAxeItem extends DiggerItem {
 		super(pAttackDamageModifier, pAttackSpeedModifier, pTier, AMBlockTags.MINEABLE_WITH_ALIEN_AXE, pProperties);
 	}
 
-	/**
-	 * Called when this item is used when targeting a Block
-	 */
-	public InteractionResult useOn(UseOnContext pContext) {
+/*/public InteractionResult useOn(UseOnContext pContext) {
 		Level level = pContext.getLevel();
 		BlockPos blockpos = pContext.getClickedPos();
 		Player player = pContext.getPlayer();
@@ -81,7 +78,7 @@ public class AlienAxeItem extends DiggerItem {
 			return p_150689_.defaultBlockState().setValue(RotatedPillarBlock.AXIS,
 					pUnstrippedState.getValue(RotatedPillarBlock.AXIS));
 		});
-	}
+	}*/
 
 	@Override
 	public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {

@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-09T23:11:20.8988755	Item Models: alien
+// 1.20.2	2025-10-10T15:18:57.4224775	Item Models: alien
 ea411e845d0ddb8b29a9e850a24a30b9c26c2ca7 assets/alien/models/item/air_purifier.json
 762cb26d8d4a387261889bea16b7a5a785ecba5f assets/alien/models/item/algussoil.json
 5d7af0e918e1a5edae73711792347441b0197982 assets/alien/models/item/alien_air.json
@@ -9,18 +9,18 @@ a28ebf46521535982c109d596886cf1df800271f assets/alien/models/item/alien_portal.j
 037e40cbeea0a3d0d9b90dbd6494c3251ce3da92 assets/alien/models/item/ammonia_liquid.json
 80730e6f80c6c156a421ca0e17dd498b6dd1a284 assets/alien/models/item/ammonia_liquid_bucket.json
 625d102acf6004db05ec82ce1f51180dbdbf3acf assets/alien/models/item/anti_gravity.json
-35ccf92e34c43c3eb2c80045a375966a8439dbd5 assets/alien/models/item/atsali_axe.json
-eb3e3cfb135605ae212ffcd73a197e372c54a256 assets/alien/models/item/atsali_block.json
-07875f5ed42ee0dd75db9a99ee770499d84b0d95 assets/alien/models/item/atsali_boots.json
-cae4e144befaebc9048fa1a5f046873f98883e62 assets/alien/models/item/atsali_chestplate.json
-b592be190f2a61c6f78c8141085f84e4c12f9c7e assets/alien/models/item/atsali_helmet.json
-bee2f39a8eeff66f075ef340ef029eddd3aa01f9 assets/alien/models/item/atsali_hoe.json
-5c7aeb1a05925d8747373b9579c219daa5c24203 assets/alien/models/item/atsali_ingot.json
-986151b3349454aa9692f126fa850d4516a7832d assets/alien/models/item/atsali_leggings.json
-d2017aece5ec52a407d8cd7386ed872044979d4c assets/alien/models/item/atsali_ore.json
-3f7abf79d27e4d85a57d32529f4d999952d7c300 assets/alien/models/item/atsali_pickaxe.json
-24bc4eb9527d50b2a629e7ed6e980f1bb9c640eb assets/alien/models/item/atsali_shovel.json
-2351799a4cf05d6dd90ad463e8fd4988fcf24370 assets/alien/models/item/atsali_sword.json
+69bc1fde2f5f8fbac50e5c4996a040eb81af3250 assets/alien/models/item/apsius_axe.json
+8adbe58489640644ef805d6205d3270ddd4f3960 assets/alien/models/item/apsius_block.json
+d6ce3bcfef35569491c0d9cd1d2222673eb6471c assets/alien/models/item/apsius_boots.json
+353ebfe1ef24facfeed72122964ed966815f35a1 assets/alien/models/item/apsius_chestplate.json
+b06b5269d604ed5db7561da99f104b3a11add069 assets/alien/models/item/apsius_gem.json
+23b319868668e858b7402dae2f2e876882364293 assets/alien/models/item/apsius_helmet.json
+d7d1eceac0aced5fef62155f91e7988173716d31 assets/alien/models/item/apsius_hoe.json
+17f828fab15293465f313af57f9607c5de6ebdb5 assets/alien/models/item/apsius_leggings.json
+f8b0bfd6df787464e78ac284b9474a33b5054d34 assets/alien/models/item/apsius_ore.json
+ea1a70992f3808b43e1bdadf572d81c5ec94c2be assets/alien/models/item/apsius_pickaxe.json
+55de0a043e5254ca6a52b3e1fde6c1d860ec5383 assets/alien/models/item/apsius_shovel.json
+481a59fa720d372d1229335754c3c618c6cd7a75 assets/alien/models/item/apsius_sword.json
 642da99d462c2649f8a4eadf6623ba00b9c02c33 assets/alien/models/item/battery.json
 572438409f586e3cd9b12ddffaa1b38e8cd9753b assets/alien/models/item/coal_generator.json
 611668867aeb801ca20c6ee0cc286c3e6558192b assets/alien/models/item/cobble_gelustone.json
@@ -29,6 +29,7 @@ c9d806d929e63c77b92955b8a706f6641e24e43e assets/alien/models/item/cobble_gelusto
 d79b2cb04340c8c3dda71099dcc7fb5db15d7a46 assets/alien/models/item/cobble_gelustone_wall.json
 5ffdf40732bee1674f4afd486e7da452873bf00d assets/alien/models/item/copper_wire.json
 64b31f2b626a5bc151b80392ec2214b7f5273ac7 assets/alien/models/item/dead_plant.json
+f965db9c48f55e0e7077acc11aa46d069ebaf79f assets/alien/models/item/double_tall_gramen.json
 f0af880d2eb0b86f821d3f3e8068de851d83432c assets/alien/models/item/energy_block.json
 237d7287cfeb170149de6bf7c2ee61c27b784ab1 assets/alien/models/item/energy_storage_block.json
 ee771ec40b113bff98b1e82e8fe7f78786a7b772 assets/alien/models/item/fur_coat.json
@@ -40,13 +41,13 @@ bf71b45835aa56d4c533627e588d44dc8de2a9d7 assets/alien/models/item/gelustone_bedr
 a4255c64210abd50d83501d0067d30be183f65ed assets/alien/models/item/gelustone_coal_ore.json
 9fc05c4ee5db6a1a1a7f61c030b7c9e0df3ff024 assets/alien/models/item/gelustone_gold_ore.json
 82a4fb5a78fadbbd2baa8a08ba7d529b181519fe assets/alien/models/item/gelustone_hoe.json
+cafeda8f5489fd8e0b254f0df4fca7fa1c662e43 assets/alien/models/item/gelustone_iron_ore.json
 3adab178b063f8e85e6c821cd9852f6475d2ab3e assets/alien/models/item/gelustone_pickaxe.json
 ed0b2706a3d52f6d2a210159b19620aecba2a531 assets/alien/models/item/gelustone_pressure_plate.json
 18c1a0718b68bc3e469b2ee425f142f7663501e6 assets/alien/models/item/gelustone_shovel.json
 63be87da1482d56d10d204942b0194b2345a26de assets/alien/models/item/gelustone_slab.json
 b3de82a07e65c3dd21c1b4f23ce787adf952400f assets/alien/models/item/gelustone_stairs.json
 d63d9852238e50d73c674a3c7192dd9ae0296d09 assets/alien/models/item/gelustone_sword.json
-61afd24f90843b8b4a37c4ca5bd58c0786b078a6 assets/alien/models/item/gramen.json
 27aa3e80f79c4e9fc604cf51f980f796faee5dd9 assets/alien/models/item/gramen_block.json
 22e731d9d25091c5f1689bca04399b80ed043bfc assets/alien/models/item/int_limit_battery.json
 b2234b49e43a7dd9d727c20830d022e02894ed62 assets/alien/models/item/lazer_creator.json
@@ -73,13 +74,9 @@ aae6c9aeefb5eb22d64dbe91772fb69fd296f7f3 assets/alien/models/item/lignum_pressur
 be8f63fd2afee8b5e7e64170acd5c6bf4df7aaab assets/alien/models/item/lignum_sword.json
 3baf15a8632ba2c810899df19c734089ee498022 assets/alien/models/item/lignum_trapdoor.json
 47473606da928e81eac24b214e2cd0e9fbf4e2d6 assets/alien/models/item/oxygen_sack.json
-b486a18c50f92124a332b9189d14a1e3f7ec1131 assets/alien/models/item/raw_atsali.json
-23db45b4b9ef924856bfabeb90d25bf25127fb43 assets/alien/models/item/raw_atsali_block.json
-234e5d73ec56cee840f216fb38bd60e8fba3cb5c assets/alien/models/item/stripped_lignum_all_sides_log.json
-f3896f58e0809044a1b4a6a0b9101b681cc1e66c assets/alien/models/item/stripped_lignum_log.json
 2cce8a9bf614a247a08262b2eaff181da1934da0 assets/alien/models/item/survival_boots.json
 b7bc3c3d25f3a5279e7734a3057e0f1e41bf9082 assets/alien/models/item/survival_gear.json
-f965db9c48f55e0e7077acc11aa46d069ebaf79f assets/alien/models/item/tall_gramen.json
+61afd24f90843b8b4a37c4ca5bd58c0786b078a6 assets/alien/models/item/tall_gramen.json
 5d6e983c9ac16c29d41bcacf90a166a48112187c assets/alien/models/item/test_block.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/alien/models/item/test_entity_spawn_egg.json
 fa06357b0fb2c3e9bde48bdf640258ad38ade9ef assets/alien/models/item/test_item.json

@@ -12,7 +12,7 @@ public class AlienChestBlockEntity extends ChestBlockEntity {
 	}
 
 	public AlienChestBlockEntity(BlockPos blockPos, BlockState blockState) {
-		this(AMBlockEntities.ALIEN_WOOD_CHEST.get(), blockPos, blockState);
+		this(AMBlockEntities.LIGNUM_CHEST.get(), blockPos, blockState);
 	}
 
 }
