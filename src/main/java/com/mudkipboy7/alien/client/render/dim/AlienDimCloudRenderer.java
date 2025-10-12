@@ -24,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
+@Deprecated
 public class AlienDimCloudRenderer {
 
 	private static final ResourceLocation CLOUDS_LOCATION = AlienMod.location("textures/environment/alien_clouds.png");

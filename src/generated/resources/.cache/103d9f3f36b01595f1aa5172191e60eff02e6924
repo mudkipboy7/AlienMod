@@ -1,11 +1,11 @@
-// 1.20.2	2025-10-12T00:12:35.7806835	Registries
+// 1.20.2	2025-10-12T05:39:52.9939611	Registries
 74f5acb51b97095b1cfc71e6b7fcb38e38392b69 data/alien/damage_type/no_oxygen.json
 f4b3f073d41ba749dca0cc076819315c02608d10 data/alien/dimension/alien_planet.json
 a2055e6b79bc7890819edef17a2740a0f0ea9120 data/alien/dimension/jovian_planet.json
 bcb7f2629813e2e3fa4c0240b63fc83d51a5d7b0 data/alien/dimension_type/alien_planet.json
-260da4a8c79dee8e18e86f976a3a44199b38a390 data/alien/dimension_type/jovian_planet.json
+77c63386d2f1e8ec8c54f3995f11034d6446d797 data/alien/dimension_type/jovian_planet.json
 ede71f4d58f9465e1d3eb3790b55a19c6e549345 data/alien/worldgen/biome/barren_craterscape.json
-84769479f25e00b2f9dc411ac50f51c2696d583f data/alien/worldgen/biome/jovian_planet.json
+8cedc9715f16e9e00e805a21b36f52e5f49c08d1 data/alien/worldgen/biome/jovian_planet.json
 3d7a66ad6752c86655c0e3cda12257116d0e73b6 data/alien/worldgen/biome/towering_forrest.json
 954eeae6376dca3a91d7b618be26bdfd0602057a data/alien/worldgen/configured_feature/double_tall_gramen.json
 72bb978ea9548a3ae3223be9c7e2ce2b50a7fe44 data/alien/worldgen/configured_feature/tall_gramen.json

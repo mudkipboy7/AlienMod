@@ -18,7 +18,7 @@ public abstract class PlayerMixin {
 	public void tryToStartFallFlying(CallbackInfoReturnable<Boolean> callbackInfo) {
 		Player player = (Player) (Object) this;
 		Holder<Biome> biome = player.level().getBiome(player.blockPosition());
-		if (biome.is(AMBiomeTags.LOW_GRAVITY)) {
+		if (biome.is(AMBiomeTags.LOW_GRAVITY) || biome.is(AMBiomeTags.ULTRACOLD)) {
 			callbackInfo.cancel();
 			callbackInfo.setReturnValue(false);
 		}

@@ -143,14 +143,14 @@ public class JovianDimCloudsRenderer {
 			Vec3 pCloudColor) {
 		float f3 = (float) Mth.floor(pX) * 0.00390625F;
 		float f4 = (float) Mth.floor(pZ) * 0.00390625F;
-		float cloudColorRed = 1;
-		float cloudColorGreen = 0.5F;
+		float cloudColorRed = 0.6F;
+		float cloudColorGreen = 0.3F;
 		float cloudColorBlue = 0.2F;
 		RenderSystem.setShader(GameRenderer::getPositionTexColorNormalShader);
 		pBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR_NORMAL);
 		float f17 = (float) Math.floor(pY / 4.0D) * 4.0F;
 		// System.out.println(f5);
-		float trans = 0.5F;
+		float trans =0.5F;
 		for (int l1 = -32; l1 < 32; l1 += 32) {
 			for (int i2 = -32; i2 < 32; i2 += 32) {
 				pBuilder.vertex((double) (l1 + 0), (double) f17, (double) (i2 + 32))

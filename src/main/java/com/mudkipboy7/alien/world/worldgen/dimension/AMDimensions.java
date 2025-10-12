@@ -87,7 +87,7 @@ public class AMDimensions {
 			new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)); // monsterSettings
 
 	private static DimensionType jovianDimDimentionType = new DimensionType(OptionalLong.of(6000), // fixedTime
-			false, // hasSkyLight
+			true, // hasSkyLight
 			false, // hasCeiling
 			false, // ultraWarm
 			true, // natural
@@ -99,7 +99,7 @@ public class AMDimensions {
 			128, // logicalHeight
 			BlockTags.INFINIBURN_OVERWORLD, // infiniburn
 			JOVIANDIM_ID, // effectsLocation
-			1, // ambientLight
+			0, // ambientLight
 			new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)); // monsterSettings
 
 	public static void bootstrapDimensionType(BootstapContext<DimensionType> context) {

@@ -9,9 +9,9 @@
 		"LevelMixin",
 		"PlayerMixin",
 		"FluidTypeMixin",
-		"IceBlockMixin"
-	],
-	"server": [
+		"IceBlockMixin",
+		"ServerLevelMixin"
+		
 	],
 	"client": [
 		"client.HeartGuiMixin",

@@ -9,6 +9,7 @@ import com.mudkipboy7.alien.world.effect.AMMobEffects;
 
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.Gui.HeartType;
+import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.world.entity.player.Player;
 
 @Mixin(Gui.HeartType.class)
@@ -18,5 +19,6 @@ public class HeartGuiMixin {
 		if (player.hasEffect(AMMobEffects.NO_OXYGEN.get()) || player.hasEffect(AMMobEffects.COLD.get())) {
 			callbackInfo.setReturnValue(HeartType.FROZEN);
 		}
+
 	}
 }

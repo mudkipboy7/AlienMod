@@ -16,6 +16,7 @@ import com.mudkipboy7.alien.client.render.dim.JovianDimSpecialEffects;
 import com.mudkipboy7.alien.client.render.entity.SurvivalGearRenderingStuff;
 import com.mudkipboy7.alien.inventory.AMMenuTypes;
 import com.mudkipboy7.alien.sky.AlienDimSky;
+import com.mudkipboy7.alien.sound.AMMusicManager;
 import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
@@ -47,6 +48,7 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.client.event.ViewportEvent.ComputeFogColor;
 import net.minecraftforge.client.event.ViewportEvent.RenderFog;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.TickEvent.ClientTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -109,5 +111,9 @@ public class AMClientEvents {
 	@SubscribeEvent
 	public static void setFogColors(ComputeFogColor event) {
 		AlienDimSky.setFogColors(event);
+	}
+	@SubscribeEvent
+	public static void onClientTick(ClientTickEvent event) {
+		AMMusicManager.tickMusic();
 	}
 }

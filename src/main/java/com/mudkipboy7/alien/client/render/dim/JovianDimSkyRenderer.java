@@ -68,9 +68,9 @@ public class JovianDimSkyRenderer {
 		RenderSystem.depthMask(false);
 
 		// Changes sky color for eclipses.
-		skyRed = AlienDimSky.redMul * .25F;
-		skyGreen = AlienDimSky.greenMul * .25F;
-		skyBlue = AlienDimSky.blueMul * .25F;
+		skyRed = AlienDimSky.redMul * .2F;
+		skyGreen = AlienDimSky.greenMul * .2F;
+		skyBlue = AlienDimSky.blueMul * .2F;
 		RenderSystem.setShaderColor(skyRed, skyGreen, skyBlue, 1.0F);
 
 		ShaderInstance shaderinstance = RenderSystem.getShader();
@@ -121,10 +121,10 @@ public class JovianDimSkyRenderer {
 				GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 
 		// Draws the alien planet
-		drawMoon(partialTick, poseStack, projectionMatrix, bufferbuilder, 50.0F, -10F, 10.0F, skyRed, skyGreen, skyBlue,
+		drawMoon(partialTick, poseStack, projectionMatrix, bufferbuilder, 70.0F, -10F, 15.0F, skyRed, skyGreen, skyBlue,
 				ALIEN_PLANET_TEXTURE);
 		// Draws the stationary moon planet
-		drawMoon(partialTick, poseStack, projectionMatrix, bufferbuilder, -60.0F, -5F, 3.0F, skyRed, skyGreen, skyBlue,
+		drawMoon(partialTick, poseStack, projectionMatrix, bufferbuilder, -50.0F, -5F, 3.0F, skyRed, skyGreen, skyBlue,
 				SMALL_MOON_TEXURE);
 
 		/*
@@ -164,7 +164,7 @@ public class JovianDimSkyRenderer {
 		/*
 		 * Draws the stationary sky object.
 		 */
-		float brightness = 0.5F;
+		float brightness = 0.2F;
 		// Starts up it.
 		poseStack.pushPose();
 		matrix4f1 = poseStack.last().pose();

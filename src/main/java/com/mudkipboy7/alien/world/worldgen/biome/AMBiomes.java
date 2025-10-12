@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.biome.OverworldBiomeBuilder;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -37,7 +38,7 @@ public class AMBiomes extends AMBiomeMaker {
 				defaultSpawnSettings(), basicEffects()));
 		
 		context.register(JOVIAN_PLANET_BIOME, makeBiome(true, 1.0F, 1.0F, jovianPlanetBiome(feature, carver),
-				defaultSpawnSettings(), jovianEffects()));
+				new MobSpawnSettings.Builder(), jovianEffects()));
 	}
 
 	private static ResourceKey<Biome> makeKey(String id, String name) {

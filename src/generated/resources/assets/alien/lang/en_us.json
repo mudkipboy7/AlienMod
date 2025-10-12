@@ -123,6 +123,7 @@
   "item.minecraft.tipped_arrow.effect.hazard_protection": "Arrow of Hazard Protection",
   "itemGroup.alien.blocks_tab": "Alien Mod Blocks",
   "itemGroup.alien.items_tab": "Alien Mod Items",
+  "mesg.alien.cant_break": "You can't seem to break the block",
   "mesg.alien.wrong_weapon": "It isn't doing much damage",
   "pack.alien.desc": "Resources for AlienMod."
 }

@@ -49,6 +49,8 @@ public class AMLanguage {
 	 * Components
 	 */
 	public static Component wrongWeaponMessage = Component.translatable(Affixes.messagePrefix + "wrong_weapon");
+	public static Component cantBreakMessage = Component.translatable(Affixes.messagePrefix + "cant_break");
+	
 	public static Component airPuriferContainerName = Component.translatable(Affixes.containerPrefix + "air_purifier");
 	public static Component coalGeneratorContainerName = Component
 			.translatable(Affixes.containerPrefix + "coal_generator");
@@ -109,6 +111,7 @@ public class AMLanguage {
 			 * Messages
 			 */
 			add(wrongWeaponMessage.getString(), "It isn't doing much damage");
+			add(cantBreakMessage.getString(), "You can't seem to break the block");
 
 			/*
 			 * Effect

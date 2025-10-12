@@ -6,8 +6,8 @@
     "foliage_color": 16777215,
     "grass_color": 16777215,
     "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
+      "max_delay": 2,
+      "min_delay": 1,
       "replace_current_music": false,
       "sound": {
         "sound_id": "alien:music.jovian_boss"
@@ -25,20 +25,7 @@
     "axolotls": [],
     "creature": [],
     "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "alien:alien_zombie",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 70
-      }
-    ],
+    "monster": [],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

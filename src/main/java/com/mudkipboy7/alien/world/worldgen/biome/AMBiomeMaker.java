@@ -1,5 +1,6 @@
 package com.mudkipboy7.alien.world.worldgen.biome;
 
+import com.mudkipboy7.alien.sound.AMMusics;
 import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.worldgen.structure.placement.AMVegetationPlacers;
@@ -66,7 +67,7 @@ class AMBiomeMaker {
 		BiomeSpecialEffects.Builder effectSettings = new BiomeSpecialEffects.Builder();
 		effectSettings.waterColor(0xFFFFFF).waterFogColor(0xFFFFFF).skyColor(0x7E2500).grassColorOverride(0xFFFFFF)
 				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000)
-				.backgroundMusic(Musics.createGameMusic(Holder.direct(AMSoundEvents.JOVIAN_BOSS_MUSIC.get())));
+				.backgroundMusic(AMMusics.JOVIAN_BOSS_MUSIC);
 		return effectSettings;
 
 		// .ambientParticle(AmbientParticleSettings.)

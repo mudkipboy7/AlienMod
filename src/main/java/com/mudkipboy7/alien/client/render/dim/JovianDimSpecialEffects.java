@@ -87,7 +87,9 @@ public class JovianDimSpecialEffects extends DimensionSpecialEffects {
 	}
 
 	/*
-	 * Changes lighting of blocks and stuff for eclipses
+	 * Changes lighting of blocks and stuff for eclipses. Okay so this didn't work
+	 * I think because I set there to be no skylight and I set ambient light to
+	 * always be 1, gotta set it to be just fixxed time and not those
 	 */
 	@Override
 	public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker,
@@ -153,13 +155,15 @@ public class JovianDimSpecialEffects extends DimensionSpecialEffects {
 	@Override
 	public boolean renderSnowAndRain(ClientLevel level, int ticks, float partialTick, LightTexture lightTexture,
 			double camX, double camY, double camZ) {
-		level.setRainLevel(0.4F);
+		//level.setRainLevel(0.4F);
+		//level.setThunderLevel(100.0F);
 		return false;
 	}
 
 	@Override
 	public boolean tickRain(ClientLevel level, int ticks, Camera camera) {
-		level.setRainLevel(0.4F);
+		//level.setRainLevel(0.4F);
+		//level.setThunderLevel(100.0F);
 		return true;
 	}
 

@@ -16,15 +16,20 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
+import net.minecraftforge.event.entity.living.LivingDestroyBlockEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
@@ -55,9 +60,6 @@ public class AMEntityEvents {
 			// Runs doHazards() on the entity
 			doHazards(livingEntity);
 		}
-		if(true) {
-			//livingEntity.level().setRainLevel(70);
-		}
 		// Checks if the entity is in a low gravity biome.
 		if (Gravity.entityIsInLowGravityBiome(livingEntity)) {
 			// Runs doSlowFall() to make the entity fall slower if it is falling.
@@ -68,6 +70,10 @@ public class AMEntityEvents {
 		else if (Gravity.entityIsInHighGravityBiome(livingEntity)) {
 			// Runs doSlowFall() to make the entity fall faster if it is falling.
 			Gravity.doSlowFall(livingEntity, Gravity.ALIENDIM_LIVING_FALL_MOD);
+		}
+		if (livingEntity.level().dimensionTypeId() == AMDimensions.JOVIANDIM_TYPE
+				&& livingEntity instanceof Player player) {
+
 		}
 		/*
 		 * For fun. checks if the entity is holding the anti-gravity item. If he is it
@@ -86,6 +92,7 @@ public class AMEntityEvents {
 	 */
 	// @SubscribeEvent
 	// public static void onPlayerTick(PlayerTickEvent event) {
+
 	// }
 
 	/**
@@ -192,6 +199,7 @@ public class AMEntityEvents {
 		Player player = event.getEntity();
 		applyStartingEffects(player);
 	}
+
 
 	// Don't remember what this was for, keeping it just in case it was important
 	// @SubscribeEvent
