@@ -34,7 +34,8 @@ public class AMBiomeTags extends BiomeTagsProvider {
 		 */
 		tag(AMBiomeTags.LOW_GRAVITY).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE);
 
-		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE);
+		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE,
+				AMBiomes.JOVIAN_PLANET_BIOME);
 
 		/*
 		 * Vanilla/Forge/Other

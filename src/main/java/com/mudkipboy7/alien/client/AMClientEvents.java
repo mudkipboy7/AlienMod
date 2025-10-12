@@ -12,6 +12,7 @@ import com.mudkipboy7.alien.client.gui.screen.EnergyStorageScreen;
 import com.mudkipboy7.alien.client.gui.screen.HazardRemovalScreen;
 import com.mudkipboy7.alien.client.render.dim.AlienDimSkyRenderer;
 import com.mudkipboy7.alien.client.render.dim.AlienDimSpecialEffects;
+import com.mudkipboy7.alien.client.render.dim.JovianDimSpecialEffects;
 import com.mudkipboy7.alien.client.render.entity.SurvivalGearRenderingStuff;
 import com.mudkipboy7.alien.inventory.AMMenuTypes;
 import com.mudkipboy7.alien.sky.AlienDimSky;
@@ -82,6 +83,9 @@ public class AMClientEvents {
 			// Special effects for the alien planet
 			event.register(AMDimensions.ALIENDIM_ID,
 					new AlienDimSpecialEffects(110.0F, true, SkyType.NONE, false, false));
+			// Special effects for the jovian
+			event.register(AMDimensions.JOVIANDIM_ID,
+					new JovianDimSpecialEffects(50.0F, true, SkyType.NONE, false, false));
 
 		}
 

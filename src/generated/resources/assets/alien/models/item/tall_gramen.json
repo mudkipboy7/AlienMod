@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alien:block/plant/gramen"
+    "layer0": "alien:block/plant/tall_gramen"
   }
 }

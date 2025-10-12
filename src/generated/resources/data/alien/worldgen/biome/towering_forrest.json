@@ -1,0 +1,63 @@
+{
+  "carvers": {},
+  "downfall": 1.0,
+  "effects": {
+    "fog_color": 9318400,
+    "foliage_color": 16777215,
+    "grass_color": 16777215,
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": {
+        "sound_id": "alien:music.alien_dim"
+      }
+    },
+    "sky_color": 8267008,
+    "water_color": 16777215,
+    "water_fog_color": 16777215
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "alien:tall_gramen",
+      "alien:double_tall_gramen",
+      "alien:thin_tall_lignum_tree",
+      "alien:tall_lignum_tree"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      },
+      {
+        "type": "alien:alien_zombie",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 70
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 1.0
+}

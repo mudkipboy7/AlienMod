@@ -22,16 +22,22 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber()
 public class AMBiomes extends AMBiomeMaker {
 
+	// AlienDim
 	public static final ResourceKey<Biome> TOWERING_FOREST = makeKey("towering_forrest");
 	public static final ResourceKey<Biome> BARREN_CRATERSCAPE = makeKey("barren_craterscape");
+	public static final ResourceKey<Biome> JOVIAN_PLANET_BIOME = makeKey("jovian_planet");
 
 	public static void bootstrapBiomes(BootstapContext<Biome> context) {
 		HolderGetter<PlacedFeature> feature = context.lookup(Registries.PLACED_FEATURE);
 		HolderGetter<ConfiguredWorldCarver<?>> carver = context.lookup(Registries.CONFIGURED_CARVER);
+		// AlienDim
 		context.register(TOWERING_FOREST,
 				makeBiome(true, 1.0F, 1.0F, alienRainforest(feature, carver), defaultSpawnSettings(), basicEffects()));
 		context.register(BARREN_CRATERSCAPE, makeBiome(true, 0.1F, 3.0F, barrenCraterscape(feature, carver),
 				defaultSpawnSettings(), basicEffects()));
+		
+		context.register(JOVIAN_PLANET_BIOME, makeBiome(true, 1.0F, 1.0F, jovianPlanetBiome(feature, carver),
+				defaultSpawnSettings(), jovianEffects()));
 	}
 
 	private static ResourceKey<Biome> makeKey(String id, String name) {

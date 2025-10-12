@@ -1,0 +1,11 @@
+{
+  "type": "alien:jovian_planet",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "alien:jovian_planet"
+    },
+    "settings": "alien:jovian_planet"
+  }
+}

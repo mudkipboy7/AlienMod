@@ -1,3 +1,4 @@
+
 package com.mudkipboy7.alien.client.render.dim;
 
 import org.joml.Matrix4f;
@@ -68,7 +69,7 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 			float skyLight, int pixelX, int pixelY, Vector3f colors) {
 		Minecraft minecraft = Minecraft.getInstance();
 		float eclipsyness = getSky().getEclipsyness();
-		float brightnessMultiplier = AlienDimSky.visualBrightMul;
+		float brightnessMultiplier = AlienDimSky.alienDimVisualBrightMul;
 
 		/*
 		 * The math.max thing fixes a glitch where eclipses that happen at night would
@@ -125,3 +126,4 @@ public class AlienDimSpecialEffects extends DimensionSpecialEffects {
 		return AlienMod.getAlienDimSky();
 	}
 }
+

@@ -5,10 +5,12 @@ import com.mudkipboy7.alien.data.AMLanguage;
 import com.mudkipboy7.alien.data.tags.AMBiomeTags;
 import com.mudkipboy7.alien.data.tags.AMEntityTypeTags;
 import com.mudkipboy7.alien.data.tags.AMItemTags;
+import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.Gravity;
 import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
 import com.mudkipboy7.alien.world.item.AMItems;
+import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageSource;
@@ -53,7 +55,9 @@ public class AMEntityEvents {
 			// Runs doHazards() on the entity
 			doHazards(livingEntity);
 		}
-
+		if(true) {
+			//livingEntity.level().setRainLevel(70);
+		}
 		// Checks if the entity is in a low gravity biome.
 		if (Gravity.entityIsInLowGravityBiome(livingEntity)) {
 			// Runs doSlowFall() to make the entity fall slower if it is falling.
@@ -257,5 +261,6 @@ public class AMEntityEvents {
 		if (player.level().getBiome(player.blockPosition()).containsTag(AMBiomeTags.ULTRACOLD)) {
 			player.addEffect(new MobEffectInstance(AMMobEffects.HAZARD_PROTECTION.get(), 400, 0, false, true, true));
 		}
+
 	}
 }

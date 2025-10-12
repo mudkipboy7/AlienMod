@@ -1,22 +1,54 @@
 {
-  "player_cough": {
+  "entity.player.cough": {
     "sounds": [
       "alien:entity/player_cough"
     ]
   },
-  "test_entity_ambient": {
+  "entity.test_entity.ambient": {
     "sounds": [
       "alien:entity/test_entity_ambient"
     ]
   },
-  "test_entity_death": {
+  "entity.test_entity.death": {
     "sounds": [
       "alien:entity/test_entity_death"
     ]
   },
-  "test_entity_hurt": {
+  "entity.test_entity.hurt": {
     "sounds": [
       "alien:entity/test_entity_hurt"
+    ]
+  },
+  "music.alien_dim": {
+    "sounds": [
+      {
+        "name": "alien:music/jungle_hijynx",
+        "stream": true
+      },
+      {
+        "name": "alien:music/azumanga_daioh",
+        "stream": true
+      }
+    ]
+  },
+  "music.alien_dim_night": {
+    "sounds": [
+      {
+        "name": "alien:music/jungle_hijynx",
+        "stream": true
+      },
+      {
+        "name": "alien:music/azumanga_daioh",
+        "stream": true
+      }
+    ]
+  },
+  "music.jovian_boss": {
+    "sounds": [
+      {
+        "name": "alien:music/last_stand",
+        "stream": true
+      }
     ]
   }
 }

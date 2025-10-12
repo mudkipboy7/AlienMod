@@ -111,14 +111,16 @@ public class AlienDimSkyRenderer {
 		/*
 		 * Draws sunset/sunrise
 		 */
-		//float[] afloat = level.effects().getSunriseColor(level.getTimeOfDay(partialTick), partialTick);
+		// float[] afloat =
+		// level.effects().getSunriseColor(level.getTimeOfDay(partialTick),
+		// partialTick);
 		float[] afloat = level.effects().getSunriseColor(getAlienDimSky().alienSun.getSkyLocationTurns(), partialTick);
 		if (afloat != null) {
 			RenderSystem.setShader(GameRenderer::getPositionColorShader);
 			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 			poseStack.pushPose();
 			poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-			//float f3 = Mth.sin(level.getSunAngle(partialTick)) < 0.0F ? 180.0F : 0.0F;
+			// float f3 = Mth.sin(level.getSunAngle(partialTick)) < 0.0F ? 180.0F : 0.0F;
 			float f3 = Mth.sin((float) getAlienDimSky().alienSun.getSkyLocation()) < 0.0F ? 180.0F : 0.0F;
 			poseStack.mulPose(Axis.ZP.rotationDegrees(f3));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(90.0F));
@@ -284,9 +286,9 @@ public class AlienDimSkyRenderer {
 	}
 
 	/// @SuppressWarnings("unused")
-	private static <T extends AstronomicalObject & IPhasingAstroObject> void drawJovian(float partialTick,
-			PoseStack poseStack, double sunLocation, Matrix4f matrix4f1, T jovianPlanet, float eclipsyness,
-			BufferBuilder bufferbuilder, float skyRed, float skyGreen, float skyBlue, ResourceLocation texture) {
+	static <T extends AstronomicalObject & IPhasingAstroObject> void drawJovian(float partialTick, PoseStack poseStack,
+			double sunLocation, Matrix4f matrix4f1, T jovianPlanet, float eclipsyness, BufferBuilder bufferbuilder,
+			float skyRed, float skyGreen, float skyBlue, ResourceLocation texture) {
 		/*
 		 * Draws the stationary sky object.
 		 */
@@ -339,7 +341,7 @@ public class AlienDimSkyRenderer {
 		RenderSystem.setShaderColor(jovianBrightness, jovianBrightness, jovianBrightness, jovianBrightness);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderTexture(0, texture);
-		RenderSystem.setShaderTexture(1, SUN_TEXTURE);
+		//RenderSystem.setShaderTexture(1, SUN_TEXTURE);
 		bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();

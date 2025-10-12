@@ -2,6 +2,7 @@ package com.mudkipboy7.alien.sky;
 
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
+import com.mudkipboy7.alien.sky.astroobject.AlienPlanetInJovianSkyAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.AlienSunAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
 import com.mudkipboy7.alien.sky.astroobject.JovianPlanetAstroObject;
@@ -9,6 +10,7 @@ import com.mudkipboy7.alien.sky.astroobject.SatiliteAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.SmallMoonAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.StarAstroObject;
 import com.mudkipboy7.alien.world.WorldFuncs;
+import com.mudkipboy7.alien.world.item.functional.tool.AlienPickaxeItem;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -25,7 +27,7 @@ public class AlienDimSky {
 	 * really low number, it might screw with UI.
 	 */
 	// Used in math to make the skylight less bright, only used visually
-	public static final float visualBrightMul = 0.5F;
+	public static final float alienDimVisualBrightMul = 0.5F;
 
 	// Changes the color of the skylight. The three values should add-up to 3.
 	public static final float redMul = 1.6F;
@@ -50,7 +52,7 @@ public class AlienDimSky {
 	 */
 
 	public float getEclipsyness() {
-		if(!AMConfig.Common.doEclipses.get()) {
+		if (!AMConfig.Common.doEclipses.get()) {
 			return 1.0F;
 		}
 		float sunJovian = getTwoObjectEclipsyness(alienSun, jovianPlanet);

@@ -97,7 +97,7 @@ public class AMBlockModelGen extends BlockStateProvider {
 
 		simpleBlock(AMBlocks.GELUSTONE_GOLD_ORE.get());
 
-		crossBlock(AMBlocks.TALL_GRAMEN, AlienMod.location(plantBlockFolder + "gramen"));
+		crossBlock(AMBlocks.TALL_GRAMEN, AlienMod.location(plantBlockFolder + "tall_gramen"));
 		simpleBlock(AMBlocks.ALIEN_PORTAL.get());
 		crossBlock(AMBlocks.LIGNUM_SAPLING, AlienMod.location(plantBlockFolder + "lignum_sapling"));
 
@@ -112,8 +112,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 				.addModels(new ConfiguredModel(models().cross(AMBlocks.DEAD_PLANT.getId().getPath() + "_grass",
 						AlienMod.location(plantBlockFolder + "dead_plant_grass"))));
 
-		doubleCrossBlock(AMBlocks.DOUBLE_TALL_GRAMEN, AlienMod.location(plantBlockFolder + "tall_gramen_bottom"),
-				AlienMod.location(plantBlockFolder + "tall_gramen_top"));
+		doubleCrossBlock(AMBlocks.DOUBLE_TALL_GRAMEN, AlienMod.location(plantBlockFolder + "double_tall_gramen_bottom"),
+				AlienMod.location(plantBlockFolder + "double_tall_gramen_top"));
 
 		doorBlock(AMBlocks.LIGNUM_DOOR.get(), AlienMod.location(doorBlockFolder + "lignum_door_bottom"),
 				AlienMod.location(doorBlockFolder + "lignum_door_top"));
