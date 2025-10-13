@@ -184,6 +184,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 		simpleBlock(AMBlocks.GELUSTONE_IRON_ORE.get());
 		
 		simpleBlock(AMBlocks.REGOLITH.get());
+		
+		simpleBlock(AMBlocks.JOVIAN_PORTAL.get());
 
 	}
 

@@ -4,6 +4,7 @@ import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.client.render.entity.layer.survivalgear.SurvivalGearLayer;
 import com.mudkipboy7.alien.client.render.entity.layer.survivalgear.SurvivalGearMouthpeiceLayer;
 import com.mudkipboy7.alien.client.render.entity.model.AlienZombieModel;
+import com.mudkipboy7.alien.client.render.entity.model.JovianBossModel;
 import com.mudkipboy7.alien.client.render.entity.model.TestEntityModel;
 import com.mudkipboy7.alien.client.render.entity.model.survivalgear.SurvivalGearFirstPersonModel;
 import com.mudkipboy7.alien.client.render.entity.model.survivalgear.SurvivalGearModel;
@@ -46,6 +47,8 @@ public class AMEntityLayers {
 			"main");
 	public static final ModelLayerLocation ALIEN_ZOMBIE = new ModelLayerLocation(AlienMod.location("alien_zombie"),
 			"main");
+	public static final ModelLayerLocation JOVIAN_BOSS = new ModelLayerLocation(AlienMod.location("jovian_boss"),
+			"main");
 
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
@@ -75,6 +78,8 @@ public class AMEntityLayers {
 		 */
 		event.registerLayerDefinition(TEST_ENTITY, () -> TestEntityModel.createBodyLayer());
 		event.registerLayerDefinition(ALIEN_ZOMBIE, () -> AlienZombieModel.createBodyLayer());
+		event.registerLayerDefinition(JOVIAN_BOSS, () -> JovianBossModel.createBodyLayer());
+
 	}
 
 	@SuppressWarnings({ "rawtypes", "unused" })

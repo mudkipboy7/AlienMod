@@ -76,8 +76,8 @@ public class AMItemModelGen extends ItemModelProvider {
 		blockItem(AMItems.LIGNUM_LOG_ALL_SIDES_SAME);
 		genItem(AMItems.LIGNUM_SIGN);
 		genItem(AMItems.LIGNUM_HANGING_SIGN);
-		//blockItem(AMItems.STRIPPED_ALIEN_LOG);
-		//blockItem(AMItems.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
+		// blockItem(AMItems.STRIPPED_ALIEN_LOG);
+		// blockItem(AMItems.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
 		blockItem(AMItems.AIR_PURIFIER);
 		withExistingParent(AMItems.LIGNUM_CHEST.getId().getPath(), "minecraft:item/chest").texture("particle",
 				AMBlockModelGen.lignumPlanks);
@@ -101,6 +101,8 @@ public class AMItemModelGen extends ItemModelProvider {
 				.texture("top", AMBlockModelGen.lignumLogTop);
 		blockItem(AMItems.GELUSTONE_IRON_ORE);
 		blockItem(AMItems.REGOLITH);
+		
+		genItem(AMItems.JOVIAN_PORTAL, AlienMod.location(blockFolder + AMItems.JOVIAN_PORTAL.getId().getPath()));
 
 		/*
 		 * Items

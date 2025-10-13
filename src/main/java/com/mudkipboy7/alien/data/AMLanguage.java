@@ -10,6 +10,7 @@ import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.entity.AMEntities;
+import com.mudkipboy7.alien.world.entity.boss.JovianBossLines;
 import com.mudkipboy7.alien.world.item.AMItems;
 
 import net.minecraft.data.PackOutput;
@@ -131,6 +132,7 @@ public class AMLanguage {
 			 */
 			addEntityType(AMEntities.TEST_ENTITY, "Test Entity");
 			addEntityType(AMEntities.ALIEN_ZOMBIE, "Alien Zombie");
+			addEntityType(AMEntities.JOVIAN_BOSS, JovianBossLines.NAME);
 
 			/*
 			 * Block
@@ -162,7 +164,6 @@ public class AMLanguage {
 			addBlock(AMBlocks.GELUSTONE_GOLD_ORE, "Gelustone Gold Ore");
 			addBlock(AMBlocks.TALL_GRAMEN, "Gramen");
 			addBlock(AMBlocks.ALIEN_PORTAL, "Alien Dimension Portal");
-			addItemDesc(AMBlocks.ALIEN_PORTAL, "A portal that leads to the alien dimension.");
 			addBlock(AMBlocks.LIGNUM_SAPLING, "Lignum Sapling");
 			addBlock(AMBlocks.DEAD_PLANT, "Dead Plant");
 			addItemDesc(AMBlocks.DEAD_PLANT, "A plant that died from extreme conditions.");
@@ -196,6 +197,7 @@ public class AMLanguage {
 			addBlock(AMBlocks.THIN_LIGNUM_LOG, "Thin Lignum Log");
 			addBlock(AMBlocks.GELUSTONE_IRON_ORE, "Gelustone Iron Ore");
 			addBlock(AMBlocks.REGOLITH, "Regolith");
+			addBlock(AMBlocks.JOVIAN_PORTAL, "Jovian Dimension Portal");
 
 			/*
 			 * Item

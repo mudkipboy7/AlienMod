@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-10T17:43:01.8090252	Loot Tables
+// 1.20.2	2025-10-12T14:14:39.1866707	Loot Tables
 1f16dabb71c5a39f0887bb2fb2cb11c8e37817d5 data/alien/loot_tables/blocks/air_purifier.json
 2ee889dbbb6d733ff89d4c9d8eb6589e18fb1880 data/alien/loot_tables/blocks/algussoil.json
 656478983c35bbe3a5c6c5d1ed5a0159e2a027ea data/alien/loot_tables/blocks/apsius_block.json
@@ -45,4 +45,5 @@ c7cfa2593413caf9a86d83ca5720fce67b7d6145 data/alien/loot_tables/blocks/regolith.
 dd28fa7424aa84e14edbfed69d034ad834898d30 data/alien/loot_tables/blocks/test_block.json
 6cc0f4a228bcc7e80d60e6f1bebf6071d5bb4165 data/alien/loot_tables/blocks/thin_lignum_log.json
 02ce6ddba3f663a80fadcb5d4c96bf26b1585cc1 data/alien/loot_tables/entities/alien_zombie.json
+564c50d88b714bb35518c2e1d96bfaf956960a21 data/alien/loot_tables/entities/jovian_boss.json
 fc637165e6c96188b0237a1568395bbaeea4c438 data/alien/loot_tables/entities/test_entity.json

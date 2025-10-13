@@ -155,16 +155,16 @@ public class JovianDimSpecialEffects extends DimensionSpecialEffects {
 	@Override
 	public boolean renderSnowAndRain(ClientLevel level, int ticks, float partialTick, LightTexture lightTexture,
 			double camX, double camY, double camZ) {
-		//level.setRainLevel(0.4F);
+		level.setRainLevel(0.4F);
 		//level.setThunderLevel(100.0F);
 		return false;
 	}
 
 	@Override
 	public boolean tickRain(ClientLevel level, int ticks, Camera camera) {
-		//level.setRainLevel(0.4F);
+		level.setRainLevel(0.4F);
 		//level.setThunderLevel(100.0F);
-		return true;
+		return false;
 	}
 
 }

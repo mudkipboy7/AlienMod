@@ -27,6 +27,9 @@ import com.mudkipboy7.alien.world.block.functional.sign.AlienWallSignBlock;
 import com.mudkipboy7.alien.world.block.misc.AlienAirBlock;
 import com.mudkipboy7.alien.world.block.misc.TestBlock;
 import com.mudkipboy7.alien.world.item.AMItems;
+import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
+import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.AlienDimTeleporter;
+import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.JovianDimTeleporter;
 import com.mudkipboy7.alien.world.worldgen.structure.grower.AMTreeGrowers;
 
 import net.minecraft.core.BlockPos;
@@ -161,7 +164,8 @@ public final class AMBlocks {
 
 	// Block for testing mod functions
 	public static final RegistryObject<Block> ALIEN_PORTAL = BLOCKS.register("alien_portal", () -> new AlienPortalBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never),
+			AMDimensions.ALIENDIM_LEVEL, new AlienDimTeleporter()));
 
 	// Alien sapling
 	public static final RegistryObject<Block> LIGNUM_SAPLING = BLOCKS.register("lignum_sapling",
@@ -353,7 +357,10 @@ public final class AMBlocks {
 	public static final RegistryObject<Block> GELUSTONE_IRON_ORE = BLOCKS.register("gelustone_iron_ore",
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
 					.instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-
+	// Block for testing mod functions
+	public static final RegistryObject<Block> JOVIAN_PORTAL = BLOCKS.register("jovian_portal", () -> new AlienPortalBlock(
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never),
+			AMDimensions.JOVIANDIM_LEVEL, new JovianDimTeleporter()));
 	/*
 	 * Methods
 	 */

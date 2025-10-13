@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-12T00:12:35.7856724	Block States: alien
+// 1.20.2	2025-10-12T13:04:42.5864727	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -26,6 +26,7 @@ aaea7683437e8139767947b74e46774aab39093f assets/alien/blockstates/gelustone_butt
 04fce7d1f7ea9ca88fc5fd8b708cbb4fc489097d assets/alien/blockstates/gelustone_slab.json
 b1c13f15c66071ef413f9ab373cd5c77ab3f197f assets/alien/blockstates/gelustone_stairs.json
 5d2efa33a80fc735b16d953801ead7358ac588e3 assets/alien/blockstates/gramen_block.json
+db336003261d93c1ece8794f1cc82c9581592f04 assets/alien/blockstates/jovian_portal.json
 db2d5a47bf12e9e3fb9502fea5d9957d275eef7a assets/alien/blockstates/lazer_creator.json
 bb959a3a19a0126a372f0a7ae7d32f65e40488e7 assets/alien/blockstates/lignum_all_sides_log.json
 584eb2e5631ee9b647e788ce8f77b2b71746d175 assets/alien/blockstates/lignum_button.json
@@ -91,6 +92,7 @@ bc34551d9d0b4aa629ec55779de2191c152b0522 assets/alien/models/block/gelustone_sla
 d9692f0abbd3b989dcef934fb69346f78db78e05 assets/alien/models/block/gelustone_stairs_inner.json
 2f28dd7d882224804e89502d8d4885e43c2bdc6d assets/alien/models/block/gelustone_stairs_outer.json
 4f5767decc063556dd74c52d686458a2a08cf698 assets/alien/models/block/gramen_block.json
+d3396b87c363df7c595698f645e9eb17ccf802a7 assets/alien/models/block/jovian_portal.json
 62e1c68bf8280c64b44a5e96ef1cbc09ff90b05f assets/alien/models/block/lazer_creator.json
 29a3d68752162a68c431fd6b5fe07b16e2162608 assets/alien/models/block/lignum_all_sides_log.json
 269b1d22d5ebc2bc08e84bf1653fb6df9e180afa assets/alien/models/block/lignum_all_sides_log_horizontal.json

@@ -1,8 +1,12 @@
 package com.mudkipboy7.alien.client.render.entity.model;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mudkipboy7.alien.world.entity.boss.JovianBossEntity;
 import com.mudkipboy7.alien.world.entity.monster.AlienZombie;
 
 import net.minecraft.client.model.AnimationUtils;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -11,12 +15,17 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.monster.piglin.PiglinArmPose;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class AlienZombieModel<T extends AlienZombie> extends HumanoidModel<T> {
-	public AlienZombieModel(ModelPart pRoot) {
+public class JovianBossModel<T extends JovianBossEntity> extends HumanoidModel<T> {
+	public JovianBossModel(ModelPart pRoot) {
 		super(pRoot);
 	}
 
@@ -49,8 +58,11 @@ public class AlienZombieModel<T extends AlienZombie> extends HumanoidModel<T> {
 	public void setupAnim(T pEntity, float pLimbSwing, float pLimbSwingAmount, float pAgeInTicks, float pNetHeadYaw,
 			float pHeadPitch) {
 		super.setupAnim(pEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
-		AnimationUtils.animateZombieArms(this.leftArm, this.rightArm, false, this.attackTime,
-				pAgeInTicks);
+
+		super.setupAttackAnimation(pEntity, pAgeInTicks);
+		
+		//AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, pEntity, this.attackTime, pAgeInTicks);
+
 	}
 
 }

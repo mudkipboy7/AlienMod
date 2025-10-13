@@ -148,19 +148,18 @@ public class AMEntityEvents {
 	}
 
 	/**
-	 * Prevents a player from attacking if he has the NO_OXYGEN effect.
+	 * Prevents the player from attacking if he has the NO_OXYGEN effect. I decided to
+	 * disable it
 	 * 
 	 * @param event
 	 */
-	@SubscribeEvent
-	public static void onPlayerAttack(AttackEntityEvent event) {
-		Player player = event.getEntity();
-		if ((player.hasEffect(AMMobEffects.NO_OXYGEN.get())
-				|| player.hasEffect(AMMobEffects.COLD.get()) && !player.isCreative())) {
-			event.setCanceled(true);
-
-		}
-	}
+	/*
+	 * @SubscribeEvent public static void onPlayerAttack(AttackEntityEvent event) {
+	 * Player player = event.getEntity(); if
+	 * ((player.hasEffect(AMMobEffects.NO_OXYGEN.get()) ||
+	 * player.hasEffect(AMMobEffects.COLD.get()) && !player.isCreative())) {
+	 * event.setCanceled(true); System.out.println("ewfewf"); } }
+	 */
 
 	/**
 	 * This handles the alien weapons system and damage reduction stuff.
@@ -199,7 +198,6 @@ public class AMEntityEvents {
 		Player player = event.getEntity();
 		applyStartingEffects(player);
 	}
-
 
 	// Don't remember what this was for, keeping it just in case it was important
 	// @SubscribeEvent

@@ -28,9 +28,15 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.util.ITeleporter;
 
 public class AlienPortalBlock extends BaseEntityBlock {
+	public ResourceKey<Level> destinationDim = AMDimensions.ALIENDIM_LEVEL;
+	ITeleporter teleporter = null;
 
-	public AlienPortalBlock(BlockBehaviour.Properties properties) {
+	public AlienPortalBlock(BlockBehaviour.Properties properties, ResourceKey<Level> destinationDim,
+			ITeleporter teleporter) {
 		super(properties);
+		this.teleporter = teleporter;
+		if (destinationDim != null)
+			this.destinationDim = destinationDim;
 	}
 
 	@Override
@@ -48,16 +54,17 @@ public class AlienPortalBlock extends BaseEntityBlock {
 			InteractionHand hand, BlockHitResult hit) {
 		Item heldItem = player.getItemInHand(hand).getItem();
 		ResourceKey<Level> currentDimension = player.level().dimension();
-		ResourceKey<Level> alienDim = AMDimensions.ALIENDIM_LEVEL;
 		// ResourceKey<Level> overworld = Level.OVERWORLD;
-		boolean inValidDim = currentDimension == alienDim || currentDimension == Level.OVERWORLD;
+		boolean inValidDim = currentDimension == AMDimensions.ALIENDIM_LEVEL
+				|| currentDimension == AMDimensions.JOVIANDIM_LEVEL || currentDimension == Level.OVERWORLD;
 		if (level instanceof ServerLevel && player.canChangeDimensions()
 				&& !(heldItem instanceof BlockItem || heldItem instanceof AlienDimCreativeTeleporterItem)
 				&& inValidDim) {
-			ResourceKey<Level> dimToSendTo = player.level().dimension() == alienDim ? Level.OVERWORLD : alienDim;
+			ResourceKey<Level> dimToSendTo = player.level().dimension() == destinationDim ? Level.OVERWORLD
+					: destinationDim;
 			ServerLevel serverlevel = player.getCommandSenderWorld().getServer().getLevel(dimToSendTo);
 			if (serverlevel != null) {
-				ITeleporter teleporter = new AlienDimTeleporter();
+
 				player.changeDimension(serverlevel, teleporter);
 
 				return InteractionResult.SUCCESS;
@@ -65,11 +72,11 @@ public class AlienPortalBlock extends BaseEntityBlock {
 		}
 		return InteractionResult.FAIL;
 	}
+
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState,
 			BlockEntityType<T> blockEntityType) {
 		return level.isClientSide ? null
-				: createTickerHelper(blockEntityType, AMBlockEntities.ALIEN_PORTAL.get(),
-						AlienPortalBlockEntity::tick);
+				: createTickerHelper(blockEntityType, AMBlockEntities.ALIEN_PORTAL.get(), AlienPortalBlockEntity::tick);
 	}
 }

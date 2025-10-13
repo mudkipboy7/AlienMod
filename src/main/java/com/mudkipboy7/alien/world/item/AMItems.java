@@ -89,13 +89,14 @@ public class AMItems {
 
 	public static final RegistryObject<BlockItem> GELUSTONE_BEDROCK = simpleBlockItem(AMBlocks.GELUSTONE_BEDROCK);
 
-	public static final RegistryObject<BlockItem> LIGNUM_CRAFTING_TABLE = simpleBlockItem(AMBlocks.LIGNUM_CRAFTING_TABLE);
+	public static final RegistryObject<BlockItem> LIGNUM_CRAFTING_TABLE = simpleBlockItem(
+			AMBlocks.LIGNUM_CRAFTING_TABLE);
 
 	public static final RegistryObject<BlockItem> GELUSTONE_GOLD_ORE = simpleBlockItem(AMBlocks.GELUSTONE_GOLD_ORE);
 
 	public static final RegistryObject<BlockItem> TALL_GRAMEN = simpleBlockItem(AMBlocks.TALL_GRAMEN);
 
-	public static final RegistryObject<BlockItem> ALIEN_PORTAL = simpleDescBlockItem(AMBlocks.ALIEN_PORTAL);
+	public static final RegistryObject<BlockItem> ALIEN_PORTAL = simpleBlockItem(AMBlocks.ALIEN_PORTAL);
 
 	public static final RegistryObject<BlockItem> LIGNUM_SAPLING = simpleBlockItem(AMBlocks.LIGNUM_SAPLING);
 
@@ -107,8 +108,7 @@ public class AMItems {
 
 	public static final RegistryObject<BlockItem> LIGNUM_FENCE = simpleBlockItem(AMBlocks.LIGNUM_FENCE);
 
-	public static final RegistryObject<BlockItem> LIGNUM_FENCE_GATE = simpleBlockItem(
-			AMBlocks.LIGNUM_FENCE_GATE);
+	public static final RegistryObject<BlockItem> LIGNUM_FENCE_GATE = simpleBlockItem(AMBlocks.LIGNUM_FENCE_GATE);
 
 	public static final RegistryObject<BlockItem> LIGNUM_TRAPDOOR = simpleBlockItem(AMBlocks.LIGNUM_TRAPDOOR);
 
@@ -120,19 +120,21 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> LIGNUM_LOG_ALL_SIDES_SAME = simpleBlockItem(
 			AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME);
 
-	public static final RegistryObject<SignItem> LIGNUM_SIGN = ITEMS.register(
-			AMBlocks.LIGNUM_SIGN.getId().getPath(), () -> new SignItem((new Item.Properties()).stacksTo(16),
-					AMBlocks.LIGNUM_SIGN.get(), AMBlocks.LIGNUM_WALL_SIGN.get()));
+	public static final RegistryObject<SignItem> LIGNUM_SIGN = ITEMS.register(AMBlocks.LIGNUM_SIGN.getId().getPath(),
+			() -> new SignItem((new Item.Properties()).stacksTo(16), AMBlocks.LIGNUM_SIGN.get(),
+					AMBlocks.LIGNUM_WALL_SIGN.get()));
 
 	public static final RegistryObject<HangingSignItem> LIGNUM_HANGING_SIGN = ITEMS.register(
 			AMBlocks.LIGNUM_HANGING_SIGN.getId().getPath(),
-			() -> new HangingSignItem(AMBlocks.LIGNUM_HANGING_SIGN.get(),
-					AMBlocks.LIGNUM_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
+			() -> new HangingSignItem(AMBlocks.LIGNUM_HANGING_SIGN.get(), AMBlocks.LIGNUM_WALL_HANGING_SIGN.get(),
+					(new Item.Properties()).stacksTo(16)));
 
-	//public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG = simpleBlockItem(AMBlocks.STRIPPED_ALIEN_LOG);
+	// public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG =
+	// simpleBlockItem(AMBlocks.STRIPPED_ALIEN_LOG);
 
-	//public static final RegistryObject<BlockItem> STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = simpleBlockItem(
-	//		AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
+	// public static final RegistryObject<BlockItem>
+	// STRIPPED_ALIEN_LOG_ALL_SIDES_SAME = simpleBlockItem(
+	// AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME);
 
 	public static final RegistryObject<BlockItem> AIR_PURIFIER = simpleBlockItem(AMBlocks.AIR_PURIFIER);
 
@@ -155,21 +157,23 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> APSIUS_ORE = simpleBlockItem(AMBlocks.APSIUS_ORE);
 
 	public static final RegistryObject<BlockItem> APSIUS_BLOCK = simpleBlockItem(AMBlocks.APSIUS_BLOCK);
-	
+
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<BlockItem> COPPER_WIRE = simpleBlockItem(AMBlocks.COPPER_WIRE);
 
 	public static final RegistryObject<BlockItem> LAZER_CREATOR = simpleDescBlockItem(AMBlocks.LAZER_CREATOR);
-	
+
 	public static final RegistryObject<BlockItem> ENERGY_BLOCK = simpleBlockItem(AMBlocks.ENERGY_BLOCK);
-	
+
 	public static final RegistryObject<BlockItem> THIN_LIGNUM_LOG = simpleBlockItem(AMBlocks.THIN_LIGNUM_LOG);
-	
-	//public static final RegistryObject<BlockItem> AMMONIA_SNOW_LAYER = simpleBlockItem(AMBlocks.AMMONIA_SNOW_LAYER);
+
+	// public static final RegistryObject<BlockItem> AMMONIA_SNOW_LAYER =
+	// simpleBlockItem(AMBlocks.AMMONIA_SNOW_LAYER);
 	public static final RegistryObject<BlockItem> GELUSTONE_IRON_ORE = simpleBlockItem(AMBlocks.GELUSTONE_IRON_ORE);
 
 	public static final RegistryObject<BlockItem> REGOLITH = simpleBlockItem(AMBlocks.REGOLITH);
 
+	public static final RegistryObject<BlockItem> JOVIAN_PORTAL = simpleBlockItem(AMBlocks.JOVIAN_PORTAL);
 
 	/*
 	 * Register Normal Items

@@ -95,8 +95,8 @@ public class AMDimensions {
 			false, // bedWorks
 			false, // respawnAnchorWorks
 			0, // minY
-			128, // height
-			128, // logicalHeight
+			256, // height
+			256, // logicalHeight
 			BlockTags.INFINIBURN_OVERWORLD, // infiniburn
 			JOVIANDIM_ID, // effectsLocation
 			0, // ambientLight
@@ -140,7 +140,7 @@ public class AMDimensions {
 						false, true, true, true));
 		context.register(JOVIANDIM_NOISE_SETTINGS,
 				// The Actual settings
-				new NoiseGeneratorSettings(NoiseSettings.create(0, 128, 1, 2),
+				new NoiseGeneratorSettings(NoiseSettings.create(0, 256, 1, 2),
 						Blocks.AIR.defaultBlockState(),
 						Blocks.AIR.defaultBlockState(),
 						new NoiseRouter(DensityFunctions.zero(), DensityFunctions.zero(), DensityFunctions.zero(),

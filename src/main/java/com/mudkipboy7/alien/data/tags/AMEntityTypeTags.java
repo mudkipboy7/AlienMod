@@ -37,7 +37,8 @@ public class AMEntityTypeTags extends EntityTypeTagsProvider {
 		 * AlienMod
 		 */
 		tag(AMEntityTypeTags.ALIEN_CREATURE)
-			.add(AMEntities.ALIEN_ZOMBIE.get());
+			.add(AMEntities.ALIEN_ZOMBIE.get(),
+					AMEntities.JOVIAN_BOSS.get());
 		
 		// Remember, you only need to put LivingEntities here.
 		tag(AMEntityTypeTags.COLD_BLOODED)
@@ -69,6 +70,7 @@ public class AMEntityTypeTags extends EntityTypeTagsProvider {
 		/*
 		 * Vanilla/Forge/Other
 		 */
+
 	}
 	// Methods
 	private static TagKey<EntityType<?>> makeKey(String id, String name) {

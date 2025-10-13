@@ -120,6 +120,7 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 			return this.createOreDrop(block, Items.RAW_GOLD);
 		});
 		this.dropSelf(AMBlocks.REGOLITH.get());
+		
 	}
 
 	@Override

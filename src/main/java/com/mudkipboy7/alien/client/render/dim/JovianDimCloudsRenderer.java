@@ -39,20 +39,20 @@ public class JovianDimCloudsRenderer {
 	public static boolean renderClouds(ClientLevel level, int ticks, float partialTick, PoseStack poseStack,
 			double camX, double camY, double camZ, Matrix4f projectionMatrix) {
 		// The amount that it is eclipsing.
-		drawCloudsAtHeight(-30, level, ticks * 32, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(-10, level, ticks * 16, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(10, level, ticks * 8, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(30, level, ticks * 4, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(50, level, ticks * 2, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(70, level, ticks * 1, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(-40, level, ticks * 32, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(-20, level, ticks * 16, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(0, level, ticks * 8, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(20, level, ticks * 4, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(40, level, ticks * 2, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(60, level, ticks * 1, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
 		
 		
-		drawCloudsAtHeight(140, level, ticks * 2, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(160, level, ticks * 4, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(180, level, ticks * 8, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(200, level, ticks * 16, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(220, level, ticks * 32, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
-		drawCloudsAtHeight(240, level, ticks * 64, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(200, level, ticks * 2, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(220, level, ticks * 4, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(240, level, ticks * 8, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(260, level, ticks * 16, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		drawCloudsAtHeight(280, level, ticks * 32, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
+		//drawCloudsAtHeight(300, level, ticks * 64, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
 		//drawCloudsAtHeight(260, level, ticks * 128, partialTick, poseStack, camX, camY, camZ, projectionMatrix);
 
 		return true;

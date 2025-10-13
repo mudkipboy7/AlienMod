@@ -8,6 +8,7 @@ import com.mudkipboy7.alien.client.render.blockentity.LazerCreatingMachineRender
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
 import com.mudkipboy7.alien.world.entity.AMEntities;
+import com.mudkipboy7.alien.world.entity.boss.JovianBossEntity;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -39,6 +40,8 @@ public class AMEntityRender {
 			
 			event.registerEntityRenderer(AMEntities.TEST_ENTITY.get(), TestEntityRenderer::new);
 			event.registerEntityRenderer(AMEntities.ALIEN_ZOMBIE.get(), AlienZombieRenderer::new);
+			event.registerEntityRenderer(AMEntities.JOVIAN_BOSS.get(), JovianBossRenderer::new);
+
 		}
 	}
 

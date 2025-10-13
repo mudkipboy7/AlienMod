@@ -71,6 +71,6 @@ public class AMBlockEntities {
 	// Alien Portal
 	public static final RegistryObject<BlockEntityType<AlienPortalBlockEntity>> ALIEN_PORTAL = BLOCK_ENTITY_TYPES
 			.register("alien_portal", () -> BlockEntityType.Builder
-					.of(AlienPortalBlockEntity::new, AMBlocks.ALIEN_PORTAL.get()).build(null));
+					.of(AlienPortalBlockEntity::new, AMBlocks.ALIEN_PORTAL.get(), AMBlocks.JOVIAN_PORTAL.get()).build(null));
 
 }
