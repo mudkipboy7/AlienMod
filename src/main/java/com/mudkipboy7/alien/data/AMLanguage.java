@@ -1,7 +1,6 @@
 package com.mudkipboy7.alien.data;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
@@ -10,7 +9,6 @@ import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.entity.AMEntities;
-import com.mudkipboy7.alien.world.entity.boss.JovianBossLines;
 import com.mudkipboy7.alien.world.item.AMItems;
 
 import net.minecraft.data.PackOutput;
@@ -51,14 +49,13 @@ public class AMLanguage {
 	 */
 	public static Component wrongWeaponMessage = Component.translatable(Affixes.messagePrefix + "wrong_weapon");
 	public static Component cantBreakMessage = Component.translatable(Affixes.messagePrefix + "cant_break");
-	
+
 	public static Component airPuriferContainerName = Component.translatable(Affixes.containerPrefix + "air_purifier");
 	public static Component coalGeneratorContainerName = Component
 			.translatable(Affixes.containerPrefix + "coal_generator");
 	public static Component energyStorageBlockName = Component
 			.translatable(Affixes.containerPrefix + "energy_storage_block");
-	public static Component energyBlockName = Component
-			.translatable(Affixes.containerPrefix + "energy_block");
+	public static Component energyBlockName = Component.translatable(Affixes.containerPrefix + "energy_block");
 
 	/*
 	 * Generates the language files.
@@ -74,6 +71,11 @@ public class AMLanguage {
 		protected void addTranslations() {
 			// The description for the pack.mcmeta file
 			add("pack." + AlienMod.MODID + Affixes.descSuffix, "Resources for AlienMod.");
+
+			/*
+			 * Jovian Boss messages
+			 */
+			add(JovianBossLines.WHEN_SUMMONED_IN_WRONG_DIMENSION, "<%s> Coward... Fight me legitimetely.");
 
 			/*
 			 * Config files
@@ -95,7 +97,6 @@ public class AMLanguage {
 			add(coalGeneratorContainerName.getString(), "Coal Generator");
 			add(energyStorageBlockName.getString(), "Energy Storage Block");
 			add(energyBlockName.getString(), "Energy Block");
-			
 
 			/*
 			 * Subtitle
@@ -132,7 +133,7 @@ public class AMLanguage {
 			 */
 			addEntityType(AMEntities.TEST_ENTITY, "Test Entity");
 			addEntityType(AMEntities.ALIEN_ZOMBIE, "Alien Zombie");
-			addEntityType(AMEntities.JOVIAN_BOSS, JovianBossLines.NAME);
+			addEntityType(AMEntities.JOVIAN_BOSS, "§9§kPlayer");
 
 			/*
 			 * Block
@@ -177,8 +178,8 @@ public class AMLanguage {
 			addBlock(AMBlocks.LIGNUM_LOG_ALL_SIDES_SAME, "Lignum Wood");
 			addBlock(AMBlocks.LIGNUM_SIGN, "Lignum Sign");
 			addBlock(AMBlocks.LIGNUM_HANGING_SIGN, "Lignum Hanging Sign");
-			//addBlock(AMBlocks.STRIPPED_ALIEN_LOG, "Stripped Lignum Log");
-			//addBlock(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME, "Stripped Lignum Wood");
+			// addBlock(AMBlocks.STRIPPED_ALIEN_LOG, "Stripped Lignum Log");
+			// addBlock(AMBlocks.STRIPPED_ALIEN_LOG_ALL_SIDES_SAME, "Stripped Lignum Wood");
 			addBlock(AMBlocks.AIR_PURIFIER, "Air Purifier");
 			addBlock(AMBlocks.LIGNUM_CHEST, "Lignum Chest");
 			addBlock(AMBlocks.GELUSTONE_BUTTON, "Gelustone Button");
@@ -231,9 +232,10 @@ public class AMLanguage {
 			addItemDesc(AMItems.ALIENDIM_CREATIVE_TELEPORTER,
 					"Used to teleport the player to the alien dimension for testing purposes.");
 			addChargableItem(AMItems.BATTERY, "Battery", "Full Battery", "Dead Battery", "Partially Filled Battery");
-			addChargableItem(AMItems.INT_LIMIT_BATTERY, "Int Limit Battery", "Int Limit Battery", "Int Limit Battery", "Int Limit Battery");
+			addChargableItem(AMItems.INT_LIMIT_BATTERY, "Int Limit Battery", "Int Limit Battery", "Int Limit Battery",
+					"Int Limit Battery");
 			// addItem(AMItems.BATTERY, "Battery");
-			//addItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery");
+			// addItem(AMItems.INT_LIMIT_BATTERY, "Integer Limit Battery");
 			addItem(AMItems.APSIUS_GEM, "Apsius Gem");
 			addItem(AMItems.APSIUS_HELMET, "Apsius Helmet");
 			addItem(AMItems.APSIUS_CHESTPLATE, "Apsius Chestplate");
@@ -247,7 +249,7 @@ public class AMLanguage {
 			addItem(AMItems.TEST_ENTITY_SPAWN_EGG, "Test Entity Spawn Egg");
 			addItem(AMItems.ALIEN_SEEDS, "Alien Seeds");
 			addItem(AMItems.ALIEN_ZOMBIE_SPAWN_EGG, "Alien Zombie Spawn Egg");
-			
+
 		}
 
 		private void addItemDesc(RegistryObject<? extends ItemLike> itemLike, String text) {
@@ -266,7 +268,7 @@ public class AMLanguage {
 		private void addChargableItem(RegistryObject<? extends ItemLike> itemLike, String normal, String full,
 				String empty, String partFull) {
 			String itemName = null;
-			
+
 			if (itemLike.get() instanceof Item item)
 				itemName = item.getDescriptionId();
 			else if (itemLike.get() instanceof Block block)

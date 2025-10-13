@@ -65,7 +65,7 @@ public class AMEntityTypeTags extends EntityTypeTagsProvider {
 			.addTags(AMEntityTypeTags.ALIEN_CREATURE);
 
 		tag(AMEntityTypeTags.VANILLA_WEAPON_RESISTANT)
-		.addTags(AMEntityTypeTags.ALIEN_CREATURE);
+		.addTags(AMEntityTypeTags.ALIEN_CREATURE).remove(AMEntities.JOVIAN_BOSS.get());
 
 		/*
 		 * Vanilla/Forge/Other

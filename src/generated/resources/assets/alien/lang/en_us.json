@@ -67,7 +67,7 @@
   "effect.alien.no_oxygen": "Hypoxia",
   "effect.alien.no_sprint": "No Sprinting",
   "entity.alien.alien_zombie": "Alien Zombie",
-  "entity.alien.jovian_boss": "§kPlayer",
+  "entity.alien.jovian_boss": "§9§kPlayer",
   "entity.alien.test_entity": "Test Entity",
   "fluid_type.alien.ammonia_liquid_type": "Umifer",
   "item.alien.alien_creative_teleporter": "Alien Creative Teleporter",
@@ -124,6 +124,7 @@
   "item.minecraft.tipped_arrow.effect.hazard_protection": "Arrow of Hazard Protection",
   "itemGroup.alien.blocks_tab": "Alien Mod Blocks",
   "itemGroup.alien.items_tab": "Alien Mod Items",
+  "jovianboss.msg.summon_wrong_dim": "<%s> Coward... Fight me legitimetely.",
   "mesg.alien.cant_break": "You can't seem to break the block",
   "mesg.alien.wrong_weapon": "It isn't doing much damage",
   "pack.alien.desc": "Resources for AlienMod."

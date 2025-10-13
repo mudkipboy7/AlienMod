@@ -5,7 +5,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.mudkipboy7.alien.AMConfig.Client;
 import com.mudkipboy7.alien.AMConfig.Common;
 import com.mudkipboy7.alien.AMConfig.Server;
-import com.mudkipboy7.alien.client.render.AMPanoramaRenderer;
 import com.mudkipboy7.alien.data.AMDataGenerators;
 import com.mudkipboy7.alien.sky.AlienDimSky;
 import com.mudkipboy7.alien.world.worldgen.AlienChunkGenerator;

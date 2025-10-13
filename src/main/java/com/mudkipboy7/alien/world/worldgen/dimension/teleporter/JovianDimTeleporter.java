@@ -26,26 +26,31 @@ public class JovianDimTeleporter implements ITeleporter {
 			Function<ServerLevel, PortalInfo> defaultPortalInfo) {
 		BlockPos desBlockPos = destWorld.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				destWorld.getSharedSpawnPos());
-
 		if (destWorld.dimension() == AMDimensions.JOVIANDIM_LEVEL) {
 
 			desBlockPos = new BlockPos(0, 70, 0);
-			int i = desBlockPos.getX();
-			int j = desBlockPos.getY() - 2;
-			int k = desBlockPos.getZ();
+			int x = desBlockPos.getX();
+			int y = desBlockPos.getY() - 2;
+			int z = desBlockPos.getZ();
 			BlockPos portalPos = new BlockPos(desBlockPos.getX(), desBlockPos.getY() - 1, desBlockPos.getZ());
 			if (!(destWorld.getBlockState(portalPos).getBlock() instanceof AlienPortalBlock)) {
-				BlockPos.betweenClosed(i - 2, j + 1, k - 2, i + 2, j + 50, k + 2).forEach((p_207578_) -> {
+				BlockPos.betweenClosed(x - 2, y + 1, z - 2, x + 2, y + 50, z + 2).forEach((p_207578_) -> {
 					destWorld.setBlockAndUpdate(p_207578_, Blocks.AIR.defaultBlockState());
 				});
 			}
 			// destWorld.
-			BlockPos.betweenClosed(i - 2, j + 1, k - 2, i + 2, j + 3, k + 2).forEach((p_207578_) -> {
+			BlockPos.betweenClosed(x - 2, y + 1, z - 2, x + 2, y + 3, z + 2).forEach((p_207578_) -> {
 				destWorld.setBlockAndUpdate(p_207578_, Blocks.AIR.defaultBlockState());
 			});
-			BlockPos.betweenClosed(i - 2, j, k - 2, i + 2, j, k + 2).forEach((p_184101_) -> {
+			BlockPos.betweenClosed(x - 2, y, z - 2, x + 2, y, z + 2).forEach((p_184101_) -> {
 				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
+			
+			BlockPos.betweenClosed(x - 30, y-15, z - 30, x + 30, y-14, z + 30).forEach((p_184101_) -> {
+				destWorld.setBlockAndUpdate(p_184101_, Blocks.COBBLESTONE.defaultBlockState());
+			});
+			
+			
 			//destWorld.setBlockAndUpdate(new BlockPos(portalPos), AMBlocks.JOVIAN_PORTAL.get().defaultBlockState());
 
 		}

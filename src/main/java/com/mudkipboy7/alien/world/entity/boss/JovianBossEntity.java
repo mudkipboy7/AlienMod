@@ -2,6 +2,7 @@ package com.mudkipboy7.alien.world.entity.boss;
 
 import java.util.function.Predicate;
 
+import com.mudkipboy7.alien.data.JovianBossLines;
 import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
@@ -51,8 +52,7 @@ import net.minecraft.world.phys.AABB;
 public class JovianBossEntity extends PathfinderMob implements IAlienMob, RangedAttackMob {
 	private boolean isHoldingSword = false;
 
-	private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(),
-			BossEvent.BossBarColor.WHITE, BossEvent.BossBarOverlay.PROGRESS));
+	private JovianBossFight bossFight = new JovianBossFight(this);
 
 	public JovianBossEntity(EntityType<? extends JovianBossEntity> entityType, Level level) {
 		super(entityType, level);
@@ -74,7 +74,12 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	@Override
 	public void tick() {
+		// if(this.attack() != null) {
 		this.setSprinting(true);
+		// }
+		// else {
+		// this.setSprinting( false);
+		// }
 		if (random.nextInt(100) == 0 && (this.getHealth() < (this.getMaxHealth() / 2.0F))) {
 			AlienZombie zombie = new AlienZombie(AMEntities.ALIEN_ZOMBIE.get(), this.level());
 			zombie.setPos(this.position());
@@ -83,15 +88,15 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 		}
 		if (random.nextInt(40) == 0) {
-			//if (this.level().getDifficulty() == Difficulty.EASY)
-			//	this.heal(1);
-			//else if (this.level().getDifficulty() == Difficulty.NORMAL)
+			// if (this.level().getDifficulty() == Difficulty.EASY)
+			// this.heal(1);
+			// else if (this.level().getDifficulty() == Difficulty.NORMAL)
 			this.heal(2);
-			//else if (this.level().getDifficulty() == Difficulty.HARD)
-			//	this.heal(3);
+			// else if (this.level().getDifficulty() == Difficulty.HARD)
+			// this.heal(3);
 		}
 		// System.out.println(bossEvent.getProgress());
-		bossEvent.setProgress(1 * (this.getHealth() / this.getMaxHealth()));
+		bossFight.getBossEvent().setProgress(1 * (this.getHealth() / this.getMaxHealth()));
 		super.tick();
 	}
 
@@ -117,7 +122,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	@Override
 	public void sendSystemMessage(Component pComponent) {
-		// TODO Auto-generated method stub
 		Minecraft.getInstance().gui.getChat().addMessage(pComponent);
 	}
 
@@ -133,32 +137,23 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		if (!this.level().isClientSide()) {
 
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
-			sendSystemMessage(Component.translatable("multiplayer.player.joined", this.getName())
-					.withStyle(ChatFormatting.YELLOW));
+			simulateJoinGame();
+			//this.heal(getMaxHealth());
 		}
-		if (this.level().dimensionTypeId() != AMDimensions.ALIENDIM_TYPE) {
-		}
+
 		super.onAddedToWorld();
 	}
 
 	@Override
 	public void die(DamageSource pDamageSource) {
-		if (!this.level().isClientSide()) {
+		if (!this.level().isClientSide() && !this.isDeadOrDying()) {
 			sendSystemMessage(pDamageSource.getLocalizedDeathMessage(this));
-			Leave();
+			sendLeaveGameMessage();
 		}
 		super.die(pDamageSource);
 		// System.out.println(pDamageSource.getLocalizedDeathMessage(this).getString());
 		// Component component = this.getCombatTracker().getDeathMessage();
 
-	}
-
-	private void Leave() {
-		if (!this.level().isClientSide()) {
-			sendSystemMessage(
-					Component.translatable("multiplayer.player.left", this.getName()).withStyle(ChatFormatting.YELLOW));
-
-		}
 	}
 
 	/**
@@ -168,7 +163,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	@Override
 	public void startSeenByPlayer(ServerPlayer pPlayer) {
 		super.startSeenByPlayer(pPlayer);
-		this.bossEvent.addPlayer(pPlayer);
+		bossFight.getBossEvent().addPlayer(pPlayer);
 	}
 
 	/**
@@ -178,7 +173,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	@Override
 	public void stopSeenByPlayer(ServerPlayer pPlayer) {
 		super.stopSeenByPlayer(pPlayer);
-		this.bossEvent.removePlayer(pPlayer);
+		bossFight.getBossEvent().removePlayer(pPlayer);
 	}
 
 	@Override
@@ -200,4 +195,28 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	}
 
+	private boolean sendLeaveGameMessage() {
+		if (!this.level().isClientSide()) {
+			sendSystemMessage(
+					Component.translatable("multiplayer.player.left", this.getName()).withStyle(ChatFormatting.YELLOW));
+			return true;
+		}
+		return false;
+	}
+
+	private boolean simulateJoinGame() {
+		if (!this.level().isClientSide()) {
+			sendSystemMessage(Component.translatable("multiplayer.player.joined", this.getName())
+					.withStyle(ChatFormatting.YELLOW));
+			if (this.level().dimension() != AMDimensions.JOVIANDIM_LEVEL) {
+				sendSystemMessage(
+						Component.translatable(JovianBossLines.WHEN_SUMMONED_IN_WRONG_DIMENSION, this.getName()));
+				this.remove(RemovalReason.DISCARDED);
+				this.sendLeaveGameMessage();
+			}
+
+			return true;
+		}
+		return false;
+	}
 }
