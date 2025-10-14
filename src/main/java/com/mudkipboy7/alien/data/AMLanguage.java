@@ -203,6 +203,8 @@ public class AMLanguage {
 			addBlock(AMBlocks.GELUSTONE_IRON_ORE, "Gelustone Iron Ore");
 			addBlock(AMBlocks.REGOLITH, "Regolith");
 			addBlock(AMBlocks.JOVIAN_PORTAL, "Jovian Dimension Portal");
+			addBlock(AMBlocks.JOVIAN_RETURN_PORTAL, "Jovian Return Portal");
+			addBlock(AMBlocks.JOVIAN_BOSS_SPAWNER, "Jovian Boss Portal");
 
 			/*
 			 * Item

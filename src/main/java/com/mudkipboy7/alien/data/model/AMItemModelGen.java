@@ -101,8 +101,13 @@ public class AMItemModelGen extends ItemModelProvider {
 				.texture("top", AMBlockModelGen.lignumLogTop);
 		blockItem(AMItems.GELUSTONE_IRON_ORE);
 		blockItem(AMItems.REGOLITH);
-		
+
 		genItem(AMItems.JOVIAN_PORTAL, AlienMod.location(blockFolder + AMItems.JOVIAN_PORTAL.getId().getPath()));
+
+		genItem(AMItems.JOVIAN_RETURN_PORTAL,
+				AlienMod.location(blockFolder + AMItems.JOVIAN_RETURN_PORTAL.getId().getPath()));
+
+		blockItem(AMItems.JOVIAN_BOSS_SPAWNER);
 
 		/*
 		 * Items

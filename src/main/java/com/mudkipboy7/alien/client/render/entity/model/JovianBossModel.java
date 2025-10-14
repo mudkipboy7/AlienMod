@@ -17,10 +17,13 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.piglin.PiglinArmPose;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -61,6 +64,11 @@ public class JovianBossModel<T extends JovianBossEntity> extends HumanoidModel<T
 		super.setupAnim(pEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
 
 		super.setupAttackAnimation(pEntity, pAgeInTicks);
+		if (pEntity.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.GOLDEN_APPLE)
+				&& pEntity instanceof JovianBossEntity boss) {
+			//AnimationUtils.swingWeaponDown(rightArm, leftArm, pEntity, pHeadPitch, pAgeInTicks);
+
+		}
 
 		// AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, pEntity,
 		// this.attackTime, pAgeInTicks);

@@ -14,6 +14,9 @@ import com.mudkipboy7.alien.world.block.fluid.AmmoniaLiquidBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienChestBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienCraftingTableBlock;
 import com.mudkipboy7.alien.world.block.functional.AlienPortalBlock;
+import com.mudkipboy7.alien.world.block.functional.JovianBossSpawnerBlock;
+import com.mudkipboy7.alien.world.block.functional.JovianGoToPortalBlock;
+import com.mudkipboy7.alien.world.block.functional.JovianReturnPortalBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.CoalGeneratorBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.EnergyBlock;
 import com.mudkipboy7.alien.world.block.functional.machine.EnergyStorageBlock;
@@ -26,17 +29,12 @@ import com.mudkipboy7.alien.world.block.functional.sign.AlienWallHangingSignBloc
 import com.mudkipboy7.alien.world.block.functional.sign.AlienWallSignBlock;
 import com.mudkipboy7.alien.world.block.misc.AlienAirBlock;
 import com.mudkipboy7.alien.world.block.misc.TestBlock;
-import com.mudkipboy7.alien.world.item.AMItems;
-import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
-import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.AlienDimTeleporter;
-import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.JovianDimTeleporter;
 import com.mudkipboy7.alien.world.worldgen.structure.grower.AMTreeGrowers;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -49,7 +47,6 @@ import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
@@ -164,8 +161,7 @@ public final class AMBlocks {
 
 	// Block for testing mod functions
 	public static final RegistryObject<Block> ALIEN_PORTAL = BLOCKS.register("alien_portal", () -> new AlienPortalBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never),
-			AMDimensions.ALIENDIM_LEVEL, new AlienDimTeleporter()));
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
 
 	// Alien sapling
 	public static final RegistryObject<Block> LIGNUM_SAPLING = BLOCKS.register("lignum_sapling",
@@ -357,10 +353,14 @@ public final class AMBlocks {
 	public static final RegistryObject<Block> GELUSTONE_IRON_ORE = BLOCKS.register("gelustone_iron_ore",
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
 					.instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	// Block for testing mod functions
-	public static final RegistryObject<Block> JOVIAN_PORTAL = BLOCKS.register("jovian_portal", () -> new AlienPortalBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never),
-			AMDimensions.JOVIANDIM_LEVEL, new JovianDimTeleporter()));
+
+	public static final RegistryObject<Block> JOVIAN_PORTAL = BLOCKS.register("jovian_portal", () -> new JovianGoToPortalBlock(
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
+	public static final RegistryObject<Block> JOVIAN_RETURN_PORTAL = BLOCKS.register("jovian_return_portal", () -> new JovianReturnPortalBlock(
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
+	public static final RegistryObject<Block> JOVIAN_BOSS_SPAWNER = BLOCKS.register("jovian_boss_spawner", () -> new JovianBossSpawnerBlock(
+			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
+	
 	/*
 	 * Methods
 	 */

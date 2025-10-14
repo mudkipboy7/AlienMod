@@ -17,8 +17,8 @@ import net.minecraft.world.level.portal.PortalInfo;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
 
-public class JovianDimTeleporter implements ITeleporter {
-	public JovianDimTeleporter() {
+public class JovianDimGoToTeleporter implements ITeleporter {
+	public JovianDimGoToTeleporter() {
 	}
 
 	@Override
@@ -45,13 +45,13 @@ public class JovianDimTeleporter implements ITeleporter {
 			BlockPos.betweenClosed(x - 2, y, z - 2, x + 2, y, z + 2).forEach((p_184101_) -> {
 				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
-			
+			destWorld.setBlockAndUpdate(new BlockPos(0, 56, 0), AMBlocks.JOVIAN_BOSS_SPAWNER.get().defaultBlockState());
 			BlockPos.betweenClosed(x - 30, 55, z - 30, x + 30, 55, z + 30).forEach((p_184101_) -> {
 				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
-			
-			
-			//destWorld.setBlockAndUpdate(new BlockPos(portalPos), AMBlocks.JOVIAN_PORTAL.get().defaultBlockState());
+
+			// destWorld.setBlockAndUpdate(new BlockPos(portalPos),
+			// AMBlocks.JOVIAN_PORTAL.get().defaultBlockState());
 
 		}
 		return new PortalInfo(

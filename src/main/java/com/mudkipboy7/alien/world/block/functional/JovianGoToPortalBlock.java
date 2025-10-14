@@ -6,9 +6,9 @@ import com.mudkipboy7.alien.world.block.blockentity.machine.HazardRemovalMachine
 import com.mudkipboy7.alien.world.item.functional.AlienDimCreativeTeleporterItem;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.AlienDimTeleporter;
+import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.JovianDimGoToTeleporter;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.worldgen.DimensionTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -28,10 +28,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.util.ITeleporter;
 
-public class AlienPortalBlock extends BaseEntityBlock {
-	AlienDimTeleporter teleporter = new AlienDimTeleporter();
+public class JovianGoToPortalBlock extends BaseEntityBlock {
+	ITeleporter teleporter = new JovianDimGoToTeleporter();
 
-	public AlienPortalBlock(BlockBehaviour.Properties properties) {
+	public JovianGoToPortalBlock(BlockBehaviour.Properties properties) {
 		super(properties);
 	}
 
@@ -50,12 +50,13 @@ public class AlienPortalBlock extends BaseEntityBlock {
 			InteractionHand hand, BlockHitResult hit) {
 		Item heldItem = player.getItemInHand(hand).getItem();
 		ResourceKey<Level> currentDimension = player.level().dimension();
+		// ResourceKey<Level> overworld = Level.OVERWORLD;
+
 		boolean inValidDim = currentDimension == AMDimensions.ALIENDIM_LEVEL || currentDimension == Level.OVERWORLD;
 		if (level instanceof ServerLevel && player.canChangeDimensions()
-				&& !(heldItem instanceof BlockItem || heldItem instanceof AlienDimCreativeTeleporterItem)) {
-			ResourceKey<Level> dimToSendTo = player.level().dimension() == AMDimensions.ALIENDIM_LEVEL ? Level.OVERWORLD
-					: AMDimensions.ALIENDIM_LEVEL;
-			ServerLevel serverlevel = player.getCommandSenderWorld().getServer().getLevel(dimToSendTo);
+				&& !(heldItem instanceof BlockItem || heldItem instanceof AlienDimCreativeTeleporterItem)
+				&& inValidDim) {
+			ServerLevel serverlevel = player.getCommandSenderWorld().getServer().getLevel(AMDimensions.JOVIANDIM_LEVEL);
 			if (serverlevel != null) {
 
 				player.changeDimension(serverlevel, teleporter);

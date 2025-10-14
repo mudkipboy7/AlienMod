@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-12T13:04:42.594451	Item Models: alien
+// 1.20.2	2025-10-14T14:09:29.3953898	Item Models: alien
 ea411e845d0ddb8b29a9e850a24a30b9c26c2ca7 assets/alien/models/item/air_purifier.json
 762cb26d8d4a387261889bea16b7a5a785ecba5f assets/alien/models/item/algussoil.json
 5d7af0e918e1a5edae73711792347441b0197982 assets/alien/models/item/alien_air.json
@@ -50,7 +50,9 @@ b3de82a07e65c3dd21c1b4f23ce787adf952400f assets/alien/models/item/gelustone_stai
 d63d9852238e50d73c674a3c7192dd9ae0296d09 assets/alien/models/item/gelustone_sword.json
 27aa3e80f79c4e9fc604cf51f980f796faee5dd9 assets/alien/models/item/gramen_block.json
 22e731d9d25091c5f1689bca04399b80ed043bfc assets/alien/models/item/int_limit_battery.json
+d74117e3f82497774f806dab87aed905908351b3 assets/alien/models/item/jovian_boss_spawner.json
 115c960c51628a4437fe54cb541dd5878ec56c7b assets/alien/models/item/jovian_portal.json
+73aebd155ba83c998462d036cf487331924f07e6 assets/alien/models/item/jovian_return_portal.json
 b2234b49e43a7dd9d727c20830d022e02894ed62 assets/alien/models/item/lazer_creator.json
 763617f1b247276b66c4e5342c745b62e21bd9e8 assets/alien/models/item/lignum_all_sides_log.json
 7ba665a76dbea59fb71bcd71f21b7dbaf41e7aff assets/alien/models/item/lignum_axe.json
