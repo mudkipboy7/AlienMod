@@ -32,6 +32,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.HangingSignItem;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.ItemStack;
@@ -223,8 +224,8 @@ public class AMItems {
 	public static final RegistryObject<AlienShovelItem> LIGNUM_SHOVEL = ITEMS.register("lignum_shovel",
 			() -> new AlienShovelItem(AMTeirs.ALIEN_WOOD, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> LIGNUM_HOE = ITEMS.register("lignum_hoe",
-			() -> new AlienHoeItem(AMTeirs.ALIEN_WOOD, 0F, -3.0F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<HoeItem> LIGNUM_HOE = ITEMS.register("lignum_hoe",
+			() -> new HoeItem(AMTeirs.ALIEN_WOOD, 0, -3.0F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<AlienSwordItem> GELUSTONE_SWORD = ITEMS.register("gelustone_sword",
 			() -> new AlienSwordItem(AMTeirs.GELUSTONE, 3, -2.4F, new Item.Properties().stacksTo(1)));
@@ -238,8 +239,8 @@ public class AMItems {
 	public static final RegistryObject<AlienShovelItem> GELUSTONE_SHOVEL = ITEMS.register("gelustone_shovel",
 			() -> new AlienShovelItem(AMTeirs.GELUSTONE, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> GELUSTONE_HOE = ITEMS.register("gelustone_hoe",
-			() -> new AlienHoeItem(AMTeirs.GELUSTONE, -1, -2.0F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<HoeItem> GELUSTONE_HOE = ITEMS.register("gelustone_hoe",
+			() -> new HoeItem(AMTeirs.GELUSTONE, -1, -2.0F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<Item> ANTI_GRAVITY = simpleDescItem("anti_gravity",
 			new Item.Properties().stacksTo(1));
@@ -284,8 +285,8 @@ public class AMItems {
 	public static final RegistryObject<AlienShovelItem> APSIUS_SHOVEL = ITEMS.register("apsius_shovel",
 			() -> new AlienShovelItem(AMTeirs.APSIUS, 1.5F, -3.0F, new Item.Properties().stacksTo(1)));
 
-	public static final RegistryObject<AlienHoeItem> APSIUS_HOE = ITEMS.register("apsius_hoe",
-			() -> new AlienHoeItem(AMTeirs.APSIUS, -2, -1.0F, new Item.Properties().stacksTo(1)));
+	public static final RegistryObject<HoeItem> APSIUS_HOE = ITEMS.register("apsius_hoe",
+			() -> new HoeItem(AMTeirs.APSIUS, -2, -1.0F, new Item.Properties().stacksTo(1)));
 
 	public static final RegistryObject<ForgeSpawnEggItem> TEST_ENTITY_SPAWN_EGG = simpleSpawnEggItem(
 			AMEntities.TEST_ENTITY, 12332847, 16777215);

@@ -1,63 +1,42 @@
 package com.mudkipboy7.alien.world.entity.boss;
 
-import java.util.function.Predicate;
-
-import com.mojang.datafixers.util.Pair;
-import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
-import com.mudkipboy7.alien.world.entity.monster.AlienZombie;
 import com.mudkipboy7.alien.world.entity.monster.JovianBossMinion;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.MultiPlayerGameMode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerBossEvent;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.BossEvent;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
-import net.minecraft.world.entity.ai.goal.RunAroundLikeCrazyGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.AABB;
 
 public class JovianBossEntity extends PathfinderMob implements IAlienMob, RangedAttackMob {
 	ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(getDisplayName(), BossEvent.BossBarColor.WHITE,
@@ -86,38 +65,38 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	@Override
 	public void tick() {
-		//this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
+		// this.setItemSlot(EquipmentSlot.MAINHAND,
+		// Items.DIAMOND_SWORD.getDefaultInstance());
+		// if (!this.level().isClientSide()) {
 
-		tickAppleHealing();
-
-		this.resetFallDistance();
-		if (this.blockPosition().getY() < 40) {
-			this.teleportTo(0, 57, 0);
-			sendChatMessage(JovianBossLines.WHEN_KNOCKED_OFF_SIDE);
-			this.level().setBlockAndUpdate(new BlockPos(0, 56, 0), Blocks.COBBLESTONE.defaultBlockState());
-		}
-		// if(this.attack() != null) {
-		this.setSprinting(true);
 		// }
-		// else {
-		// this.setSprinting( false);
-		// }
-		if (this.getHealth() < (this.getMaxHealth() / 2.0F)) {
-			this.phase = 1;
-		}
-		if (phase == 1 && random.nextInt(50) == 0) {
-			JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
-			zombie.setPos(this.position());
-			this.level().addFreshEntity(zombie);
-			this.tryStartHealWithApple();
-			// this.teleportTo(0, 57, 0);
-			// this.level().setBlockAndUpdate(new BlockPos(0, 56, 0),
-			// Blocks.COBBLESTONE.defaultBlockState());
+		if (!level().isClientSide) {
 
-		}
+			this.resetFallDistance();
+			if (this.blockPosition().getY() < 40) {
+				this.teleportTo(0, 57, 0);
+				sendChatMessage(JovianBossLines.WHEN_KNOCKED_OFF_SIDE);
+				this.level().setBlockAndUpdate(new BlockPos(0, 56, 0), Blocks.COBBLESTONE.defaultBlockState());
+			}
+			// if(this.attack() != null) {
 
-		// System.out.println(bossEvent.getProgress());
-		bossEvent.setProgress(1 * (this.getHealth() / this.getMaxHealth()));
+			// }
+			// else {
+			this.setSprinting(true);
+			// }
+			if (this.getHealth() < (this.getMaxHealth() / 2.0F)) {
+				this.phase = 1;
+			}
+			if (random.nextInt(50) == 0 && phase != 0) {
+				JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
+				zombie.setPos(this.position());
+				this.level().addFreshEntity(zombie);
+				this.tryStartHealWithApple();
+
+			}
+			this.tickAppleHealing();
+			bossEvent.setProgress(1 * (this.getHealth() / this.getMaxHealth()));
+		}
 		super.tick();
 	}
 
@@ -150,7 +129,8 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	public void onAddedToWorld() {
 
 		if (!this.level().isClientSide()) {
-
+			// level().getServer().close();
+			int applesLeft = 64;
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
 			simulateJoinGame();
 			// this.heal(getMaxHealth());
@@ -253,7 +233,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
-
 		super.addAdditionalSaveData(compound);
 		compound.putInt("phase", this.phase);
 		compound.putInt("apples_left", this.applesLeft);
@@ -269,11 +248,11 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	}
 
 	private boolean tryStartHealWithApple() {
-		if (this.applesLeft > 0 && this.getHealth() < this.getMaxHealth() && this.ticksLeftToFinishEating <= 0) {
-			// this.setItemSlot(EquipmentSlot.MAINHAND,
-			// Items.GOLDEN_APPLE.getDefaultInstance());
-			
-			this.ticksLeftToFinishEating = 40;
+		if (this.getHealth() < this.getMaxHealth() && this.applesLeft > 0 && this.ticksLeftToFinishEating <= 0) {
+			this.setItemSlot(EquipmentSlot.MAINHAND, Items.GOLDEN_APPLE.getDefaultInstance());
+			this.playSound(getEatingSound(Items.GOLDEN_APPLE.getDefaultInstance()));
+
+			this.ticksLeftToFinishEating = 30;
 			this.setSilent(false);
 
 			return true;
@@ -286,20 +265,16 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			this.playSound(getEatingSound(Items.GOLDEN_APPLE.getDefaultInstance()));
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.GOLDEN_APPLE.getDefaultInstance());
 			ticksLeftToFinishEating--;
-			Item item = Items.GOLDEN_APPLE;
 
 		} else if (this.ticksLeftToFinishEating == 1) {
 			this.playSound(SoundEvents.PLAYER_BURP);
 			ticksLeftToFinishEating = 0;
-			this.heal(20);
 			this.applesLeft--;
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
-			// sendSystemMessage(Component.translatable("healed", this.getName()));
+			this.heal(10);
+
 			return true;
 		}
-		//else if (this.ticksLeftToFinishEating < 1) {
-		//	this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
-		//}
 		return false;
 	}
 

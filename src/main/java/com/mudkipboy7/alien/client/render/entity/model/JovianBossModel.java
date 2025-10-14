@@ -64,11 +64,11 @@ public class JovianBossModel<T extends JovianBossEntity> extends HumanoidModel<T
 		super.setupAnim(pEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
 
 		super.setupAttackAnimation(pEntity, pAgeInTicks);
-		if (pEntity.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.GOLDEN_APPLE)
-				&& pEntity instanceof JovianBossEntity boss) {
+		//if (pEntity.getItemBySlot(EquipmentSlot.MAINHAND).is(Items.GOLDEN_APPLE)
+		//		&& pEntity instanceof JovianBossEntity boss) {
 			//AnimationUtils.swingWeaponDown(rightArm, leftArm, pEntity, pHeadPitch, pAgeInTicks);
 
-		}
+		//}
 
 		// AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, pEntity,
 		// this.attackTime, pAgeInTicks);

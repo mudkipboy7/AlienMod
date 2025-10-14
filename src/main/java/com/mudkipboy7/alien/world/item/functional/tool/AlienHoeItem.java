@@ -9,6 +9,6 @@ import net.minecraft.world.item.Tier;
 public class AlienHoeItem extends DiggerItem {
 
 	public AlienHoeItem(Tier tier, float damage, float speed, Item.Properties properties) {
-		super((float) damage, speed, tier, AMBlockTags.MINEABLE_WITH_ALIEN_HOE, properties);
+		super((float) damage, speed, tier, null, properties);
 	}
 }

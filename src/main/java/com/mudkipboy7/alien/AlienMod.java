@@ -23,7 +23,7 @@ import net.minecraftforge.registries.RegisterEvent;
 
 @Mod(value = AlienMod.MODID)
 public final class AlienMod {
-	
+
 	/*
 	 * Constants
 	 */
@@ -46,13 +46,11 @@ public final class AlienMod {
 	private static AlienDimSky alienDimSky;
 
 
-
-
 	/**
 	 * Main method to set up the mod.
 	 */
 	public AlienMod() {
-		//b k = null;
+		// b k = null;
 		loadCustomJSONStuff();
 		// Makes the mod bus
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();

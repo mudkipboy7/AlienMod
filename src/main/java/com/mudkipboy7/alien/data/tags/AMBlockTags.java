@@ -31,7 +31,8 @@ public class AMBlockTags extends BlockTagsProvider {
 	public static final TagKey<Block> MINEABLE_WITH_ALIEN_PICKAXE = makeKey("mineable/alien_pickaxe");
 	public static final TagKey<Block> MINEABLE_WITH_ALIEN_AXE = makeKey("mineable/alien_axe");
 	public static final TagKey<Block> MINEABLE_WITH_ALIEN_SHOVEL = makeKey("mineable/alien_shovel");
-	public static final TagKey<Block> MINEABLE_WITH_ALIEN_HOE = makeKey("mineable/alien_hoe");
+	// public static final TagKey<Block> MINEABLE_WITH_ALIEN_HOE =
+	// makeKey("mineable/alien_hoe");
 	public static final TagKey<Block> ALIEN_SOIL = makeKey("alien_soil");
 	public static final TagKey<Block> ALIEN_PLANT = makeKey("alien_plant");
 	public static final TagKey<Block> SUPPORTS_ALIEN_LEAVES = makeKey("supports_alien_leaves");
@@ -84,7 +85,7 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(MINEABLE_WITH_ALIEN_SHOVEL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get(),
 				AMBlocks.REGOLITH.get());
 
-		tag(MINEABLE_WITH_ALIEN_HOE).add(AMBlocks.LIGNUM_LEAVES.get());
+		// tag(MINEABLE_WITH_ALIEN_HOE).add(AMBlocks.LIGNUM_LEAVES.get());
 
 		tag(ALIEN_SOIL).add(AMBlocks.ALGUSSOIL.get(), AMBlocks.GRAMEN_BLOCK.get(), AMBlocks.REGOLITH.get());
 
@@ -160,8 +161,9 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_AXE).remove(LIGNUM_LOGS, LIGNUM_PLANKS, LIGNUM_SLABS, LIGNUM_STAIRS);
 
 		tag(BlockTags.IRON_ORES).add(AMBlocks.GELUSTONE_IRON_ORE.get());
-		
-		
+		tag(BlockTags.LEAVES).add(AMBlocks.LIGNUM_LEAVES.get());
+		tag(BlockTags.MINEABLE_WITH_HOE).add(AMBlocks.LIGNUM_LEAVES.get());
+
 	}
 
 	// Methods
