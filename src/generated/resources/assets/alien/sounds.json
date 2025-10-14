@@ -22,23 +22,19 @@
   "music.alien_dim": {
     "sounds": [
       {
-        "name": "alien:music/jungle_hijynx",
+        "name": "alien:music/mars",
         "stream": true
       },
       {
-        "name": "alien:music/azumanga_daioh",
-        "stream": true
-      }
-    ]
-  },
-  "music.alien_dim_night": {
-    "sounds": [
-      {
-        "name": "alien:music/jungle_hijynx",
+        "name": "alien:music/mimas",
         "stream": true
       },
       {
-        "name": "alien:music/azumanga_daioh",
+        "name": "alien:music/orbit",
+        "stream": true
+      },
+      {
+        "name": "alien:music/spacerace",
         "stream": true
       }
     ]

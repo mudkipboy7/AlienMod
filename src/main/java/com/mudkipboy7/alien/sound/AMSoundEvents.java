@@ -28,7 +28,6 @@ public class AMSoundEvents {
 	
 	// Music
 	public static final RegistryObject<SoundEvent> ALIEN_MUSIC = VariableRangeSound("music.alien_dim");
-	public static final RegistryObject<SoundEvent> ALIEN_MUSIC_NIGHT = VariableRangeSound("music.alien_dim_night");
 	public static final RegistryObject<SoundEvent> JOVIAN_BOSS_MUSIC = VariableRangeSound("music.jovian_boss");
 
 

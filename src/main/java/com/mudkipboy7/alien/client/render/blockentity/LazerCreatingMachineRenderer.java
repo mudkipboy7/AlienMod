@@ -49,7 +49,7 @@ public class LazerCreatingMachineRenderer<T extends LazerCreatorBlockEntity>
 
 	public static void renderBeaconBeam(PoseStack poseStack, MultiBufferSource bufferSource, float partialTick,
 			long gameTime, int yOffset, int length, float[] pColors, Direction direction) {
-		float pBeamRadius = 0.20F;
+		float pBeamRadius = 0.25F;
 		int i = yOffset + length;
 		poseStack.pushPose();
 		float f = (float) Math.floorMod(gameTime, 40) + partialTick;

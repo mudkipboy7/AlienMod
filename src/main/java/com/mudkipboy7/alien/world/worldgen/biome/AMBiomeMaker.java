@@ -57,7 +57,7 @@ class AMBiomeMaker {
 		BiomeSpecialEffects.Builder effectSettings = new BiomeSpecialEffects.Builder();
 		effectSettings.waterColor(0xFFFFFF).waterFogColor(0xFFFFFF).skyColor(0x7E2500).grassColorOverride(0xFFFFFF)
 				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000)
-				.backgroundMusic(Musics.createGameMusic(Holder.direct(AMSoundEvents.ALIEN_MUSIC.get())));
+				.backgroundMusic(AMMusics.ALIEN_MUSIC);
 		return effectSettings;
 
 		// .ambientParticle(AmbientParticleSettings.)

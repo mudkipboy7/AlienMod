@@ -47,7 +47,7 @@
       "state": {
         "Name": "alien:thin_lignum_log",
         "Properties": {
-          "waterlogged": "true"
+          "waterlogged": "false"
         }
       }
     }

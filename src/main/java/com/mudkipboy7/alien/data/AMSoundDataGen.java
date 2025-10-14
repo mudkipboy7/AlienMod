@@ -20,12 +20,10 @@ class AMSoundDataGen extends SoundDefinitionsProvider {
 		add(AMSoundEvents.TEST_ENTITY_HURT, definition().with(sound(AlienMod.location("entity/test_entity_hurt"))));
 		add(AMSoundEvents.TEST_ENTITY_DEATH, definition().with(sound(AlienMod.location("entity/test_entity_death"))));
 		add(AMSoundEvents.ALIEN_MUSIC, definition().with(
-				sound(AlienMod.location("music/jungle_hijynx")).stream(),
-				sound(AlienMod.location("music/azumanga_daioh")).stream()
-				));
-		add(AMSoundEvents.ALIEN_MUSIC_NIGHT, definition().with(
-				sound(AlienMod.location("music/jungle_hijynx")).stream(),
-				sound(AlienMod.location("music/azumanga_daioh")).stream()
+				sound(AlienMod.location("music/mars")).stream(),
+				sound(AlienMod.location("music/mimas")).stream(),
+				sound(AlienMod.location("music/orbit")).stream(),
+				sound(AlienMod.location("music/spacerace")).stream()
 				));
 		add(AMSoundEvents.JOVIAN_BOSS_MUSIC, definition().with(
 				sound(AlienMod.location("music/last_stand")).stream()
