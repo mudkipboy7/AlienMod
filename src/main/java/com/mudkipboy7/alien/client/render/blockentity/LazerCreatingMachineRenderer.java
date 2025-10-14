@@ -9,6 +9,7 @@ import com.mojang.math.Axis;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerCreatorBlock;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -35,11 +36,14 @@ public class LazerCreatingMachineRenderer<T extends LazerCreatorBlockEntity>
 	public void render(LazerCreatorBlockEntity blockEntity, float partialTick, PoseStack poseStack,
 			MultiBufferSource buffer, int packedLight, int packedOverlay) {
 		long time = blockEntity.getLevel().getGameTime();
-		float[] color = { 1F, 0.0F, 0F };
-		int length = blockEntity.getBlockState().getValue(LazerCreatorBlock.LAZER_LENGTH);
+		float[] color = { 0.7F, 0.0F, 0F };
+		// int length =
+		blockEntity.getUpdatePacket();
+		int length = blockEntity.getUpdateTag().getInt("lazerlength");// blockEntity.getBlockState().getValue(LazerCreatorBlock.LAZER_LENGTH);
 		Direction direction = blockEntity.getBlockState().getValue(LazerCreatorBlock.DIRECTION);
-		//System.out.println(blockEntity.currentLazersGoingIn);
-		renderBeaconBeam(poseStack, buffer, partialTick, time, 0, length, color, direction);
+		// System.out.println(blockEntity.currentLazerLength);
+		if (!blockEntity.getLevel().isDebug())
+			renderBeaconBeam(poseStack, buffer, partialTick, time, 0, length, color, direction);
 
 	}
 

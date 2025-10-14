@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-13T15:39:46.5503474	Registries
+// 1.20.2	2025-10-14T00:30:37.0016148	Registries
 74f5acb51b97095b1cfc71e6b7fcb38e38392b69 data/alien/damage_type/no_oxygen.json
 f4b3f073d41ba749dca0cc076819315c02608d10 data/alien/dimension/alien_planet.json
 a2055e6b79bc7890819edef17a2740a0f0ea9120 data/alien/dimension/jovian_planet.json
@@ -10,7 +10,7 @@ b57d6095345ee05bf4eaee0459bcd3380b5c6f49 data/alien/worldgen/biome/jovian_planet
 954eeae6376dca3a91d7b618be26bdfd0602057a data/alien/worldgen/configured_feature/double_tall_gramen.json
 72bb978ea9548a3ae3223be9c7e2ce2b50a7fe44 data/alien/worldgen/configured_feature/tall_gramen.json
 76e9650830e64f34e7bfd579b7266eb31ebffacb data/alien/worldgen/configured_feature/tall_lignum_tree.json
-dcc1d8eb269ef4ae418446e56639b238ffffdbf7 data/alien/worldgen/configured_feature/thin_tall_lignum_tree.json
+1f85afe00a33def94f161a17c6f9de4ce2d95ba2 data/alien/worldgen/configured_feature/thin_tall_lignum_tree.json
 7103af066f314f6b785b0f5152a5f0129bc702a6 data/alien/worldgen/noise_settings/alien_planet.json
 77150c1f7b0c2d8cde4f2980fd80bed3a72872ab data/alien/worldgen/noise_settings/jovian_planet.json
 7f150568e25e5ed9ed65335bbc97dd5920fa5170 data/alien/worldgen/placed_feature/double_tall_gramen.json

@@ -6,6 +6,7 @@ import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.world.entity.boss.JovianBossEntity;
 import com.mudkipboy7.alien.world.entity.misc.TestEntity;
 import com.mudkipboy7.alien.world.entity.monster.AlienZombie;
+import com.mudkipboy7.alien.world.entity.monster.JovianBossMinion;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -30,10 +31,16 @@ public class AMEntities {
 			() -> EntityType.Builder.of(JovianBossEntity::new, MobCategory.MONSTER).sized(0.6F, 1.95F)
 					.clientTrackingRange(8).build("jovian_boss"));;
 
+	public static final RegistryObject<EntityType<JovianBossMinion>> JOVIAN_BOSS_MINION = ENTITY_TYPES
+			.register("jovian_boss_minion", () -> EntityType.Builder.of(JovianBossMinion::new, MobCategory.MONSTER)
+					.sized(0.6F, 1.95F).clientTrackingRange(8).build("jovian_boss_minion"));;
+
 	@SubscribeEvent
 	public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
 		event.put(AMEntities.TEST_ENTITY.get(), TestEntity.createAttributes().build());
 		event.put(AMEntities.ALIEN_ZOMBIE.get(), AlienZombie.createAttributes().build());
 		event.put(AMEntities.JOVIAN_BOSS.get(), JovianBossEntity.createAttributes().build());
+		event.put(AMEntities.JOVIAN_BOSS_MINION.get(), JovianBossMinion.createAttributes().build());
+
 	}
 }

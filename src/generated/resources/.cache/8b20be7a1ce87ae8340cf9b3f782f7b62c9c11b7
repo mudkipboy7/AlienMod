@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-12T13:04:42.5864727	Block States: alien
+// 1.20.2	2025-10-14T00:30:37.0085881	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -27,7 +27,7 @@ aaea7683437e8139767947b74e46774aab39093f assets/alien/blockstates/gelustone_butt
 b1c13f15c66071ef413f9ab373cd5c77ab3f197f assets/alien/blockstates/gelustone_stairs.json
 5d2efa33a80fc735b16d953801ead7358ac588e3 assets/alien/blockstates/gramen_block.json
 db336003261d93c1ece8794f1cc82c9581592f04 assets/alien/blockstates/jovian_portal.json
-db2d5a47bf12e9e3fb9502fea5d9957d275eef7a assets/alien/blockstates/lazer_creator.json
+d7355fe177494eea96464f9628a6641762c16c04 assets/alien/blockstates/lazer_creator.json
 bb959a3a19a0126a372f0a7ae7d32f65e40488e7 assets/alien/blockstates/lignum_all_sides_log.json
 584eb2e5631ee9b647e788ce8f77b2b71746d175 assets/alien/blockstates/lignum_button.json
 05f9120a5a09a051a95bbe0c303415c1110c619d assets/alien/blockstates/lignum_chest.json

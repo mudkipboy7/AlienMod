@@ -46,8 +46,8 @@ public class JovianDimTeleporter implements ITeleporter {
 				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
 			
-			BlockPos.betweenClosed(x - 30, y-15, z - 30, x + 30, y-14, z + 30).forEach((p_184101_) -> {
-				destWorld.setBlockAndUpdate(p_184101_, Blocks.COBBLESTONE.defaultBlockState());
+			BlockPos.betweenClosed(x - 30, 55, z - 30, x + 30, 55, z + 30).forEach((p_184101_) -> {
+				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
 			
 			

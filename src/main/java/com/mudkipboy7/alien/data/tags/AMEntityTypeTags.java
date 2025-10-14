@@ -38,7 +38,7 @@ public class AMEntityTypeTags extends EntityTypeTagsProvider {
 		 */
 		tag(AMEntityTypeTags.ALIEN_CREATURE)
 			.add(AMEntities.ALIEN_ZOMBIE.get(),
-					AMEntities.JOVIAN_BOSS.get());
+					AMEntities.JOVIAN_BOSS.get(),AMEntities.JOVIAN_BOSS_MINION.get());
 		
 		// Remember, you only need to put LivingEntities here.
 		tag(AMEntityTypeTags.COLD_BLOODED)
@@ -65,7 +65,7 @@ public class AMEntityTypeTags extends EntityTypeTagsProvider {
 			.addTags(AMEntityTypeTags.ALIEN_CREATURE);
 
 		tag(AMEntityTypeTags.VANILLA_WEAPON_RESISTANT)
-		.addTags(AMEntityTypeTags.ALIEN_CREATURE).remove(AMEntities.JOVIAN_BOSS.get());
+		.addTags(AMEntityTypeTags.ALIEN_CREATURE).remove(AMEntities.JOVIAN_BOSS.get(), AMEntities.JOVIAN_BOSS_MINION.get());
 
 		/*
 		 * Vanilla/Forge/Other

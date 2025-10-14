@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 0.7,
   "ingredient": {
-    "item": "alien:gelustone_coal_ore"
+    "item": "alien:gelustone_iron_ore"
   },
   "result": "minecraft:iron_ingot"
 }

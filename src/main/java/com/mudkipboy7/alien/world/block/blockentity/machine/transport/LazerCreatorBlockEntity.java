@@ -26,7 +26,6 @@ import net.minecraftforge.energy.EnergyStorage;
 public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreator {
 	// private BlockPos connectedTo;
 	private static final int MAX_SEARCH_RANGE = 10;
-	private static final int MAX_SEARCH_EXTENTIONS = 5;
 	public int ammountTransferedLastTick = 0;
 
 	// These are used for animations
@@ -42,10 +41,13 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 		EnergyStorage extractingFrom = blockEntity.findSomethingToExtractFrom();
 		// System.out.println(blockEntity);
 		// level.setBlockAndUpdate(blockPos, blockState);
-		//if (blockEntity.ammountTransferedLastTick != 0) {
-			blockEntity.level.setBlockAndUpdate(blockPos,
-					blockState.setValue(LazerCreatorBlock.LAZER_LENGTH, blockEntity.getCurrentLazerLength()));
-		//}
+		// if (blockEntity.ammountTransferedLastTick != 0)
+		// blockEntity.level.setBlockAndUpdate(blockPos,
+		// blockState.setValue(LazerCreatorBlock.LAZER_LENGTH,
+		// blockEntity.getCurrentLazerLength()));
+		// }
+		// I do this to s
+
 		if ((extractingFrom != null) && extractingFrom.getEnergyStored() > 0) {
 			BlockPos charging = blockEntity.searchForCharagbles(0);
 			if (charging != null) {
@@ -58,10 +60,10 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 							1.0F);
 
 			} else {
-				blockEntity.currentLazerLength = 0;
+				blockEntity.setCurrentLazerLength(0);
 			}
 		} else {
-			blockEntity.currentLazerLength = 0;
+			blockEntity.setCurrentLazerLength(0);
 		}
 	}
 
@@ -86,19 +88,19 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 			BlockEntity blockentity = level.getBlockEntity(beingChecked);
 			// Minecraft.getInstance().player.sendSystemMessage(Component.literal(beingChecked.toString()));
 			if (blockentity instanceof ILazerAcceptor) {
-				this.currentLazerLength = i;
+				this.setCurrentLazerLength(i);
 				return beingChecked;
 
 			}
 			// Commented out because this causes visual bugs
-			
-			/* else if (blockentity instanceof LazerCreatorBlockEntity otherLazer
-					&& otherLazer.getBlockState().getValue(LazerCreatorBlock.DIRECTION) != direction.getOpposite()) {
-				if (ammountDoneSoFar <= MAX_SEARCH_EXTENTIONS) {
-					this.currentLazerLength = i;
-					return otherLazer.searchForCharagbles(ammountDoneSoFar + 1);
-				}
-			}*/
+
+			/*
+			 * else if (blockentity instanceof LazerCreatorBlockEntity otherLazer &&
+			 * otherLazer.getBlockState().getValue(LazerCreatorBlock.DIRECTION) !=
+			 * direction.getOpposite()) { if (ammountDoneSoFar <= MAX_SEARCH_EXTENTIONS) {
+			 * this.currentLazerLength = i; return
+			 * otherLazer.searchForCharagbles(ammountDoneSoFar + 1); } }
+			 */
 
 			else if (!(level.getBlockState(beingChecked).isSolid() && level.getBlockState(beingChecked).canOcclude())) {
 
@@ -126,16 +128,34 @@ public class LazerCreatorBlockEntity extends BlockEntity implements ILazerCreato
 		return currentLazerLength;
 	}
 
-	@Override
-	public Packet<ClientGamePacketListener> getUpdatePacket() {
-		// TODO Auto-generated method stub
-		return ClientboundBlockEntityDataPacket.create(this);
+	/*
+	 * Used to update the client on the lazer length
+	 */
+	private void setCurrentLazerLength(int length) {
+		if (currentLazerLength != length) {
+			this.currentLazerLength = length;
+			// System.out.println(currentLazerLength);
+			level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 2);
+		}
+
 	}
 
 	@Override
 	public CompoundTag getUpdateTag() {
 		CompoundTag tag = new CompoundTag();
-		// Write your data into the tag
+		// transfers the lazerlength to the client so it can render it
+		tag.putInt("lazerlength", this.currentLazerLength);
 		return tag;
 	}
+
+	@Override
+	public Packet<ClientGamePacketListener> getUpdatePacket() {
+		return ClientboundBlockEntityDataPacket.create(this);
+	}
+	@Override
+	public void load(CompoundTag tag) {
+		super.load(tag);
+		this.currentLazerLength = tag.getInt("lazerlength");
+	}
+
 }

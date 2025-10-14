@@ -1,4 +1,8 @@
 {
+  "remove": [
+    "alien:jovian_boss",
+    "alien:jovian_boss_minion"
+  ],
   "values": [
     "#alien:alien_creature"
   ]

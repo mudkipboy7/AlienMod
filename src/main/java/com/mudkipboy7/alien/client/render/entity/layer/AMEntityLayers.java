@@ -82,7 +82,7 @@ public class AMEntityLayers {
 
 	}
 
-	@SuppressWarnings({ "rawtypes", "unused" })
+	@SuppressWarnings({ "rawtypes", "unused", "unchecked", "deprecation" })
 	@SubscribeEvent
 	public static void addEntityLayers(EntityRenderersEvent.AddLayers event) {
 		/*

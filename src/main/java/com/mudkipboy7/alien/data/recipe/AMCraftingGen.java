@@ -269,6 +269,6 @@ public class AMCraftingGen extends AMRecipeProvider {
 		basicBlastingRecipe(AMItems.GELUSTONE_COAL_ORE.get(), Items.COAL, 0.1F, output);
 		basicBlastingRecipe(AMItems.GELUSTONE_GOLD_ORE.get(), Items.GOLD_INGOT, 1.0F, output);
 		basicBlastingRecipe(AMItems.APSIUS_ORE.get(), AMItems.APSIUS_GEM.get(), 0.7F, output);
-		basicBlastingRecipe(AMItems.GELUSTONE_COAL_ORE.get(), Items.IRON_INGOT, 0.7F, output);
+		basicBlastingRecipe(AMItems.GELUSTONE_IRON_ORE.get(), Items.IRON_INGOT, 0.7F, output);
 	}
 }

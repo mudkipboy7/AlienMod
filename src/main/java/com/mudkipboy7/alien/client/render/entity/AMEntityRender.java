@@ -41,6 +41,7 @@ public class AMEntityRender {
 			event.registerEntityRenderer(AMEntities.TEST_ENTITY.get(), TestEntityRenderer::new);
 			event.registerEntityRenderer(AMEntities.ALIEN_ZOMBIE.get(), AlienZombieRenderer::new);
 			event.registerEntityRenderer(AMEntities.JOVIAN_BOSS.get(), JovianBossRenderer::new);
+			event.registerEntityRenderer(AMEntities.JOVIAN_BOSS_MINION.get(), AlienZombieRenderer::new);
 
 		}
 	}

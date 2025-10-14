@@ -8,6 +8,7 @@ import com.mudkipboy7.alien.world.entity.monster.AlienZombie;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -60,8 +61,9 @@ public class JovianBossModel<T extends JovianBossEntity> extends HumanoidModel<T
 		super.setupAnim(pEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
 
 		super.setupAttackAnimation(pEntity, pAgeInTicks);
-		
-		//AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, pEntity, this.attackTime, pAgeInTicks);
+
+		// AnimationUtils.swingWeaponDown(this.rightArm, this.leftArm, pEntity,
+		// this.attackTime, pAgeInTicks);
 
 	}
 

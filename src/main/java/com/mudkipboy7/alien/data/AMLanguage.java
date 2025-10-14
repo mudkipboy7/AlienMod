@@ -9,6 +9,7 @@ import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.entity.AMEntities;
+import com.mudkipboy7.alien.world.entity.boss.JovianBossLines;
 import com.mudkipboy7.alien.world.item.AMItems;
 
 import net.minecraft.data.PackOutput;
@@ -76,7 +77,9 @@ public class AMLanguage {
 			 * Jovian Boss messages
 			 */
 			add(JovianBossLines.WHEN_SUMMONED_IN_WRONG_DIMENSION, "<%s> Coward... Fight me legitimetely.");
-
+			add(JovianBossLines.WHEN_KNOCKED_OFF_SIDE, "<%s> Hah! You think that's gonna work!");
+			add(JovianBossLines.WHEN_ATTACKED_IN_CREATIVE_MODE, "<%s> Creative Mode... Really???");
+			add(JovianBossLines.DEATH, "<%s> NOOOOOOO!!!!!");
 			/*
 			 * Config files
 			 */
@@ -134,6 +137,7 @@ public class AMLanguage {
 			addEntityType(AMEntities.TEST_ENTITY, "Test Entity");
 			addEntityType(AMEntities.ALIEN_ZOMBIE, "Alien Zombie");
 			addEntityType(AMEntities.JOVIAN_BOSS, "§9§kPlayer");
+			addEntityType(AMEntities.JOVIAN_BOSS_MINION, "Jovian Boss Minion");
 
 			/*
 			 * Block

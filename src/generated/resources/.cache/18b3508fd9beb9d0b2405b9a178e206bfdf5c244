@@ -1,6 +1,6 @@
-// 1.20.2	2025-10-12T14:14:39.189662	Tags for minecraft:entity_type mod id alien
-521659c03b314b1d7406517e886e97fa3542d77c data/alien/tags/entity_types/alien_creature.json
+// 1.20.2	2025-10-13T19:25:41.9792939	Tags for minecraft:entity_type mod id alien
+9731664bcffeac51a0dd284a5bf6929e75b39449 data/alien/tags/entity_types/alien_creature.json
 1ffa5762574dce738ae9634ae3c65deabe21a7e8 data/alien/tags/entity_types/alien_weapon_vulnerable.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/alien/tags/entity_types/cannot_survive_overworld.json
 e34187702e17942c28c3d08ea301dee181df52c1 data/alien/tags/entity_types/cold_blooded.json
-e101dc417ac24f9b76af343c9987d2d558332695 data/alien/tags/entity_types/vanilla_weapon_resistant.json
+4340e2c7d95ebf6584de13ff0c385ad23d7def22 data/alien/tags/entity_types/vanilla_weapon_resistant.json

@@ -1,6 +1,7 @@
 {
   "values": [
     "alien:alien_zombie",
-    "alien:jovian_boss"
+    "alien:jovian_boss",
+    "alien:jovian_boss_minion"
   ]
 }
