@@ -48,6 +48,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	public JovianBossEntity(EntityType<? extends JovianBossEntity> entityType, Level level) {
 		super(entityType, level);
+		applesLeft = 64;
 
 	}
 
@@ -70,13 +71,15 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		// if (!this.level().isClientSide()) {
 
 		// }
+
 		if (!level().isClientSide) {
 
 			this.resetFallDistance();
 			if (this.blockPosition().getY() < 40) {
 				this.teleportTo(0, 57, 0);
 				sendChatMessage(JovianBossLines.WHEN_KNOCKED_OFF_SIDE);
-				this.level().setBlockAndUpdate(new BlockPos(0, 56, 0), Blocks.COBBLESTONE.defaultBlockState());
+				this.level().setBlockAndUpdate(new BlockPos(0, 56, 0),
+						AMBlocks.HARDENED_CLOUD.get().defaultBlockState());
 			}
 			// if(this.attack() != null) {
 
@@ -84,16 +87,24 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			// else {
 			this.setSprinting(true);
 			// }
-			if (this.getHealth() < (this.getMaxHealth() / 2.0F)) {
+
+			if (this.getHealth() < (this.getMaxHealth() / 2.0F) && phase == 0) {
 				this.phase = 1;
 			}
-			if (random.nextInt(50) == 0 && phase != 0) {
+			if (this.getHealth() < (this.getMaxHealth() / 3.0F) && random.nextInt(100) == 0) {
+				JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
+				zombie.setPos(this.position());
+				this.level().addFreshEntity(zombie);
+				this.teleportTo(random.nextInt(23), 57, random.nextInt(23));
+				this.tryStartHealWithApple();
+			}
+			if (random.nextInt(40) == 0 && phase != 0) {
 				JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
 				zombie.setPos(this.position());
 				this.level().addFreshEntity(zombie);
 				this.tryStartHealWithApple();
-
 			}
+			// this.tryStartHealWithApple();
 			this.tickAppleHealing();
 			bossEvent.setProgress(1 * (this.getHealth() / this.getMaxHealth()));
 		}
@@ -130,7 +141,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 		if (!this.level().isClientSide()) {
 			// level().getServer().close();
-			int applesLeft = 64;
+			// int applesLeft = 64;
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
 			simulateJoinGame();
 			// this.heal(getMaxHealth());
@@ -236,22 +247,31 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		super.addAdditionalSaveData(compound);
 		compound.putInt("phase", this.phase);
 		compound.putInt("apples_left", this.applesLeft);
-		compound.putInt("ticks_left_to_eat_apple", this.ticksLeftToFinishEating);
+		// compound.putInt("ticks_left_to_eat_apple", this.ticksLeftToFinishEating);
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		this.phase = compound.getInt("phase");
-		this.applesLeft = compound.getInt("apples_left");
-		this.ticksLeftToFinishEating = compound.getInt("ticks_left_to_eat_apple");
+		/*
+		 * This is a quick fix to check if it is newly spawned in so it doesn't set
+		 * applesLeft to zero when first spawned. If phase is 0 that means it couldn't
+		 * have eaten any apples yet so it shouldn't set it to the saved value which
+		 * would be 0 by default. I don't understand why it does this.
+		 */
+		if (this.phase != 0) {
+			this.applesLeft = compound.getInt("apples_left");
+		}
+		// this.ticksLeftToFinishEating = compound.getInt("ticks_left_to_eat_apple");
 	}
 
 	private boolean tryStartHealWithApple() {
+
 		if (this.getHealth() < this.getMaxHealth() && this.applesLeft > 0 && this.ticksLeftToFinishEating <= 0) {
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.GOLDEN_APPLE.getDefaultInstance());
 			this.playSound(getEatingSound(Items.GOLDEN_APPLE.getDefaultInstance()));
-
+			// System.out.println("fewfwefwefewfwef");
 			this.ticksLeftToFinishEating = 30;
 			this.setSilent(false);
 

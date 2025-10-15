@@ -108,6 +108,7 @@ public class AMItemModelGen extends ItemModelProvider {
 				AlienMod.location(blockFolder + AMItems.JOVIAN_RETURN_PORTAL.getId().getPath()));
 
 		blockItem(AMItems.JOVIAN_BOSS_SPAWNER);
+		blockItem(AMItems.HARDENED_CLOUD);
 
 		/*
 		 * Items

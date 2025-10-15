@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-14T16:15:32.7262986	Tags for minecraft:block mod id alien
+// 1.20.2	2025-10-14T19:47:50.4813148	Tags for minecraft:block mod id alien
 3e7a34bb3a00a3818fbc00da386c5d7101059eb2 data/alien/tags/blocks/alien_plant.json
 8ece85f797e67afa6131a969e5c581dd42c93189 data/alien/tags/blocks/alien_soil.json
 98a4ba37009d94811c7d545a36557a2185623315 data/alien/tags/blocks/lazer_can_pass.json
@@ -23,6 +23,7 @@ dc6c04d6075028d1fe7518172b07f4b83887ea7d data/minecraft/tags/blocks/iron_ores.js
 b487dea33b37e5c57f81f3dbd801cc35d61e4fc2 data/minecraft/tags/blocks/leaves.json
 c3d8512f123646fc33402489c0c2a171e30f710e data/minecraft/tags/blocks/logs_that_burn.json
 db81b0130e00f2eda3784e18359ce72735e67481 data/minecraft/tags/blocks/mineable/axe.json
+b487dea33b37e5c57f81f3dbd801cc35d61e4fc2 data/minecraft/tags/blocks/mineable/hoe.json
 ec2213c417f6b783bec94753933744bc0025a0ea data/minecraft/tags/blocks/needs_iron_tool.json
 93cb758e508854f32c58b7b237b4e2b460dc9db1 data/minecraft/tags/blocks/planks.json
 b1ef7958d22984d01822076c4734e57b6e098cbc data/minecraft/tags/blocks/pressure_plates.json

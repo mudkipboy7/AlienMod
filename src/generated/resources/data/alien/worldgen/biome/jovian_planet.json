@@ -17,7 +17,11 @@
     "water_color": 16777215,
     "water_fog_color": 16777215
   },
-  "features": [],
+  "features": [
+    [
+      "alien:jovian_small_cloud"
+    ]
+  ],
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {

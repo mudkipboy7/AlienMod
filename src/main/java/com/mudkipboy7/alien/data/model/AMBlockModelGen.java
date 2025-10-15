@@ -188,6 +188,7 @@ public class AMBlockModelGen extends BlockStateProvider {
 		simpleBlock(AMBlocks.JOVIAN_PORTAL.get());
 		simpleBlock(AMBlocks.JOVIAN_RETURN_PORTAL.get());
 		simpleBlock(AMBlocks.JOVIAN_BOSS_SPAWNER.get());
+		simpleBlock(AMBlocks.HARDENED_CLOUD.get());
 
 	}
 

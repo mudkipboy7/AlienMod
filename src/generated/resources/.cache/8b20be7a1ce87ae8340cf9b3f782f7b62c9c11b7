@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-14T14:09:29.388408	Block States: alien
+// 1.20.2	2025-10-14T20:11:10.2756567	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -26,6 +26,7 @@ aaea7683437e8139767947b74e46774aab39093f assets/alien/blockstates/gelustone_butt
 04fce7d1f7ea9ca88fc5fd8b708cbb4fc489097d assets/alien/blockstates/gelustone_slab.json
 b1c13f15c66071ef413f9ab373cd5c77ab3f197f assets/alien/blockstates/gelustone_stairs.json
 5d2efa33a80fc735b16d953801ead7358ac588e3 assets/alien/blockstates/gramen_block.json
+f4cdd5e868371770ba1a6acc9d313e445f3af7ca assets/alien/blockstates/hardened_cloud.json
 d98314cd9dffddc647a257a454c941ec71e59e0c assets/alien/blockstates/jovian_boss_spawner.json
 db336003261d93c1ece8794f1cc82c9581592f04 assets/alien/blockstates/jovian_portal.json
 82ba018fe077d661c188ab50e9bef61b32a694ae assets/alien/blockstates/jovian_return_portal.json
@@ -94,6 +95,7 @@ bc34551d9d0b4aa629ec55779de2191c152b0522 assets/alien/models/block/gelustone_sla
 d9692f0abbd3b989dcef934fb69346f78db78e05 assets/alien/models/block/gelustone_stairs_inner.json
 2f28dd7d882224804e89502d8d4885e43c2bdc6d assets/alien/models/block/gelustone_stairs_outer.json
 4f5767decc063556dd74c52d686458a2a08cf698 assets/alien/models/block/gramen_block.json
+381c0cae8a009dfd1c8161b513f99f0c3a65e199 assets/alien/models/block/hardened_cloud.json
 35d092e521200bd922853df82ff8efc3a2e1be91 assets/alien/models/block/jovian_boss_spawner.json
 d3396b87c363df7c595698f645e9eb17ccf802a7 assets/alien/models/block/jovian_portal.json
 f032ebfbd8ec0e1c89bdbca5e61c6784a9296a25 assets/alien/models/block/jovian_return_portal.json

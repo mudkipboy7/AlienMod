@@ -19,9 +19,9 @@ import com.mudkipboy7.alien.data.tags.AMItemTags;
 import com.mudkipboy7.alien.world.worldgen.AmDensityFunctions;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
-import com.mudkipboy7.alien.world.worldgen.structure.AMGrassFeatures;
-import com.mudkipboy7.alien.world.worldgen.structure.AMTreeFeatures;
-import com.mudkipboy7.alien.world.worldgen.structure.placement.AMVegetationPlacers;
+import com.mudkipboy7.alien.world.worldgen.worldobject.AMConfiguredFeatures;
+import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
+import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructures;
 
 import net.minecraft.DetectedVersion;
 import net.minecraft.core.HolderLookup;
@@ -113,11 +113,11 @@ public class AMDataGenerators {
 				.add(Registries.LEVEL_STEM, AMDimensions::bootstrapLevelStem)
 				.add(Registries.NOISE_SETTINGS, AMDimensions::bootstrapNoiseGen)
 				.add(Registries.BIOME, AMBiomes::bootstrapBiomes).add(Registries.CONFIGURED_FEATURE, context -> {
-					AMTreeFeatures.bootstrap(context);
-					AMGrassFeatures.bootstrap(context);
+					AMConfiguredFeatures.bootstrap(context);
 				}).add(Registries.PLACED_FEATURE, context -> {
-					AMVegetationPlacers.bootstrap(context);
-				}).add(Registries.DENSITY_FUNCTION, AmDensityFunctions::bootstrap);
+					AMPlacedFeatures.bootstrap(context);
+				}).add(Registries.DENSITY_FUNCTION, AmDensityFunctions::bootstrap)
+				.add(Registries.STRUCTURE, AMStructures::bootstrap);;
 
 	}
 }

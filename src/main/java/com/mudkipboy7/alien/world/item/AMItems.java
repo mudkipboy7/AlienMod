@@ -179,6 +179,9 @@ public class AMItems {
 	public static final RegistryObject<BlockItem> JOVIAN_RETURN_PORTAL = simpleBlockItem(AMBlocks.JOVIAN_RETURN_PORTAL);
 	
 	public static final RegistryObject<BlockItem> JOVIAN_BOSS_SPAWNER = simpleBlockItem(AMBlocks.JOVIAN_BOSS_SPAWNER);
+	
+	public static final RegistryObject<BlockItem> HARDENED_CLOUD = simpleBlockItem(AMBlocks.HARDENED_CLOUD);
+
 
 
 	/*

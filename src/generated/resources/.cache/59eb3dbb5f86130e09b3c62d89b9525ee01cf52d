@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-13T19:25:41.9763019	Loot Tables
+// 1.20.2	2025-10-14T20:11:10.2716674	Loot Tables
 1f16dabb71c5a39f0887bb2fb2cb11c8e37817d5 data/alien/loot_tables/blocks/air_purifier.json
 2ee889dbbb6d733ff89d4c9d8eb6589e18fb1880 data/alien/loot_tables/blocks/algussoil.json
 656478983c35bbe3a5c6c5d1ed5a0159e2a027ea data/alien/loot_tables/blocks/apsius_block.json
@@ -22,6 +22,7 @@ bb40592dfec36aa1f0fe87d2bb45347eea272973 data/alien/loot_tables/blocks/gelustone
 cd0fac1e6c9668e41ab8a8b9ce93f4b914c47b54 data/alien/loot_tables/blocks/gelustone_slab.json
 bd10bb6c0f4910ba416fa22de00dde82dcf4cd77 data/alien/loot_tables/blocks/gelustone_stairs.json
 9b5f92f8560ee57505640bacdde65dcd884b7908 data/alien/loot_tables/blocks/gramen_block.json
+d0f939b739186cd0eb2ffdcd21f8f440f2738a7a data/alien/loot_tables/blocks/hardened_cloud.json
 babfcb15f8f5173bdd92c05b0bcd43942048e7dd data/alien/loot_tables/blocks/lazer_creator.json
 50f1f1cdaa532b5711e91165a4076bf6b50acf30 data/alien/loot_tables/blocks/lignum_all_sides_log.json
 2b3334c6faf67467ab62b676f2d9a8fad462858b data/alien/loot_tables/blocks/lignum_button.json

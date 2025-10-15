@@ -3,7 +3,7 @@ package com.mudkipboy7.alien.world.worldgen.biome;
 import com.mudkipboy7.alien.sound.AMMusics;
 import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.entity.AMEntities;
-import com.mudkipboy7.alien.world.worldgen.structure.placement.AMVegetationPlacers;
+import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -24,10 +24,10 @@ class AMBiomeMaker {
 	public static BiomeGenerationSettings.Builder alienRainforest(HolderGetter<PlacedFeature> feature,
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.TALL_GRAMEN);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.DOUBLE_TALL_GRAMEN);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.THIN_TALL_ALIEN_TREE);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMVegetationPlacers.TALL_ALIEN_TREE);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.TALL_GRAMEN);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.DOUBLE_TALL_GRAMEN);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.THIN_TALL_ALIEN_TREE);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.TALL_ALIEN_TREE);
 		return genSettings;
 	}
 
@@ -40,6 +40,8 @@ class AMBiomeMaker {
 	public static BiomeGenerationSettings.Builder jovianPlanetBiome(HolderGetter<PlacedFeature> feature,
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
+		genSettings.addFeature(GenerationStep.Decoration.RAW_GENERATION, AMPlacedFeatures.JOVIAN_SMALL_CLOUD);
+
 		return genSettings;
 	}
 	

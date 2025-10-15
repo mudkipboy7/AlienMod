@@ -70,6 +70,7 @@ public class AMClientEvents {
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.DOUBLE_TALL_GRAMEN.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_DOOR.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_TRAPDOOR.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.HARDENED_CLOUD.get(), RenderType.translucent());
 
 			MenuScreens.register(AMMenuTypes.HAZARD_REMOVAL.get(), HazardRemovalScreen::new);
 			MenuScreens.register(AMMenuTypes.COAL_GENERATOR.get(), CoalGeneratorScreen::new);

@@ -8,7 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class JovianBossMinion extends AlienZombie {
-	static final int LIFESPAN = 400;
+	static final int LIFESPAN = 200;
 	int ticksExisted = 0;
 
 	public JovianBossMinion(EntityType<? extends AlienZombie> entityType, Level level) {
@@ -17,11 +17,13 @@ public class JovianBossMinion extends AlienZombie {
 
 	@Override
 	public void tick() {
-		if (ticksExisted > LIFESPAN) {
-			this.hurt(this.level().damageSources().generic(), 99999999);
+		if (!this.hasCustomName()) {
+			if (ticksExisted > LIFESPAN) {
+				this.hurt(this.level().damageSources().generic(), 99999999);
+			}
+			ticksExisted++;
 		}
 		super.tick();
-		ticksExisted++;
 	}
 
 	@Override

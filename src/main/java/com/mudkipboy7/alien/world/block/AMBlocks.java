@@ -29,7 +29,7 @@ import com.mudkipboy7.alien.world.block.functional.sign.AlienWallHangingSignBloc
 import com.mudkipboy7.alien.world.block.functional.sign.AlienWallSignBlock;
 import com.mudkipboy7.alien.world.block.misc.AlienAirBlock;
 import com.mudkipboy7.alien.world.block.misc.TestBlock;
-import com.mudkipboy7.alien.world.worldgen.structure.grower.AMTreeGrowers;
+import com.mudkipboy7.alien.world.worldgen.worldobject.flora.AMTreeGrowers;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -44,6 +44,7 @@ import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -354,13 +355,19 @@ public final class AMBlocks {
 			() -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
 					.instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
-	public static final RegistryObject<Block> JOVIAN_PORTAL = BLOCKS.register("jovian_portal", () -> new JovianGoToPortalBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
-	public static final RegistryObject<Block> JOVIAN_RETURN_PORTAL = BLOCKS.register("jovian_return_portal", () -> new JovianReturnPortalBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
-	public static final RegistryObject<Block> JOVIAN_BOSS_SPAWNER = BLOCKS.register("jovian_boss_spawner", () -> new JovianBossSpawnerBlock(
-			BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable().isValidSpawn(AMBlocks::never)));
-	
+	public static final RegistryObject<Block> JOVIAN_PORTAL = BLOCKS.register("jovian_portal",
+			() -> new JovianGoToPortalBlock(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable()
+					.isValidSpawn(AMBlocks::never)));
+	public static final RegistryObject<Block> JOVIAN_RETURN_PORTAL = BLOCKS.register("jovian_return_portal",
+			() -> new JovianReturnPortalBlock(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable()
+					.isValidSpawn(AMBlocks::never)));
+	public static final RegistryObject<Block> JOVIAN_BOSS_SPAWNER = BLOCKS.register("jovian_boss_spawner",
+			() -> new JovianBossSpawnerBlock(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable()
+					.isValidSpawn(AMBlocks::never)));
+
+	public static final RegistryObject<Block> HARDENED_CLOUD = BLOCKS.register("hardened_cloud", () -> new GlassBlock(
+			BlockBehaviour.Properties.of().strength(0.1F, 3.0F).sound(SoundType.WOOL).noOcclusion().isViewBlocking(AMBlocks::never)));
+
 	/*
 	 * Methods
 	 */
@@ -368,6 +375,7 @@ public final class AMBlocks {
 	// Makes a stair block
 	private static final RegistryObject<StairBlock> makeSimpleStairBlock(String name,
 			RegistryObject<? extends Block> blockin) {
+
 		return BLOCKS.register(name,
 				() -> new StairBlock(blockin.get().defaultBlockState(), BlockBehaviour.Properties.copy(blockin.get())));
 	}
