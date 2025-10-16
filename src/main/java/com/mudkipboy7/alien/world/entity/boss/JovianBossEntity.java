@@ -46,13 +46,12 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	// How many arrows it has left to shoot
 	int arrowsLeft = 64;
 	boolean alreadyDoneCreativeTaunt = false;
+	JovianBossStrategy strategy = JovianBossStrategy.CHASING;
 
 	private static final int PLATFORM_RADIUS = 23;
 
 	public JovianBossEntity(EntityType<? extends JovianBossEntity> entityType, Level level) {
 		super(entityType, level);
-		applesLeft = 64;
-
 	}
 
 	@Override
@@ -199,12 +198,19 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	}
 
 	@Override
-	protected void actuallyHurt(DamageSource pDamageSource, float pDamageAmount) {
+	public boolean hurt(DamageSource pDamageSource, float pDamageAmount) {
 		if (pDamageSource.getEntity() != null && pDamageSource.getEntity() instanceof Player player
-				&& player.isCreative() && !alreadyDoneCreativeTaunt) {
-			sendChatMessage(JovianBossLines.WHEN_ATTACKED_IN_CREATIVE_MODE);
+				&& player.isCreative()) {
+			if (!alreadyDoneCreativeTaunt)
+				sendChatMessage(JovianBossLines.WHEN_ATTACKED_IN_CREATIVE_MODE);
 			this.alreadyDoneCreativeTaunt = true;
+			return false;
 		}
+		return super.hurt(pDamageSource, pDamageAmount);
+	}
+
+	@Override
+	protected void actuallyHurt(DamageSource pDamageSource, float pDamageAmount) {
 		super.actuallyHurt(pDamageSource, pDamageAmount);
 	}
 
@@ -217,6 +223,8 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		super.addAdditionalSaveData(compound);
 		compound.putInt("phase", this.phase);
 		compound.putInt("apples_left", this.applesLeft);
+		compound.putString("apples_left", this.strategy.getName());
+
 	}
 
 	@Override
@@ -224,13 +232,16 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		super.readAdditionalSaveData(compound);
 		this.phase = compound.getInt("phase");
 		/*
-		 * This is a quick fix to check if it is newly spawned in so it doesn't set
-		 * applesLeft to zero when first spawned. If phase is 0 that means it couldn't
-		 * have eaten any apples yet so it shouldn't set it to the saved value which
-		 * would be 0 by default. I don't understand why it does this.
+		 * This is a fix so I can check if its already been spawned or not. If I don't
+		 * do this it'll overwrite applesLeft with 0 when first spawned in because 0 is
+		 * the default value and I can't specify a default one. If I don't do this it'll
+		 * always be set to 0 apples left when spawned in for the first time.
 		 */
-		if (this.phase != 0) {
+		if (compound.contains("apples_left")) {
 			this.applesLeft = compound.getInt("apples_left");
+		}
+		if (compound.contains("strategy")) {
+			this.strategy = JovianBossStrategy.valueOf(compound.getString("strategy"));
 		}
 		// this.ticksLeftToFinishEating = compound.getInt("ticks_left_to_eat_apple");
 	}

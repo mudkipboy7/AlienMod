@@ -1,11 +1,11 @@
 {
   "placement": {
     "type": "minecraft:concentric_rings",
-    "count": 1,
-    "distance": 1,
+    "count": 20,
+    "distance": 0,
     "preferred_biomes": "alien:jovian_planet",
     "salt": 0,
-    "spread": 1
+    "spread": 0
   },
   "structures": [
     {

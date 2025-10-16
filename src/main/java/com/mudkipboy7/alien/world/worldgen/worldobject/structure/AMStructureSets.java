@@ -24,8 +24,9 @@ public class AMStructureSets {
 	public static void bootstrap(BootstapContext<StructureSet> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
+		// There are 100 so I can lower the chances of that glitch where only part of it generates
 		context.register(JOVIAN_PLANET_ARENA, new StructureSet(structures.getOrThrow(AMStructures.JOVIAN_PLANET_ARENA), new ConcentricRingsStructurePlacement(
-				1, 1, 1, HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)))));
+				0, 0, 20, HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)))));
 		
 	}
 

@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.mojang.serialization.Codec;
 import com.mudkipboy7.alien.AlienMod;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,22 +30,25 @@ public class JovianArenaStructure extends Structure {
 
 	@Override
 	protected Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
-		System.out.println("fewfwgewege");
 		return getPeices(context, new BlockPos(-23, 61, -23));
 	}
 
 	private static Optional<GenerationStub> getPeices(GenerationContext context, BlockPos blockPos) {
 		return Optional.of(new GenerationStub(blockPos, (x) -> {
+			Minecraft.getInstance().level.getChunk(blockPos);
 			x.addPiece(new JovianArenaPeices(context.structureTemplateManager(), blockPos));
 		}));
 	}
 
 	@Override
 	public StructureType<?> type() {
-		// TODO Auto-generated method stub
 		return AMStructureTypes.JOVIAN_ARENA.get();
 	}
 
+	/*
+	 * okay nevermind apperently you can't do it like this. Apperently structure
+	 * blocks have issues making structures larger than one chunk.
+	 */
 	private static class JovianArenaPeices extends TemplateStructurePiece {
 		private static final ResourceLocation LOCATION = AlienMod.location("jovian_arena");
 

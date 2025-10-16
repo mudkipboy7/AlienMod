@@ -47,7 +47,9 @@ public class AlienDimSkyRenderer {
 
 	// The texture for the moon
 	private static final ResourceLocation SMALL_MOON_TEXURE = AlienMod.location("textures/environment/small_moon.png");
-
+	
+	private static final ResourceLocation ALIEN_PLANET_TEXTURE = AlienMod
+			.location("textures/environment/alien_planet.png");
 	// The texture for the phases shaders
 	private static final ResourceLocation PHASES_0 = AlienMod.location("textures/environment/phases_0.png");
 	private static final ResourceLocation PHASES_1 = AlienMod.location("textures/environment/phases_1.png");
@@ -339,7 +341,7 @@ public class AlienDimSkyRenderer {
 		RenderSystem.setShaderColor(jovianBrightness, jovianBrightness, jovianBrightness, jovianBrightness);
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderTexture(0, texture);
-		//RenderSystem.setShaderTexture(1, SUN_TEXTURE);
+		// RenderSystem.setShaderTexture(1, SUN_TEXTURE);
 		bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 		bufferbuilder.vertex(matrix4f1, -celestialSize, 100.0F, -celestialSize).uv(0.0F, 0.0F).endVertex();
 		bufferbuilder.vertex(matrix4f1, celestialSize, 100.0F, -celestialSize).uv(1.0F, 0.0F).endVertex();

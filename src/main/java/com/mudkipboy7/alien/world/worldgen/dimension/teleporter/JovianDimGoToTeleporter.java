@@ -27,7 +27,7 @@ public class JovianDimGoToTeleporter implements ITeleporter {
 				destWorld.getSharedSpawnPos());
 		if (destWorld.dimension() == AMDimensions.JOVIANDIM_LEVEL) {
 
-			desBlockPos = new BlockPos(50, 70, 0);
+			desBlockPos = new BlockPos(-40, 70, -15);
 
 			int x = desBlockPos.getX();
 			int y = desBlockPos.getY() - 2;
