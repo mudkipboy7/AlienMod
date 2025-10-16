@@ -1,6 +1,5 @@
 package com.mudkipboy7.alien.data.loot;
 
-
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -41,11 +40,7 @@ public class AMEntityLootGen extends EntityLootSubProvider {
 						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
 								.add(LootItem.lootTableItem(Items.ROTTEN_FLESH))
 								.when(LootItemKilledByPlayerCondition.killedByPlayer())));
-		this.add(AMEntities.JOVIAN_BOSS_MINION.get(),
-				LootTable.lootTable()
-						.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
-								.add(LootItem.lootTableItem(Items.ROTTEN_FLESH))
-								.when(LootItemKilledByPlayerCondition.killedByPlayer())));
+		this.add(AMEntities.JOVIAN_BOSS_MINION.get(), LootTable.lootTable());
 	}
 
 	@Override

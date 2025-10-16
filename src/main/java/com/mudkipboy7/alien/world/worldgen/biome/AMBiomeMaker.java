@@ -68,8 +68,7 @@ class AMBiomeMaker {
 	public static BiomeSpecialEffects.Builder jovianEffects() {
 		BiomeSpecialEffects.Builder effectSettings = new BiomeSpecialEffects.Builder();
 		effectSettings.waterColor(0xFFFFFF).waterFogColor(0xFFFFFF).skyColor(0x7E2500).grassColorOverride(0xFFFFFF)
-				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000)
-				.backgroundMusic(AMMusics.JOVIAN_BOSS_MUSIC);
+				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000);
 		return effectSettings;
 
 		// .ambientParticle(AmbientParticleSettings.)

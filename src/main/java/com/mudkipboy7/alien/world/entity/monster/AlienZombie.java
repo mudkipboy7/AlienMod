@@ -3,6 +3,7 @@ package com.mudkipboy7.alien.world.entity.monster;
 import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
+import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -46,7 +47,7 @@ public class AlienZombie extends Monster implements IAlienMob {
 
 	@Override
 	public void aiStep() {
-		if (this.isAlive()) {
+		if (this.isAlive() && this.level().dimensionTypeId() != AMDimensions.JOVIANDIM_TYPE) {
 			if (!WorldFuncs.inUltracoldOrEndBiome(this.level(), this.blockPosition())
 					&& !this.isInFluidType(AMFluids.AMMONIA_LIQUID_TYPE.get())) {
 				this.setSecondsOnFire(8);

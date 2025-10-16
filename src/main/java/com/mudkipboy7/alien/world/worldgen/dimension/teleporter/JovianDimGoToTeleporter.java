@@ -28,7 +28,8 @@ public class JovianDimGoToTeleporter implements ITeleporter {
 				destWorld.getSharedSpawnPos());
 		if (destWorld.dimension() == AMDimensions.JOVIANDIM_LEVEL) {
 
-			desBlockPos = new BlockPos(0, 70, 0);
+			desBlockPos = new BlockPos(50, 70, 0);
+
 			int x = desBlockPos.getX();
 			int y = desBlockPos.getY() - 2;
 			int z = desBlockPos.getZ();
@@ -43,10 +44,6 @@ public class JovianDimGoToTeleporter implements ITeleporter {
 				destWorld.setBlockAndUpdate(p_207578_, Blocks.AIR.defaultBlockState());
 			});
 			BlockPos.betweenClosed(x - 2, y, z - 2, x + 2, y, z + 2).forEach((p_184101_) -> {
-				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
-			});
-			destWorld.setBlockAndUpdate(new BlockPos(0, 56, 0), AMBlocks.JOVIAN_BOSS_SPAWNER.get().defaultBlockState());
-			BlockPos.betweenClosed(x - 30, 55, z - 30, x + 30, 55, z + 30).forEach((p_184101_) -> {
 				destWorld.setBlockAndUpdate(p_184101_, Blocks.BEDROCK.defaultBlockState());
 			});
 

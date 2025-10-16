@@ -3,6 +3,7 @@ package com.mudkipboy7.alien.world.entity.boss;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
+import com.mudkipboy7.alien.world.entity.AIgoals.JovianBossFindNearestTargetGoal;
 import com.mudkipboy7.alien.world.entity.monster.JovianBossMinion;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
@@ -30,21 +31,23 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 
 public class JovianBossEntity extends PathfinderMob implements IAlienMob, RangedAttackMob {
 	ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(getDisplayName(), BossEvent.BossBarColor.WHITE,
-			BossEvent.BossBarOverlay.PROGRESS));;
+			BossEvent.BossBarOverlay.PROGRESS));
+	// Stores permananant changes to the bosses behavior.
 	int phase = 0;
+	// How many golden apples it has left
 	int applesLeft = 64;
-	boolean isEating = false;
+	// How many ticks until it heals
 	int ticksLeftToFinishEating = 0;
+	// How many arrows it has left to shoot
+	int arrowsLeft = 64;
+
+	private static final int PLATFORM_RADIUS = 23;
 
 	public JovianBossEntity(EntityType<? extends JovianBossEntity> entityType, Level level) {
 		super(entityType, level);
@@ -55,30 +58,23 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, false));
-		// this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this,
-		// Villager.class, false));
+		this.targetSelector.addGoal(0, new JovianBossFindNearestTargetGoal(this));
 		goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
 		this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 8.0F));
-		// this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 
 	}
 
 	@Override
 	public void tick() {
-		// this.setItemSlot(EquipmentSlot.MAINHAND,
-		// Items.DIAMOND_SWORD.getDefaultInstance());
-		// if (!this.level().isClientSide()) {
-
-		// }
 
 		if (!level().isClientSide) {
-
+			this.extinguishFire();
 			this.resetFallDistance();
 			if (this.blockPosition().getY() < 40) {
-				this.teleportTo(0, 57, 0);
+				this.playSound(SoundEvents.ENDERMAN_TELEPORT);
+				this.teleportTo(0D, 67D, 0D);
 				sendChatMessage(JovianBossLines.WHEN_KNOCKED_OFF_SIDE);
-				this.level().setBlockAndUpdate(new BlockPos(0, 56, 0),
+				this.level().setBlockAndUpdate(new BlockPos(0, 67, 0),
 						AMBlocks.HARDENED_CLOUD.get().defaultBlockState());
 			}
 			// if(this.attack() != null) {
@@ -91,17 +87,13 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			if (this.getHealth() < (this.getMaxHealth() / 2.0F) && phase == 0) {
 				this.phase = 1;
 			}
-			if (this.getHealth() < (this.getMaxHealth() / 3.0F) && random.nextInt(100) == 0) {
-				JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
-				zombie.setPos(this.position());
-				this.level().addFreshEntity(zombie);
-				this.teleportTo(random.nextInt(23), 57, random.nextInt(23));
+			if (this.getHealth() < (this.getMaxHealth() / 3.0F) && random.nextInt(50) == 0) {
+				this.spawnZombies(this.position(), 3);
+				this.playSound(SoundEvents.ENDERMAN_TELEPORT);
+				this.teleportTo(random.nextInt(PLATFORM_RADIUS - 4), 67, random.nextInt(PLATFORM_RADIUS - 4));
 				this.tryStartHealWithApple();
-			}
-			if (random.nextInt(40) == 0 && phase != 0) {
-				JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
-				zombie.setPos(this.position());
-				this.level().addFreshEntity(zombie);
+			} else if (random.nextInt(40) == 0 && phase != 0) {
+				this.spawnZombies(this.position(), 1);
 				this.tryStartHealWithApple();
 			}
 			// this.tryStartHealWithApple();
@@ -157,11 +149,9 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			sendChatMessage(JovianBossLines.DEATH);
 			sendSystemMessage(pDamageSource.getLocalizedDeathMessage(this));
 			sendLeaveGameMessage();
-			level().setBlockAndUpdate(new BlockPos(0, 56, 0), AMBlocks.JOVIAN_RETURN_PORTAL.get().defaultBlockState());
+			level().setBlockAndUpdate(new BlockPos(0, 66, 0), AMBlocks.JOVIAN_RETURN_PORTAL.get().defaultBlockState());
 		}
 		super.die(pDamageSource);
-		// System.out.println(pDamageSource.getLocalizedDeathMessage(this).getString());
-		// Component component = this.getCombatTracker().getDeathMessage();
 
 	}
 
@@ -185,25 +175,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		bossEvent.removePlayer(pPlayer);
 	}
 
-	@Override
-	public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
-		ItemStack itemstack = this.getProjectile(this.getItemInHand(
-				ProjectileUtil.getWeaponHoldingHand(this, item -> item instanceof net.minecraft.world.item.BowItem)));
-		AbstractArrow abstractarrow = new Arrow(pTarget.level(), this);
-		if (this.getMainHandItem().getItem() instanceof net.minecraft.world.item.BowItem)
-			abstractarrow = ((net.minecraft.world.item.BowItem) this.getMainHandItem().getItem())
-					.customArrow(abstractarrow);
-		double d0 = pTarget.getX() - this.getX();
-		double d1 = pTarget.getY(0.3333333333333333D) - abstractarrow.getY();
-		double d2 = pTarget.getZ() - this.getZ();
-		double d3 = Math.sqrt(d0 * d0 + d2 * d2);
-		abstractarrow.shoot(d0, d1 + d3 * (double) 0.2F, d2, 1.6F,
-				(float) (14 - this.level().getDifficulty().getId() * 4));
-		this.playSound(SoundEvents.ARROW_SHOOT, 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-		this.level().addFreshEntity(abstractarrow);
-
-	}
-
 	private boolean sendLeaveGameMessage() {
 		if (!this.level().isClientSide()) {
 			sendSystemMessage(
@@ -222,7 +193,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 				this.remove(RemovalReason.DISCARDED);
 				this.sendLeaveGameMessage();
 			}
-
 			return true;
 		}
 		return false;
@@ -233,7 +203,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		if (pDamageSource.getEntity() != null && pDamageSource.getEntity() instanceof Player player
 				&& player.isCreative()) {
 			sendChatMessage(JovianBossLines.WHEN_ATTACKED_IN_CREATIVE_MODE);
-			// player.kill();
 		}
 		super.actuallyHurt(pDamageSource, pDamageAmount);
 	}
@@ -247,7 +216,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		super.addAdditionalSaveData(compound);
 		compound.putInt("phase", this.phase);
 		compound.putInt("apples_left", this.applesLeft);
-		// compound.putInt("ticks_left_to_eat_apple", this.ticksLeftToFinishEating);
 	}
 
 	@Override
@@ -292,7 +260,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			this.applesLeft--;
 			this.setItemSlot(EquipmentSlot.MAINHAND, Items.DIAMOND_SWORD.getDefaultInstance());
 			this.heal(10);
-
 			return true;
 		}
 		return false;
@@ -300,5 +267,22 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 
 	public int getTicksLeftToFinishEating() {
 		return ticksLeftToFinishEating;
+	}
+
+	public void spawnZombies(Vec3 pos, int ammount) {
+
+		for (int i = 0; i < ammount; i++) {
+			double x = pos.x + random.nextInt(2);
+			double y = pos.y;
+			double z = pos.z + random.nextInt(2);
+			JovianBossMinion zombie = new JovianBossMinion(AMEntities.JOVIAN_BOSS_MINION.get(), this.level());
+			zombie.setPos(new Vec3(x, y, z));
+			this.level().addFreshEntity(zombie);
+		}
+	}
+
+	@Override
+	public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
+
 	}
 }
