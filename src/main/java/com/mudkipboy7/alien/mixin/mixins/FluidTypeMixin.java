@@ -22,7 +22,7 @@ import net.minecraftforge.fluids.FluidType;
 
 @Mixin(FluidType.class)
 public abstract class FluidTypeMixin {
-	@Inject(method = "isVaporizedOnPlacement", at = @At("RETURN"), cancellable = true)
+	@Inject(method = "isVaporizedOnPlacement", at = @At("RETURN"), cancellable = true, remap = false)
 	public void isVaporizedOnPlacement(Level level, BlockPos blockPos, FluidStack stack,
 			CallbackInfoReturnable<Boolean> callbackInfo) {
 		Holder<Biome> biome = level.getBiome(blockPos);
@@ -38,7 +38,7 @@ public abstract class FluidTypeMixin {
 		}
 	}
 
-	@Inject(method = "onVaporize", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "onVaporize", at = @At("HEAD"), cancellable = true, remap = false)
 	public void onVaporize(Player player, Level level, BlockPos blockPos, FluidStack stack, CallbackInfo callbackInfo) {
 		Holder<Biome> biome = level.getBiome(blockPos);
 		FluidType type = (FluidType) (Object) this;
