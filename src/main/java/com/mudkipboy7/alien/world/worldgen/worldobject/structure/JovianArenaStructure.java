@@ -34,9 +34,9 @@ public class JovianArenaStructure extends Structure {
 	}
 
 	private static Optional<GenerationStub> getPeices(GenerationContext context, BlockPos blockPos) {
-		return Optional.of(new GenerationStub(blockPos, (x) -> {
+		return Optional.of(new GenerationStub(blockPos, builder -> {
 			Minecraft.getInstance().level.getChunk(blockPos);
-			x.addPiece(new JovianArenaPeices(context.structureTemplateManager(), blockPos));
+			builder.addPiece(new JovianArenaPeices(context.structureTemplateManager(), blockPos));
 		}));
 	}
 

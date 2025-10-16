@@ -8,7 +8,7 @@ displayName="AlienMod"
 logoFile="alienmod.png"
 credits="mudkipboy7"
 authors="mudkipboy7"
-description='''Alienmod'''
+description='''Travel to a distant alien world.'''
 
 [[dependencies.alien]]
     modId="forge"
