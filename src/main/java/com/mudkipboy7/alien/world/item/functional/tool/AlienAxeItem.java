@@ -1,29 +1,11 @@
 package com.mudkipboy7.alien.world.item.functional.tool;
 
-import java.util.Map;
-import java.util.Optional;
-
-import com.google.common.collect.ImmutableMap;
 import com.mudkipboy7.alien.data.tags.AMBlockTags;
-import com.mudkipboy7.alien.world.block.AMBlocks;
 
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 public class AlienAxeItem extends DiggerItem {
 	//protected static final Map<Block, Block> STRIPPABLES = (new ImmutableMap.Builder<Block, Block>())

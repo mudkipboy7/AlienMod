@@ -1,11 +1,6 @@
 package com.mudkipboy7.alien.world.block.blockentity.machine;
 
-import java.util.List;
-
 import com.mudkipboy7.alien.data.AMLanguage;
-import com.mudkipboy7.alien.data.tags.AMBiomeTags;
-import com.mudkipboy7.alien.data.tags.AMEntityTypeTags;
-import com.mudkipboy7.alien.data.tags.AMItemTags;
 import com.mudkipboy7.alien.inventory.menu.HazardRemovalMenu;
 import com.mudkipboy7.alien.inventory.menu.slot.MachineBatterySlot;
 import com.mudkipboy7.alien.inventory.menu.slot.MachineWaterSlot;
@@ -13,24 +8,18 @@ import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.blockentity.IHazardRemovalBlockEntity;
 import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.lazer.ILazerAcceptor;
-import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.energy.AMEnergyMethods;
 import com.mudkipboy7.alien.world.energy.AMEnergyStorage;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
 import net.minecraftforge.energy.EnergyStorage;
 
 public class HazardRemovalMachineBlockEntity extends AbstractContainerMachineBlockEntity

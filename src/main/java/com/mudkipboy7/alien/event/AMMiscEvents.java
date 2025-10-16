@@ -1,18 +1,11 @@
 package com.mudkipboy7.alien.event;
 
-import java.util.HashMap;
-
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.SpecialPlayers;
-import com.mudkipboy7.alien.SpecialPlayers.SpecialPlayerType;
 
 import net.minecraft.commands.Commands;
-import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.event.TickEvent.ClientTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 

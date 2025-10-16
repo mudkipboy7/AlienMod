@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.client.gui.screen;
 
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.inventory.menu.EnergyBlockMenu;
-import com.mudkipboy7.alien.inventory.menu.EnergyStorageMenu;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;

@@ -1,12 +1,9 @@
 package com.mudkipboy7.alien.world.effect;
 
 import com.mudkipboy7.alien.data.AMDamageTypes;
-import com.mudkipboy7.alien.sound.AMSoundEvents;
 
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 
 public class NoOxygenMobEffect extends AlienMobEffect {
 	int timeSinceLastCough = 0;

@@ -2,8 +2,6 @@ package com.mudkipboy7.alien.client.render.entity.layer.survivalgear;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mudkipboy7.alien.SpecialPlayers;
-import com.mudkipboy7.alien.SpecialPlayers.SpecialPlayerType;
 import com.mudkipboy7.alien.client.render.entity.SurvivalGearRenderingStuff;
 import com.mudkipboy7.alien.client.render.entity.model.survivalgear.SurvivalGearModel;
 import com.mudkipboy7.alien.client.render.entity.model.survivalgear.SurvivalGearModel.InnerModel;
@@ -19,7 +17,6 @@ import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 

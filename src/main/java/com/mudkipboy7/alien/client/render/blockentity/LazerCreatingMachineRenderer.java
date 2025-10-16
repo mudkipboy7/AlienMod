@@ -9,7 +9,6 @@ import com.mojang.math.Axis;
 import com.mudkipboy7.alien.world.block.blockentity.machine.transport.LazerCreatorBlockEntity;
 import com.mudkipboy7.alien.world.block.functional.machine.transport.LazerCreatorBlock;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;

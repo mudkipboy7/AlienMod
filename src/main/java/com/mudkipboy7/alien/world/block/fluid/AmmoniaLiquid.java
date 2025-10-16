@@ -1,26 +1,19 @@
 package com.mudkipboy7.alien.world.block.fluid;
 
-import java.util.Optional;
-
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.item.AMItems;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.fluids.FluidType.Properties;
 
 public abstract class AmmoniaLiquid extends ForgeFlowingFluid {
 

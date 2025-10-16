@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.world.block.functional.machine;
 
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.blockentity.machine.EnergyBlockEntity;
-import com.mudkipboy7.alien.world.block.blockentity.machine.EnergyStorageBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -10,7 +9,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class EnergyBlock extends AbstractContainerMachineBlock {
 

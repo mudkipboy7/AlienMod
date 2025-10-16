@@ -1,7 +1,6 @@
 package com.mudkipboy7.alien.data.model;
 
 import com.mudkipboy7.alien.AlienMod;
-import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.block.fluid.AmmoniaFluidType;
 import com.mudkipboy7.alien.world.item.AMItems;
 

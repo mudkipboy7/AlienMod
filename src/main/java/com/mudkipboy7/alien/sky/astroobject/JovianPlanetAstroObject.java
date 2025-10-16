@@ -4,8 +4,6 @@ import org.joml.Math;
 
 import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
-import net.minecraft.resources.ResourceLocation;
-
 public class JovianPlanetAstroObject extends AstronomicalObject implements IPhasingAstroObject {
 
 	public JovianPlanetAstroObject(float minBrightness, float size) {

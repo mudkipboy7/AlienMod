@@ -1,12 +1,6 @@
 package com.mudkipboy7.alien.sky;
 
-import com.mudkipboy7.alien.sky.astroobject.IPhasingAstroObject;
-
-import mezz.jei.common.util.MathUtil;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LightLayer;
 
 public class AstronomicalFunctions {
 

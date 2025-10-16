@@ -1,11 +1,7 @@
 package com.mudkipboy7.alien.sky.astroobject;
 
-import org.joml.Math;
-
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.sky.AstronomicalFunctions;
-
-import net.minecraft.resources.ResourceLocation;
 
 public class SmallMoonAstroObject extends SatiliteAstroObject implements IPhasingAstroObject {
 

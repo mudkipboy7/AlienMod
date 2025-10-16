@@ -2,10 +2,8 @@ package com.mudkipboy7.alien.world.block.functional;
 
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
 import com.mudkipboy7.alien.world.block.blockentity.AlienPortalBlockEntity;
-import com.mudkipboy7.alien.world.block.blockentity.machine.HazardRemovalMachineBlockEntity;
 import com.mudkipboy7.alien.world.item.functional.AlienDimCreativeTeleporterItem;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
-import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.AlienDimTeleporter;
 import com.mudkipboy7.alien.world.worldgen.dimension.teleporter.JovianDimGoToTeleporter;
 
 import net.minecraft.core.BlockPos;
@@ -18,7 +16,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;

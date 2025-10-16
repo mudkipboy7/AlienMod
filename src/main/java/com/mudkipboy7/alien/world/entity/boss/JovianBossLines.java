@@ -1,9 +1,5 @@
 package com.mudkipboy7.alien.world.entity.boss;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextColor;
-
 public class JovianBossLines {
 	private static final String PREFIX = "jovianboss.";
 	private static final String CHAT_PREFIX = PREFIX + "msg.";

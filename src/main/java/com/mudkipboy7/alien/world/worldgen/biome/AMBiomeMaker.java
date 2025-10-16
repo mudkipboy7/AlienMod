@@ -1,14 +1,10 @@
 package com.mudkipboy7.alien.world.worldgen.biome;
 
 import com.mudkipboy7.alien.sound.AMMusics;
-import com.mudkipboy7.alien.sound.AMSoundEvents;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.sounds.Musics;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;

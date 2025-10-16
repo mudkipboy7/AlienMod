@@ -1,9 +1,5 @@
 package com.mudkipboy7.alien;
 
-import java.util.Scanner;
-
-import com.mudkipboy7.alien.sky.AstronomicalFunctions;
-
 /**
  * Runs code for testing purposes
  */

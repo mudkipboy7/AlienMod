@@ -1,7 +1,5 @@
 package com.mudkipboy7.alien.client.render.dim;
 
-import static com.mudkipboy7.alien.AlienMod.getAlienDimSky;
-
 import javax.annotation.Nullable;
 
 import org.joml.Matrix4f;

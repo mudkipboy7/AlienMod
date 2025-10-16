@@ -2,16 +2,11 @@ package com.mudkipboy7.alien.world.block.blockentity.machine;
 
 import com.mudkipboy7.alien.data.AMLanguage;
 import com.mudkipboy7.alien.inventory.menu.EnergyBlockMenu;
-import com.mudkipboy7.alien.inventory.menu.EnergyStorageMenu;
 import com.mudkipboy7.alien.inventory.menu.slot.MachineBatterySlot;
 import com.mudkipboy7.alien.world.block.blockentity.AMBlockEntities;
-import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.IEnergyStoringMachineBlockEntity;
-import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.lazer.ILazerAcceptor;
 import com.mudkipboy7.alien.world.block.blockentity.machine.interfaces.lazer.ILazerCanExtractFrom;
-import com.mudkipboy7.alien.world.energy.AMEnergyMethods;
 import com.mudkipboy7.alien.world.energy.AMEnergyStorage;
 import com.mudkipboy7.alien.world.energy.AMInfiniteEnergyStorage;
-import com.mudkipboy7.alien.world.item.functional.BatteryItem;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,12 +17,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.energy.EnergyStorage;
 
 public class EnergyBlockEntity extends AbstractContainerMachineBlockEntity implements ILazerCanExtractFrom {
 

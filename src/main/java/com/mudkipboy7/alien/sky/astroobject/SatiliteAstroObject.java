@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.sky.astroobject;
 
 import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
 public class SatiliteAstroObject extends AstronomicalObject {

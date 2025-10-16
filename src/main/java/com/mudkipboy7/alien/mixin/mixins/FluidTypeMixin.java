@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.mudkipboy7.alien.mixin.MixinMethods;
 import com.mudkipboy7.alien.world.WorldFuncs;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 

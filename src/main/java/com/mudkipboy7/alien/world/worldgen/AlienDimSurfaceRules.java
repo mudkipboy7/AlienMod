@@ -5,7 +5,6 @@ import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;

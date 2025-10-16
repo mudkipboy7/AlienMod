@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.sky;
 
 import com.mudkipboy7.alien.AMConfig;
 import com.mudkipboy7.alien.AlienMod;
-import com.mudkipboy7.alien.sky.astroobject.AlienPlanetInJovianSkyAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.AlienSunAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
 import com.mudkipboy7.alien.sky.astroobject.JovianPlanetAstroObject;
@@ -10,15 +9,10 @@ import com.mudkipboy7.alien.sky.astroobject.SatiliteAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.SmallMoonAstroObject;
 import com.mudkipboy7.alien.sky.astroobject.StarAstroObject;
 import com.mudkipboy7.alien.world.WorldFuncs;
-import com.mudkipboy7.alien.world.item.functional.tool.AlienPickaxeItem;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
-import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.util.CubicSampler;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.BiomeManager;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.event.ViewportEvent.ComputeFogColor;
 
 public class AlienDimSky {

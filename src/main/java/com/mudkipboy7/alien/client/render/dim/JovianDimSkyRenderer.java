@@ -2,8 +2,6 @@ package com.mudkipboy7.alien.client.render.dim;
 
 import static com.mudkipboy7.alien.AlienMod.getAlienDimSky;
 
-import java.security.spec.ECField;
-
 import org.joml.Math;
 import org.joml.Matrix4f;
 
@@ -19,10 +17,6 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.math.Axis;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.sky.AlienDimSky;
-import com.mudkipboy7.alien.sky.AstronomicalFunctions;
-import com.mudkipboy7.alien.sky.astroobject.AlienPlanetInJovianSkyAstroObject;
-import com.mudkipboy7.alien.sky.astroobject.AstronomicalObject;
-import com.mudkipboy7.alien.sky.astroobject.IPhasingAstroObject;
 
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;

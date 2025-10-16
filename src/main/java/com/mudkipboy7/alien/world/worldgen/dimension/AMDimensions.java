@@ -3,8 +3,6 @@ package com.mudkipboy7.alien.world.worldgen.dimension;
 import java.util.List;
 import java.util.OptionalLong;
 
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
 import com.mojang.serialization.Codec;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.world.block.AMBlocks;
@@ -13,7 +11,6 @@ import com.mudkipboy7.alien.world.worldgen.AlienDimNoiseRouter;
 import com.mudkipboy7.alien.world.worldgen.AlienDimSurfaceRules;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -21,24 +18,18 @@ import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.FixedBiomeSource;
-import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
-import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseRouter;
-import net.minecraft.world.level.levelgen.NoiseRouterData;
 import net.minecraft.world.level.levelgen.NoiseSettings;
-import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class AMDimensions {
 	/*

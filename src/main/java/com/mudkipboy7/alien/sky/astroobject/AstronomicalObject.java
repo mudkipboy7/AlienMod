@@ -1,11 +1,6 @@
 package com.mudkipboy7.alien.sky.astroobject;
 
-import org.joml.Math;
-
-import com.mudkipboy7.alien.AlienMod;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
 public class AstronomicalObject {

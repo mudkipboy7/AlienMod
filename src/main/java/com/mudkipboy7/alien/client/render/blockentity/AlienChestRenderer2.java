@@ -5,10 +5,10 @@ import com.mudkipboy7.alien.world.block.blockentity.AlienChestBlockEntity;
 
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider.Context;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
 import net.minecraft.client.resources.model.Material;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
 public class AlienChestRenderer2<T extends AlienChestBlockEntity> extends ChestRenderer<T> {
 

@@ -4,7 +4,6 @@ import java.util.function.Function;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.functional.AlienPortalBlock;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 

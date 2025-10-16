@@ -1,13 +1,9 @@
 package com.mudkipboy7.alien.world.entity.monster;
 
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class JovianBossMinion extends AlienZombie {

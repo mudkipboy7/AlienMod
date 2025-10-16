@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.world.block.blockentity;
 
 import java.util.List;
 
-import com.mudkipboy7.alien.data.tags.AMBiomeTags;
 import com.mudkipboy7.alien.data.tags.AMEntityTypeTags;
 import com.mudkipboy7.alien.data.tags.AMItemTags;
 import com.mudkipboy7.alien.world.WorldFuncs;

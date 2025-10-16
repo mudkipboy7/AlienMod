@@ -2,7 +2,6 @@ package com.mudkipboy7.alien.sky.astroobject;
 
 import org.joml.Math;
 
-import com.mudkipboy7.alien.sky.AlienDimSky;
 import com.mudkipboy7.alien.sky.AstronomicalFunctions;
 
 public class AlienSunAstroObject extends AstronomicalObject {

@@ -2,8 +2,6 @@ package com.mudkipboy7.alien.sound;
 
 import static com.mudkipboy7.alien.AMRegistry.SOUND_EVENTS;
 
-import java.util.function.Supplier;
-
 import com.mudkipboy7.alien.AlienMod;
 
 import net.minecraft.core.Holder;

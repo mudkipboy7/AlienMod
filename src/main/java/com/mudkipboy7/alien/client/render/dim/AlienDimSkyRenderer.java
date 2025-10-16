@@ -2,8 +2,6 @@ package com.mudkipboy7.alien.client.render.dim;
 
 import static com.mudkipboy7.alien.AlienMod.getAlienDimSky;
 
-import java.security.spec.ECField;
-
 import org.joml.Math;
 import org.joml.Matrix4f;
 

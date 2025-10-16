@@ -9,7 +9,6 @@ import com.mudkipboy7.alien.inventory.menu.EnergyStorageMenu;
 import com.mudkipboy7.alien.inventory.menu.HazardRemovalMenu;
 
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.RegistryObject;;
