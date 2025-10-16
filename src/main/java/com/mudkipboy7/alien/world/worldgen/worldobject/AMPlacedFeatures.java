@@ -66,8 +66,8 @@ public class AMPlacedFeatures {
 								BiomeFilter.biome())));
 		PlacementUtils.register(context, JOVIAN_SMALL_CLOUD,
 				configuredFeatures.getOrThrow(AMConfiguredFeatures.JOVIAN_SMALL_CLOUD),
-				RarityFilter.onAverageOnceEvery(14), PlacementUtils.countExtra(1, 0.15F, 1), InSquarePlacement.spread(),
-				HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(60)),
+				RarityFilter.onAverageOnceEvery(14), PlacementUtils.countExtra(1, 0.2F, 1), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(60)),
 				BiomeFilter.biome());
 
 		/*

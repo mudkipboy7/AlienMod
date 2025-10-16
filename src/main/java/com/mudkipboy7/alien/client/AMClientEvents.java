@@ -1,5 +1,6 @@
 package com.mudkipboy7.alien.client;
 
+import com.mudkipboy7.alien.AMRegistry;
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.client.gui.screen.CoalGeneratorScreen;
 import com.mudkipboy7.alien.client.gui.screen.EnergyBlockScreen;
@@ -14,6 +15,7 @@ import com.mudkipboy7.alien.sound.AMMusicManager;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.block.AMFluids;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
+import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructureTypes;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.DimensionSpecialEffects.SkyType;
@@ -90,8 +92,10 @@ public class AMClientEvents {
 	public static void setFogColors(ComputeFogColor event) {
 		AlienDimSky.setFogColors(event);
 	}
+
 	@SubscribeEvent
 	public static void onClientTick(ClientTickEvent event) {
 		AMMusicManager.tickMusic();
+		//AMRegistry.STRUCTURE_TYPES.getEntries().forEach(x -> System.out.println(x.getId()));
 	}
 }

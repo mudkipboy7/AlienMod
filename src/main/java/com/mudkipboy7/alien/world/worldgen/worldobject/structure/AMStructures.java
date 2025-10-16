@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.data.tags.AMBiomeTags;
+import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
@@ -24,28 +25,13 @@ public class AMStructures {
 	public static void bootstrap(BootstapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> structures = context.lookup(Registries.TEMPLATE_POOL);
-
 		context.register(JOVIAN_PLANET_ARENA,
-				new JovianArenaStructure(structure(biomes.getOrThrow(AMBiomeTags.HAS_JOVIAN_ARENA), TerrainAdjustment.NONE)));
+				new JovianArenaStructure(new Structure.StructureSettings(
+						HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)), Map.of(),
+						GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE)));
 	}
 
 	private static ResourceKey<Structure> createKey(String name) {
 		return ResourceKey.create(Registries.STRUCTURE, AlienMod.location(name));
-	}
-
-	private static Structure.StructureSettings structure(HolderSet<Biome> pBiomes,
-			Map<MobCategory, StructureSpawnOverride> pSpawnOverrides, GenerationStep.Decoration pStep,
-			TerrainAdjustment pTerrainAdaptation) {
-		return new Structure.StructureSettings(pBiomes, pSpawnOverrides, pStep, pTerrainAdaptation);
-	}
-
-	private static Structure.StructureSettings structure(HolderSet<Biome> pBiomes, GenerationStep.Decoration pStep,
-			TerrainAdjustment pTerrainAdaptation) {
-		return structure(pBiomes, Map.of(), pStep, pTerrainAdaptation);
-	}
-
-	private static Structure.StructureSettings structure(HolderSet<Biome> pBiomes,
-			TerrainAdjustment pTerrainAdaptation) {
-		return structure(pBiomes, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, pTerrainAdaptation);
 	}
 }

@@ -21,6 +21,7 @@ import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMConfiguredFeatures;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
+import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructureSets;
 import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructures;
 
 import net.minecraft.DetectedVersion;
@@ -117,7 +118,8 @@ public class AMDataGenerators {
 				}).add(Registries.PLACED_FEATURE, context -> {
 					AMPlacedFeatures.bootstrap(context);
 				}).add(Registries.DENSITY_FUNCTION, AmDensityFunctions::bootstrap)
-				.add(Registries.STRUCTURE, AMStructures::bootstrap);;
+				.add(Registries.STRUCTURE, AMStructures::bootstrap)
+				.add(Registries.STRUCTURE_SET, AMStructureSets::bootstrap);
 
 	}
 }

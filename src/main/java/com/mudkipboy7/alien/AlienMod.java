@@ -15,6 +15,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -50,13 +51,14 @@ public final class AlienMod {
 	 * Main method to set up the mod.
 	 */
 	public AlienMod() {
+		
 		// b k = null;
 		loadCustomJSONStuff();
 		// Makes the mod bus
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		// Sets up all of the mod regist
 		AMRegistry.init(modBus);
-
+		ModList.get().isLoaded("fossil");
 		// Listeners
 		modBus.addListener(AMDataGenerators::gatherData);
 		modBus.addListener(this::registerStuff);

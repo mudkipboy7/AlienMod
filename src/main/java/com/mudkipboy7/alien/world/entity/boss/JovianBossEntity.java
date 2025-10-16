@@ -45,6 +45,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	int ticksLeftToFinishEating = 0;
 	// How many arrows it has left to shoot
 	int arrowsLeft = 64;
+	boolean alreadyDoneCreativeTaunt = false;
 
 	private static final int PLATFORM_RADIUS = 23;
 
@@ -71,7 +72,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			this.resetFallDistance();
 			if (this.blockPosition().getY() < 40) {
 				this.playSound(SoundEvents.ENDERMAN_TELEPORT);
-				this.teleportTo(0D, 67D, 0D);
+				this.teleportTo(0D, 68D, 0D);
 				sendChatMessage(JovianBossLines.WHEN_KNOCKED_OFF_SIDE);
 				this.level().setBlockAndUpdate(new BlockPos(0, 67, 0),
 						AMBlocks.HARDENED_CLOUD.get().defaultBlockState());
@@ -148,7 +149,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 			sendChatMessage(JovianBossLines.DEATH);
 			sendSystemMessage(pDamageSource.getLocalizedDeathMessage(this));
 			sendLeaveGameMessage();
-			level().setBlockAndUpdate(new BlockPos(0, 66, 0), AMBlocks.JOVIAN_RETURN_PORTAL.get().defaultBlockState());
+			level().setBlockAndUpdate(new BlockPos(0, 67, 0), AMBlocks.JOVIAN_RETURN_PORTAL.get().defaultBlockState());
 		}
 		super.die(pDamageSource);
 
@@ -200,8 +201,9 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	@Override
 	protected void actuallyHurt(DamageSource pDamageSource, float pDamageAmount) {
 		if (pDamageSource.getEntity() != null && pDamageSource.getEntity() instanceof Player player
-				&& player.isCreative()) {
+				&& player.isCreative() && !alreadyDoneCreativeTaunt) {
 			sendChatMessage(JovianBossLines.WHEN_ATTACKED_IN_CREATIVE_MODE);
+			this.alreadyDoneCreativeTaunt = true;
 		}
 		super.actuallyHurt(pDamageSource, pDamageAmount);
 	}

@@ -73,7 +73,7 @@ public final class AMBlocks {
 
 	// Block for the ammonia liquid
 	public static final RegistryObject<AmmoniaLiquidBlock> AMMONIA_LIQUID_BLOCK = BLOCKS.register("ammonia_liquid",
-			() -> new AmmoniaLiquidBlock((AMFluids.AMMONIA_LIQUID)));
+			() -> new AmmoniaLiquidBlock(AMFluids.AMMONIA_LIQUID));
 
 	public static final RegistryObject<Block> ALIEN_AIR = BLOCKS.register("alien_air", () -> new AlienAirBlock(
 			BlockBehaviour.Properties.of().noCollission().noOcclusion().noLootTable().strength(-1.0F, 3600000.0F)));

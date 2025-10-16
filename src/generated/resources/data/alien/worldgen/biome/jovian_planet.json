@@ -5,14 +5,6 @@
     "fog_color": 9318400,
     "foliage_color": 16777215,
     "grass_color": 16777215,
-    "music": {
-      "max_delay": 0,
-      "min_delay": 0,
-      "replace_current_music": true,
-      "sound": {
-        "sound_id": "alien:music.jovian_boss"
-      }
-    },
     "sky_color": 8267008,
     "water_color": 16777215,
     "water_fog_color": 16777215

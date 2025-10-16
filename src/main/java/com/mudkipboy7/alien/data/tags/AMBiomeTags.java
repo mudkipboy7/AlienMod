@@ -20,9 +20,6 @@ public class AMBiomeTags extends BiomeTagsProvider {
 	public static final TagKey<Biome> LOW_GRAVITY = makeKey("low_gravity");
 	public static final TagKey<Biome> ULTRACOLD = makeKey("ultracold");
 	public static final TagKey<Biome> HIGH_GRAVITY = makeKey("high_gravity");
-	
-	// Structure tags
-	public static final TagKey<Biome> HAS_JOVIAN_ARENA = makeKey("has_jovian_arena");
 
 	public AMBiomeTags(PackOutput output, CompletableFuture<Provider> lookupProvider,
 			ExistingFileHelper existingFileHelper) {
@@ -39,8 +36,7 @@ public class AMBiomeTags extends BiomeTagsProvider {
 
 		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE,
 				AMBiomes.JOVIAN_PLANET_BIOME);
-		
-		tag(AMBiomeTags.HAS_JOVIAN_ARENA).add(AMBiomes.JOVIAN_PLANET_BIOME);
+
 
 		/*
 		 * Vanilla/Forge/Other

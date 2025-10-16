@@ -1,0 +1,6 @@
+{
+  "type": "alien:jovian_arena",
+  "biomes": "alien:jovian_planet",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}
