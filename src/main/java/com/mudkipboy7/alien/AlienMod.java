@@ -7,8 +7,10 @@ import com.mudkipboy7.alien.AMConfig.Common;
 import com.mudkipboy7.alien.AMConfig.Server;
 import com.mudkipboy7.alien.data.AMDataGenerators;
 import com.mudkipboy7.alien.sky.AlienDimSky;
+import com.mudkipboy7.alien.sound.AMMusicManager;
 import com.mudkipboy7.alien.world.worldgen.AlienChunkGenerator;
 
+import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -46,14 +48,16 @@ public final class AlienMod {
 	// The class for the alienDimSky
 	private static AlienDimSky alienDimSky;
 
+	private static AMMusicManager musicManager;
 
 	/**
 	 * Main method to set up the mod.
 	 */
 	public AlienMod() {
-		
+
 		// b k = null;
 		loadCustomJSONStuff();
+		musicManager = new AMMusicManager();
 		// Makes the mod bus
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		// Sets up all of the mod regist
@@ -102,5 +106,9 @@ public final class AlienMod {
 
 	public static AlienDimSky getAlienDimSky() {
 		return alienDimSky;
+	}
+
+	public static AMMusicManager getMusicManager() {
+		return musicManager;
 	}
 }

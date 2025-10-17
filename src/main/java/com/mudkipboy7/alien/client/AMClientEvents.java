@@ -95,7 +95,7 @@ public class AMClientEvents {
 
 	@SubscribeEvent
 	public static void onClientTick(ClientTickEvent event) {
-		AMMusicManager.tickMusic();
+		AlienMod.getMusicManager().tickMusic();;
 		//AMRegistry.STRUCTURE_TYPES.getEntries().forEach(x -> System.out.println(x.getId()));
 	}
 }

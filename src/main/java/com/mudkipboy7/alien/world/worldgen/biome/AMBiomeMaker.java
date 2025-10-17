@@ -3,7 +3,7 @@ package com.mudkipboy7.alien.world.worldgen.biome;
 import com.mudkipboy7.alien.sound.AMMusics;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
-
+import java.util.function.Supplier;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
