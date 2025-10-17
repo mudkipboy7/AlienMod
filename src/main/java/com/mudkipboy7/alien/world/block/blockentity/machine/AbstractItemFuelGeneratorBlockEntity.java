@@ -81,8 +81,9 @@ public abstract class AbstractItemFuelGeneratorBlockEntity extends AbstractGener
 
 				this.setBurnTimeLeft(burnTimeToAdd);
 				this.setBurnTimeOfFuel(burnTimeToAdd);
-				if (fuelItemStack.getItem() == Items.LAVA_BUCKET) {
-					this.inventory.set(1, Items.BUCKET.getDefaultInstance());
+				// This is used to fix a bug
+				if (this instanceof CoalGeneratorBlockEntity entity && fuelItemStack.getItem() == Items.LAVA_BUCKET) {
+					entity.inventory.set(1, Items.BUCKET.getDefaultInstance());
 				} else {
 					fuelItemStack.shrink(1);
 				}
