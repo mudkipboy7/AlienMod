@@ -1,4 +1,4 @@
-package com.mudkipboy7.alien.world.entity.AIgoals;
+package com.mudkipboy7.alien.world.entity.AIgoals.jovianboss;
 
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;

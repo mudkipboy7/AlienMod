@@ -37,7 +37,6 @@ public class AMMusicManager {
 		// System.out.println(timesMusicHasBeenPlayed);
 		// This is used to prevent it from ever not realizing the music has stopped.
 		if (!Minecraft.getInstance().getSoundManager().isActive(currentMusic)) {
-
 			currentMusic = null;
 		}
 		Level level = Minecraft.getInstance().level;
@@ -46,11 +45,16 @@ public class AMMusicManager {
 			// tryPlayMusic(AMMusics.JOVIAN_BOSS_MUSIC);
 			// tryPlayMusic(AMMusics.JOVIAN_BOSS_MUSIC);
 			if (dimType == AMDimensions.ALIENDIM_TYPE) {
-				if (currentMusic == null && random.nextInt(600) == 0) {
-					tryPlayMusic(AMMusics.ALIEN_MUSIC);
+				if (currentMusic == null) {
+
+					musicManager().stopPlaying();
+					if (random.nextInt(500) == 0)
+						tryPlayMusic(AMMusics.ALIEN_MUSIC);
+
 				}
 			} else if (dimType == AMDimensions.JOVIANDIM_TYPE) {
 				tryPlayMusic(AMMusics.JOVIAN_BOSS_MUSIC);
+				musicManager().stopPlaying();
 			}
 		}
 	}
@@ -60,11 +64,8 @@ public class AMMusicManager {
 		if (alreadyPlayedThisTick) {
 			Minecraft.crash(new CrashReport("Tried to play music at once.",
 					new Exception("Tried to play music in " + this.toString() + " twice in one of tickMusic()")));
-
 		}
-		if (musicManager() != null) {
-			musicManager().stopPlaying();
-		}
+		cancelNormalMusic();
 		if ((currentMusic == null) || (currentMusic != null && currentMusic.music != music)) {
 
 			stopMusic();
@@ -85,6 +86,12 @@ public class AMMusicManager {
 
 	private MusicManager musicManager() {
 		return Minecraft.getInstance().getMusicManager();
+	}
+
+	private void cancelNormalMusic() {
+		if (musicManager() != null)
+			musicManager().stopPlaying();
+
 	}
 
 }

@@ -3,7 +3,7 @@ package com.mudkipboy7.alien.world.entity.boss;
 import com.mudkipboy7.alien.world.block.AMBlocks;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.entity.IAlienMob;
-import com.mudkipboy7.alien.world.entity.AIgoals.JovianBossFindNearestTargetGoal;
+import com.mudkipboy7.alien.world.entity.AIgoals.jovianboss.JovianBossFindNearestTargetGoal;
 import com.mudkipboy7.alien.world.entity.monster.JovianBossMinion;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 
@@ -46,7 +46,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	// How many arrows it has left to shoot
 	int arrowsLeft = 64;
 	boolean alreadyDoneCreativeTaunt = false;
-	JovianBossStrategy strategy = JovianBossStrategy.CHASING;
 
 	private static final int PLATFORM_RADIUS = 23;
 
@@ -223,8 +222,6 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		super.addAdditionalSaveData(compound);
 		compound.putInt("phase", this.phase);
 		compound.putInt("apples_left", this.applesLeft);
-		compound.putString("apples_left", this.strategy.getName());
-
 	}
 
 	@Override
@@ -240,9 +237,7 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 		if (compound.contains("apples_left")) {
 			this.applesLeft = compound.getInt("apples_left");
 		}
-		if (compound.contains("strategy")) {
-			this.strategy = JovianBossStrategy.valueOf(compound.getString("strategy"));
-		}
+
 		// this.ticksLeftToFinishEating = compound.getInt("ticks_left_to_eat_apple");
 	}
 
@@ -297,4 +292,5 @@ public class JovianBossEntity extends PathfinderMob implements IAlienMob, Ranged
 	public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
 
 	}
+
 }

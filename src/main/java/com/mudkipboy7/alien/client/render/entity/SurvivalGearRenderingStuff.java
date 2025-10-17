@@ -71,8 +71,8 @@ public class SurvivalGearRenderingStuff {
 		 * texturepack that makes the sleeve of the coat invisible it will display their
 		 * skin instead of steve's skin.
 		 */
-		//armModel.render(poseStack, buffer.getBuffer(RenderType.entitySolid(renderer.getTextureLocation(clientPlayer))),
-		//		combinedLight, OverlayTexture.NO_OVERLAY);
+		armModel.render(poseStack, buffer.getBuffer(RenderType.entitySolid(renderer.getTextureLocation(clientPlayer))),
+				combinedLight, OverlayTexture.NO_OVERLAY);
 		// Renders the gloves
 		coatInnerModel.render(poseStack, buffer.getBuffer(RenderType.entityTranslucent(texture)), combinedLight,
 				OverlayTexture.NO_OVERLAY);
