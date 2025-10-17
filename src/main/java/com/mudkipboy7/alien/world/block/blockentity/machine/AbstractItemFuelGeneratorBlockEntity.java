@@ -7,6 +7,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -80,7 +81,11 @@ public abstract class AbstractItemFuelGeneratorBlockEntity extends AbstractGener
 
 				this.setBurnTimeLeft(burnTimeToAdd);
 				this.setBurnTimeOfFuel(burnTimeToAdd);
-				fuelItemStack.shrink(1);
+				if (fuelItemStack.getItem() == Items.LAVA_BUCKET) {
+					this.inventory.set(1, Items.BUCKET.getDefaultInstance());
+				} else {
+					fuelItemStack.shrink(1);
+				}
 			}
 		} else if (this.isBurning()) {
 			// Adds the energy
