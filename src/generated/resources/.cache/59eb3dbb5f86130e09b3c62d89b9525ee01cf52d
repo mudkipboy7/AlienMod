@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-15T22:49:56.1052401	Loot Tables
+// 1.20.2	2025-10-17T23:54:43.508515	Loot Tables
 1f16dabb71c5a39f0887bb2fb2cb11c8e37817d5 data/alien/loot_tables/blocks/air_purifier.json
 2ee889dbbb6d733ff89d4c9d8eb6589e18fb1880 data/alien/loot_tables/blocks/algussoil.json
 656478983c35bbe3a5c6c5d1ed5a0159e2a027ea data/alien/loot_tables/blocks/apsius_block.json
@@ -9,7 +9,6 @@ f60690ad30c64bea63a258acd5314db60bcdc52d data/alien/loot_tables/blocks/cobble_ge
 0bd5604a53e11d80bbec236b6ac29618a233c3eb data/alien/loot_tables/blocks/cobble_gelustone_stairs.json
 a5b094ab215840f66be41e6e99346169ce325a3d data/alien/loot_tables/blocks/cobble_gelustone_wall.json
 df69dd3d035ca244e600c4c246fc8aceb115e540 data/alien/loot_tables/blocks/copper_wire.json
-731efceb0a3f1f599d32603eea5ea692366475b1 data/alien/loot_tables/blocks/double_tall_gramen.json
 1deaed29291208fcae638ab57e4a0e0b836e10b0 data/alien/loot_tables/blocks/energy_block.json
 bf046b3a39a034aa5afe42e748cd3532ce73d462 data/alien/loot_tables/blocks/energy_storage_block.json
 639acc354b802e0a0df93458b5c29d6404044e5e data/alien/loot_tables/blocks/gelustone.json
@@ -42,6 +41,7 @@ d933d936bca74f04a8e02decb2a1e5b674ebff41 data/alien/loot_tables/blocks/lignum_pr
 ea61d4586d0aa5b5dbecdcbfedf41536d999f28a data/alien/loot_tables/blocks/lignum_stairs.json
 ebc02b749f182ccc27b147768fa071690fe93ebf data/alien/loot_tables/blocks/lignum_trapdoor.json
 c7cfa2593413caf9a86d83ca5720fce67b7d6145 data/alien/loot_tables/blocks/regolith.json
+95e1b6f20a71d5c72f49fa7f2e10b593934f9ee1 data/alien/loot_tables/blocks/rutilonus.json
 0607bdc469a5706580aa7316cd7f27be0127b102 data/alien/loot_tables/blocks/tall_gramen.json
 dd28fa7424aa84e14edbfed69d034ad834898d30 data/alien/loot_tables/blocks/test_block.json
 6cc0f4a228bcc7e80d60e6f1bebf6071d5bb4165 data/alien/loot_tables/blocks/thin_lignum_log.json

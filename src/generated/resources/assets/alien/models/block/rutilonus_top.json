@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "alien:block/plant/double_tall_gramen_bottom"
+    "cross": "alien:block/plant/rutilonus_top"
   }
 }

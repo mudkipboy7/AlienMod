@@ -19,7 +19,7 @@
                   }
                 }
               ],
-              "name": "alien:double_tall_gramen"
+              "name": "alien:rutilonus"
             },
             {
               "type": "minecraft:item",
@@ -50,5 +50,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "alien:blocks/double_tall_gramen"
+  "random_sequence": "alien:blocks/rutilonus"
 }

@@ -22,7 +22,7 @@ class AMBiomeMaker {
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.TALL_GRAMEN);
-		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.DOUBLE_TALL_GRAMEN);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.COMMON_GLOWING_GRASS);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.THIN_TALL_ALIEN_TREE);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.TALL_ALIEN_TREE);
 		
@@ -34,6 +34,7 @@ class AMBiomeMaker {
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
 		genSettings.addCarver(GenerationStep.Carving.AIR, AMConfiguredCarvers.CRATER);
+		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.UNCOMMON_GLOWING_GRASS);
 		return genSettings;
 	}
 

@@ -1,6 +1,7 @@
 package com.mudkipboy7.alien.world.worldgen.worldobject.structure;
 
 import com.mudkipboy7.alien.AlienMod;
+import com.mudkipboy7.alien.data.tags.AMBiomeTags;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
 
 import net.minecraft.core.HolderGetter;
@@ -20,14 +21,20 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 
 public class AMStructureSets {
 	public static final ResourceKey<StructureSet> JOVIAN_PLANET_ARENA = createKey("jovian_arena");
+	public static final ResourceKey<StructureSet> OVERWORLD_DUNGEON = createKey("overworld_dungeon");
 
 	public static void bootstrap(BootstapContext<StructureSet> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<Structure> structures = context.lookup(Registries.STRUCTURE);
-		// There are 100 so I can lower the chances of that glitch where only part of it generates
-		context.register(JOVIAN_PLANET_ARENA, new StructureSet(structures.getOrThrow(AMStructures.JOVIAN_PLANET_ARENA), new ConcentricRingsStructurePlacement(
-				0, 0, 20, HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)))));
-		
+		// There are 100 so I can lower the chances of that glitch where only part of it
+		// generates
+		context.register(JOVIAN_PLANET_ARENA,
+				new StructureSet(structures.getOrThrow(AMStructures.JOVIAN_PLANET_ARENA),
+						new ConcentricRingsStructurePlacement(0, 0, 20,
+								HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)))));
+		context.register(OVERWORLD_DUNGEON, new StructureSet(structures.getOrThrow(AMStructures.OVERWORLD_DUNGEON),
+				new RandomSpreadStructurePlacement(32, 8, RandomSpreadType.LINEAR, 14357620)));
+
 	}
 
 	private static ResourceKey<StructureSet> createKey(String name) {

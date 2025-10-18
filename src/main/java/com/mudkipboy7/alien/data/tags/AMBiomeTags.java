@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,6 +21,8 @@ public class AMBiomeTags extends BiomeTagsProvider {
 	public static final TagKey<Biome> LOW_GRAVITY = makeKey("low_gravity");
 	public static final TagKey<Biome> ULTRACOLD = makeKey("ultracold");
 	public static final TagKey<Biome> HIGH_GRAVITY = makeKey("high_gravity");
+	
+	public static final TagKey<Biome> CAN_HAVE_OVERWORLD_DUNGEON = makeKey("has_overworld_dungeon");
 
 	public AMBiomeTags(PackOutput output, CompletableFuture<Provider> lookupProvider,
 			ExistingFileHelper existingFileHelper) {
@@ -36,6 +39,8 @@ public class AMBiomeTags extends BiomeTagsProvider {
 
 		tag(AMBiomeTags.ULTRACOLD).add(AMBiomes.TOWERING_FOREST, AMBiomes.BARREN_CRATERSCAPE,
 				AMBiomes.JOVIAN_PLANET_BIOME);
+		
+		tag(AMBiomeTags.CAN_HAVE_OVERWORLD_DUNGEON).addTag(BiomeTags.IS_OVERWORLD).remove(BiomeTags.IS_OCEAN);
 
 
 		/*

@@ -101,7 +101,7 @@ public class AMItems {
 
 	public static final RegistryObject<BlockItem> DEAD_PLANT = simpleDescBlockItem(AMBlocks.DEAD_PLANT);
 
-	public static final RegistryObject<BlockItem> DOUBLE_TALL_GRAMEN = simpleBlockItem(AMBlocks.DOUBLE_TALL_GRAMEN);
+	public static final RegistryObject<BlockItem> GLOWING_GRASS = simpleBlockItem(AMBlocks.GLOWING_GRASS);
 
 	public static final RegistryObject<BlockItem> LIGNUM_DOOR = simpleBlockItem(AMBlocks.LIGNUM_DOOR);
 

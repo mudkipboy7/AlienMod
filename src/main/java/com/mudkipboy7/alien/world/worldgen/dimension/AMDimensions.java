@@ -105,7 +105,7 @@ public class AMDimensions {
 		HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
 		// AlienDim
-		FixedBiomeSource alienBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.TOWERING_FOREST));
+		FixedBiomeSource alienBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.BARREN_CRATERSCAPE));
 		
 		
 		

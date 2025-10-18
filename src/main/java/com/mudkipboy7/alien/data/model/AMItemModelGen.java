@@ -62,7 +62,7 @@ public class AMItemModelGen extends ItemModelProvider {
 		genItem(AMItems.TALL_GRAMEN, AlienMod.location(plantBlockFolder + "tall_gramen"));
 		genItem(AMItems.LIGNUM_SAPLING, AlienMod.location(plantBlockFolder + "lignum_sapling"));
 		genItem(AMItems.DEAD_PLANT, AlienMod.location(plantBlockFolder + "dead_plant_sapling"));
-		genItem(AMItems.DOUBLE_TALL_GRAMEN, AlienMod.location(plantBlockFolder + "double_tall_gramen_top"));
+		genItem(AMItems.GLOWING_GRASS, AlienMod.location(plantBlockFolder + "rutilonus_top"));
 		genItem(AMItems.LIGNUM_DOOR);
 		withExistingParent(AMItems.LIGNUM_FENCE.getId().getPath(), "block/fence_inventory").texture("texture",
 				AMBlockModelGen.lignumPlanks);

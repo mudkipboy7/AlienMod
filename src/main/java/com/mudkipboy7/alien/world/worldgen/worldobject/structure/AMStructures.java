@@ -11,6 +11,7 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 public class AMStructures {
 	public static final ResourceKey<Structure> JOVIAN_PLANET_ARENA = createKey("jovian_arena");
 
+	public static final ResourceKey<Structure> OVERWORLD_DUNGEON = createKey("overworld_dungeon");
+
 	public static void bootstrap(BootstapContext<Structure> context) {
 		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 		HolderGetter<StructureTemplatePool> structures = context.lookup(Registries.TEMPLATE_POOL);
@@ -29,6 +32,10 @@ public class AMStructures {
 				new JovianArenaStructure(new Structure.StructureSettings(
 						HolderSet.direct(biomes.getOrThrow(AMBiomes.JOVIAN_PLANET_BIOME)), Map.of(),
 						GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE)));
+		context.register(OVERWORLD_DUNGEON,
+				new OverworldDungeonStructure(
+						new Structure.StructureSettings(biomes.getOrThrow(AMBiomeTags.CAN_HAVE_OVERWORLD_DUNGEON),
+								Map.of(), GenerationStep.Decoration.UNDERGROUND_STRUCTURES, TerrainAdjustment.NONE)));
 	}
 
 	private static ResourceKey<Structure> createKey(String name) {

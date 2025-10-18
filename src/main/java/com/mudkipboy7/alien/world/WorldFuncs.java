@@ -16,7 +16,7 @@ public class WorldFuncs {
 	/*
 	 * These three checks for different biome types
 	 */
-	@SafeVarargs
+	//@SafeVarargs
 	public static boolean isInBiomeType(LevelAccessor level, BlockPos blockPos, TagKey<Biome>... biomeTags) {
 		Holder<Biome> biome = level.getBiome(blockPos);
 		for (int i = 0; i < biomeTags.length; i++) {

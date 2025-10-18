@@ -62,7 +62,7 @@ public class HazardRemovalMachineBlockEntity extends AbstractContainerMachineBlo
 				// The energy storage
 				new AMEnergyStorage(8000),
 				// The inventory
-				NonNullList.withSize(2, ItemStack.EMPTY));
+				NonNullList.withSize(1, ItemStack.EMPTY));
 	}
 
 	public static void tick(Level level, BlockPos blockPos, BlockState blockState,
@@ -104,8 +104,7 @@ public class HazardRemovalMachineBlockEntity extends AbstractContainerMachineBlo
 
 	@Override
 	public boolean canPlaceItem(int index, ItemStack stack) {
-		if ((index == 0 && !MachineBatterySlot.canBePlaced(stack))
-				|| (index == 1 && !MachineWaterSlot.canBePlaced(stack)))
+		if ((index == 0 && !MachineBatterySlot.canBePlaced(stack)))
 			return false;
 		else
 			return true;

@@ -27,7 +27,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 public class AMConfiguredFeatures {
 	// Grass
 	public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_GRAMEN = createKey("tall_gramen");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> DOUBLE_TALL_GRAMEN = createKey("double_tall_gramen");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWING_GRASS = createKey("rutilonus");
 	// Trees
 	public static final ResourceKey<ConfiguredFeature<?, ?>> THIN_ALIEN_TREE = createKey("tall_lignum_tree");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> THIN_TALL_ALIEN_TREE = createKey("thin_tall_lignum_tree");
@@ -43,10 +43,10 @@ public class AMConfiguredFeatures {
 		context.register(TALL_GRAMEN, new ConfiguredFeature<>(Feature.RANDOM_PATCH,
 				grassPatch(BlockStateProvider.simple(AMBlocks.TALL_GRAMEN.get()), 32)));
 
-		context.register(DOUBLE_TALL_GRAMEN,
+		context.register(GLOWING_GRASS,
 				new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
 						Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.DOUBLE_TALL_GRAMEN.get())))));
+						new SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.GLOWING_GRASS.get())))));
 		FeatureUtils
 				.register(context, THIN_ALIEN_TREE, Feature.TREE,
 						createStraightBlobTree(AMBlocks.LIGNUM_LOG.get().defaultBlockState(),

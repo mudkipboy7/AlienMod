@@ -28,7 +28,8 @@ public class AMPlacedFeatures {
 
 	// Grasses
 	public static final ResourceKey<PlacedFeature> TALL_GRAMEN = createKey("tall_gramen");
-	public static final ResourceKey<PlacedFeature> DOUBLE_TALL_GRAMEN = createKey("double_tall_gramen");
+	public static final ResourceKey<PlacedFeature> COMMON_GLOWING_GRASS = createKey("common_rutilonus");
+	public static final ResourceKey<PlacedFeature> UNCOMMON_GLOWING_GRASS = createKey("uncommon_rutilonus");
 
 	// Trees
 	public static final ResourceKey<PlacedFeature> TALL_ALIEN_TREE = createKey("tall_lignum_tree");
@@ -44,9 +45,14 @@ public class AMPlacedFeatures {
 						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7), InSquarePlacement.spread(),
 								PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
 
-		context.register(DOUBLE_TALL_GRAMEN,
-				new PlacedFeature(configuredFeatures.getOrThrow(AMConfiguredFeatures.DOUBLE_TALL_GRAMEN),
-						List.of(NoiseThresholdCountPlacement.of(-0.8D, 0, 7), RarityFilter.onAverageOnceEvery(5),
+		context.register(COMMON_GLOWING_GRASS,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMConfiguredFeatures.GLOWING_GRASS),
+						List.of(PlacementUtils.countExtra(1, 0.01F, 1), RarityFilter.onAverageOnceEvery(8),
+								InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+		context.register(UNCOMMON_GLOWING_GRASS,
+				new PlacedFeature(configuredFeatures.getOrThrow(AMConfiguredFeatures.GLOWING_GRASS),
+						List.of(PlacementUtils.countExtra(1, 0.01F, 1), RarityFilter.onAverageOnceEvery(30),
 								InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
 		PlacementModifier placementmodifier = SurfaceWaterDepthFilter.forMaxDepth(0);

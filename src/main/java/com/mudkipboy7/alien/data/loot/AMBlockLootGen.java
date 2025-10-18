@@ -79,7 +79,7 @@ public class AMBlockLootGen extends BlockLootSubProvider {
 
 		this.dropSelf(AMBlocks.LIGNUM_SAPLING.get());
 		// this.dropSelf(AMBlocks.DEAD_PLANT.get());
-		this.add(AMBlocks.DOUBLE_TALL_GRAMEN.get(), (block) -> {
+		this.add(AMBlocks.GLOWING_GRASS.get(), (block) -> {
 			return createShearsDispatchTable(block,
 					this.applyExplosionDecay(block,
 							LootItem.lootTableItem(AMItems.ALIEN_SEEDS.get())

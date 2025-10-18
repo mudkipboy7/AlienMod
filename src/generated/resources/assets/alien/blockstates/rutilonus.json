@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "alien:block/rutilonus_bottom"
+    },
+    "half=upper": {
+      "model": "alien:block/rutilonus_top"
+    }
+  }
+}

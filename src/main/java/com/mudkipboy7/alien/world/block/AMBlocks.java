@@ -158,7 +158,9 @@ public final class AMBlocks {
 	public static final RegistryObject<Block> TALL_GRAMEN = BLOCKS.register("tall_gramen",
 			() -> new AlienTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
 					.noCollission().instabreak().sound(SoundType.WET_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
-					.ignitedByLava().pushReaction(PushReaction.DESTROY)));
+					.ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel((x) -> {
+						return 6;
+					})));
 
 	// Block for testing mod functions
 	public static final RegistryObject<Block> ALIEN_PORTAL = BLOCKS.register("alien_portal", () -> new AlienPortalBlock(
@@ -175,10 +177,12 @@ public final class AMBlocks {
 					.pushReaction(PushReaction.DESTROY)));
 
 	// Tall grass for the Alien Dimension
-	public static final RegistryObject<Block> DOUBLE_TALL_GRAMEN = BLOCKS.register("double_tall_gramen",
+	public static final RegistryObject<Block> GLOWING_GRASS = BLOCKS.register("rutilonus",
 			() -> new AlienDoubleTallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
 					.noCollission().instabreak().sound(SoundType.WET_GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
-					.ignitedByLava().pushReaction(PushReaction.DESTROY)));
+					.ignitedByLava().pushReaction(PushReaction.DESTROY).lightLevel((x) -> {
+						return 6;
+					})));
 
 	// Alien wood door
 	public static final RegistryObject<DoorBlock> LIGNUM_DOOR = BLOCKS.register("lignum_door",
@@ -365,8 +369,9 @@ public final class AMBlocks {
 			() -> new JovianBossSpawnerBlock(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable()
 					.isValidSpawn(AMBlocks::never)));
 
-	public static final RegistryObject<Block> HARDENED_CLOUD = BLOCKS.register("hardened_cloud", () -> new GlassBlock(
-			BlockBehaviour.Properties.of().strength(0.1F, 3.0F).sound(SoundType.WOOL).noOcclusion().isViewBlocking(AMBlocks::never)));
+	public static final RegistryObject<Block> HARDENED_CLOUD = BLOCKS.register("hardened_cloud",
+			() -> new GlassBlock(BlockBehaviour.Properties.of().strength(0.1F, 3.0F).sound(SoundType.WOOL).noOcclusion()
+					.isViewBlocking(AMBlocks::never)));
 
 	/*
 	 * Methods

@@ -172,7 +172,7 @@ public class AMLanguage {
 			addBlock(AMBlocks.LIGNUM_SAPLING, "Lignum Sapling");
 			addBlock(AMBlocks.DEAD_PLANT, "Dead Plant");
 			addItemDesc(AMBlocks.DEAD_PLANT, "A plant that died from extreme conditions.");
-			addBlock(AMBlocks.DOUBLE_TALL_GRAMEN, "Double Tall Gramen");
+			addBlock(AMBlocks.GLOWING_GRASS, "Rutilonus");
 			addBlock(AMBlocks.LIGNUM_DOOR, "Lignum Door");
 			addBlock(AMBlocks.LIGNUM_FENCE, "Lignum Fence");
 			addBlock(AMBlocks.LIGNUM_FENCE_GATE, "Lignum Fence Gate");

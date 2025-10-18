@@ -2,13 +2,10 @@ package com.mudkipboy7.alien.world.worldgen.worldobject.structure;
 
 import java.util.Optional;
 
-import com.mojang.serialization.Codec;
 import com.mudkipboy7.alien.AlienMod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -18,32 +15,33 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.TemplateStructurePiece;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
-import net.minecraft.world.level.levelgen.structure.structures.SwampHutPiece;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
-public class JovianArenaStructure extends Structure {
+public class OverworldDungeonStructure extends Structure {
 
-	protected JovianArenaStructure(StructureSettings pSettings) {
+	protected OverworldDungeonStructure(StructureSettings pSettings) {
 		super(pSettings);
 	}
 
 	@Override
 	protected Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
-		return getPeices(context, new BlockPos(-23, 61, -23));
+		int yPos = 30;
+		return getPeices(context, null);
 	}
 
 	private static Optional<GenerationStub> getPeices(GenerationContext context, BlockPos blockPos) {
-		return Optional.of(new GenerationStub(blockPos, builder -> {
-			//if (Minecraft.getInstance().level != null)
-				//Minecraft.getInstance().level.getChunk(blockPos);
+		System.out.println("wefwef");
+		return Optional.of(new Structure.GenerationStub(context.chunkPos().getWorldPosition().atY(30), (builder) -> {
+			//Minecraft.getInstance().level.getChunk(blockPos);
 			builder.addPiece(new JovianArenaPeices(context.structureTemplateManager(), blockPos));
 		}));
+
 	}
 
 	@Override
 	public StructureType<?> type() {
-		return AMStructureTypes.JOVIAN_ARENA.get();
+		return AMStructureTypes.OVERWORLD_DUNGEON.get();
 	}
 
 	/*
@@ -69,4 +67,5 @@ public class JovianArenaStructure extends Structure {
 		}
 
 	}
+
 }

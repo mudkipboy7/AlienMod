@@ -46,7 +46,7 @@ public class AMClientEvents {
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.TALL_GRAMEN.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_SAPLING.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.DEAD_PLANT.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(AMBlocks.DOUBLE_TALL_GRAMEN.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(AMBlocks.GLOWING_GRASS.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_DOOR.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.LIGNUM_TRAPDOOR.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(AMBlocks.HARDENED_CLOUD.get(), RenderType.translucent());

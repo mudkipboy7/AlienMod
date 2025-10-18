@@ -1,4 +1,4 @@
-// 1.20.2	2025-10-14T20:11:10.2756567	Block States: alien
+// 1.20.2	2025-10-17T23:54:43.512506	Block States: alien
 f284e33d2e4b029587f9c3b0bcc3bc0aafbc4361 assets/alien/blockstates/air_purifier.json
 b23c29d873b805d3d03eb664bbf442fe5eae9996 assets/alien/blockstates/algussoil.json
 09f7c49a43daa578f2200bd5990f27165a92a156 assets/alien/blockstates/alien_air.json
@@ -13,7 +13,6 @@ ca51d73481daaabfc0ba1c7e2d619a16555fdd09 assets/alien/blockstates/cobble_gelusto
 0a6ef165b0a738f7214f6f701c5d08feb0cf19b1 assets/alien/blockstates/cobble_gelustone_wall.json
 ef85e164f5a7f86d3487697a521fc9f1dd8ae572 assets/alien/blockstates/copper_wire.json
 268c03ca2a9b7fdebd641d1bfddd571d8b9e5eb8 assets/alien/blockstates/dead_plant.json
-1ef845a875c31a354b26dced4ee53850cb02b97b assets/alien/blockstates/double_tall_gramen.json
 60e24714af3ec4056e640962dfc9cd3aa031df30 assets/alien/blockstates/energy_block.json
 c6767b80edae5e80d34341f5451ffcd55e2a7252 assets/alien/blockstates/energy_storage_block.json
 13ee36f252a7c13cb49180ad96a000b34d8408fa assets/alien/blockstates/gelustone.json
@@ -51,6 +50,7 @@ a38a9e2ac8eb62326d98fd2bd84238a0ebcc7cb9 assets/alien/blockstates/lignum_trapdoo
 4d34789e004e2d2dda4d4763d8a6f285487f09a6 assets/alien/blockstates/lignum_wall_hanging_sign.json
 22f63e212353bdae56672ccfd17f073701f77d26 assets/alien/blockstates/lignum_wall_sign.json
 06bf493a5a36e164a70625aa98521e4f4ec8083a assets/alien/blockstates/regolith.json
+c738f5f5ce3f34094898bfddc05c40e40cb157fa assets/alien/blockstates/rutilonus.json
 c55c240cc401e8f68efd96bd19bc60f3a911b2f7 assets/alien/blockstates/tall_gramen.json
 c8be591b38b77d9c7e47c691df31251829299d6f assets/alien/blockstates/test_block.json
 bd759c3e21b2e32879a0651aa1a9602eaebe563b assets/alien/blockstates/thin_lignum_log.json
@@ -76,8 +76,6 @@ b1e064dd16b2a791442926f0976fa56ed8de595f assets/alien/models/block/copper_wire_s
 e8023e184ab40ed46ad63e45313a199336587941 assets/alien/models/block/dead_plant_flower.json
 8663f61f94796347b666b37d96b5421979d6bd59 assets/alien/models/block/dead_plant_grass.json
 ab9990d340c8c01705673d78bfbb67b245ac8555 assets/alien/models/block/dead_plant_sapling.json
-892d584ae8441236b39efc8601f7a2b121f59d22 assets/alien/models/block/double_tall_gramen_bottom.json
-7439bd6596e270ab1525c72c85fd060689977ae0 assets/alien/models/block/double_tall_gramen_top.json
 5477c69d5effc3e8cac9a526be8023e04df9a437 assets/alien/models/block/energy_block.json
 f5db5b56434c36813df6056b97ff33ef9f1a13ed assets/alien/models/block/energy_storage_block.json
 e0203e9471f28c40bdfa842abb6459943d0d8c2d assets/alien/models/block/gelustone.json
@@ -138,6 +136,8 @@ a9147173df50501535e1a3ad9da25c1a8d1db654 assets/alien/models/block/lignum_trapdo
 1da5384c60c913ac72a37b1f2a006f6d53331e4d assets/alien/models/block/lignum_trapdoor_open.json
 6ad1b99e33d60a1c930e9e1d0a2fb8ad84d8c39d assets/alien/models/block/lignum_trapdoor_top.json
 968b7cd06484bfab71f3a80e9a190b309c2e94a2 assets/alien/models/block/regolith.json
+d5f1adbbb60e7c502ebecbb20729aec9ce26083d assets/alien/models/block/rutilonus_bottom.json
+7ac11583af23b6e0e341ef9105fff20340daaf86 assets/alien/models/block/rutilonus_top.json
 bc058aa47a9eafc0b7698ef901754638e662a7fa assets/alien/models/block/tall_gramen.json
 e59aa3aea2b9511af0d74a1ded5d3fb46ad16944 assets/alien/models/block/test_block.json
 7bc09b7dac04c73b3d8020c21d93da3a68720622 assets/alien/models/block/thin_lignum_log.json

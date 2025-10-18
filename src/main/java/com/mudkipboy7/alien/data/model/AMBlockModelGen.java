@@ -108,8 +108,8 @@ public class AMBlockModelGen extends BlockStateProvider {
 				.addModels(new ConfiguredModel(models().cross(AMBlocks.DEAD_PLANT.getId().getPath() + "_grass",
 						AlienMod.location(plantBlockFolder + "dead_plant_grass"))));
 
-		doubleCrossBlock(AMBlocks.DOUBLE_TALL_GRAMEN, AlienMod.location(plantBlockFolder + "double_tall_gramen_bottom"),
-				AlienMod.location(plantBlockFolder + "double_tall_gramen_top"));
+		doubleCrossBlock(AMBlocks.GLOWING_GRASS, AlienMod.location(plantBlockFolder + "rutilonus_bottom"),
+				AlienMod.location(plantBlockFolder + "rutilonus_top"));
 
 		doorBlock(AMBlocks.LIGNUM_DOOR.get(), AlienMod.location(doorBlockFolder + "lignum_door_bottom"),
 				AlienMod.location(doorBlockFolder + "lignum_door_top"));

@@ -27,7 +27,7 @@ public class HazardRemovalMenu extends AbstractMachineMenu {
 		// Makes the battery slot
 		this.addSlot(new MachineBatterySlot(blockContainer, 0, 80, 53));
 		// Makes the water slot
-		this.addSlot(new MachineWaterSlot(blockContainer, 1, 80, 17));
+		//this.addSlot(new MachineWaterSlot(blockContainer, 1, 80, 17));
 		// Makes the player's inventory and hotbar
 		makePlayerInventory(playerInventory);
 	}
@@ -42,9 +42,9 @@ public class HazardRemovalMenu extends AbstractMachineMenu {
 		if (MachineBatterySlot.canBePlaced(stackBeingMoved)) {
 			if (!this.moveItemStackTo(stackBeingMoved, 0, 1, false))
 				return true;
-		} else if (MachineWaterSlot.canBePlaced(stackBeingMoved))
-			if (!this.moveItemStackTo(stackBeingMoved, 1, getNumCustomSlots(), false))
-				return true;
+		} //else if (MachineWaterSlot.canBePlaced(stackBeingMoved))
+			//if (!this.moveItemStackTo(stackBeingMoved, 1, getNumCustomSlots(), false))
+			//	return true;
 		return false;
 	}
 

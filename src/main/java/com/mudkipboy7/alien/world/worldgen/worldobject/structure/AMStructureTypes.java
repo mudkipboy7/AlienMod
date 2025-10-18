@@ -14,4 +14,7 @@ public class AMStructureTypes {
 	
 	public static final RegistryObject<StructureType<?>> JOVIAN_ARENA = STRUCTURE_TYPES.register("jovian_arena",
 			() -> () -> Structure.simpleCodec(JovianArenaStructure::new));
+	
+	public static final RegistryObject<StructureType<?>> OVERWORLD_DUNGEON = STRUCTURE_TYPES.register("overworld_dungeon",
+			() -> () -> Structure.simpleCodec(OverworldDungeonStructure::new));
 }

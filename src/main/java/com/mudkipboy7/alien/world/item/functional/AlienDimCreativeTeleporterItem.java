@@ -27,14 +27,10 @@ public class AlienDimCreativeTeleporterItem extends Item {
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-		ResourceKey<Level> currentDimension = player.level().dimension();
-		ResourceKey<Level> alienDim = AMDimensions.ALIENDIM_LEVEL;
-		//ResourceKey<Level> overworld = Level.OVERWORLD;
 		ItemStack heldItem = player.getItemInHand(hand);
-		boolean inValidDim = currentDimension == alienDim || currentDimension == Level.OVERWORLD;
 		if (level instanceof ServerLevel && player.canChangeDimensions()
-				&& !(player.getItemInHand(hand).getItem() instanceof BlockItem) && inValidDim) {
-			ResourceKey<Level> dimToSendTo = player.level().dimension() == alienDim ? Level.OVERWORLD : alienDim;
+				&& !(player.getItemInHand(hand).getItem() instanceof BlockItem)) {
+			ResourceKey<Level> dimToSendTo = player.level().dimension() ==  AMDimensions.ALIENDIM_LEVEL ? Level.OVERWORLD :  AMDimensions.ALIENDIM_LEVEL;
 			ServerLevel serverlevel = player.getCommandSenderWorld().getServer().getLevel(dimToSendTo);
 			if (serverlevel != null) {
 				ITeleporter teleporter = new AlienDimCreativeTeleporter();

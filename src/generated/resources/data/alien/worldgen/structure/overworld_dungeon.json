@@ -1,0 +1,6 @@
+{
+  "type": "alien:jovian_arena",
+  "biomes": "#alien:has_overworld_dungeon",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}
