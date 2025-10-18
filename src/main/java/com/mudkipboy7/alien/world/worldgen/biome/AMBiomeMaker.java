@@ -2,6 +2,7 @@ package com.mudkipboy7.alien.world.worldgen.biome;
 
 import com.mudkipboy7.alien.sound.AMMusics;
 import com.mudkipboy7.alien.world.entity.AMEntities;
+import com.mudkipboy7.alien.world.worldgen.carvers.AMConfiguredCarvers;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
 import java.util.function.Supplier;
 import net.minecraft.core.HolderGetter;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 class AMBiomeMaker {
-	
+
 	public static BiomeGenerationSettings.Builder alienRainforest(HolderGetter<PlacedFeature> feature,
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
@@ -24,12 +25,15 @@ class AMBiomeMaker {
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.DOUBLE_TALL_GRAMEN);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.THIN_TALL_ALIEN_TREE);
 		genSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AMPlacedFeatures.TALL_ALIEN_TREE);
+		
+		System.out.println();
 		return genSettings;
 	}
 
 	public static BiomeGenerationSettings.Builder barrenCraterscape(HolderGetter<PlacedFeature> feature,
 			HolderGetter<ConfiguredWorldCarver<?>> carver) {
 		BiomeGenerationSettings.Builder genSettings = new BiomeGenerationSettings.Builder(feature, carver);
+		genSettings.addCarver(GenerationStep.Carving.AIR, AMConfiguredCarvers.CRATER);
 		return genSettings;
 	}
 
@@ -40,9 +44,7 @@ class AMBiomeMaker {
 
 		return genSettings;
 	}
-	
-	
-	
+
 	public static MobSpawnSettings.Builder defaultSpawnSettings() {
 		MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
 		builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 5, 1, 1));
@@ -54,13 +56,13 @@ class AMBiomeMaker {
 	public static BiomeSpecialEffects.Builder basicEffects() {
 		BiomeSpecialEffects.Builder effectSettings = new BiomeSpecialEffects.Builder();
 		effectSettings.waterColor(0xFFFFFF).waterFogColor(0xFFFFFF).skyColor(0x7E2500).grassColorOverride(0xFFFFFF)
-				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000)
-				.backgroundMusic(AMMusics.ALIEN_MUSIC);
+				.foliageColorOverride(0xFFFFFF).fogColor(0x8E3000);
 		return effectSettings;
 
 		// .ambientParticle(AmbientParticleSettings.)
 		// .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
 	}
+
 	public static BiomeSpecialEffects.Builder jovianEffects() {
 		BiomeSpecialEffects.Builder effectSettings = new BiomeSpecialEffects.Builder();
 		effectSettings.waterColor(0xFFFFFF).waterFogColor(0xFFFFFF).skyColor(0x7E2500).grassColorOverride(0xFFFFFF)
@@ -87,7 +89,8 @@ class AMBiomeMaker {
 			BiomeGenerationSettings.Builder generationSettings, MobSpawnSettings.Builder mobSpawnSettings,
 			BiomeSpecialEffects.Builder specialEffects) {
 		return new Biome.BiomeBuilder().hasPrecipitation(hasPrecipitation).downfall(downfall).temperature(temperature)
-				.generationSettings(generationSettings.build()).mobSpawnSettings(mobSpawnSettings.build())
-				.specialEffects(specialEffects.build()).build();
+				.generationSettings(
+						generationSettings.build())
+				.mobSpawnSettings(mobSpawnSettings.build()).specialEffects(specialEffects.build()).build();
 	}
 }

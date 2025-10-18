@@ -17,7 +17,9 @@ import com.mudkipboy7.alien.data.tags.AMDamageTypeTags;
 import com.mudkipboy7.alien.data.tags.AMEntityTypeTags;
 import com.mudkipboy7.alien.data.tags.AMItemTags;
 import com.mudkipboy7.alien.world.worldgen.AmDensityFunctions;
+import com.mudkipboy7.alien.world.worldgen.biome.AMBiomeParameterLists;
 import com.mudkipboy7.alien.world.worldgen.biome.AMBiomes;
+import com.mudkipboy7.alien.world.worldgen.carvers.AMConfiguredCarvers;
 import com.mudkipboy7.alien.world.worldgen.dimension.AMDimensions;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMConfiguredFeatures;
 import com.mudkipboy7.alien.world.worldgen.worldobject.AMPlacedFeatures;
@@ -119,7 +121,10 @@ public class AMDataGenerators {
 					AMPlacedFeatures.bootstrap(context);
 				}).add(Registries.DENSITY_FUNCTION, AmDensityFunctions::bootstrap)
 				.add(Registries.STRUCTURE, AMStructures::bootstrap)
-				.add(Registries.STRUCTURE_SET, AMStructureSets::bootstrap);
+				.add(Registries.STRUCTURE_SET, AMStructureSets::bootstrap)
+				.add(Registries.CONFIGURED_CARVER, AMConfiguredCarvers::bootstrap)
+				.add(Registries.MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST, AMBiomeParameterLists::bootstrap)
+				;
 
 	}
 }

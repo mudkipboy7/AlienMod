@@ -106,6 +106,10 @@ public class AMDimensions {
 
 		// AlienDim
 		FixedBiomeSource alienBiomeSource = new FixedBiomeSource(biomes.getOrThrow(AMBiomes.TOWERING_FOREST));
+		
+		
+		
+		
 		AlienChunkGenerator alienChunkGen = new AlienChunkGenerator(alienBiomeSource,
 				noiseGenSettings.getOrThrow(ALIEN_DIM_NOISE_SETTINGS));
 		LevelStem alienLevelStem = new LevelStem(dimTypes.getOrThrow(AMDimensions.ALIENDIM_TYPE), alienChunkGen);
@@ -131,8 +135,7 @@ public class AMDimensions {
 						false, true, true, true));
 		context.register(JOVIANDIM_NOISE_SETTINGS,
 				// The Actual settings
-				new NoiseGeneratorSettings(NoiseSettings.create(0, 256, 1, 2),
-						Blocks.AIR.defaultBlockState(),
+				new NoiseGeneratorSettings(NoiseSettings.create(0, 256, 1, 2), Blocks.AIR.defaultBlockState(),
 						Blocks.AIR.defaultBlockState(),
 						new NoiseRouter(DensityFunctions.zero(), DensityFunctions.zero(), DensityFunctions.zero(),
 								DensityFunctions.zero(), DensityFunctions.zero(), DensityFunctions.zero(),

@@ -1,8 +1,10 @@
 {
-  "carvers": {},
+  "carvers": {
+    "air": "alien:crater"
+  },
   "downfall": 0.1,
   "effects": {
-    "fog_color": 9318400,
+    "fog_color": 12295311,
     "foliage_color": 16777215,
     "grass_color": 16777215,
     "music": {
@@ -13,7 +15,7 @@
         "sound_id": "alien:music.alien_dim"
       }
     },
-    "sky_color": 8267008,
+    "sky_color": 13346198,
     "water_color": 16777215,
     "water_fog_color": 16777215
   },

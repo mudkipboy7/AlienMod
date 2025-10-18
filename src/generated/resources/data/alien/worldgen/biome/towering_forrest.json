@@ -5,14 +5,6 @@
     "fog_color": 9318400,
     "foliage_color": 16777215,
     "grass_color": 16777215,
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": {
-        "sound_id": "alien:music.alien_dim"
-      }
-    },
     "sky_color": 8267008,
     "water_color": 16777215,
     "water_fog_color": 16777215

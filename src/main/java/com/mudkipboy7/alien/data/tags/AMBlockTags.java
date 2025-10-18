@@ -43,6 +43,8 @@ public class AMBlockTags extends BlockTagsProvider {
 	// Only needs to define blocks that aren't considered air
 	public static final TagKey<Block> LAZER_CAN_PASS = makeKey("lazer_can_pass");
 
+	public static final TagKey<Block> CARVER_CAN_REPLACE = makeKey("carver_can_replace");
+
 	/*
 	 * Remember, after doing this you might want to go and copy these tags into
 	 * AMItemTags
@@ -103,6 +105,7 @@ public class AMBlockTags extends BlockTagsProvider {
 		tag(LIGNUM_SLABS).add(AMBlocks.LIGNUM_SLAB.get());
 
 		tag(LAZER_CAN_PASS).add(Blocks.GLASS);
+		tag(CARVER_CAN_REPLACE).add(AMBlocks.GELUSTONE.get()).addTag(ALIEN_SOIL);
 
 		/*
 		 * Vanilla/Forge/Other

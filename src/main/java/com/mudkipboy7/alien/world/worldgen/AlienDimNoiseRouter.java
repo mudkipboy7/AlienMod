@@ -86,49 +86,50 @@ public class AlienDimNoiseRouter {
 	public static NoiseRouter alienDimNoiseRouter(HolderGetter<DensityFunction> densityFunction,
 			HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
 
-		DensityFunction densityfunction = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_BARRIER),
+		DensityFunction barrierNoise = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_BARRIER),
 				0.5D);
-		DensityFunction densityfunction1 = DensityFunctions
+		DensityFunction fluidLevelFloodednessNoise = DensityFunctions
 				.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 0.67D);
-		DensityFunction densityfunction2 = DensityFunctions
+		DensityFunction fluidLevelSpreadNoise = DensityFunctions
 				.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 0.7142857142857143D);
-		DensityFunction densityfunction3 = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_LAVA));
+		DensityFunction lavaNoise = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_LAVA));
 		DensityFunction densityfunction4 = getFunction(densityFunction, SHIFT_X);
 		DensityFunction densityfunction5 = getFunction(densityFunction, SHIFT_Z);
-		DensityFunction densityfunction6 = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D,
+		DensityFunction temperature = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D,
 				noiseParameters.getOrThrow(Noises.TEMPERATURE));
-		DensityFunction densityfunction7 = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D,
+		DensityFunction vegetation = DensityFunctions.shiftedNoise2d(densityfunction4, densityfunction5, 0.25D,
 				noiseParameters.getOrThrow(Noises.VEGETATION));
 		DensityFunction densityfunction8 = getFunction(densityFunction, FACTOR);
-		DensityFunction densityfunction9 = getFunction(densityFunction, DEPTH);
+		DensityFunction depth = getFunction(densityFunction, DEPTH);
 		DensityFunction densityfunction10 = noiseGradientDensity(DensityFunctions.cache2d(densityfunction8),
-				densityfunction9);
+				depth);
 		DensityFunction densityfunction11 = getFunction(densityFunction, SLOPED_CHEESE);
 		DensityFunction densityfunction12 = DensityFunctions.min(densityfunction11,
 				DensityFunctions.mul(DensityFunctions.constant(5.0D), getFunction(densityFunction, ENTRANCES)));
 		DensityFunction densityfunction13 = DensityFunctions.rangeChoice(densityfunction11, -1000000.0D, 1.5625D,
 				densityfunction12, underground(densityFunction, noiseParameters, densityfunction11));
-		DensityFunction densityfunction14 = DensityFunctions.min(postProcess(slideOverworld(densityfunction13)),
+		DensityFunction finalDensity = DensityFunctions.min(postProcess(slideOverworld(densityfunction13)),
 				getFunction(densityFunction, NOODLE));
 		DensityFunction densityfunction15 = getFunction(densityFunction, Y);
 		int i = -60;
 		int j = 50;
-		DensityFunction densityfunction16 = yLimitedInterpolatable(densityfunction15,
+		DensityFunction veinToggle = yLimitedInterpolatable(densityfunction15,
 				DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEININESS), 1.5D, 1.5D), i, j, 0);
 		// float f = 4.0F;
-		DensityFunction densityfunction17 = yLimitedInterpolatable(densityfunction15,
-				DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
-		DensityFunction densityfunction18 = yLimitedInterpolatable(densityfunction15,
-				DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEIN_B), 4.0D, 4.0D), i, j, 0).abs();
-		DensityFunction densityfunction19 = DensityFunctions.add(DensityFunctions.constant((double) -0.08F),
-				DensityFunctions.max(densityfunction17, densityfunction18));
-		DensityFunction densityfunction20 = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_GAP));
-		return new NoiseRouter(densityfunction, densityfunction1, densityfunction2, densityfunction3, densityfunction6,
-				densityfunction7, getFunction(densityFunction, CONTINENTS), getFunction(densityFunction, EROSION),
-				densityfunction9, getFunction(densityFunction, RIDGES),
+		//DensityFunction densityfunction17 = yLimitedInterpolatable(densityfunction15,
+		//		DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEIN_A), 4.0D, 4.0D), i, j, 0).abs();
+		//DensityFunction densityfunction18 = yLimitedInterpolatable(densityfunction15,
+		//		DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_VEIN_B), 4.0D, 4.0D), i, j, 0).abs();
+		DensityFunction veinRidged = DensityFunctions.zero();
+		DensityFunction veinGap = DensityFunctions.noise(noiseParameters.getOrThrow(Noises.ORE_GAP));
+		return new NoiseRouter(barrierNoise, fluidLevelFloodednessNoise, fluidLevelSpreadNoise, lavaNoise, temperature,
+				vegetation, getFunction(densityFunction, CONTINENTS), getFunction(densityFunction, EROSION),
+				depth, getFunction(densityFunction, RIDGES),
 				slideOverworld(DensityFunctions.add(densityfunction10, DensityFunctions.constant(-0.703125D))
 						.clamp(-64.0D, 64.0D)),
-				densityfunction14, densityfunction16, densityfunction19, densityfunction20);
+				finalDensity, veinToggle, veinRidged, veinGap);
+		
+		
 	}
 	
 

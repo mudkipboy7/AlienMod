@@ -5,7 +5,10 @@
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "alien:algussoil"
+        "Name": "alien:gramen_block",
+        "Properties": {
+          "snowy": "false"
+        }
       }
     },
     "foliage_placer": {

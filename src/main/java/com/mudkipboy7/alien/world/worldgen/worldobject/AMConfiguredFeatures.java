@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mudkipboy7.alien.AlienMod;
 import com.mudkipboy7.alien.world.block.AMBlocks;
+import com.mudkipboy7.alien.world.block.flora.ThinAlienLog;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -12,6 +13,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -45,13 +47,17 @@ public class AMConfiguredFeatures {
 				new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
 						Feature.SIMPLE_BLOCK,
 						new SimpleBlockConfiguration(BlockStateProvider.simple(AMBlocks.DOUBLE_TALL_GRAMEN.get())))));
-		FeatureUtils.register(context, THIN_ALIEN_TREE, Feature.TREE,
-				createStraightBlobTree(AMBlocks.LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 8, 6, 10, 3, 1, 2)
-						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALGUSSOIL.get())).build());
+		FeatureUtils
+				.register(context, THIN_ALIEN_TREE, Feature.TREE,
+						createStraightBlobTree(AMBlocks.LIGNUM_LOG.get().defaultBlockState(),
+								AMBlocks.LIGNUM_LEAVES.get().defaultBlockState(), 8, 6, 10, 3, 1, 2).ignoreVines()
+								.build());
 
 		FeatureUtils.register(context, THIN_TALL_ALIEN_TREE, Feature.TREE,
-				createStraightBlobTree(AMBlocks.THIN_LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 5, 2, 10, 2, 1, 2)
-						.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.GRAMEN_BLOCK.get())).build());
+				// This fixes a stupid glitch where it generated it with waterlogged
+				createStraightBlobTree(
+						AMBlocks.THIN_LIGNUM_LOG.get().defaultBlockState().setValue(ThinAlienLog.WATERLOGGED, false),
+						AMBlocks.LIGNUM_LEAVES.get().defaultBlockState(), 5, 2, 10, 2, 1, 2).ignoreVines().build());
 		context.register(JOVIAN_SMALL_CLOUD,
 				new ConfiguredFeature<>(Feature.RANDOM_PATCH,
 						FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
@@ -70,17 +76,12 @@ public class AMConfiguredFeatures {
 				PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(state)));
 	}
 
-	private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block log, Block leaves,
+	private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(BlockState log, BlockState leaves,
 			int baseHeight, int heightRandA, int heightRandB, int leavesHeight, int leavesOffsett, int leavesRadius) {
 		return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log),
 				new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(leaves),
 				new BlobFoliagePlacer(ConstantInt.of(leavesRadius), ConstantInt.of(leavesOffsett), leavesHeight),
-				new TwoLayersFeatureSize(1, 0, 1));
-	}
-
-	private static TreeConfiguration.TreeConfigurationBuilder createBasicTree() {
-		return createStraightBlobTree(AMBlocks.LIGNUM_LOG.get(), AMBlocks.LIGNUM_LEAVES.get(), 4, 2, 0, 3, 0, 2)
-				.ignoreVines().dirt(BlockStateProvider.simple(AMBlocks.ALGUSSOIL.get()));
+				new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(AMBlocks.GRAMEN_BLOCK.get()));
 	}
 
 }

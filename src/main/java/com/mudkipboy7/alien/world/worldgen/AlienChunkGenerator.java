@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.BiomeSource;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSourceParameterList;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Aquifer;
@@ -43,6 +44,7 @@ public class AlienChunkGenerator extends NoiseBasedChunkGenerator {
 		// Blocks.AIR.defaultBlockState());
 		return (x, y, z) -> {
 			return y < Math.min(lavaLevel, seaLevel) ? lava : water;
+			//return water;
 		};
 	}
 }
