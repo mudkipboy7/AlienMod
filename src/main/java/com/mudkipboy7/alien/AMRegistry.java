@@ -12,6 +12,7 @@ import com.mudkipboy7.alien.world.effect.AMMobEffects;
 import com.mudkipboy7.alien.world.entity.AMEntities;
 import com.mudkipboy7.alien.world.item.AMItems;
 import com.mudkipboy7.alien.world.worldgen.carvers.AMCarvers;
+import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructurePeiceTypes;
 import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructureSets;
 import com.mudkipboy7.alien.world.worldgen.worldobject.structure.AMStructureTypes;
 
@@ -30,6 +31,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.StructureType;
+import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidType;
@@ -57,6 +59,9 @@ public final class AMRegistry {
 	
 	public static final DeferredRegister<WorldCarver<?>> CARVERS = deferredRegister(
 			Registries.CARVER);
+	
+	public static final DeferredRegister<StructurePieceType> STRUCTURE_PIECE_TYPES = deferredRegister(
+			Registries.STRUCTURE_PIECE);
 	/**
 	 * This sets up all of the deferred registries for the mod
 	 * 
@@ -80,6 +85,7 @@ public final class AMRegistry {
 		new AMMobEffects.AMPotions();
 		new AMStructureTypes();
 		new AMCarvers();
+		new AMStructurePeiceTypes();
 		/*
 		 * Init all the deferred Registers
 		 */
@@ -97,6 +103,7 @@ public final class AMRegistry {
 		POTIONS.register(modBus);
 		STRUCTURE_TYPES.register(modBus);
 		CARVERS.register(modBus);
+		STRUCTURE_PIECE_TYPES.register(modBus);
 	}
 
 	private static <T> DeferredRegister<T> deferredRegister(IForgeRegistry<T> type) {

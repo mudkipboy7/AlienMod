@@ -6,14 +6,21 @@ import com.mudkipboy7.alien.AlienMod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.StructureManager;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.TemplateStructurePiece;
+import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
@@ -31,10 +38,10 @@ public class OverworldDungeonStructure extends Structure {
 	}
 
 	private static Optional<GenerationStub> getPeices(GenerationContext context, BlockPos blockPos) {
-		System.out.println("wefwef");
+		// System.out.println("wefwef");
 		return Optional.of(new Structure.GenerationStub(context.chunkPos().getWorldPosition().atY(30), (builder) -> {
-			//Minecraft.getInstance().level.getChunk(blockPos);
-			builder.addPiece(new JovianArenaPeices(context.structureTemplateManager(), blockPos));
+			// Minecraft.getInstance().level.getChunk(blockPos);
+			//builder.addPiece(new JovianArenaPeices(StructurePieceType.JIGSAW, blockPos));
 		}));
 
 	}
@@ -48,12 +55,13 @@ public class OverworldDungeonStructure extends Structure {
 	 * okay nevermind apperently you can't do it like this. Apperently structure
 	 * blocks have issues making structures larger than one chunk.
 	 */
-	private static class JovianArenaPeices extends TemplateStructurePiece {
-		private static final ResourceLocation LOCATION = AlienMod.location("jovian_arena");
+	private static class JovianArenaPeices extends StructurePiece {
+		protected JovianArenaPeices(StructurePieceType pType, int pGenDepth, BoundingBox pBoundingBox) {
+			super(pType, pGenDepth, pBoundingBox);
+		}
 
-		public JovianArenaPeices(StructureTemplateManager pStructureTemplateManager, BlockPos blockPos) {
-			super(StructurePieceType.JIGSAW, 0, pStructureTemplateManager, LOCATION, LOCATION.toString(),
-					makeSettings(Rotation.NONE), blockPos);
+		public JovianArenaPeices(StructurePieceType pType, CompoundTag pTag) {
+			super(pType, pTag);
 		}
 
 		private static StructurePlaceSettings makeSettings(Rotation rotation) {
@@ -61,9 +69,16 @@ public class OverworldDungeonStructure extends Structure {
 		}
 
 		@Override
-		protected void handleDataMarker(String pName, BlockPos pPos, ServerLevelAccessor pLevel, RandomSource pRandom,
-				BoundingBox pBox) {
+		protected void addAdditionalSaveData(StructurePieceSerializationContext pContext, CompoundTag pTag) {
+			// TODO Auto-generated method stub
+			
+		}
 
+		@Override
+		public void postProcess(WorldGenLevel pLevel, StructureManager pStructureManager, ChunkGenerator pGenerator,
+				RandomSource pRandom, BoundingBox pBox, ChunkPos pChunkPos, BlockPos pPos) {
+			// TODO Auto-generated method stub
+			
 		}
 
 	}
